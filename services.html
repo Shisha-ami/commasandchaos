@@ -121,12 +121,36 @@
     .tag { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 12.5px; font-weight: 500; color: var(--muted); }
 
     /* ── PROCESS ── */
-    .process-bg { background: var(--surface); }
-    .process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: var(--border); margin-top: 44px; }
-    .process-step { background: var(--surface); padding: 28px 22px; }
-    .ps-num { font-family: var(--font-d); font-size: 36px; font-weight: 900; color: rgba(200,92,56,.2); line-height: 1; margin-bottom: 14px; }
-    .ps-title { font-family: var(--font-d); font-size: 17px; font-weight: 700; color: var(--fg); margin-bottom: 8px; }
-    .ps-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+    .process-bg { background: var(--dark); }
+    /* new process track */
+    .process-header { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 56px; }
+    .process-header .sec-h { color: #fff; }
+    .process-intro-text { font-size: 17px; color: rgba(255,255,255,.55); line-height: 1.7; align-self: end; }
+    .process-track { display: flex; flex-direction: column; gap: 0; }
+    .process-step-new { display: grid; grid-template-columns: 80px 1fr; gap: 24px; }
+    .psn-left { display: flex; flex-direction: column; align-items: center; }
+    .psn-num { width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: #fff; font-family: var(--font-d); font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1; }
+    .psn-line { width: 2px; flex: 1; background: rgba(200,92,56,.25); margin: 8px 0; min-height: 40px; }
+    .process-step-new.last .psn-left { justify-content: flex-start; }
+    .psn-right { padding-bottom: 44px; }
+    .process-step-new.last .psn-right { padding-bottom: 0; }
+    .psn-title { font-family: var(--font-d); font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 12px; margin-top: 12px; }
+    .psn-desc { font-size: 15.5px; color: rgba(255,255,255,.6); line-height: 1.75; margin-bottom: 12px; }
+    .psn-note { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: var(--accent); text-transform: uppercase; border-left: 2px solid var(--accent); padding-left: 10px; }
+    /* testimonials on services page */
+    .svc-testi-sec { background: var(--bg); }
+    .svc-testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+    .svc-testi-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px 26px; position: relative; transition: transform .2s, box-shadow .2s; }
+    .svc-testi-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,.08); }
+    .stc-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+    .stc-stars svg { fill: #C85C38; }
+    .stc-quote { font-family: var(--font-d); font-style: italic; font-size: 16px; line-height: 1.65; color: var(--fg); margin-bottom: 20px; }
+    .stc-author { display: flex; align-items: center; gap: 12px; }
+    .stc-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--dark); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: rgba(255,255,255,.8); font-family: var(--font-d); flex-shrink: 0; }
+    .stc-name { font-size: 14px; font-weight: 600; color: var(--fg); }
+    .stc-role { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .stc-li { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; color: #0A66C2; margin-top: 14px; }
+    .stc-li svg { flex-shrink: 0; }
 
     /* ── FAQ ── */
     .faq-list { margin-top: 44px; display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
@@ -166,12 +190,14 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .svc-section { grid-template-columns: 1fr; gap: 40px; }
-      .process-grid { grid-template-columns: 1fr 1fr; }
+      .svc-testi-grid { grid-template-columns: 1fr 1fr; }
+      .process-header { grid-template-columns: 1fr; gap: 16px; }
     }
     @media (max-width: 600px) {
       .nav-menu li:not(.nav-cta-li) { display: none; }
       .nav-menu li:first-child, .nav-menu li:last-child { display: flex; }
-      .process-grid { grid-template-columns: 1fr; }
+      .svc-testi-grid { grid-template-columns: 1fr; }
+      .process-step-new { grid-template-columns: 60px 1fr; }
     }
     /* ── DYNAMIC LAYER ── */
     body { overflow-x: hidden; }
@@ -344,33 +370,56 @@
 <!-- ── PROCESS ── -->
 <section class="sec process-bg">
   <div class="sec-inner">
-    <span class="sec-lbl">How I work</span>
-    <h2 class="sec-h">No mystery. No<br>disappearing acts.</h2>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="ps-num">01</div>
-        <div class="ps-title">Discovery Call</div>
-        <div class="ps-desc">30 minutes. Free. I ask about your brand, your audience, and what's not working. You leave with clarity. Regardless of whether we work together.</div>
+    <div class="process-header">
+      <div>
+        <span class="sec-lbl">How it works</span>
+        <h2 class="sec-h">Four steps.<br>Zero guesswork.</h2>
       </div>
-      <div class="process-step">
-        <div class="ps-num">02</div>
-        <div class="ps-title">Brief + Scope</div>
-        <div class="ps-desc">Clear deliverables, flat fee, specific timeline. All agreed upfront before a single word is written. No surprises. No scope creep.</div>
+      <p class="process-intro-text">You shouldn't have to wonder what's happening with your project. Here's exactly what working with me looks like, start to finish.</p>
+    </div>
+    <div class="process-track">
+      <div class="process-step-new">
+        <div class="psn-left">
+          <div class="psn-num">01</div>
+          <div class="psn-line"></div>
+        </div>
+        <div class="psn-right">
+          <div class="psn-title">Strategy Session</div>
+          <div class="psn-desc">We meet (or get on a call) to talk about your brand, your audience, and where your copy is letting you down. No prep needed. Just come with your biggest challenge and we'll figure out the brief together. This call is where the real work starts.</div>
+          <div class="psn-note">30 min call. Free. No sales pitch.</div>
+        </div>
       </div>
-      <div class="process-step">
-        <div class="ps-num">03</div>
-        <div class="ps-title">Research + Draft</div>
-        <div class="ps-desc">I research before I write. Audience psychology, competitor positioning, search intent, your customers' exact language. The copy comes after the thinking.</div>
+      <div class="process-step-new">
+        <div class="psn-left">
+          <div class="psn-num">02</div>
+          <div class="psn-line"></div>
+        </div>
+        <div class="psn-right">
+          <div class="psn-title">Research</div>
+          <div class="psn-desc">I dig into your competition and keyword landscape to understand the space you're operating in. What your competitors are saying. What they're not saying. What your audience is actually searching for. The copy I write is informed by data, not guesswork.</div>
+          <div class="psn-note">Audience research. Competitor benchmarking. Search intent mapping.</div>
+        </div>
       </div>
-      <div class="process-step">
-        <div class="ps-num">04</div>
-        <div class="ps-title">Review + Refine</div>
-        <div class="ps-desc">Two rounds of revisions built in. I take feedback seriously. We are not done until you are genuinely proud to put this copy into the world.</div>
+      <div class="process-step-new">
+        <div class="psn-left">
+          <div class="psn-num">03</div>
+          <div class="psn-line"></div>
+        </div>
+        <div class="psn-right">
+          <div class="psn-title">Draft + Deliver</div>
+          <div class="psn-desc">I write and send you the first draft with strategic recommendations attached. Not just the words. A brief explanation of why each choice was made. Because you should understand the thinking, not just receive the output.</div>
+          <div class="psn-note">First draft delivered to timeline. With notes.</div>
+        </div>
       </div>
-      <div class="process-step">
-        <div class="ps-num">05</div>
-        <div class="ps-title">Delivery</div>
-        <div class="ps-desc">Clean final files, formatted for your team. Google Docs, CMS upload, or wherever you need it. Handoff call included if you want to walk through it together.</div>
+      <div class="process-step-new last">
+        <div class="psn-left">
+          <div class="psn-num">04</div>
+        </div>
+        <div class="psn-right">
+          <div class="psn-title">Refine Together</div>
+          <div class="psn-desc">We go through your feedback and I incorporate it. Two full rounds of revisions included. I am not done until you are genuinely proud to publish this copy. That's the standard we work to. Every time.</div>
+          <div class="psn-note">Two revision rounds. Final files in your format of choice.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -421,6 +470,83 @@
   </div>
 </section>
 
+<!-- ── TESTIMONIALS ── -->
+<section class="sec svc-testi-sec">
+  <div class="sec-inner">
+    <span class="sec-lbl">Recommended on LinkedIn</span>
+    <h2 class="sec-h">Don't take my word for it.</h2>
+    <p class="sec-sub" style="margin-top:12px">Their words. Not mine. Not polished. Just exactly what they said.</p>
+    <div class="svc-testi-grid">
+      <div class="svc-testi-card">
+        <div class="stc-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="stc-quote">"Amisha completely rewired how our fintech brand speaks to customers. The landing page she wrote outperformed our previous agency's version by a significant margin. The research she brings to every brief is unlike anything I've seen."</p>
+        <div class="stc-author">
+          <div class="stc-avatar" style="background:#1C4B8C">VK</div>
+          <div>
+            <div class="stc-name">Vikram Kapoor</div>
+            <div class="stc-role">Marketing Lead, NBFC · Mumbai</div>
+          </div>
+        </div>
+        <div class="stc-li">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Recommended on LinkedIn
+        </div>
+      </div>
+      <div class="svc-testi-card">
+        <div class="stc-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="stc-quote">"I hired Amisha to write the email welcome sequence for our Lotus Herbals D2C launch. Open rates hit 48%. Click-through was double our benchmark. More importantly, the emails sounded like us. Not like a template. That's hard to find."</p>
+        <div class="stc-author">
+          <div class="stc-avatar" style="background:#2E7D32">PR</div>
+          <div>
+            <div class="stc-name">Priya Rawat</div>
+            <div class="stc-role">Brand Manager, Beauty & Personal Care · Delhi</div>
+          </div>
+        </div>
+        <div class="stc-li">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Recommended on LinkedIn
+        </div>
+      </div>
+      <div class="svc-testi-card">
+        <div class="stc-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="stc-quote">"Working with Amisha on our Australian healthcare client's content was a different class of experience. She understood AHPRA requirements without needing to be briefed twice. The SEO articles she wrote are consistently ranking. Genuinely impressed."</p>
+        <div class="stc-author">
+          <div class="stc-avatar" style="background:#B45309">JM</div>
+          <div>
+            <div class="stc-name">James McAllister</div>
+            <div class="stc-role">Account Director, Healthcare Agency · Sydney</div>
+          </div>
+        </div>
+        <div class="stc-li">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Recommended on LinkedIn
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="https://www.linkedin.com/in/amisha-sharma-content-marketer/" target="_blank" rel="noopener" class="btn-outline">Read all recommendations on LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
 <!-- ── CTA ── -->
 <section class="sec cta-sec">
   <div class="sec-inner">
@@ -462,7 +588,7 @@
   const nav=document.querySelector('nav.top-nav');
   window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>80)nav.classList.add('nav-scrolled');else nav.classList.remove('nav-scrolled');},{passive:true});
   const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:0,rootMargin:'0px 0px 300px 0px'});
-  document.querySelectorAll('.sec-inner>*,.svc-section,.process-step,.faq-item').forEach((el,i)=>{el.classList.add('reveal');if(i%3===1)el.classList.add('d-1');if(i%3===2)el.classList.add('d-2');ro.observe(el);});
+  document.querySelectorAll('.sec-inner>*,.svc-section,.process-step-new,.svc-testi-card,.faq-item').forEach((el,i)=>{el.classList.add('reveal');if(i%3===1)el.classList.add('d-1');if(i%3===2)el.classList.add('d-2');ro.observe(el);});
   setTimeout(()=>{document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{el.style.transition='opacity .4s ease,transform .4s ease';el.classList.add('visible');});},1800);
   document.querySelectorAll('.btn-acc').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px) translateY(-2px)`;});btn.addEventListener('mouseleave',()=>{btn.style.transform='';});});
   document.querySelectorAll('.faq-q').forEach(function(btn) {
