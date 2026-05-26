@@ -179,7 +179,7 @@
     body:hover .cursor-glow { opacity: 1; }
     .progress-line { position: fixed; top: 0; left: 0; height: 2px; z-index: 9998; background: var(--accent); width: 0%; pointer-events: none; transition: width .1s linear; }
     nav.top-nav { transition: transform .35s cubic-bezier(0.2,0,0,1), box-shadow .3s !important; will-change: transform; }
-    nav.top-nav.nav-hidden { transform: translateY(-100%) !important; }
+    /* nav stays visible always */
     nav.top-nav.nav-scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.06) !important; }
     /* logo hover handled by .logo-name and .logo-tag rules */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s cubic-bezier(0.2,0,0,1), transform .75s cubic-bezier(0.2,0,0,1); }
@@ -459,8 +459,8 @@
   (function loop(){cx+=(gx-cx)*.12;cy+=(gy-cy)*.12;if(glow){glow.style.left=cx+'px';glow.style.top=cy+'px';}requestAnimationFrame(loop);})();
   const pl=document.getElementById('progressLine');
   window.addEventListener('scroll',()=>{if(pl)pl.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';},{passive:true});
-  let ls=0;const nav=document.querySelector('nav.top-nav');
-  window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>80)nav.classList.add('nav-scrolled');else nav.classList.remove('nav-scrolled');if(y>ls+8&&y>160)nav.classList.add('nav-hidden');else if(y<ls-8)nav.classList.remove('nav-hidden');ls=y;},{passive:true});
+  const nav=document.querySelector('nav.top-nav');
+  window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>80)nav.classList.add('nav-scrolled');else nav.classList.remove('nav-scrolled');},{passive:true});
   const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:0,rootMargin:'0px 0px 300px 0px'});
   document.querySelectorAll('.sec-inner>*,.svc-section,.process-step,.faq-item').forEach((el,i)=>{el.classList.add('reveal');if(i%3===1)el.classList.add('d-1');if(i%3===2)el.classList.add('d-2');ro.observe(el);});
   setTimeout(()=>{document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{el.style.transition='opacity .4s ease,transform .4s ease';el.classList.add('visible');});},1800);

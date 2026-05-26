@@ -1811,14 +1811,10 @@
   }, { passive: true });
 
   /* ── SCROLL-AWARE NAV ── */
-  let lastScroll = 0;
   const nav = document.querySelector('nav.top-nav');
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     if (y > 80) nav.classList.add('nav-scrolled'); else nav.classList.remove('nav-scrolled');
-    if (y > lastScroll + 8 && y > 160) nav.classList.add('nav-hidden');
-    else if (y < lastScroll - 8) nav.classList.remove('nav-hidden');
-    lastScroll = y;
   }, { passive: true });
 
   /* ── SCROLL REVEAL ── */
