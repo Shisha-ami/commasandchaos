@@ -78,12 +78,13 @@
     .page-hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 100svh;
+      min-height: calc(100svh - 64px);
+      margin-top: 64px;
     }
     .ph-left {
       background: var(--dark);
       display: flex; flex-direction: column; justify-content: center;
-      padding: calc(64px + clamp(48px, 7vw, 96px)) clamp(28px, 5vw, 72px) clamp(48px, 7vw, 96px);
+      padding: clamp(48px, 7vw, 96px) clamp(28px, 5vw, 72px);
       position: relative; overflow: hidden;
     }
     /* subtle radial glow behind text */
@@ -124,7 +125,7 @@
       position: absolute; inset: 0;
       width: 100%; height: 100%;
       object-fit: cover;
-      object-position: center center;
+      object-position: center 18%;
       display: block;
     }
     /* terracotta edge glow on photo */
@@ -234,6 +235,49 @@
     .cc-title { font-family: var(--font-d); font-size: 22px; font-weight: 700; line-height: 1.25; color: var(--fg); margin-bottom: 12px; }
     .cc-detail { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
+    /* ── CERTIFICATIONS SECTION ── */
+    .certs-sec { background: var(--dark); }
+    .certs-sec .sec-lbl { color: rgba(200,92,56,.9); }
+    .certs-sec .sec-h { color: #fff; }
+    .certs-sec .sec-sub { color: rgba(255,255,255,.55); }
+    .cert-badges {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px; margin-top: 44px;
+    }
+    .cert-badge {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px; padding: 28px 24px;
+      display: flex; flex-direction: column; gap: 16px;
+      transition: background .25s, border-color .25s, transform .2s;
+    }
+    .cert-badge:hover {
+      background: rgba(255,255,255,.09);
+      border-color: rgba(200,92,56,.45);
+      transform: translateY(-3px);
+    }
+    .cert-badge-top { display: flex; align-items: center; gap: 14px; }
+    .cert-logo {
+      width: 48px; height: 48px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; overflow: hidden;
+    }
+    .cert-issuer {
+      font-size: 11px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: rgba(255,255,255,.4);
+    }
+    .cert-name {
+      font-family: var(--font-d); font-size: 18px; font-weight: 700;
+      color: #fff; line-height: 1.3; margin-bottom: 6px;
+    }
+    .cert-desc { font-size: 13.5px; color: rgba(255,255,255,.5); line-height: 1.6; }
+    .cert-year {
+      display: inline-block; margin-top: auto;
+      font-size: 10.5px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--accent);
+      border-top: 1px solid rgba(200,92,56,.3); padding-top: 12px;
+    }
+
     /* ── SHORT VERSION — styles live in the dynamic layer below ── */
 
     /* ── PHILOSOPHY ── */
@@ -310,7 +354,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .page-hero { grid-template-columns: 1fr; min-height: auto; }
-      .ph-left { padding: calc(64px + clamp(32px, 6vw, 64px)) clamp(20px, 5vw, 40px) clamp(32px, 6vw, 64px); }
+      .ph-left { padding: clamp(32px, 6vw, 64px) clamp(20px, 5vw, 40px); }
       .ph-right { height: 52vw; min-height: 280px; }
       .stats-band-inner { grid-template-columns: repeat(3, 1fr); }
       .sb-item:nth-child(4), .sb-item:nth-child(5) { border-top: 1px solid rgba(255,255,255,.07); }
@@ -341,22 +385,6 @@
       .nav-menu li:first-child, .nav-menu li:last-child { display: flex; }
       .story-side { grid-template-columns: 1fr; }
     }
-    /* ── NAV: transparent-to-cream transition over dark hero ── */
-    nav.top-nav.nav-hero-dark:not(.nav-scrolled) {
-      background: transparent !important;
-      border-bottom-color: transparent !important;
-    }
-    nav.top-nav.nav-hero-dark:not(.nav-scrolled) .logo-name { color: #fff; }
-    nav.top-nav.nav-hero-dark:not(.nav-scrolled) .logo-tag  { color: rgba(255,255,255,.38); }
-    nav.top-nav.nav-hero-dark:not(.nav-scrolled) .logo-tag .at { color: rgba(200,92,56,.9); }
-    nav.top-nav.nav-hero-dark:not(.nav-scrolled) .nav-menu a { color: rgba(255,255,255,.55); }
-    nav.top-nav.nav-hero-dark:not(.nav-scrolled) .nav-menu a:hover { color: #fff; }
-    nav.top-nav.nav-hero-dark:not(.nav-scrolled) .nav-btn {
-      background: rgba(255,255,255,.1) !important;
-      color: #fff !important;
-      border: 1px solid rgba(255,255,255,.2) !important;
-    }
-
     /* ── SHORT VERSION (redesigned with photo) ── */
     .sv-sec { background: var(--dark); padding: clamp(72px, 9vw, 120px) var(--px); overflow: hidden; }
     .sv-grid {
@@ -495,11 +523,27 @@
     .d-2 { transition-delay: .2s; }
     .d-3 { transition-delay: .3s; }
     .btn-acc:hover { box-shadow: 0 8px 24px rgba(200,92,56,.28) !important; }
+
+    /* ── cascade fix: these must come AFTER the base grid declarations ── */
+    @media (max-width: 900px) {
+      .cert-badges { grid-template-columns: 1fr 1fr !important; }
+      .sv-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+      .sv-photo-img { height: 320px !important; }
+      .sv-quote-card { left: 0 !important; right: 0 !important; bottom: -32px !important; }
+      .testi-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+    }
+    @media (max-width: 540px) {
+      .cert-badges { grid-template-columns: 1fr !important; }
+    }
+    @media (min-width: 600px) and (max-width: 900px) {
+      .testi-grid { grid-template-columns: 1fr 1fr !important; }
+      .testi-card:last-child { grid-column: 1 / -1 !important; }
+    }
   </style>
 </head>
 <body>
 
-<nav class="top-nav nav-hero-dark">
+<nav class="top-nav">
   <div class="nav-w">
     <a href="index.html" class="logo">
       <span class="logo-name">Amisha Sharma</span>
@@ -633,6 +677,24 @@
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
+            <span class="tl-year">2023</span>
+            <div class="tl-title">IISc SEO Workshop</div>
+            <div class="tl-detail">Search optimisation deep-dive from one of India's top research institutions.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-year">2023</span>
+            <div class="tl-title">Kairos Marketing Fellowship</div>
+            <div class="tl-detail">Flagship fellowship covering brand positioning, growth, and content-led acquisition.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-year">2023</span>
+            <div class="tl-title">Performance Marketing — Growth School</div>
+            <div class="tl-detail">Paid acquisition, funnel optimisation, Google Ads, and Meta strategy.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
             <span class="tl-year">2024</span>
             <div class="tl-title">Certified in Generative AI</div>
             <div class="tl-detail">Airtribe certification. Using AI to build smarter systems, not replace the craft.</div>
@@ -646,7 +708,7 @@
 <!-- ── SHORT VERSION ── -->
 <section class="sv-sec">
   <div class="sv-grid">
-    <div class="sv-left reveal">
+    <div class="sv-left">
       <span class="sv-lbl">The short version</span>
       <h2 class="sv-h">You don't need more words.<br>You need the <em>right</em> ones.</h2>
       <div class="sv-body">
@@ -655,7 +717,7 @@
       </div>
       <a href="contact.html" class="btn-acc" style="margin-top:32px;display:inline-block">Let's talk →</a>
     </div>
-    <div class="sv-photo-col reveal d-1">
+    <div class="sv-photo-col">
       <div class="sv-photo-wrap">
         <picture>
           <source type="image/webp" srcset="photo-about-800.webp 800w, photo-about-1200.webp 1200w" sizes="420px">
@@ -706,6 +768,143 @@
         <div class="cc-title">Certified in Generative AI</div>
         <div class="cc-detail">Completed Airtribe's Generative AI certification. Because the future of content strategy involves working with AI, not running from it. I use these tools to build smarter systems, not shortcuts. The craft stays human.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTIFICATIONS ── -->
+<section class="sec certs-sec">
+  <div class="sec-inner">
+    <span class="sec-lbl">Certifications</span>
+    <div class="two-col" style="align-items:start;gap:24px">
+      <div>
+        <h2 class="sec-h">Credentials that<br><em style="color:var(--accent)">prove the depth.</em></h2>
+      </div>
+      <p class="sec-sub" style="color:rgba(255,255,255,.55)">Not just titles. Actual programmes from institutions that don't hand these out for completing a 3-minute quiz.</p>
+    </div>
+    <div class="cert-badges">
+
+      <!-- IISc -->
+      <div class="cert-badge">
+        <div class="cert-badge-top">
+          <div class="cert-logo" style="background:#1A3A5C">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="IISc logo">
+              <rect width="48" height="48" rx="10" fill="#1A3A5C"/>
+              <circle cx="24" cy="22" r="12" stroke="#C8A840" stroke-width="1.5" fill="none"/>
+              <text x="24" y="20" text-anchor="middle" font-size="8" font-weight="800" fill="#C8A840" font-family="Georgia,serif">IISc</text>
+              <text x="24" y="28" text-anchor="middle" font-size="4.5" fill="rgba(200,168,64,.75)" font-family="sans-serif" letter-spacing=".08em">BANGALORE</text>
+              <line x1="12" y1="36" x2="36" y2="36" stroke="#C8A840" stroke-width=".75" opacity=".5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cert-issuer">Indian Institute of Science</div>
+          </div>
+        </div>
+        <div class="cert-name">SEO Workshop</div>
+        <div class="cert-desc">Search engine optimisation fundamentals and advanced application from one of India's top research institutions.</div>
+        <span class="cert-year">2023</span>
+      </div>
+
+      <!-- Airtribe -->
+      <div class="cert-badge">
+        <div class="cert-badge-top">
+          <div class="cert-logo" style="background:#6C47FF">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Airtribe logo">
+              <rect width="48" height="48" rx="10" fill="#6C47FF"/>
+              <path d="M24 10L32 34H16L24 10Z" fill="rgba(255,255,255,.9)" stroke="none"/>
+              <rect x="18" y="27" width="12" height="2.5" rx="1.25" fill="#6C47FF"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cert-issuer">Airtribe</div>
+          </div>
+        </div>
+        <div class="cert-name">Certified in Generative AI</div>
+        <div class="cert-desc">Using AI to build smarter content systems. The craft stays human. The workflow gets sharper.</div>
+        <span class="cert-year">2024</span>
+      </div>
+
+      <!-- Google Digital Garage -->
+      <div class="cert-badge">
+        <div class="cert-badge-top">
+          <div class="cert-logo" style="background:#fff">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Google Digital Garage logo">
+              <rect width="48" height="48" rx="10" fill="#fff"/>
+              <!-- Google G -->
+              <path d="M33 24.2c0-.7-.1-1.4-.2-2H24v3.8h5c-.2 1.1-.9 2-1.8 2.6v2.2h3c1.8-1.7 2.8-4.1 2.8-6.6z" fill="#4285F4"/>
+              <path d="M24 34c2.5 0 4.6-.8 6.1-2.2l-3-2.2c-.8.6-1.9.9-3.1.9-2.4 0-4.4-1.6-5.1-3.8h-3.1v2.3C17.4 32.1 20.5 34 24 34z" fill="#34A853"/>
+              <path d="M18.9 26.7c-.2-.6-.3-1.2-.3-1.8s.1-1.2.3-1.8v-2.3h-3.1A9.9 9.9 0 0014 25c0 1.6.4 3.1 1.1 4.3l3.1-2.3v-.3z" fill="#FBBC05"/>
+              <path d="M24 19.5c1.3 0 2.5.5 3.4 1.3l2.6-2.6C28.6 16.8 26.5 16 24 16c-3.5 0-6.6 1.9-8.1 4.8l3.1 2.3c.7-2.2 2.7-3.6 5-3.6z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cert-issuer">Google Digital Garage</div>
+          </div>
+        </div>
+        <div class="cert-name">Fundamentals of Digital Marketing</div>
+        <div class="cert-desc">Google's accredited digital marketing certification covering search, social, email, and analytics fundamentals.</div>
+        <span class="cert-year">2022</span>
+      </div>
+
+      <!-- Kairos -->
+      <div class="cert-badge">
+        <div class="cert-badge-top">
+          <div class="cert-logo" style="background:#0B1A2E">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Kairos logo">
+              <rect width="48" height="48" rx="10" fill="#0B1A2E"/>
+              <text x="24" y="29" text-anchor="middle" font-size="14" font-weight="900" fill="#E8B84B" font-family="Georgia,serif">K</text>
+              <rect x="12" y="34" width="24" height="1.5" rx=".75" fill="rgba(232,184,75,.4)"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cert-issuer">Kairos</div>
+          </div>
+        </div>
+        <div class="cert-name">Flagship Marketing Fellowship</div>
+        <div class="cert-desc">Intensive fellowship programme covering brand positioning, growth marketing, and content-led acquisition strategies.</div>
+        <span class="cert-year">2023</span>
+      </div>
+
+      <!-- Growth School -->
+      <div class="cert-badge">
+        <div class="cert-badge-top">
+          <div class="cert-logo" style="background:#FF4F00">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Growth School logo">
+              <rect width="48" height="48" rx="10" fill="#FF4F00"/>
+              <!-- Upward arrow / growth chart icon -->
+              <polyline points="12,34 20,24 26,29 36,16" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <polyline points="30,16 36,16 36,22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cert-issuer">Growth School</div>
+          </div>
+        </div>
+        <div class="cert-name">Performance Marketing Program</div>
+        <div class="cert-desc">Paid acquisition, funnel optimisation, Google Ads, and Meta — the technical side of making copy spend money wisely.</div>
+        <span class="cert-year">2023</span>
+      </div>
+
+      <!-- ISB -->
+      <div class="cert-badge">
+        <div class="cert-badge-top">
+          <div class="cert-logo" style="background:#002147">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="ISB logo">
+              <rect width="48" height="48" rx="10" fill="#002147"/>
+              <text x="24" y="22" text-anchor="middle" font-size="9" font-weight="800" fill="#FFD700" font-family="Georgia,serif">ISB</text>
+              <text x="24" y="31" text-anchor="middle" font-size="4" fill="rgba(255,215,0,.6)" font-family="sans-serif" letter-spacing=".06em">HYDERABAD</text>
+              <line x1="14" y1="35" x2="34" y2="35" stroke="#FFD700" stroke-width=".75" opacity=".4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cert-issuer">Indian School of Business</div>
+          </div>
+        </div>
+        <div class="cert-name">Digital Marketing Alumna</div>
+        <div class="cert-desc">One of Asia's top-ranked business schools. Analytics, SEO, paid media, content strategy. The foundation everything else is built on.</div>
+        <span class="cert-year">2022</span>
+      </div>
+
     </div>
   </div>
 </section>
@@ -935,7 +1134,7 @@
     if(y>80)nav.classList.add('nav-scrolled');else nav.classList.remove('nav-scrolled');
     if(y>ls+8&&y>160)nav.classList.add('nav-hidden');else if(y<ls-8)nav.classList.remove('nav-hidden');
     ls=y;},{passive:true});
-  const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:.05,rootMargin:'0px 0px 100px 0px'});
   document.querySelectorAll('.sec-inner>*,.two-col,.cred-grid,.phil-grid,.story-side,.timeline-item').forEach((el,i)=>{el.classList.add('reveal');if(i%3===1)el.classList.add('d-1');if(i%3===2)el.classList.add('d-2');ro.observe(el);});
   document.querySelectorAll('.btn-acc').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px) translateY(-2px)`;});btn.addEventListener('mouseleave',()=>{btn.style.transform='';});});
 </script>
