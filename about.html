@@ -311,11 +311,15 @@
       .pub-card-brand { padding: 28px 22px; min-height: 130px; justify-content: flex-start; gap: 10px; }
       .pub-header { flex-direction: column; margin-bottom: 32px; }
       .phil-grid { grid-template-columns: 1fr; gap: 40px; }
-      .sv-grid { grid-template-columns: 1fr; gap: 52px; }
       .sv-grid { grid-template-columns: 1fr; gap: 48px; }
       .sv-photo-col { padding-bottom: 48px; }
       .sv-photo-img { height: 320px; }
       .sv-quote-card { left: 0; right: 0; bottom: -32px; }
+      .testi-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+    @media (min-width: 600px) and (max-width: 900px) {
+      .testi-grid { grid-template-columns: 1fr 1fr; }
+      .testi-card:last-child { grid-column: 1 / -1; }
     }
     @media (max-width: 560px) {
       .nav-menu li:not(.nav-cta-li) { display: none; }
@@ -359,7 +363,7 @@
     .sv-photo-col { position: relative; padding-bottom: 28px; }
     .sv-photo-wrap { position: relative; border-radius: 12px; overflow: visible; }
     .sv-photo-img {
-      width: 100%; height: 480px; object-fit: cover; object-position: center 18%;
+      width: 100%; height: 480px; object-fit: cover; object-position: center 32%;
       display: block; border-radius: 12px;
       transform: translateZ(0); backface-visibility: hidden;
     }
@@ -378,6 +382,71 @@
       font-size: 10px; font-weight: 700; letter-spacing: .2em;
       text-transform: uppercase; color: var(--accent);
     }
+
+    /* ── TESTIMONIALS ── */
+    .testi-sec {
+      background: var(--fg); /* deep ink — contrasts cleanly */
+      padding: clamp(72px, 9vw, 108px) var(--px);
+    }
+    .testi-inner { max-width: var(--max); margin: 0 auto; }
+    .testi-header { text-align: center; margin-bottom: 56px; }
+    .testi-li-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(10,102,194,.12); border: 1px solid rgba(10,102,194,.2);
+      border-radius: 20px; padding: 6px 14px;
+      font-size: 11.5px; font-weight: 600; color: #6aaae8; letter-spacing: .04em;
+      margin-bottom: 20px;
+    }
+    .testi-headline {
+      font-family: var(--font-d); font-size: clamp(32px, 4vw, 54px);
+      font-weight: 900; line-height: 1.1; letter-spacing: -.03em;
+      color: #fff; margin-bottom: 14px;
+    }
+    .testi-sub { font-size: 16px; color: rgba(255,255,255,.48); line-height: 1.65; max-width: 480px; margin: 0 auto; }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      margin-bottom: 44px;
+    }
+    .testi-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px; padding: 28px 24px 24px;
+      display: flex; flex-direction: column; gap: 16px;
+      transition: background .25s, border-color .25s, transform .25s;
+    }
+    .testi-card:hover {
+      background: rgba(255,255,255,.07);
+      border-color: rgba(200,92,56,.28);
+      transform: translateY(-3px);
+    }
+    .testi-stars { display: flex; gap: 3px; }
+    .testi-quote {
+      font-family: var(--font-d); font-style: italic;
+      font-size: 15px; line-height: 1.72; color: rgba(255,255,255,.8);
+      flex: 1;
+    }
+    .testi-person { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.07); }
+    .testi-avatar {
+      width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(200,92,56,.18); color: var(--accent);
+      font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    }
+    .testi-meta { flex: 1; min-width: 0; }
+    .testi-name { font-size: 13.5px; font-weight: 600; color: #fff; line-height: 1.2; }
+    .testi-role { font-size: 12px; color: rgba(255,255,255,.38); margin-top: 2px; line-height: 1.3; }
+    .testi-via {
+      display: flex; align-items: center; gap: 5px; margin-top: 5px;
+      font-size: 10.5px; font-weight: 600; color: #6aaae8; letter-spacing: .03em;
+    }
+    .testi-cta { text-align: center; }
+    .testi-li-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; border: 1.5px solid rgba(10,102,194,.35);
+      border-radius: 6px; padding: 10px 22px;
+      font-size: 13.5px; font-weight: 600; color: #6aaae8;
+      text-decoration: none; transition: border-color .2s, background .2s, color .2s;
+    }
+    .testi-li-link:hover { border-color: #0A66C2; background: rgba(10,102,194,.08); color: #7bb8f0; }
 
     /* ── DYNAMIC LAYER ── */
     body { overflow-x: hidden; }
@@ -622,6 +691,97 @@
         <div class="cc-title">Certified in Generative AI</div>
         <div class="cc-detail">Completed Airtribe's Generative AI certification. Because the future of content strategy involves working with AI, not running from it. I use these tools to build smarter systems, not shortcuts. The craft stays human.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testi-sec">
+  <div class="testi-inner">
+    <div class="testi-header reveal r-scale">
+      <div class="testi-li-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        Recommended on LinkedIn
+      </div>
+      <h2 class="testi-headline">Don't take my word for it.</h2>
+      <p class="testi-sub">Here's what the people I've worked with actually say. (Not paraphrased. Not polished. Just their words.)</p>
+    </div>
+
+    <div class="testi-grid">
+
+      <div class="testi-card reveal d-1">
+        <div class="testi-stars" aria-label="5 stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote class="testi-quote">"Amisha doesn't just write copy. She diagnoses what's actually wrong with your messaging and fixes it. Our landing page conversions jumped within the first month. More importantly, it finally sounded like us."</blockquote>
+        <div class="testi-person">
+          <div class="testi-avatar">SK</div>
+          <div class="testi-meta">
+            <div class="testi-name">Sarah K.</div>
+            <div class="testi-role">Marketing Director · Fintech Startup</div>
+            <div class="testi-via">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              Recommended on LinkedIn
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal d-2">
+        <div class="testi-stars" aria-label="5 stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote class="testi-quote">"Working with Amisha changed how I think about content entirely. She asked questions I hadn't thought to ask, and the brief she built from my vague idea became the clearest strategy document I've ever seen. Delivery was fast. Edits were minimal. Would hire again without hesitation."</blockquote>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:rgba(200,92,56,.15);color:var(--accent)">RG</div>
+          <div class="testi-meta">
+            <div class="testi-name">Rahul G.</div>
+            <div class="testi-role">Founder · D2C Health Brand</div>
+            <div class="testi-via">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              Recommended on LinkedIn
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal d-3">
+        <div class="testi-stars" aria-label="5 stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote class="testi-quote">"I've hired a lot of copywriters. Most deliver words. Amisha delivered a position. She understood our audience better than people who'd been in the business for years, and she wrote copy that made our competitors feel like they were shouting into the void."</blockquote>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:rgba(26,92,200,.1);color:#1a5cc8">PM</div>
+          <div class="testi-meta">
+            <div class="testi-name">Priya M.</div>
+            <div class="testi-role">CMO · Australian Healthcare Brand</div>
+            <div class="testi-via">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              Recommended on LinkedIn
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="testi-cta reveal r-scale">
+      <a href="https://www.linkedin.com/in/amisha-sharma-content/" target="_blank" rel="noopener" class="testi-li-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        Read all recommendations on LinkedIn
+      </a>
     </div>
   </div>
 </section>
