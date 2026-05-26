@@ -337,6 +337,12 @@
     .d-4 { transition-delay: .38s; }
     .d-5 { transition-delay: .48s; }
     .d-6 { transition-delay: .58s; }
+    /* Always show content for print, reduced-motion, and crawlers */
+    @media print, (prefers-reduced-motion: reduce) {
+      .reveal, .reveal.r-left, .reveal.r-right, .reveal.r-scale {
+        opacity: 1 !important; transform: none !important; transition: none !important;
+      }
+    }
 
     /* ── SECTION SYSTEM ── */
     .sec { padding: clamp(64px, 8vw, 112px) var(--px); }
@@ -1292,7 +1298,7 @@
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           What most brands publish
         </div>
-        <div class="ct-text" id="ctBefore"></div>
+        <div class="ct-text" id="ctBefore">We provide comprehensive digital marketing solutions to help your business grow and achieve its online goals with our expert team.</div>
       </div>
       <div class="ct-divider" aria-hidden="true">
         <div class="ct-divider-line"></div>
@@ -1304,7 +1310,7 @@
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1.5 5.5L3.8 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           What makes people buy
         </div>
-        <div class="ct-text" id="ctAfter"></div>
+        <div class="ct-text ct-lit" id="ctAfter">You're losing customers to brands with worse products and better copy. Let's fix that — starting with your next landing page.</div>
       </div>
     </div>
     <div class="ct-dots">
@@ -1820,8 +1826,15 @@
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px 300px 0px' });
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  // Safety net: force any missed reveals visible after 1.8s
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      el.style.transition = 'opacity .4s ease, transform .4s ease';
+      el.classList.add('visible');
+    });
+  }, 1800);
 
   /* ── ANIMATED COUNTERS ── */
   function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
