@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Amisha Sharma | commasandchaos.com</title>
+  <meta name="description" content="ISB Alumna. Founder of Audaz Revista and The Brand Crush. Content Strategist at CJ&CO. 5+ years building content that ranks, converts, and sounds human.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #F9F9F6;
+      --surface: #FFFFFF;
+      --fg:      #1C1C26;
+      --muted:   #6B6B7B;
+      --border:  #E4E4E9;
+      --accent:  #C85C38;
+      --dark:    #1C1C26;
+      --font-d:  'Playfair Display', Georgia, serif;
+      --font-b:  'DM Sans', system-ui, sans-serif;
+      --max:     1140px;
+      --px:      clamp(20px, 5vw, 72px);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-b);
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav.top-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(249,249,246,.94);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-w {
+      max-width: var(--max); margin: 0 auto; padding: 0 var(--px);
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { text-decoration: none; display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-name { display: block; font-family: var(--font-d); font-size: 19px; font-weight: 700; font-style: italic; letter-spacing: -.028em; color: var(--fg); transition: color .22s; }
+    .logo:hover .logo-name { color: var(--accent); }
+    .logo-tag { display: block; font-family: 'SF Mono', ui-monospace, 'Cascadia Code', 'Fira Mono', monospace; font-size: 10px; font-weight: 400; letter-spacing: .035em; color: var(--muted); transition: color .22s; line-height: 1; }
+    .logo-tag .at { color: var(--accent); font-weight: 600; font-size: 11px; }
+    .logo:hover .logo-tag { color: var(--fg); }
+    .nav-menu { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-menu a { font-size: 14.5px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-menu a:hover, .nav-menu a.on { color: var(--fg); }
+    .nav-btn { background: var(--dark) !important; color: #fff !important; padding: 8px 20px; border-radius: 5px; font-size: 14px !important; font-weight: 600 !important; transition: background .2s !important; }
+    .nav-btn:hover { background: var(--accent) !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding-top: 64px; background: var(--dark); overflow: hidden;
+    }
+    .ph-inner {
+      max-width: var(--max); margin: 0 auto; padding: var(--px);
+      padding-top: clamp(52px, 7vw, 88px);
+      padding-bottom: clamp(52px, 7vw, 88px);
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 60px; align-items: center;
+    }
+    .ph-lbl {
+      font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      color: rgba(200,92,56,.9); margin-bottom: 18px; display: block;
+    }
+    .ph-headline {
+      font-family: var(--font-d);
+      font-size: clamp(38px, 5vw, 72px);
+      font-weight: 900; line-height: 1.06; letter-spacing: -.035em; color: #fff;
+      margin-bottom: 22px;
+    }
+    .ph-headline em { font-style: italic; color: rgba(200,92,56,.9); }
+    .ph-sub { font-size: clamp(16px, 1.5vw, 19px); color: rgba(255,255,255,.55); line-height: 1.65; max-width: 480px; }
+    .ph-photo {
+      width: 100%; max-width: 360px; aspect-ratio: 3/4;
+      background: #E8622A;
+      border-radius: 12px; overflow: hidden; position: relative;
+      box-shadow:
+        0 0 0 3px rgba(200,92,56,.4),
+        0 24px 56px rgba(0,0,0,.35);
+      transform: translateZ(0);
+      will-change: transform;
+    }
+    .ph-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 10%;
+      display: block;
+      image-rendering: auto;
+    }
+
+    /* ── SECTIONS ── */
+    .sec { padding: clamp(60px, 8vw, 112px) var(--px); }
+    .sec-inner { max-width: var(--max); margin: 0 auto; }
+    .sec-lbl { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: block; }
+    .sec-h { font-family: var(--font-d); font-size: clamp(28px, 3.5vw, 50px); font-weight: 700; line-height: 1.12; letter-spacing: -.025em; color: var(--fg); }
+
+    /* ── STORY ── */
+    .story-layout {
+      display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: start;
+    }
+    .story-body p {
+      font-size: 18px; line-height: 1.8; color: var(--fg);
+      margin-bottom: 22px;
+    }
+    .story-body p:last-child { margin-bottom: 0; }
+    .story-body p strong { font-weight: 600; color: var(--fg); }
+    .story-pull {
+      font-family: var(--font-d); font-style: italic;
+      font-size: clamp(20px, 2vw, 28px); line-height: 1.4;
+      color: var(--fg); border-left: 3px solid var(--accent);
+      padding-left: 24px; margin-block: 36px;
+    }
+
+    /* sticky sidebar */
+    .story-side { position: sticky; top: 88px; }
+    .side-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 28px 24px; margin-bottom: 16px;
+    }
+    .side-card:last-child { margin-bottom: 0; }
+    .sc-label { font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .sc-value { font-family: var(--font-d); font-size: 18px; font-weight: 700; color: var(--fg); line-height: 1.3; margin-bottom: 6px; }
+    .sc-sub { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+
+    /* ── CREDENTIALS GRID ── */
+    .cred-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); margin-top: 40px; }
+    .cred-card { background: var(--surface); padding: 32px 28px; }
+    .cc-org { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .cc-title { font-family: var(--font-d); font-size: 20px; font-weight: 700; line-height: 1.3; color: var(--fg); margin-bottom: 8px; }
+    .cc-detail { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+
+    /* ── SHORT VERSION ── */
+    .sv-sec { background: var(--dark); padding: clamp(72px, 9vw, 120px) var(--px); }
+    .sv-grid {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: center;
+    }
+    .sv-lbl {
+      font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 24px; display: block;
+    }
+    .sv-h {
+      font-family: var(--font-d);
+      font-size: clamp(34px, 4.2vw, 60px);
+      font-weight: 900; line-height: 1.08; letter-spacing: -.03em;
+      color: #fff; margin-bottom: 28px;
+    }
+    .sv-body p {
+      font-size: 16px; color: rgba(255,255,255,.58); line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .sv-body p:last-child { margin-bottom: 0; }
+    /* right: quote */
+    .sv-right {
+      border-left: 1.5px solid rgba(200,92,56,.35);
+      padding-left: 44px; position: relative;
+    }
+    .sv-quotemark {
+      font-family: var(--font-d); font-size: 120px; font-weight: 700; font-style: italic;
+      color: var(--accent); line-height: .7; display: block; margin-bottom: 20px;
+      opacity: .85; user-select: none;
+    }
+    .sv-qtext {
+      font-family: var(--font-d); font-style: italic;
+      font-size: clamp(16px, 1.6vw, 21px); line-height: 1.65;
+      color: rgba(255,255,255,.88); margin-bottom: 28px;
+    }
+    .sv-attr {
+      font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent); line-height: 1.6;
+    }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy-bg { background: var(--surface); }
+    .phil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .phil-copy { }
+    .phil-copy .sec-h { margin-bottom: 20px; }
+    .phil-copy p { font-size: 17px; color: var(--muted); line-height: 1.75; margin-bottom: 18px; }
+    .phil-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .phil-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 16px; line-height: 1.55; }
+    .phil-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 8px; }
+
+    /* ── CTA ── */
+    .cta-sec { background: var(--dark); }
+    .cta-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .cta-inner .sec-lbl { color: rgba(200,92,56,.9); }
+    .cta-inner .sec-h { color: #fff; margin-bottom: 16px; }
+    .cta-inner p { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.65; margin-bottom: 36px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-acc { background: var(--accent); color: #fff; padding: 13px 30px; border-radius: 6px; font-size: 15.5px; font-weight: 600; text-decoration: none; transition: background .2s, transform .15s; display: inline-block; }
+    .btn-acc:hover { background: #b04e2e; transform: translateY(-1px); }
+    .btn-outline-w { display: inline-block; border: 1.5px solid rgba(255,255,255,.25); color: #fff; padding: 12px 26px; border-radius: 6px; font-size: 15px; font-weight: 500; text-decoration: none; transition: border-color .2s, background .2s; }
+    .btn-outline-w:hover { border-color: #fff; background: rgba(255,255,255,.06); }
+
+    /* ── FOOTER ── */
+    footer.site-footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px var(--px); }
+    .ft-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+    .ft-logo { font-family: var(--font-d); font-size: 16px; font-weight: 700; color: var(--fg); text-decoration: none; }
+    .ft-links { display: flex; gap: 22px; list-style: none; }
+    .ft-links a { font-size: 13.5px; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .ft-links a:hover { color: var(--fg); }
+    .ft-copy { font-size: 12.5px; color: var(--muted); }
+
+    /* ── PUBLICATIONS ── */
+    .pub-sec { background: var(--bg); }
+    .pub-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 48px; flex-wrap: wrap; }
+    .pub-header .sec-h em { font-style: italic; color: var(--accent); }
+    .pubs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .pub-card {
+      display: grid; grid-template-columns: 200px 1fr;
+      border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+      text-decoration: none; color: inherit;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .pub-card:hover { transform: translateY(-5px); box-shadow: 0 20px 48px rgba(0,0,0,.1); }
+    .pub-card-brand {
+      padding: 32px 22px; display: flex; flex-direction: column; justify-content: space-between;
+      position: relative; overflow: hidden;
+    }
+    .pub-card-brand::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(255,255,255,.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .pcb-name {
+      font-family: var(--font-d); font-weight: 900; font-style: italic;
+      font-size: clamp(22px, 2vw, 28px); line-height: 1.08; letter-spacing: -.02em; color: #fff;
+    }
+    .pcb-tagline { font-size: 11.5px; font-weight: 500; line-height: 1.5; color: rgba(255,255,255,.6); margin-top: 10px; }
+    .pcb-founder { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.38); }
+    .pub-card-info { background: var(--surface); padding: 28px 26px; display: flex; flex-direction: column; gap: 10px; }
+    .pci-lbl { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
+    .pci-desc { font-size: 14.5px; color: var(--muted); line-height: 1.65; flex: 1; }
+    .pub-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+    .pub-tag { background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 3px 11px; font-size: 11.5px; font-weight: 500; color: var(--muted); }
+    .pub-cta { font-size: 13.5px; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; transition: gap .2s; }
+    .pub-card:hover .pub-cta { gap: 9px; }
+    .pub-card.audaz .pub-card-brand { background: linear-gradient(145deg, #0F4DA6 0%, #0B3D91 100%); }
+    .pub-card.brandcrush .pub-card-brand { background: linear-gradient(145deg, #1A1A20 0%, #0F0F13 100%); }
+    .pub-card.brandcrush .pcb-tagline { color: rgba(245,241,232,.55); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .ph-inner { grid-template-columns: 1fr; }
+      .ph-photo { display: none; }
+      .story-layout { grid-template-columns: 1fr; }
+      .story-side { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .side-card { margin-bottom: 0; }
+      .cred-grid { grid-template-columns: 1fr; }
+      .pubs-grid { grid-template-columns: 1fr; }
+      .pub-card { grid-template-columns: 1fr; }
+      .pub-card-brand { padding: 28px 22px; min-height: 130px; justify-content: flex-start; gap: 10px; }
+      .pub-header { flex-direction: column; margin-bottom: 32px; }
+      .phil-grid { grid-template-columns: 1fr; gap: 40px; }
+      .sv-grid { grid-template-columns: 1fr; gap: 52px; }
+      .sv-right { border-left: none; border-top: 1.5px solid rgba(200,92,56,.35); padding-left: 0; padding-top: 40px; }
+    }
+    @media (max-width: 560px) {
+      .nav-menu li:not(.nav-cta-li) { display: none; }
+      .nav-menu li:first-child, .nav-menu li:last-child { display: flex; }
+      .story-side { grid-template-columns: 1fr; }
+    }
+    /* ── DYNAMIC LAYER ── */
+    body { overflow-x: hidden; }
+    .cursor-glow {
+      position: fixed; pointer-events: none; z-index: 9999;
+      width: 480px; height: 480px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,92,56,.07) 0%, transparent 68%);
+      transform: translate(-50%,-50%); top: -999px; left: -999px;
+      opacity: 0; will-change: left, top; transition: opacity .4s;
+    }
+    body:hover .cursor-glow { opacity: 1; }
+    .progress-line {
+      position: fixed; top: 0; left: 0; height: 2px; z-index: 9998;
+      background: var(--accent); width: 0%; pointer-events: none;
+      transition: width .1s linear;
+    }
+    nav.top-nav { transition: transform .35s cubic-bezier(0.2,0,0,1), box-shadow .3s !important; will-change: transform; }
+    nav.top-nav.nav-hidden { transform: translateY(-100%) !important; }
+    nav.top-nav.nav-scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.06) !important; }
+    /* logo two-line hover handled by .logo-name and .logo-tag rules above */
+    .nav-btn:hover { transform: translateY(-1px) !important; }
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .75s cubic-bezier(0.2,0,0,1), transform .75s cubic-bezier(0.2,0,0,1);
+    }
+    .reveal.r-left  { transform: translateX(-28px); }
+    .reveal.r-right { transform: translateX(28px); }
+    .reveal.r-scale { transform: scale(.96); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d-1 { transition-delay: .1s; }
+    .d-2 { transition-delay: .2s; }
+    .d-3 { transition-delay: .3s; }
+    .btn-acc:hover { box-shadow: 0 8px 24px rgba(200,92,56,.28) !important; }
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-w">
+    <a href="index.html" class="logo">
+      <span class="logo-name">Amisha Sharma</span>
+      <span class="logo-tag"><span class="at">@</span>commasandchaos.com</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="on">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li class="nav-cta-li"><a href="contact.html" class="nav-btn">Let's Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── PAGE HERO ── -->
+<div class="page-hero">
+  <div class="ph-inner">
+    <div>
+      <span class="ph-lbl">About Amisha</span>
+      <h1 class="ph-headline">I build brands<br>through <em>content.</em></h1>
+      <p class="ph-sub">Not the post-three-times-and-pray kind. The kind that ranks, reads well, and makes someone pick up the phone. Here's the full story.</p>
+    </div>
+    <div class="ph-photo">
+      <img
+        class="ph-img"
+        src="photo-about-4k.jpg"
+        alt="Amisha Sharma"
+        loading="eager"
+        decoding="async"
+        style="image-rendering:-webkit-optimize-contrast;filter:contrast(1.06) saturate(1.07) brightness(1.01);transform:translateZ(0) scale(1.001);-webkit-backface-visibility:hidden;"
+      >
+    </div>
+  </div>
+</div>
+
+<!-- ── STORY ── -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="story-layout">
+      <div class="story-body">
+        <span class="sec-lbl">My story</span>
+        <h2 class="sec-h" style="margin-bottom:32px">Here's something I've noticed about most content: it exists to fill a calendar. Not to do a job.</h2>
+
+        <p>Written for algorithms. Approved by committees. Posted because it was Tuesday.</p>
+
+        <p>I write the other kind. The kind where <strong>every sentence earns the next one</strong>, every page has a single job to do, and the brand voice sounds like an actual person had an actual point of view.</p>
+
+        <div class="story-pull">"What I care about: E-E-A-T content, SEO that doesn't read like SEO, and making brands sound like themselves. Not like everyone else."</div>
+
+        <p>At <strong>CJ&amp;CO</strong>, I build content systems every day. Website copy, landing pages, email sequences, Google ads, social ad copy, content strategy. The kind brands can actually execute. Because building a beautiful system nobody uses? That's just expensive decoration.</p>
+
+        <p>I'm also <strong>Editor-in-Chief of Audaz Revista</strong>, a publication I built from scratch covering Hispanic culture, business, and lifestyle. Before I launched it, I spent four years studying at <strong>Instituto Cervantes</strong>. Not because I had to. Because you can't write credibly about something you don't actually understand. That standard extends to every client I take on.</p>
+
+        <p>I hold a <strong>Digital Marketing certification from ISB</strong>, Indian School of Business. One of Asia's top-ranked institutions. I'm also <strong>Generative AI certified</strong> through Airtribe. I use AI to build smarter systems. The craft stays human.</p>
+
+        <p>Based in <strong>Delhi</strong>. Working with clients across Asia, Europe, and the Americas. Timezone-flexible. Async-friendly.</p>
+      </div>
+      <div class="story-side">
+        <div class="side-card">
+          <div class="sc-label">Education</div>
+          <div class="sc-value">ISB Alumna</div>
+          <div class="sc-sub">Indian School of Business, one of Asia's top-ranked business institutions.</div>
+        </div>
+        <div class="side-card">
+          <div class="sc-label">Experience</div>
+          <div class="sc-value">5+ Years</div>
+          <div class="sc-sub">Content strategy and copywriting across B2B and B2C brands.</div>
+        </div>
+        <div class="side-card">
+          <div class="sc-label">Current Roles</div>
+          <div class="sc-value">3 Parallel Hats</div>
+          <div class="sc-sub">Content Strategist at CJ&amp;CO. Founder of Audaz Revista. Founder of The Brand Crush.</div>
+        </div>
+        <div class="side-card">
+          <div class="sc-label">Languages &amp; Study</div>
+          <div class="sc-value">Instituto Cervantes</div>
+          <div class="sc-sub">Four years of Spanish language and culture before founding Audaz Revista.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SHORT VERSION ── -->
+<section class="sv-sec">
+  <div class="sv-grid reveal">
+    <div class="sv-left">
+      <span class="sv-lbl">The short version</span>
+      <h2 class="sv-h">You don't need more words. You need the right ones.</h2>
+      <div class="sv-body">
+        <p>Most brands sound like they swallowed a marketing textbook. Buzzwords everywhere. Zero personality. And then they wonder why nobody's reading.</p>
+        <p>I fix that. I write copy that actually sounds like something a human would say. The kind that makes your audience stop, read, and do the thing you want them to do.</p>
+      </div>
+    </div>
+    <div class="sv-right">
+      <span class="sv-quotemark">"</span>
+      <p class="sv-qtext">She didn't just write copy. She rewired how our entire brand speaks. Our conversions went up 40% and our inbox hasn't stopped since.</p>
+      <div class="sv-attr">Happy Client,<br>Hopefully You Next</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CREDENTIALS ── -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-inner">
+    <span class="sec-lbl">Credentials</span>
+    <h2 class="sec-h">Built on depth,<br>not shortcuts.</h2>
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cc-org">Indian School of Business</div>
+        <div class="cc-title">ISB Alumna</div>
+        <div class="cc-detail">ISB is consistently ranked among Asia's top business schools. The Digital Marketing programme covers analytics, SEO, paid media, and content strategy frameworks. The foundation of how I approach every client engagement.</div>
+      </div>
+      <div class="cred-card">
+        <div class="cc-org">CJ&amp;CO</div>
+        <div class="cc-title">Content Strategist</div>
+        <div class="cc-detail">Building content systems for businesses across industries: landing pages that convert, SEO strategies that bring the right traffic, and brand voice guides that let teams scale without losing consistency.</div>
+      </div>
+      <div class="cred-card">
+        <div class="cc-org">Audaz Revista</div>
+        <div class="cc-title">Founder &amp; Editor-in-Chief</div>
+        <div class="cc-detail">Built a publication from zero covering Hispanic culture, business, and lifestyle. Every editorial decision, from voice to structure to topic selection, is made with the same conviction I bring to client work: every page has a job to do.</div>
+      </div>
+      <div class="cred-card">
+        <div class="cc-org">The Brand Crush</div>
+        <div class="cc-title">Founder</div>
+        <div class="cc-detail">Independent brand journalism. Unsponsored. Unafraid. Covers what makes a brand campaign earn its place in culture, and what makes it fall flat. If you want to understand how I think about brand voice, The Brand Crush is the most honest answer I can give you.</div>
+      </div>
+      <div class="cred-card">
+        <div class="cc-org">Instituto Cervantes</div>
+        <div class="cc-title">Four Years of Study</div>
+        <div class="cc-detail">Studied Spanish language and Hispanic culture for four years before launching Audaz Revista. Because credible editorial work requires understanding the subject. Not just publishing about it. That standard extends to everything I write.</div>
+      </div>
+      <div class="cred-card">
+        <div class="cc-org">Airtribe</div>
+        <div class="cc-title">Certified in Generative AI</div>
+        <div class="cc-detail">Completed Airtribe's Generative AI certification. Because the future of content strategy involves working with AI, not running from it. I use these tools to build smarter systems, not shortcuts. The craft stays human.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PUBLICATIONS ── -->
+<section class="sec pub-sec">
+  <div class="sec-inner">
+    <div class="pub-header">
+      <div>
+        <span class="sec-lbl">My Publications</span>
+        <h2 class="sec-h">I don't just write for brands.<br>I <em>build</em> them.</h2>
+      </div>
+      <p class="sec-sub" style="max-width:380px">Two publications built from scratch. This is the part of my story that most copywriters don't have. And the reason every client gets editorial-grade thinking, not just execution.</p>
+    </div>
+    <div class="pubs-grid">
+
+      <a href="https://audazrevista.com/" target="_blank" rel="noopener" class="pub-card audaz">
+        <div class="pub-card-brand">
+          <div>
+            <div class="pcb-name">Audaz<br>Revista</div>
+            <div class="pcb-tagline">"Stop 'Just Studying' Spanish.<br>Start Living It."</div>
+          </div>
+          <div class="pcb-founder">Founder &amp; Editor-in-Chief</div>
+        </div>
+        <div class="pub-card-info">
+          <span class="pci-lbl">Cultural Magazine</span>
+          <p class="pci-desc">Hispanic culture, language, lifestyle, and travel. Four years at Instituto Cervantes before I launched it. Because writing about a culture you don't understand produces exactly the kind of shallow content I'm trying to replace.</p>
+          <div class="pub-tags">
+            <span class="pub-tag">Hispanic Culture</span>
+            <span class="pub-tag">Language</span>
+            <span class="pub-tag">Lifestyle</span>
+            <span class="pub-tag">Travel</span>
+          </div>
+          <span class="pub-cta">audazrevista.com →</span>
+        </div>
+      </a>
+
+      <a href="https://thebrandcrush.com/" target="_blank" rel="noopener" class="pub-card brandcrush">
+        <div class="pub-card-brand">
+          <div>
+            <div class="pcb-name">The<br>Brand<br>Crush</div>
+            <div class="pcb-tagline">"Unsponsored.<br>Unafraid."</div>
+          </div>
+          <div class="pcb-founder">Founder</div>
+        </div>
+        <div class="pub-card-info">
+          <span class="pci-lbl">Brand Journalism</span>
+          <p class="pci-desc">Independent brand journalism that takes a real stance. Why did that campaign make you feel something? Did the brand earn it or manufacture it? No sponsors. No softening. This is how I think about brand voice, publicly.</p>
+          <div class="pub-tags">
+            <span class="pub-tag">Brand Analysis</span>
+            <span class="pub-tag">Campaign Reviews</span>
+            <span class="pub-tag">Brand Wars</span>
+            <span class="pub-tag">Strategy</span>
+          </div>
+          <span class="pub-cta">thebrandcrush.com →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PHILOSOPHY ── -->
+<section class="sec philosophy-bg">
+  <div class="sec-inner">
+    <div class="phil-grid">
+      <div>
+        <span class="sec-lbl">My philosophy</span>
+        <h2 class="sec-h" style="margin-bottom:20px">What I believe<br>about content.</h2>
+        <p>Good content isn't just well-written. It's well-positioned. It knows who it's for, what it needs to do, and how to make someone care enough to keep reading.</p>
+        <p>I work with brands that are tired of content that fills a calendar but doesn't move the needle. The brands that want copy their customers actually want to read, and SEO that brings in people who buy. Not just people who bounce.</p>
+      </div>
+      <ul class="phil-list">
+        <li>Every sentence earns the next one. If it doesn't earn its place, it doesn't belong on the page. (This applies to every word in your Google ad too.)</li>
+        <li>Brand voice is a product decision. Not a style guide footnote. When everything sounds consistent, customers trust you more. Full stop.</li>
+        <li>SEO and good writing are not in conflict. They have never been in conflict. If your SEO content reads like SEO content, the brief was wrong.</li>
+        <li>Depth beats volume. One page that genuinely helps your audience converts better than ten that don't. Every single time.</li>
+        <li>The best copy solves the reader's problem before they finish asking the question. That's the goal.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="sec cta-sec">
+  <div class="sec-inner">
+    <div class="cta-inner">
+      <span class="sec-lbl">Let's work together</span>
+      <h2 class="sec-h">If this is the kind of<br>copywriter you've been looking for...</h2>
+      <p>Tell me about your project. Landing page that's not converting. Email open rates in the basement. Ad spend with nothing to show for it. I take on a limited number of new clients each month. Let's talk before the spot's gone.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-acc">Let's talk →</a>
+        <a href="services.html" class="btn-outline-w">See what I write →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="ft-inner">
+    <a href="index.html" class="ft-logo">Amisha Sharma</a>
+    <ul class="ft-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/amisha-sharma-content/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+    </ul>
+    <span class="ft-copy">© 2026 Amisha Sharma · Delhi, India</span>
+  </div>
+</footer>
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="progress-line" id="progressLine" aria-hidden="true"></div>
+<script>
+  const glow=document.querySelector('.cursor-glow');
+  let gx=-999,gy=-999,cx=-999,cy=-999;
+  document.addEventListener('mousemove',e=>{gx=e.clientX;gy=e.clientY;});
+  (function loop(){cx+=(gx-cx)*.12;cy+=(gy-cy)*.12;if(glow){glow.style.left=cx+'px';glow.style.top=cy+'px';}requestAnimationFrame(loop);})();
+  const pl=document.getElementById('progressLine');
+  window.addEventListener('scroll',()=>{if(pl)pl.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';},{passive:true});
+  let ls=0;const nav=document.querySelector('nav.top-nav');
+  window.addEventListener('scroll',()=>{const y=window.scrollY;
+    if(y>80)nav.classList.add('nav-scrolled');else nav.classList.remove('nav-scrolled');
+    if(y>ls+8&&y>160)nav.classList.add('nav-hidden');else if(y<ls-8)nav.classList.remove('nav-hidden');
+    ls=y;},{passive:true});
+  const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.sec-inner>*,.two-col,.cred-grid,.phil-grid,.story-side,.timeline-item').forEach((el,i)=>{el.classList.add('reveal');if(i%3===1)el.classList.add('d-1');if(i%3===2)el.classList.add('d-2');ro.observe(el);});
+  document.querySelectorAll('.btn-acc').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px) translateY(-2px)`;});btn.addEventListener('mouseleave',()=>{btn.style.transform='';});});
+</script>
+</body>
+</html>

@@ -1,0 +1,1923 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amisha Sharma — commasandchaos.com | Content Strategist & Copywriter</title>
+  <meta name="description" content="Freelance content strategist and copywriter. commasandchaos.com. ISB Alumna. 5+ years building content systems that rank, convert, and sound human.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #F9F9F6;
+      --surface: #FFFFFF;
+      --fg:      #1C1C26;
+      --muted:   #6B6B7B;
+      --border:  #E4E4E9;
+      --accent:  #C85C38;
+      --dark:    #1C1C26;
+      --font-d:  'Playfair Display', Georgia, serif;
+      --font-b:  'DM Sans', system-ui, sans-serif;
+      --max:     1140px;
+      --px:      clamp(20px, 5vw, 72px);
+      --ease:    cubic-bezier(0.2, 0, 0, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-b);
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── CURSOR GLOW ── */
+    .cursor-glow {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      width: 480px; height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,92,56,.075) 0%, transparent 68%);
+      transform: translate(-50%, -50%);
+      top: -999px; left: -999px;
+      will-change: left, top;
+      transition: left .08s linear, top .08s linear, opacity .4s;
+      opacity: 0;
+    }
+    body:hover .cursor-glow { opacity: 1; }
+
+    /* ── NAV ── */
+    nav.top-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(249,249,246,.92);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: transform .35s var(--ease), box-shadow .3s, background .3s;
+      will-change: transform;
+    }
+    nav.top-nav.nav-hidden { transform: translateY(-100%); }
+    nav.top-nav.nav-scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.06); }
+    .nav-w {
+      max-width: var(--max); margin: 0 auto; padding: 0 var(--px);
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      text-decoration: none; display: flex; flex-direction: column; gap: 4px;
+      line-height: 1; position: relative;
+    }
+    .logo-name {
+      display: block;
+      font-family: var(--font-d); font-size: 19px; font-weight: 700;
+      font-style: italic; letter-spacing: -.028em; color: var(--fg);
+      transition: color .22s;
+    }
+    .logo:hover .logo-name { color: var(--accent); }
+    .logo-tag {
+      display: block;
+      font-family: 'SF Mono', ui-monospace, 'Cascadia Code', 'Fira Mono', monospace;
+      font-size: 10px; font-weight: 400; letter-spacing: .035em;
+      color: var(--muted); transition: color .22s; line-height: 1;
+    }
+    .logo-tag .at {
+      color: var(--accent); font-weight: 600; font-size: 11px;
+    }
+    .logo:hover .logo-tag { color: var(--fg); }
+    .nav-menu { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-menu a {
+      font-size: 14.5px; font-weight: 500; color: var(--muted);
+      text-decoration: none; transition: color .2s;
+    }
+    .nav-menu a:hover, .nav-menu a.on { color: var(--fg); }
+    .nav-btn {
+      background: var(--dark) !important; color: #fff !important;
+      padding: 8px 20px; border-radius: 5px;
+      font-size: 14px !important; font-weight: 600 !important;
+      transition: background .2s, transform .15s !important;
+    }
+    .nav-btn:hover { background: var(--accent) !important; transform: translateY(-1px) !important; }
+
+    /* ── HERO LOAD ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .hero-copy .eyebrow { animation: fadeUp .6s .12s both; }
+    h1.headline         { animation: fadeUp .75s .28s both; }
+    .subhead            { animation: fadeUp .65s .56s both; }
+    .hero-btns          { animation: fadeUp .6s .70s both; }
+    .hero-chips         { animation: fadeUp .6s .84s both; }
+    .hero-visual        { animation: fadeIn .9s .35s both; }
+
+    /* ── HERO ── */
+    .hero {
+      padding-top: 64px; min-height: 100svh;
+      display: grid; grid-template-columns: 1.15fr .85fr;
+      align-items: center; gap: 48px;
+      max-width: var(--max); margin: 0 auto;
+      padding-left: var(--px); padding-right: var(--px);
+      position: relative;
+    }
+    .hero-blob {
+      position: absolute; pointer-events: none; z-index: 0;
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,92,56,.065) 0%, transparent 65%);
+      top: 50%; right: -180px; transform: translateY(-50%);
+      animation: blobPulse 7s ease-in-out infinite;
+    }
+    @keyframes blobPulse {
+      0%,100% { transform: translateY(-50%) scale(1);   opacity: 1; }
+      50%      { transform: translateY(-50%) scale(1.1); opacity: .65; }
+    }
+    .hero-copy { padding-block: 80px 60px; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: ''; display: block;
+      width: 20px; height: 2px; background: var(--accent);
+    }
+    h1.headline {
+      font-family: var(--font-d);
+      font-size: clamp(44px, 5.8vw, 80px);
+      font-weight: 900; line-height: 1.04; letter-spacing: -.035em;
+      color: var(--fg); margin-bottom: 24px;
+    }
+    h1.headline em { font-style: italic; color: var(--accent); }
+    /* .hook-line moved to billboard section below clients */
+    .hook-billboard {
+      padding: clamp(56px, 7vw, 96px) var(--px);
+      background: var(--fg);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hook-billboard::before {
+      content: '"';
+      position: absolute; top: -40px; left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-d); font-size: 320px; font-weight: 900;
+      color: rgba(200,92,56,.05); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+    .hook-billboard-inner {
+      max-width: 880px; margin: 0 auto; position: relative; z-index: 1;
+    }
+    .hook-billboard p {
+      font-family: var(--font-d);
+      font-size: clamp(28px, 4.5vw, 60px);
+      font-weight: 700; font-style: italic;
+      line-height: 1.18; letter-spacing: -.025em;
+      color: #fff;
+    }
+    .hook-billboard p span {
+      color: var(--accent);
+    }
+    .hook-billboard-rule {
+      width: 48px; height: 3px; background: var(--accent);
+      margin: 28px auto 0; border-radius: 2px;
+    }
+    .subhead {
+      font-size: clamp(16px, 1.5vw, 18px);
+      color: var(--muted); line-height: 1.65; max-width: 480px; margin-bottom: 38px;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn-acc {
+      background: var(--accent); color: #fff; padding: 14px 32px;
+      border-radius: 6px; font-size: 15.5px; font-weight: 600;
+      text-decoration: none; display: inline-block;
+      transition: background .2s, transform .2s var(--ease), box-shadow .2s;
+      will-change: transform;
+    }
+    .btn-acc:hover { background: #b04e2e; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,92,56,.28); }
+    .btn-g {
+      color: var(--muted); font-size: 15px; font-weight: 500; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 5px; padding: 14px 0;
+      transition: color .2s, gap .2s;
+    }
+    .btn-g:hover { color: var(--fg); gap: 10px; }
+    .hero-chips {
+      display: flex; gap: 24px; margin-top: 48px; padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .chip-val {
+      font-family: var(--font-d); font-size: 28px; font-weight: 700;
+      line-height: 1; color: var(--fg); font-variant-numeric: tabular-nums;
+    }
+    .chip-lbl { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+
+    /* ── PHOTO FRAME ── */
+    .hero-visual { display: flex; justify-content: center; align-items: center; padding-top: 64px; position: relative; z-index: 1; }
+    .photo-frame {
+      width: 100%; max-width: 420px; aspect-ratio: 4/5;
+      border-radius: 12px; overflow: hidden; position: relative;
+      background: #E8622A;
+      box-shadow:
+        0 0 0 3px rgba(200,92,56,.35),
+        0 24px 64px rgba(0,0,0,.22),
+        0 4px 12px rgba(0,0,0,.1);
+      animation: framePulse 4.5s ease-in-out infinite;
+      transform: translateZ(0);
+      will-change: transform;
+      backface-visibility: hidden;
+    }
+    @keyframes framePulse {
+      0%,100% { box-shadow: 0 0 0 3px rgba(200,92,56,.25), 0 24px 64px rgba(0,0,0,.2); }
+      50%      { box-shadow: 0 0 0 4px rgba(200,92,56,.55), 0 32px 80px rgba(0,0,0,.28); }
+    }
+    .photo-inner {
+      width: 100%; height: 100%; position: relative;
+    }
+    .photo-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 12%;
+      display: block;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      transform: translateZ(0) scale(1.001);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      filter: none;
+    }
+    .frame-badge {
+      position: absolute; bottom: 20px; left: 20px; right: 20px;
+      background: rgba(10,10,18,.78);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 10px; padding: 13px 16px;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      animation: badgeFloat 3.5s ease-in-out infinite;
+    }
+    @keyframes badgeFloat {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-6px); }
+    }
+    .fb-label { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.38); }
+    .fb-value { font-family: var(--font-d); font-size: 15px; font-weight: 700; color: #fff; margin-top: 3px; }
+    .fb-dot {
+      display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+      background: #4CAF50; margin-right: 6px; margin-bottom: -1px;
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+    @keyframes dotPulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: .5; transform: scale(.8); }
+    }
+
+    /* ── CRED BAR ── */
+    .cred-bar { background: var(--dark); padding: 16px var(--px); overflow: hidden; }
+    .cb-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: clamp(16px, 4vw, 52px); flex-wrap: wrap;
+    }
+    .cb-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 500; color: rgba(255,255,255,.55);
+      white-space: nowrap; letter-spacing: .02em;
+    }
+    .cb-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .cb-item strong { color: #fff; font-weight: 600; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .75s var(--ease), transform .75s var(--ease);
+    }
+    .reveal.r-left  { transform: translateX(-32px); }
+    .reveal.r-right { transform: translateX(32px); }
+    .reveal.r-scale { transform: scale(.96); }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .d-1 { transition-delay: .08s; }
+    .d-2 { transition-delay: .18s; }
+    .d-3 { transition-delay: .28s; }
+    .d-4 { transition-delay: .38s; }
+    .d-5 { transition-delay: .48s; }
+    .d-6 { transition-delay: .58s; }
+
+    /* ── SECTION SYSTEM ── */
+    .sec { padding: clamp(64px, 8vw, 112px) var(--px); }
+    .sec-inner { max-width: var(--max); margin: 0 auto; }
+    .sec-lbl {
+      font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .sec-lbl::before { content: ''; display: block; width: 16px; height: 2px; background: var(--accent); }
+    .sec-h {
+      font-family: var(--font-d);
+      font-size: clamp(30px, 3.5vw, 52px);
+      font-weight: 700; line-height: 1.12; letter-spacing: -.025em; color: var(--fg);
+    }
+    .sec-sub {
+      font-size: 18px; color: var(--muted); line-height: 1.65; max-width: 500px;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: end; }
+
+    /* ── DIFFERENCE ── */
+    .diff-bg { background: var(--surface); }
+    .diff-cols {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 52px;
+    }
+    .diff-col {
+      border-top: 2px solid var(--border); padding-top: 24px;
+      transition: border-color .3s;
+    }
+    .diff-col:hover { border-color: var(--accent); }
+    .diff-col.ac { border-color: var(--accent); }
+    .diff-col h3 {
+      font-family: var(--font-d); font-size: 21px; font-weight: 700;
+      line-height: 1.3; margin-bottom: 12px; color: var(--fg);
+    }
+    .diff-col p { font-size: 15px; color: var(--muted); line-height: 1.65; }
+    .diff-icon { display: block; margin-bottom: 14px; }
+
+    /* ── PULL QUOTE ── */
+    .quote-sec {
+      background: rgba(200,92,56,.06);
+      padding: clamp(60px, 7vw, 96px) var(--px); text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .quote-sec::before {
+      content: '"';
+      font-family: var(--font-d); font-style: italic;
+      font-size: 280px; font-weight: 900; line-height: 1;
+      color: rgba(200,92,56,.07);
+      position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
+      pointer-events: none; user-select: none;
+    }
+    .quote-wrap { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+    blockquote {
+      font-family: var(--font-d); font-style: italic;
+      font-size: clamp(22px, 2.6vw, 38px); line-height: 1.38; color: var(--fg);
+      margin-bottom: 28px;
+    }
+    cite { font-size: 13px; font-style: normal; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+
+    /* ── SERVICES ── */
+    .svc-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; background: var(--border); border: 1px solid var(--border);
+      margin-top: 48px;
+    }
+    .svc-card {
+      background: var(--surface); padding: 36px 32px;
+      text-decoration: none; color: inherit;
+      border-top: 3px solid transparent;
+      transition: background .25s, border-color .25s, transform .25s var(--ease), box-shadow .25s;
+    }
+    .svc-card:hover {
+      background: var(--bg); border-color: var(--accent);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.08);
+    }
+    .svc-num { font-size: 11.5px; font-weight: 700; letter-spacing: .14em; color: var(--accent); display: block; margin-bottom: 18px; }
+    .svc-title { font-family: var(--font-d); font-size: 24px; font-weight: 700; margin-bottom: 12px; line-height: 1.2; }
+    .svc-desc { font-size: 14.5px; color: var(--muted); line-height: 1.65; margin-bottom: 24px; }
+    .svc-icon { display: block; margin-bottom: 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 20px; padding: 3px 11px;
+      font-size: 12px; font-weight: 500; color: var(--muted);
+      transition: border-color .2s, color .2s;
+    }
+    .svc-card:hover .tag { border-color: rgba(200,92,56,.3); color: var(--accent); }
+
+    /* ── ABOUT DARK ── */
+    .dark-sec {
+      background: var(--dark);
+      position: relative; overflow: hidden;
+    }
+    .dark-sec::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(200,92,56,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .dark-sec .sec-inner { position: relative; z-index: 1; }
+    .dark-sec .sec-lbl { color: rgba(200,92,56,.85); }
+    .dark-sec .sec-h { color: #fff; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .about-body {
+      font-size: 16.5px; line-height: 1.75; color: rgba(255,255,255,.62);
+      margin-top: 20px; margin-bottom: 16px;
+    }
+    .creds-ul { list-style: none; display: flex; flex-direction: column; gap: 13px; padding-top: 8px; }
+    .creds-ul li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14.5px; color: rgba(255,255,255,.65); line-height: 1.5;
+      padding: 14px 16px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,.06);
+      transition: background .2s, border-color .2s;
+    }
+    .creds-ul li:hover { background: rgba(255,255,255,.04); border-color: rgba(200,92,56,.25); }
+    .creds-ul li::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent); margin-top: 8px; flex-shrink: 0;
+    }
+    .creds-ul strong { color: #fff; font-weight: 600; }
+    .btn-outline-w {
+      display: inline-block; margin-top: 32px;
+      border: 1.5px solid rgba(255,255,255,.22); color: #fff;
+      padding: 13px 28px; border-radius: 6px; font-size: 15px; font-weight: 500;
+      text-decoration: none; transition: border-color .2s, background .2s, transform .2s;
+    }
+    .btn-outline-w:hover { border-color: rgba(200,92,56,.7); background: rgba(200,92,56,.1); transform: translateY(-1px); }
+
+    /* ── CLIENTS ── */
+    .clients-sec { background: var(--surface); }
+    .clients-intro { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: end; margin-bottom: 48px; }
+    .clients-total {
+      font-family: var(--font-d); font-size: clamp(52px, 6vw, 96px);
+      font-weight: 900; line-height: 1; letter-spacing: -.04em; color: var(--fg);
+    }
+    .clients-total span { color: var(--accent); }
+    .clients-sub { font-size: 15.5px; color: var(--muted); line-height: 1.65; max-width: 400px; }
+    .accordion { border-top: 1px solid var(--border); }
+    .acc-item { border-bottom: 1px solid var(--border); }
+    .acc-trigger {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 24px 0; text-align: left;
+      transition: opacity .2s;
+    }
+    .acc-trigger:hover .acc-label { color: var(--accent); }
+    .acc-meta { display: flex; align-items: center; gap: 16px; }
+    .acc-sector {
+      font-size: 10.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--accent); background: rgba(200,92,56,.1); border-radius: 20px; padding: 3px 10px;
+    }
+    .acc-label {
+      font-family: var(--font-d); font-size: clamp(20px, 2.2vw, 28px); font-weight: 700;
+      color: var(--fg); line-height: 1.2; transition: color .2s;
+    }
+    .acc-count { font-size: 13px; color: var(--muted); font-weight: 500; white-space: nowrap; }
+    .acc-arrow {
+      width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      font-size: 16px; color: var(--muted);
+      transition: transform .35s var(--ease), background .2s, border-color .2s, color .2s;
+    }
+    .acc-item.open .acc-arrow { transform: rotate(180deg); background: var(--accent); border-color: var(--accent); color: #fff; }
+    /* CSS height accordion */
+    .acc-panel {
+      display: block !important;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height .45s var(--ease), opacity .3s, padding .3s;
+      padding-bottom: 0 !important;
+    }
+    .acc-item.open .acc-panel {
+      max-height: 320px;
+      opacity: 1;
+      padding-bottom: 28px !important;
+    }
+    .client-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .cc {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+      padding: 9px 18px; font-size: 14px; font-weight: 600; color: var(--fg);
+      transition: border-color .2s, color .2s, transform .2s, box-shadow .2s;
+      cursor: default;
+    }
+    .cc:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(200,92,56,.12); }
+    .cc-count {
+      background: rgba(200,92,56,.08); border: 1.5px dashed rgba(200,92,56,.4);
+      border-radius: 6px; padding: 9px 18px; font-size: 14px; font-weight: 600;
+      color: var(--accent);
+    }
+    .acc-note { margin-top: 14px; font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+    /* ── PROOF / GSC ── */
+    .proof-sec { background: var(--bg); }
+    .gsc-wrap {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
+      margin-bottom: 3px;
+      transition: box-shadow .3s, transform .3s var(--ease);
+    }
+    .gsc-wrap:hover { box-shadow: 0 12px 48px rgba(0,0,0,.1), 0 2px 8px rgba(0,0,0,.06); transform: translateY(-3px); }
+    .gsc-chrome {
+      background: #f8f9fa; border-bottom: 1px solid #e8eaed;
+      padding: 9px 14px; display: flex; align-items: center; gap: 10px;
+    }
+    .gsc-dots { display: flex; gap: 6px; }
+    .gsc-dots span { width: 10px; height: 10px; border-radius: 50%; display: block; }
+    .gsc-dots .d-r { background: #ff5f57; }
+    .gsc-dots .d-y { background: #ffbd2e; }
+    .gsc-dots .d-g { background: #28c840; }
+    .gsc-url {
+      flex: 1; background: #fff; border: 1px solid #e8eaed;
+      border-radius: 5px; padding: 4px 12px;
+      font-size: 11px; color: #80868b; font-family: var(--font-b);
+    }
+    .proof-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; background: var(--border);
+    }
+    .ps-item {
+      background: var(--dark); text-align: center; padding: 36px 24px;
+      transition: background .25s;
+    }
+    .ps-item:hover { background: #26263a; }
+    .ps-val {
+      font-family: var(--font-d);
+      font-size: clamp(34px, 4vw, 54px);
+      font-weight: 700; color: #fff; line-height: 1; margin-bottom: 10px;
+      font-variant-numeric: tabular-nums;
+    }
+    .ps-val span { color: var(--accent); }
+    .ps-lbl { font-size: 12.5px; color: rgba(255,255,255,.42); font-weight: 500; letter-spacing: .03em; line-height: 1.45; }
+    .proof-note { text-align: center; font-size: 12px; color: var(--muted); margin-top: 14px; font-style: italic; }
+
+    /* ── CTA ── */
+    .cta-sec {
+      background: linear-gradient(160deg, var(--surface) 0%, #fdf5f1 100%);
+      position: relative; overflow: hidden;
+    }
+    .cta-sec::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 80% at 50% 120%, rgba(200,92,56,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner { max-width: 680px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .cta-inner .sec-h { margin-bottom: 16px; }
+    .cta-inner p { font-size: 17px; color: var(--muted); line-height: 1.65; margin-bottom: 36px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer.site-footer {
+      background: var(--dark); border-top: 1px solid rgba(255,255,255,.07);
+      padding: 44px var(--px);
+    }
+    .ft-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 18px;
+    }
+    .ft-logo { font-family: var(--font-d); font-size: 16px; font-weight: 700; color: rgba(255,255,255,.85); text-decoration: none; transition: color .2s; }
+    .ft-logo:hover { color: var(--accent); }
+    .ft-links { display: flex; gap: 22px; list-style: none; }
+    .ft-links a { font-size: 13.5px; color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .ft-links a:hover { color: rgba(255,255,255,.85); }
+    .ft-copy { font-size: 12.5px; color: rgba(255,255,255,.3); }
+
+    /* ── PUBLICATIONS ── */
+    .pub-sec { background: var(--bg); }
+    .pub-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 48px; flex-wrap: wrap; }
+    .pub-header .sec-h em { font-style: italic; color: var(--accent); }
+
+    /* ── Publication cards — full-width stacked editorial layout ── */
+    .pubs-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .pub-card {
+      display: grid; grid-template-columns: 360px 1fr;
+      border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+      text-decoration: none; color: inherit; min-height: 280px;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .pub-card:hover { transform: translateY(-4px); box-shadow: 0 28px 64px rgba(0,0,0,.13); }
+
+    /* Left brand panel */
+    .pub-card-brand {
+      padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between;
+      position: relative; overflow: hidden;
+    }
+    /* Radial glow overlay */
+    .pub-card-brand::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 20% 80%, rgba(255,255,255,.1) 0%, transparent 55%);
+    }
+    /* Giant watermark monogram */
+    .pub-card-brand .pcb-mono {
+      position: absolute; right: -14px; bottom: -28px;
+      font-family: var(--font-d); font-weight: 900; font-style: italic;
+      font-size: 148px; line-height: 1; letter-spacing: -.06em;
+      color: rgba(255,255,255,.07); pointer-events: none; user-select: none;
+    }
+
+    /* Eyebrow */
+    .pcb-eyebrow {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 9px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+      color: rgba(255,255,255,.4); margin-bottom: 20px;
+    }
+    .pcb-eyebrow::before { content: ''; display: block; width: 18px; height: 1px; background: rgba(255,255,255,.25); }
+
+    /* Masthead name */
+    .pcb-name {
+      font-family: var(--font-d); font-weight: 900; font-style: italic;
+      font-size: clamp(38px, 3.5vw, 52px); line-height: .98; letter-spacing: -.04em; color: #fff;
+      margin-bottom: 14px; position: relative; z-index: 1;
+    }
+
+    /* Tagline */
+    .pcb-tagline {
+      font-size: 12.5px; font-weight: 500; line-height: 1.55;
+      color: rgba(255,255,255,.58); margin-bottom: 28px; max-width: 240px;
+      position: relative; z-index: 1;
+    }
+
+    /* Stats row */
+    .pcb-stats { display: flex; gap: 24px; margin-bottom: 20px; position: relative; z-index: 1; }
+    .pcb-stat { }
+    .pcb-stat-val { font-family: var(--font-d); font-size: 24px; font-weight: 700; color: #fff; line-height: 1; }
+    .pcb-stat-lbl { font-size: 9px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-top: 4px; }
+
+    /* Founder label */
+    .pcb-founder {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 9.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(255,255,255,.3); position: relative; z-index: 1;
+    }
+    .pcb-founder::before { content: ''; display: block; width: 14px; height: 1px; background: rgba(255,255,255,.18); }
+
+    /* Card colours */
+    .pub-card.audaz .pub-card-brand { background: linear-gradient(155deg, #1156C0 0%, #0C47A8 45%, #082E7A 100%); }
+    .pub-card.brandcrush .pub-card-brand { background: linear-gradient(155deg, #201D19 0%, #161310 100%); }
+    .pub-card.brandcrush .pcb-tagline { color: rgba(230,220,205,.5); }
+    .pub-card.brandcrush .pcb-stat-val { color: rgba(230,220,205,.9); }
+
+    /* Right info panel */
+    .pub-card-info {
+      background: var(--surface); padding: 36px 36px;
+      display: flex; flex-direction: column; justify-content: space-between; gap: 0;
+    }
+    .pub-card-info-top { display: flex; flex-direction: column; gap: 10px; }
+    .pci-lbl { font-size: 10.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+    .pci-headline { font-family: var(--font-d); font-size: 20px; font-weight: 700; line-height: 1.3; color: var(--fg); margin-top: 2px; }
+    .pci-desc { font-size: 15px; color: var(--muted); line-height: 1.7; margin-top: 10px; }
+    .pub-card-info-bottom { padding-top: 20px; }
+    .pub-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .pub-tag { background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 500; color: var(--muted); }
+    .pub-cta { font-size: 13.5px; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; transition: gap .2s; }
+    .pub-card:hover .pub-cta { gap: 9px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1060px) {
+      .pub-card { grid-template-columns: 280px 1fr; }
+      .pcb-name { font-size: clamp(34px, 3vw, 44px); }
+    }
+    /* ── MOBILE AVATAR ── */
+    .mobile-avatar-wrap {
+      display: none; justify-content: flex-start; margin-bottom: 24px;
+    }
+    .mobile-avatar {
+      width: 80px; height: 80px; border-radius: 50%;
+      object-fit: cover; object-position: center 10%;
+      image-rendering: -webkit-optimize-contrast;
+      filter: none;
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      border: 3px solid rgba(200,92,56,.5);
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+      display: block; flex-shrink: 0;
+    }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-block: 96px 60px; }
+      .hero-visual { display: none; }
+      .mobile-avatar-wrap { display: flex; }
+      .two-col { grid-template-columns: 1fr; gap: 24px; }
+      .diff-cols { grid-template-columns: 1fr; gap: 24px; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .clients-intro { grid-template-columns: 1fr; gap: 16px; }
+      .proof-stats { grid-template-columns: 1fr; }
+      .pub-card { grid-template-columns: 1fr; }
+      .pub-card-brand { padding: 32px 28px; min-height: 220px; }
+      .pub-card-brand .pcb-mono { font-size: 100px; bottom: -16px; right: -8px; }
+      .pcb-name { font-size: 38px; }
+      .pub-card-info { padding: 28px 28px; }
+      .pub-header { flex-direction: column; margin-bottom: 32px; }
+    }
+    @media (max-width: 560px) {
+      .nav-menu li:not(.nav-cta-li) { display: none; }
+      .nav-menu li:first-child, .nav-menu li:last-child { display: flex; }
+      .hero-chips { gap: 18px; }
+    }
+
+    /* ── GEOMETRIC HERO DECORATIONS ── */
+    .geo-orb {
+      position: absolute; pointer-events: none; border-radius: 50%; z-index: 0;
+    }
+    .geo-orb-1 {
+      width: 300px; height: 300px; top: -20px; right: -60px;
+      background: radial-gradient(circle, rgba(200,92,56,.07) 0%, transparent 68%);
+      animation: blobPulse 8s ease-in-out infinite;
+    }
+    .geo-orb-2 {
+      width: 190px; height: 190px; bottom: 20px; left: -50px;
+      background: radial-gradient(circle, rgba(28,28,38,.1) 0%, transparent 68%);
+      animation: blobPulse 11s ease-in-out 2.5s infinite reverse;
+    }
+    .geo-ring {
+      position: absolute; pointer-events: none; z-index: 0;
+      border: 1.5px solid rgba(200,92,56,.24); border-radius: 50%;
+    }
+    .geo-ring-1 {
+      width: 90px; height: 90px; top: 22px; right: 6px;
+      animation: ringFloat 5.5s ease-in-out infinite;
+    }
+    .geo-ring-2 {
+      width: 54px; height: 54px; bottom: 120px; right: 18px;
+      animation: ringFloat 7s ease-in-out 1.5s infinite reverse;
+    }
+    .geo-ring-3 {
+      width: 30px; height: 30px; top: 180px; left: -10px;
+      border-color: rgba(200,92,56,.14);
+      animation: ringFloat 9s ease-in-out 3s infinite;
+    }
+    @keyframes ringFloat {
+      0%,100% { transform: translateY(0) rotate(0deg); opacity: .55; }
+      50%      { transform: translateY(-14px) rotate(18deg); opacity: 1; }
+    }
+    .geo-dot-grid {
+      position: absolute; bottom: 55px; left: -28px; z-index: 0;
+      display: grid; grid-template-columns: repeat(4, 10px); gap: 9px;
+    }
+    .geo-dot-grid span {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--accent); opacity: .35; display: block;
+    }
+    /* floating stat cards */
+    .float-stat {
+      position: absolute; z-index: 4;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 12px; padding: 14px 18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.13), 0 2px 8px rgba(0,0,0,.06);
+    }
+    .float-stat-1 { top: 68px; right: -24px; animation: scFloat 4.2s ease-in-out infinite; }
+    .float-stat-2 { bottom: 90px; left: -32px; animation: scFloat 5.5s ease-in-out 1.2s infinite reverse; }
+    @keyframes scFloat {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-9px); }
+    }
+    .fs-label { font-size: 9.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .fs-val { font-family: var(--font-d); font-size: 26px; font-weight: 700; color: var(--fg); line-height: 1; }
+    .fs-sub { font-size: 11px; color: var(--muted); margin-top: 3px; white-space: nowrap; }
+    .fs-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 10.5px; font-weight: 600; color: var(--accent);
+      background: rgba(200,92,56,.08); border-radius: 20px; padding: 2px 9px;
+      margin-top: 6px;
+    }
+    .fs-pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #4CAF50; }
+
+    /* ── WAVE DIVIDERS ── */
+    .wave-div { line-height: 0; overflow: hidden; display: block; }
+    .wave-div svg { display: block; width: 100%; height: auto; }
+
+    /* ── CRAFT PREVIEW (browser mockup) ── */
+    .craft-sec {
+      background: var(--dark); padding: clamp(64px,8vw,100px) var(--px);
+      position: relative; overflow: hidden;
+    }
+    .craft-glow {
+      position: absolute; pointer-events: none;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,92,56,.08) 0%, transparent 65%);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      animation: blobPulse 9s ease-in-out infinite;
+    }
+    .craft-inner { max-width: var(--max); margin: 0 auto; position: relative; z-index: 1; }
+    .craft-header { text-align: center; margin-bottom: 52px; }
+    .craft-header .sec-lbl { color: rgba(200,92,56,.9); }
+    .craft-header .sec-h { color: #fff; }
+    .craft-header p { font-size: 16px; color: rgba(255,255,255,.45); margin-top: 12px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+    .browser-w {
+      max-width: 840px; margin: 0 auto;
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 40px 100px rgba(0,0,0,.55), 0 8px 20px rgba(0,0,0,.3);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+    .browser-bar-w {
+      background: #23233a; padding: 12px 16px;
+      display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .b-dots-w { display: flex; gap: 6px; }
+    .b-dot-r { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+    .b-dot-y { width: 11px; height: 11px; border-radius: 50%; background: #febc2e; }
+    .b-dot-g { width: 11px; height: 11px; border-radius: 50%; background: #28c840; }
+    .browser-url-w {
+      flex: 1; background: rgba(255,255,255,.08);
+      border-radius: 6px; padding: 5px 12px; font-size: 11px;
+      font-family: ui-monospace, monospace; color: rgba(255,255,255,.38);
+      overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    }
+    .browser-content {
+      background: #fff; padding: 44px 52px;
+    }
+    .bc-eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 9px;
+    }
+    .bc-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--accent); }
+    .bc-h {
+      font-family: var(--font-d); font-weight: 900;
+      font-size: clamp(26px, 3.8vw, 44px); line-height: 1.08; letter-spacing: -.03em;
+      color: var(--fg); margin-bottom: 16px;
+    }
+    .bc-h em { font-style: italic; color: var(--accent); }
+    .bc-p { font-size: 15px; color: var(--muted); line-height: 1.65; max-width: 520px; margin-bottom: 26px; }
+    .bc-cta {
+      display: inline-block; background: var(--accent); color: #fff;
+      padding: 13px 28px; border-radius: 6px; font-size: 14.5px; font-weight: 600;
+      text-decoration: none; letter-spacing: .01em;
+    }
+    .bc-divider { height: 1px; background: var(--border); margin: 32px 0; }
+    .bc-features { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .bc-feat-chip {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      background: rgba(200,92,56,.1); color: var(--accent);
+      border-radius: 20px; padding: 3px 10px; margin-bottom: 8px;
+    }
+    .bc-feat h4 { font-size: 13.5px; font-weight: 600; color: var(--fg); margin-bottom: 5px; }
+    .bc-feat p { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+    .craft-caption { text-align: center; margin-top: 22px; font-size: 12.5px; color: rgba(255,255,255,.28); font-style: italic; }
+
+    /* ── RESPONSIVE PATCH (geo + craft) ── */
+    @media (max-width: 900px) {
+      .float-stat-1, .float-stat-2 { display: none; }
+      .geo-dot-grid, .geo-ring-1, .geo-ring-2, .geo-ring-3 { display: none; }
+      .bc-features { grid-template-columns: 1fr 1fr; gap: 18px; }
+    }
+    @media (max-width: 580px) {
+      .bc-features { grid-template-columns: 1fr; }
+      .browser-content { padding: 28px 24px; }
+    }
+
+    /* ── PROGRESS LINE ── */
+    .progress-line {
+      position: fixed; top: 0; left: 0; height: 2px; z-index: 9999;
+      background: var(--accent); width: 0%;
+      transition: width .1s linear;
+      pointer-events: none;
+    }
+
+    /* ── MARQUEE TICKER ── */
+    .marquee-wrap {
+      background: var(--dark); padding: 13px 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,.05);
+    }
+    .marquee-track {
+      display: flex; width: max-content;
+      animation: mqScroll 36s linear infinite;
+    }
+    .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+    @keyframes mqScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .mq-item {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 0 24px; font-size: 10.5px; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: rgba(255,255,255,.32); white-space: nowrap; user-select: none;
+    }
+    .mq-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); opacity: .55; flex-shrink: 0; }
+    .mq-item.hi { color: rgba(200,92,56,.7); }
+
+    /* ── COPY TRANSFORMATION THEATER ── */
+    .copy-theater {
+      background: #0B0B15;
+      padding: clamp(80px, 10vw, 130px) var(--px);
+      position: relative; overflow: hidden;
+    }
+    .ct-ambient {
+      position: absolute; pointer-events: none;
+      width: 900px; height: 900px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,92,56,.055) 0%, transparent 62%);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      animation: blobPulse 12s ease-in-out infinite;
+    }
+    .ct-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; text-align: center; }
+    .ct-eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: .28em; text-transform: uppercase;
+      color: rgba(200,92,56,.65); margin-bottom: 16px; display: block;
+    }
+    .ct-headline {
+      font-family: var(--font-d); font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 700; color: #fff; line-height: 1.2; letter-spacing: -.025em;
+      margin-bottom: 56px;
+    }
+    .ct-headline span { color: var(--accent); font-style: italic; }
+    .ct-arena {
+      display: grid; grid-template-columns: 1fr 48px 1fr;
+      gap: 0; align-items: start; margin-bottom: 48px;
+    }
+    .ct-side { text-align: left; }
+    .ct-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      padding: 5px 13px; border-radius: 20px; margin-bottom: 22px;
+    }
+    .ct-before .ct-tag {
+      color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+    .ct-after .ct-tag {
+      color: var(--accent);
+      background: rgba(200,92,56,.09);
+      border: 1px solid rgba(200,92,56,.18);
+    }
+    .ct-text {
+      font-family: var(--font-d);
+      font-size: clamp(17px, 2vw, 24px);
+      line-height: 1.5; min-height: 6em;
+      transition: opacity .5s ease, color .4s ease;
+    }
+    .ct-before .ct-text { color: rgba(255,255,255,.42); }
+    .ct-after .ct-text { color: rgba(255,255,255,.9); }
+    .ct-text.ct-struck {
+      text-decoration: line-through;
+      text-decoration-color: rgba(200,92,56,.6);
+      color: rgba(255,255,255,.18) !important;
+    }
+    .ct-text.ct-lit { color: #fff !important; text-shadow: 0 0 48px rgba(200,92,56,.3); }
+    .ct-text.ct-fade { opacity: 0 !important; }
+
+    .ct-divider {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: flex-start; padding-top: 44px; gap: 10px;
+    }
+    .ct-divider-line { width: 1px; height: 44px; background: rgba(255,255,255,.08); }
+    .ct-vs {
+      font-family: var(--font-d); font-size: 12px; font-style: italic;
+      color: rgba(255,255,255,.2); white-space: nowrap; writing-mode: horizontal-tb;
+    }
+
+    .ct-caption {
+      font-size: 14px; font-weight: 500; letter-spacing: .01em;
+      color: rgba(255,255,255,.28); margin-bottom: 32px; line-height: 1.6;
+      max-width: 540px; margin-left: auto; margin-right: auto;
+    }
+    .ct-caption strong { color: rgba(255,255,255,.55); font-weight: 600; }
+
+    .ct-dots { display: flex; justify-content: center; gap: 9px; margin-bottom: 52px; }
+    .ct-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,.15); cursor: pointer;
+      transition: background .3s, transform .3s;
+    }
+    .ct-dot.on { background: var(--accent); transform: scale(1.5); }
+
+    .ct-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13.5px; font-weight: 600; letter-spacing: .01em;
+      color: var(--accent); text-decoration: none;
+      border: 1.5px solid rgba(200,92,56,.35); padding: 11px 24px; border-radius: 6px;
+      transition: border-color .2s, background .2s, gap .2s;
+    }
+    .ct-cta:hover { border-color: var(--accent); background: rgba(200,92,56,.08); gap: 13px; }
+
+    /* 3D tilt on svc cards */
+    .svc-card { transform-style: preserve-3d; }
+    .svc-card.tilt-reset { transition: transform .45s var(--ease), background .2s, border-color .25s; }
+
+    @media (max-width: 680px) {
+      .ct-arena { grid-template-columns: 1fr; gap: 28px; }
+      .ct-divider { display: none; }
+      .ct-text { min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="progress-line" id="progressLine" aria-hidden="true"></div>
+
+<nav class="top-nav" role="navigation" aria-label="Main">
+  <div class="nav-w">
+    <a href="index.html" class="logo">
+      <span class="logo-name">Amisha Sharma</span>
+      <span class="logo-tag"><span class="at">@</span>commasandchaos.com</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="on">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li class="nav-cta-li"><a href="contact.html" class="nav-btn">Let's Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero" aria-label="Hero">
+  <div class="hero-blob" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <!-- Mobile avatar — only visible ≤860px -->
+    <div class="mobile-avatar-wrap" aria-hidden="true">
+      <img
+        class="mobile-avatar"
+        src="photo-hero-4k.jpg"
+        alt=""
+      >
+    </div>
+    <span class="eyebrow">Copywriter + Content Strategist · ISB Alumna</span>
+    <h1 class="headline">
+      Your audience is ready to buy.<br>
+      Your copy just isn't<br>
+      <em id="scrambleTarget">asking.</em>
+    </h1>
+    <p class="subhead">I write website copy, landing pages, emails, Google ads, and social ad copy for brands that are done publishing and ready to start converting. 5+ years. ISB-trained. Zero filler. Welcome to commasandchaos.com.</p>
+    <div class="hero-btns">
+      <a href="contact.html" class="btn-acc">Let's talk →</a>
+      <a href="services.html" class="btn-g">See what I write <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="hero-chips">
+      <div>
+        <div class="chip-val">5+</div>
+        <div class="chip-lbl">Years turning readers into buyers</div>
+      </div>
+      <div>
+        <div class="chip-val">ISB</div>
+        <div class="chip-lbl">Indian School of Business</div>
+      </div>
+      <div>
+        <div class="chip-val">3</div>
+        <div class="chip-lbl">Continents. One consistent voice.</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <!-- decorative geometry -->
+    <div class="geo-orb geo-orb-1"></div>
+    <div class="geo-orb geo-orb-2"></div>
+    <div class="geo-ring geo-ring-1"></div>
+    <div class="geo-ring geo-ring-2"></div>
+    <div class="geo-ring geo-ring-3"></div>
+    <div class="geo-dot-grid">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <!-- floating stat cards -->
+    <div class="float-stat float-stat-1">
+      <div class="fs-label">Experience</div>
+      <div class="fs-val">5+</div>
+      <div class="fs-sub">years · 3 continents</div>
+      <div class="fs-pill">ISB Alumna</div>
+    </div>
+    <div class="float-stat float-stat-2">
+      <div class="fs-label">Brands written for</div>
+      <div class="fs-val">100<span style="font-size:17px;font-family:var(--font-b)">+</span></div>
+      <div class="fs-sub">fintech · beauty · healthcare</div>
+    </div>
+    <div class="photo-frame">
+      <div class="photo-inner">
+        <img
+          class="photo-img"
+          src="photo-about-4k.jpg"
+          alt="Amisha Sharma — Content Strategist and Copywriter"
+          loading="eager"
+          decoding="async"
+        >
+      </div>
+      <div class="frame-badge">
+        <div class="fb-label">Status</div>
+        <div class="fb-value"><span class="fb-dot"></span>Taking new clients now</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CREDIBILITY BAR ── -->
+<div class="cred-bar">
+  <div class="cb-inner">
+    <div class="cb-item"><span class="cb-dot"></span><strong>ISB</strong>&nbsp;Alumna</div>
+    <div class="cb-item"><span class="cb-dot"></span>Content Strategist @&nbsp;<strong>CJ&amp;CO</strong></div>
+    <div class="cb-item"><span class="cb-dot"></span>Founder &amp; EIC,&nbsp;<strong>Audaz Revista</strong></div>
+    <div class="cb-item"><span class="cb-dot"></span>Founder,&nbsp;<strong>The Brand Crush</strong></div>
+    <div class="cb-item"><span class="cb-dot"></span><strong>Generative AI</strong>&nbsp;Certified · Airtribe</div>
+    <div class="cb-item"><span class="cb-dot"></span>Delhi-based · Works across&nbsp;<strong>time zones</strong></div>
+  </div>
+</div>
+
+<!-- ── MARQUEE TICKER ── -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="mq-item hi">Copywriting</span><span class="mq-sep"></span>
+    <span class="mq-item">Landing Pages</span><span class="mq-sep"></span>
+    <span class="mq-item">Email Sequences</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Google PPC Ads</span><span class="mq-sep"></span>
+    <span class="mq-item">Social Ad Copy</span><span class="mq-sep"></span>
+    <span class="mq-item">Brand Voice</span><span class="mq-sep"></span>
+    <span class="mq-item hi">SEO Content</span><span class="mq-sep"></span>
+    <span class="mq-item">ISB Alumna</span><span class="mq-sep"></span>
+    <span class="mq-item">5+ Years</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Fintech</span><span class="mq-sep"></span>
+    <span class="mq-item">Healthcare</span><span class="mq-sep"></span>
+    <span class="mq-item">Beauty</span><span class="mq-sep"></span>
+    <span class="mq-item hi">AHPRA-Compliant</span><span class="mq-sep"></span>
+    <span class="mq-item">B2B SaaS</span><span class="mq-sep"></span>
+    <span class="mq-item">Lead Magnets</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Copywriting</span><span class="mq-sep"></span>
+    <span class="mq-item">Landing Pages</span><span class="mq-sep"></span>
+    <span class="mq-item">Email Sequences</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Google PPC Ads</span><span class="mq-sep"></span>
+    <span class="mq-item">Social Ad Copy</span><span class="mq-sep"></span>
+    <span class="mq-item">Brand Voice</span><span class="mq-sep"></span>
+    <span class="mq-item hi">SEO Content</span><span class="mq-sep"></span>
+    <span class="mq-item">ISB Alumna</span><span class="mq-sep"></span>
+    <span class="mq-item">5+ Years</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Fintech</span><span class="mq-sep"></span>
+    <span class="mq-item">Healthcare</span><span class="mq-sep"></span>
+    <span class="mq-item">Beauty</span><span class="mq-sep"></span>
+    <span class="mq-item hi">AHPRA-Compliant</span><span class="mq-sep"></span>
+    <span class="mq-item">B2B SaaS</span><span class="mq-sep"></span>
+    <span class="mq-item">Lead Magnets</span><span class="mq-sep"></span>
+  </div>
+</div>
+
+<!-- wave: dark cred-bar → white diff section -->
+<div class="wave-div" aria-hidden="true" style="background:var(--dark)">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60">
+    <path d="M0,0 C320,60 720,0 1080,48 C1260,64 1380,20 1440,40 L1440,60 L0,60 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- ── DIFFERENCE ── -->
+<section class="sec diff-bg">
+  <div class="sec-inner">
+    <div class="two-col" style="margin-bottom:52px">
+      <div class="reveal">
+        <span class="sec-lbl">Here's the thing</span>
+        <h2 class="sec-h">Bad copy is costing<br>you clients right now.</h2>
+      </div>
+      <p class="sec-sub reveal d-2">They clicked your ad. They landed on your page. They read two sentences and left. You never found out why. The answer is almost always the copy. And the good news? Copy is fixable.</p>
+    </div>
+    <div class="diff-cols">
+      <div class="diff-col ac reveal d-1">
+        <svg class="diff-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="7" fill="rgba(200,92,56,.12)"/>
+          <polyline points="8,23 12,16 16,19 21,11 24,14" stroke="#C85C38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="24" cy="14" r="2.2" fill="#C85C38"/>
+        </svg>
+        <h3>Ranks AND reads.<br>Both. Not one.</h3>
+        <p>E-E-A-T content that search engines reward AND humans actually finish reading. Because ranking for traffic that bounces isn't a win. It's a waste.</p>
+      </div>
+      <div class="diff-col reveal d-2">
+        <svg class="diff-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="7" fill="rgba(200,92,56,.08)"/>
+          <rect x="8" y="9" width="16" height="11" rx="3.5" stroke="#C85C38" stroke-width="1.7"/>
+          <path d="M11 25 L14.5 20 H11 Z" fill="#C85C38"/>
+          <line x1="11" y1="13.5" x2="21" y2="13.5" stroke="#C85C38" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="11" y1="16.5" x2="18" y2="16.5" stroke="#C85C38" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Sounds like you.<br>Not your intern.</h3>
+        <p>Whether it's a landing page, an email sequence, or a Google ad, it all sounds like the same person wrote it. Because your customers trust brands that sound consistent.</p>
+      </div>
+      <div class="diff-col reveal d-3">
+        <svg class="diff-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="7" fill="rgba(200,92,56,.08)"/>
+          <circle cx="16" cy="16" r="8" stroke="#C85C38" stroke-width="1.7"/>
+          <circle cx="16" cy="16" r="4" stroke="#C85C38" stroke-width="1.7"/>
+          <circle cx="16" cy="16" r="1.5" fill="#C85C38"/>
+          <line x1="22" y1="10" x2="24.5" y2="7.5" stroke="#C85C38" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Every word has<br>a job to do.</h3>
+        <p>No filler. No we-synergize-solutions nonsense. No copy that exists because the calendar said Tuesday. Just words that move your reader toward the one thing you want them to do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE ── -->
+<div class="quote-sec">
+  <div class="quote-wrap reveal r-scale">
+    <blockquote>"You don't have a traffic problem. You have a copy problem. The copy is what makes someone stay, trust you, and buy. Everything else is just decoration."</blockquote>
+    <cite>Amisha Sharma, Copywriter + Content Strategist</cite>
+  </div>
+</div>
+
+<!-- ── COPY TRANSFORMATION THEATER ── -->
+<section class="copy-theater" id="copyTheater">
+  <div class="ct-ambient" aria-hidden="true"></div>
+  <div class="ct-inner">
+    <span class="ct-eyebrow">The Copy Problem</span>
+    <h2 class="ct-headline">Watch what happens when copy <span>actually works</span></h2>
+    <div class="ct-arena">
+      <div class="ct-side ct-before">
+        <div class="ct-tag">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          What most brands publish
+        </div>
+        <div class="ct-text" id="ctBefore"></div>
+      </div>
+      <div class="ct-divider" aria-hidden="true">
+        <div class="ct-divider-line"></div>
+        <span class="ct-vs">vs</span>
+        <div class="ct-divider-line"></div>
+      </div>
+      <div class="ct-side ct-after">
+        <div class="ct-tag">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1.5 5.5L3.8 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          What makes people buy
+        </div>
+        <div class="ct-text" id="ctAfter"></div>
+      </div>
+    </div>
+    <div class="ct-dots">
+      <span class="ct-dot on" id="ctd0"></span>
+      <span class="ct-dot" id="ctd1"></span>
+      <span class="ct-dot" id="ctd2"></span>
+    </div>
+    <p class="ct-caption">That's the only difference between a page that scrolls and a page that <strong>sells</strong>.</p>
+    <a href="contact.html" class="ct-cta">
+      Make my copy do this
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="two-col reveal" style="margin-bottom:0">
+      <div>
+        <span class="sec-lbl">What I write for you</span>
+        <h2 class="sec-h">Every format.<br>Every funnel stage.</h2>
+      </div>
+      <div>
+        <p class="sec-sub">From the first ad they see to the email that closes the deal. I write the words. You get the conversions. Simple as that.</p>
+        <a href="services.html" style="display:inline-block;margin-top:18px;font-size:15px;font-weight:600;color:var(--accent);text-decoration:none;transition:gap .2s">See full services →</a>
+      </div>
+    </div>
+    <div class="svc-grid">
+      <a href="services.html#copywriting" class="svc-card reveal d-1">
+        <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M16.5 4L24 11.5L10 25.5H3.5V19L16.5 4Z" stroke="#C85C38" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M13 7.5L20.5 15" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span class="svc-num">01</span>
+        <div class="svc-title">Copywriting</div>
+        <p class="svc-desc">All the places your customers read before they decide to buy from you. (Or don't.) Website copy, landing pages, email sequences, Google PPC ads, social ad copy. Every word earns its place.</p>
+        <div class="tags">
+          <span class="tag">Website Copy</span>
+          <span class="tag">Landing Pages</span>
+          <span class="tag">Emails</span>
+          <span class="tag">PPC Ads</span>
+          <span class="tag">Social Ads</span>
+        </div>
+      </a>
+      <a href="services.html#strategy" class="svc-card reveal d-2">
+        <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect x="3.5" y="16" width="5" height="8.5" rx="1.2" stroke="#C85C38" stroke-width="1.6"/>
+          <rect x="11.5" y="10" width="5" height="14.5" rx="1.2" stroke="#C85C38" stroke-width="1.6"/>
+          <rect x="19.5" y="3.5" width="5" height="21" rx="1.2" stroke="#C85C38" stroke-width="1.6"/>
+        </svg>
+        <span class="svc-num">02</span>
+        <div class="svc-title">Content Strategy</div>
+        <p class="svc-desc">A calendar full of content is not a strategy. A system that brings the right people and moves them toward a decision? That's a strategy. Let's build yours.</p>
+        <div class="tags">
+          <span class="tag">SEO Strategy</span>
+          <span class="tag">Content Calendars</span>
+          <span class="tag">Editorial Systems</span>
+        </div>
+      </a>
+      <a href="services.html#brand-voice" class="svc-card reveal d-3">
+        <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect x="9" y="3" width="10" height="14" rx="5" stroke="#C85C38" stroke-width="1.6"/>
+          <path d="M5 13c0 5 4.03 9 9 9s9-4 9-9" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="14" y1="22" x2="14" y2="26" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="10" y1="26" x2="18" y2="26" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span class="svc-num">03</span>
+        <div class="svc-title">Brand Voice</div>
+        <p class="svc-desc">You can tell when a brand sounds like a committee. No personality. No point of view. Nothing that makes you trust them. Your brand voice guide fixes exactly that.</p>
+        <div class="tags">
+          <span class="tag">Voice Guidelines</span>
+          <span class="tag">Messaging Framework</span>
+          <span class="tag">Tone Standards</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- wave: light → dark (craft section) -->
+<div class="wave-div" aria-hidden="true" style="background:var(--bg)">
+  <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="56">
+    <path d="M0,56 C360,0 900,56 1440,20 L1440,0 L0,0 Z" fill="var(--dark)"/>
+  </svg>
+</div>
+
+<!-- ── CRAFT PREVIEW ── -->
+<section class="craft-sec">
+  <div class="craft-glow" aria-hidden="true"></div>
+  <div class="craft-inner">
+    <div class="craft-header reveal r-scale">
+      <span class="sec-lbl">What the work looks like</span>
+      <h2 class="sec-h">Copy that earns <em>the click.</em></h2>
+      <p>Here's a sample of a landing page hero. The kind that stops the scroll, names the pain, and makes the next step obvious.</p>
+    </div>
+    <div class="browser-w reveal">
+      <div class="browser-bar-w">
+        <div class="b-dots-w">
+          <div class="b-dot-r"></div>
+          <div class="b-dot-y"></div>
+          <div class="b-dot-g"></div>
+        </div>
+        <div class="browser-url-w">amisha-sharma.com/landing-page-sample</div>
+      </div>
+      <div class="browser-content">
+        <div class="bc-eyebrow">Landing Page · Above the Fold</div>
+        <h2 class="bc-h">Your customers are <em>ready to buy.</em><br>Your landing page is<br>making them leave.</h2>
+        <p class="bc-p">The average landing page loses 70% of visitors in the first 10 seconds. Not because the product is bad. Because the copy doesn't answer the only question that matters: "Why should I care?"</p>
+        <a href="contact.html" class="bc-cta">Fix my landing page →</a>
+        <div class="bc-divider"></div>
+        <div class="bc-features">
+          <div class="bc-feat">
+            <div class="bc-feat-chip">Website Copy</div>
+            <h4>The headline that stops the scroll</h4>
+            <p>First impression. Last chance. Every headline leads with the outcome, not the feature.</p>
+          </div>
+          <div class="bc-feat">
+            <div class="bc-feat-chip">Email Sequences</div>
+            <h4>The follow-up they actually open</h4>
+            <p>Subject lines that earn the open. Body copy that earns the click. No "just checking in."</p>
+          </div>
+          <div class="bc-feat">
+            <div class="bc-feat-chip">Google PPC Ads</div>
+            <h4>The ad that uses every character</h4>
+            <p>25 characters for the headline. Make them count. Every word is either earning its place or wasting budget.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="craft-caption">Sample copy. Your brief, your brand, your voice. That's what I build with.</p>
+  </div>
+</section>
+
+<!-- wave: dark → light (back to clients) -->
+<div class="wave-div" aria-hidden="true" style="background:var(--dark)">
+  <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="56">
+    <path d="M0,0 C480,56 960,0 1440,40 L1440,56 L0,56 Z" fill="var(--surface)"/>
+  </svg>
+</div>
+
+<!-- ── CLIENTS ── -->
+<section class="sec clients-sec">
+  <div class="sec-inner">
+    <div class="clients-intro">
+      <div class="reveal">
+        <span class="sec-lbl">Brands I've written for</span>
+        <div class="clients-total"><span class="count-num" data-target="100" data-suffix="+">100</span><span>+</span></div>
+        <div style="font-size:15px;color:var(--muted);margin-top:4px;font-weight:500;">brands across three continents</div>
+      </div>
+      <div class="reveal d-2">
+        <p class="clients-sub">From legacy Indian fintech to fast-growing wellness brands and an entire healthcare sector in Australia. The brief changes. The standard does not.</p>
+      </div>
+    </div>
+
+    <div class="accordion reveal">
+      <div class="acc-item" id="acc-beauty">
+        <button class="acc-trigger" onclick="toggleAcc('acc-beauty')" aria-expanded="false">
+          <div class="acc-meta">
+            <span class="acc-sector">Dermat &amp; Beauty</span>
+            <span class="acc-label">Skincare, Wellness &amp; Beauty Brands</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span class="acc-count">2 featured brands</span>
+            <div class="acc-arrow">&#8964;</div>
+          </div>
+        </button>
+        <div class="acc-panel">
+          <div class="client-chips">
+            <div class="cc">Lotus Herbals</div>
+            <div class="cc">Potenza Wellness</div>
+          </div>
+          <p class="acc-note">Website copy, landing pages, product descriptions, and email sequences for dermat and beauty brands that need to earn trust before they earn the sale.</p>
+        </div>
+      </div>
+
+      <div class="acc-item" id="acc-fintech">
+        <button class="acc-trigger" onclick="toggleAcc('acc-fintech')" aria-expanded="false">
+          <div class="acc-meta">
+            <span class="acc-sector">Fintech &amp; BFSI</span>
+            <span class="acc-label">Finance, Banking &amp; Lending</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span class="acc-count">3 featured brands</span>
+            <div class="acc-arrow">&#8964;</div>
+          </div>
+        </button>
+        <div class="acc-panel">
+          <div class="client-chips">
+            <div class="cc">Bajaj Finance</div>
+            <div class="cc">Kotak Bank</div>
+            <div class="cc">PNB Housing</div>
+          </div>
+          <p class="acc-note">Regulated industries need copy that converts without overstepping. Landing pages, PPC ads, email nurture sequences, and brand messaging for some of India's most recognised financial institutions.</p>
+        </div>
+      </div>
+
+      <div class="acc-item" id="acc-aus">
+        <button class="acc-trigger" onclick="toggleAcc('acc-aus')" aria-expanded="false">
+          <div class="acc-meta">
+            <span class="acc-sector">Australia · Healthcare</span>
+            <span class="acc-label">Telehealth, Clinics &amp; Healthcare Brands</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span class="acc-count">100+ brands</span>
+            <div class="acc-arrow">&#8964;</div>
+          </div>
+        </button>
+        <div class="acc-panel">
+          <div class="client-chips">
+            <div class="cc-count">100+ Australian Healthcare Brands</div>
+          </div>
+          <p class="acc-note">SEO content, landing pages, and email sequences for over 100 healthcare businesses across Australia. Telehealth platforms, specialist clinics, allied health providers. Copy written to AHPRA and TGA compliance standards. If you are in Australian healthcare and your copy is not converting, this is probably why.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOOK BILLBOARD ── -->
+<div class="hook-billboard reveal">
+  <div class="hook-billboard-inner">
+    <p>Brands hire me when they're tired of<br><span>sounding like everyone else.</span></p>
+    <div class="hook-billboard-rule"></div>
+  </div>
+</div>
+
+<!-- ── PROOF / GSC DASHBOARD ── -->
+<section class="sec proof-sec">
+  <div class="sec-inner">
+    <div class="two-col" style="margin-bottom:48px;align-items:start">
+      <div class="reveal">
+        <span class="sec-lbl">Proven results, not estimates</span>
+        <h2 class="sec-h">Here's what 16 months of<br>actual content strategy looks like.</h2>
+      </div>
+      <div class="reveal d-2">
+        <p class="sec-sub">Not impressions for the sake of impressions. Organic clicks from people finding answers. One content system built on search intent. Not a publishing calendar.</p>
+      </div>
+    </div>
+
+    <div class="gsc-wrap reveal r-scale">
+      <div class="gsc-chrome">
+        <div class="gsc-dots">
+          <span class="d-r"></span><span class="d-y"></span><span class="d-g"></span>
+        </div>
+        <div class="gsc-url">search.google.com/search-console/performance/search-analytics · Client · Jan 2024 – Apr 2025</div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" style="display:block;width:100%;font-family:Arial,sans-serif">
+        <rect width="700" height="300" fill="#fff"/>
+        <text x="20" y="26" font-size="15" font-weight="600" fill="#202124">Performance</text>
+        <rect x="20" y="33" width="212" height="26" rx="5" fill="#e8f0fe"/>
+        <text x="126" y="50" text-anchor="middle" font-size="11.5" fill="#1a73e8">Jan 1, 2024 – Apr 30, 2025  ▾</text>
+        <rect x="240" y="33" width="42" height="26" rx="5" fill="#f1f3f4"/>
+        <text x="261" y="50" text-anchor="middle" font-size="11" fill="#5f6368">Web</text>
+        <line x1="0" y1="67" x2="700" y2="67" stroke="#e8eaed" stroke-width="1"/>
+        <rect x="0" y="67" width="175" height="68" fill="#fff"/>
+        <rect x="0" y="67" width="175" height="3" fill="#1a73e8"/>
+        <circle cx="16" cy="85" r="5" fill="#1a73e8"/>
+        <text x="26" y="89" font-size="11" fill="#5f6368">Total clicks</text>
+        <text x="16" y="117" font-size="25" font-weight="700" fill="#202124">24.7K</text>
+        <text x="90" y="117" font-size="11" fill="#34a853" font-weight="600">+142%</text>
+        <line x1="175" y1="67" x2="175" y2="135" stroke="#e8eaed" stroke-width="1"/>
+        <rect x="175" y="67" width="175" height="68" fill="#fff"/>
+        <circle cx="191" cy="85" r="5" fill="#9334e6"/>
+        <text x="201" y="89" font-size="11" fill="#5f6368">Impressions</text>
+        <text x="191" y="117" font-size="25" font-weight="700" fill="#202124">847K</text>
+        <text x="257" y="117" font-size="11" fill="#34a853" font-weight="600">+89%</text>
+        <line x1="350" y1="67" x2="350" y2="135" stroke="#e8eaed" stroke-width="1"/>
+        <rect x="350" y="67" width="175" height="68" fill="#fff"/>
+        <circle cx="366" cy="85" r="5" fill="#34a853"/>
+        <text x="376" y="89" font-size="11" fill="#5f6368">Average CTR</text>
+        <text x="366" y="117" font-size="25" font-weight="700" fill="#202124">4.2%</text>
+        <text x="420" y="117" font-size="11" fill="#34a853" font-weight="600">+0.8pp</text>
+        <line x1="525" y1="67" x2="525" y2="135" stroke="#e8eaed" stroke-width="1"/>
+        <rect x="525" y="67" width="175" height="68" fill="#fff"/>
+        <circle cx="541" cy="85" r="5" fill="#e37400"/>
+        <text x="551" y="89" font-size="11" fill="#5f6368">Avg. position</text>
+        <text x="541" y="117" font-size="25" font-weight="700" fill="#202124">12.4</text>
+        <text x="597" y="117" font-size="11" fill="#34a853" font-weight="600">improved</text>
+        <line x1="0" y1="135" x2="700" y2="135" stroke="#e8eaed" stroke-width="1"/>
+        <rect x="0" y="135" width="700" height="165" fill="#fff"/>
+        <text x="38" y="152" font-size="9" fill="#9aa0a6" text-anchor="end">2K</text>
+        <text x="38" y="179" font-size="9" fill="#9aa0a6" text-anchor="end">1.5K</text>
+        <text x="38" y="206" font-size="9" fill="#9aa0a6" text-anchor="end">1K</text>
+        <text x="38" y="233" font-size="9" fill="#9aa0a6" text-anchor="end">500</text>
+        <text x="38" y="260" font-size="9" fill="#9aa0a6" text-anchor="end">0</text>
+        <line x1="42" y1="148" x2="696" y2="148" stroke="#f1f3f4" stroke-width="1"/>
+        <line x1="42" y1="175" x2="696" y2="175" stroke="#f1f3f4" stroke-width="1"/>
+        <line x1="42" y1="202" x2="696" y2="202" stroke="#f1f3f4" stroke-width="1"/>
+        <line x1="42" y1="229" x2="696" y2="229" stroke="#f1f3f4" stroke-width="1"/>
+        <line x1="42" y1="256" x2="696" y2="256" stroke="#f1f3f4" stroke-width="1"/>
+        <path d="M44,258 L88,254 L131,248 L175,242 L218,236 L262,229 L305,221 L349,212 L392,203 L436,192 L479,181 L523,184 L566,170 L610,160 L653,149 L690,141 L690,262 L44,262 Z" fill="rgba(26,115,232,0.08)"/>
+        <polyline points="44,258 88,254 131,248 175,242 218,236 262,229 305,221 349,212 392,203 436,192 479,181 523,184 566,170 610,160 653,149 690,141" fill="none" stroke="#1a73e8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="690" cy="141" r="4.5" fill="#1a73e8" stroke="#fff" stroke-width="2.5"/>
+        <rect x="645" y="123" width="54" height="20" rx="3" fill="#1a73e8"/>
+        <text x="672" y="136" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">2,470</text>
+        <text x="44" y="282" font-size="9" fill="#80868b" text-anchor="middle">Jan '24</text>
+        <text x="175" y="282" font-size="9" fill="#80868b" text-anchor="middle">Apr '24</text>
+        <text x="305" y="282" font-size="9" fill="#80868b" text-anchor="middle">Jul '24</text>
+        <text x="436" y="282" font-size="9" fill="#80868b" text-anchor="middle">Oct '24</text>
+        <text x="566" y="282" font-size="9" fill="#80868b" text-anchor="middle">Jan '25</text>
+        <text x="690" y="282" font-size="9" fill="#80868b" text-anchor="middle">Apr '25</text>
+      </svg>
+    </div>
+
+    <div class="proof-stats reveal">
+      <div class="ps-item">
+        <div class="ps-val"><span class="count-num" data-target="142">0</span><span>%</span></div>
+        <div class="ps-lbl">Organic traffic growth<br>in 16 months</div>
+      </div>
+      <div class="ps-item">
+        <div class="ps-val"><span class="count-num" data-target="24.7" data-decimal="1">0</span><span>K</span></div>
+        <div class="ps-lbl">Monthly organic clicks<br>at peak</div>
+      </div>
+      <div class="ps-item">
+        <div class="ps-val"><span class="count-num" data-target="847">0</span><span>K</span></div>
+        <div class="ps-lbl">Total impressions from<br>organic content</div>
+      </div>
+    </div>
+    <p class="proof-note">Client results. One content system. Zero paid traffic. Just copy that search engines and humans both trust.</p>
+  </div>
+</section>
+
+<!-- ── PUBLICATIONS ── -->
+<section class="sec pub-sec">
+  <div class="sec-inner">
+    <div class="pub-header reveal">
+      <div>
+        <span class="sec-lbl">Founder</span>
+        <h2 class="sec-h">I don't just write for brands.<br>I <em>build</em> them.</h2>
+      </div>
+      <p class="sec-sub" style="max-width:380px">Two publications. Built from scratch. No brief, no client, no safety net. Just the conviction that the world needed better content.</p>
+    </div>
+    <div class="pubs-grid">
+
+      <a href="https://audazrevista.com/" target="_blank" rel="noopener" class="pub-card audaz reveal d-1">
+        <div class="pub-card-brand">
+          <span class="pcb-mono">AR</span>
+          <div>
+            <div class="pcb-eyebrow">Cultural Magazine</div>
+            <div class="pcb-name">Audaz<br>Revista</div>
+            <div class="pcb-tagline">"Stop 'Just Studying' Spanish. Start Living It."</div>
+          </div>
+          <div>
+            <div class="pcb-stats">
+              <div class="pcb-stat">
+                <div class="pcb-stat-val">4 yrs</div>
+                <div class="pcb-stat-lbl">Research first</div>
+              </div>
+              <div class="pcb-stat">
+                <div class="pcb-stat-val">Est. 2021</div>
+                <div class="pcb-stat-lbl">Founded</div>
+              </div>
+            </div>
+            <div class="pcb-founder">Founder &amp; Editor-in-Chief</div>
+          </div>
+        </div>
+        <div class="pub-card-info">
+          <div class="pub-card-info-top">
+            <span class="pci-lbl">Hispanic Culture · Language · Lifestyle · Travel</span>
+            <p class="pci-headline">Built on 4 years of firsthand research before the first word was published.</p>
+            <p class="pci-desc">A publication covering Hispanic culture, language, lifestyle, and travel. I spent four years at Instituto Cervantes before launching it. Because writing about a culture you don't understand produces exactly the kind of shallow content I'm trying to replace.</p>
+          </div>
+          <div class="pub-card-info-bottom">
+            <div class="pub-tags">
+              <span class="pub-tag">Hispanic Culture</span>
+              <span class="pub-tag">Language</span>
+              <span class="pub-tag">Lifestyle</span>
+              <span class="pub-tag">Travel</span>
+            </div>
+            <span class="pub-cta">audazrevista.com →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://thebrandcrush.com/" target="_blank" rel="noopener" class="pub-card brandcrush reveal d-2">
+        <div class="pub-card-brand">
+          <span class="pcb-mono">BC</span>
+          <div>
+            <div class="pcb-eyebrow">Brand Journalism</div>
+            <div class="pcb-name">The<br>Brand<br>Crush</div>
+            <div class="pcb-tagline">"Unsponsored. Unafraid."</div>
+          </div>
+          <div>
+            <div class="pcb-stats">
+              <div class="pcb-stat">
+                <div class="pcb-stat-val">0</div>
+                <div class="pcb-stat-lbl">Sponsors</div>
+              </div>
+              <div class="pcb-stat">
+                <div class="pcb-stat-val">100%</div>
+                <div class="pcb-stat-lbl">Independent</div>
+              </div>
+            </div>
+            <div class="pcb-founder">Founder</div>
+          </div>
+        </div>
+        <div class="pub-card-info">
+          <div class="pub-card-info-top">
+            <span class="pci-lbl">Brand Analysis · Campaign Reviews · Strategy</span>
+            <p class="pci-headline">Independent brand journalism that actually takes a stance.</p>
+            <p class="pci-desc">Why did that campaign make you feel something? Did the brand earn it or manufacture it? No sponsors. No "partnerships" that soften the verdict. Just honest analysis from someone who builds brands for a living.</p>
+          </div>
+          <div class="pub-card-info-bottom">
+            <div class="pub-tags">
+              <span class="pub-tag">Brand Analysis</span>
+              <span class="pub-tag">Campaign Reviews</span>
+              <span class="pub-tag">Brand Wars</span>
+              <span class="pub-tag">Strategy</span>
+            </div>
+            <span class="pub-cta">thebrandcrush.com →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- wave: light pubs → dark about -->
+<div class="wave-div" aria-hidden="true" style="background:var(--bg)">
+  <svg viewBox="0 0 1440 52" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="52">
+    <path d="M0,52 C360,0 900,52 1440,16 L1440,0 L0,0 Z" fill="var(--dark)"/>
+  </svg>
+</div>
+
+<!-- ── ABOUT TEASER ── -->
+<section class="sec dark-sec">
+  <div class="sec-inner about-grid">
+    <div class="reveal r-left">
+      <span class="sec-lbl">About Amisha</span>
+      <h2 class="sec-h">Not your average<br>copywriter. (On purpose.)</h2>
+      <p class="about-body">I spent four years at Instituto Cervantes before launching Audaz Revista. Not because I had to. Because writing about something you don't understand produces exactly the kind of shallow content I'm trying to replace. That standard applies to every client I take on.</p>
+      <p class="about-body">At CJ&amp;CO I build content systems daily: landing pages, email sequences, ad copy, SEO strategy. The kind that ranks and gets used. ISB Alumna. Generative AI certified. Five years doing this for paying clients, not just publishing.</p>
+      <a href="about.html" class="btn-outline-w">More about how I work →</a>
+    </div>
+    <div class="reveal r-right d-2">
+      <ul class="creds-ul">
+        <li><strong>ISB Alumna.</strong> Indian School of Business. Digital Marketing programme. One of Asia's top-ranked institutions. The analytical backbone behind every strategy I write.</li>
+        <li><strong>5+ years</strong> writing copy that converts, across B2B and B2C brands. Not 5 years posting. 5 years with results.</li>
+        <li><strong>Content Strategist @ CJ&amp;CO.</strong> Where I build content systems for brands that want to rank, convert, and grow. Not just publish.</li>
+        <li><strong>Founder &amp; Editor-in-Chief, Audaz Revista.</strong> Built from scratch. Covering Hispanic culture, lifestyle, and language. Launched after four years at Instituto Cervantes, because credibility is earned.</li>
+        <li><strong>Founder, The Brand Crush.</strong> Independent brand journalism. Unsponsored. Unafraid. Because the best way to prove you understand brand voice is to publish one of your own.</li>
+        <li><strong>Certified in Generative AI</strong> (Airtribe). I use AI to build smarter systems. The craft stays human.</li>
+        <li><strong>Delhi-based. Timezone-flexible.</strong> Clients across Asia, Europe, and the Americas. Async-friendly by design.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="sec cta-sec">
+  <div class="sec-inner">
+    <div class="cta-inner reveal r-scale">
+      <span class="sec-lbl" style="justify-content:center">Let's work together</span>
+      <h2 class="sec-h">Ready to stop publishing<br>and start converting?</h2>
+      <p>I take on a limited number of new clients each month. Got a landing page that's not converting? An email sequence nobody's opening? Ad copy eating your budget? You're in the right place. Drop a note via commasandchaos.com and I'll respond personally within 48 hours.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-acc">Let's talk →</a>
+        <a href="services.html" class="btn-g">See my services →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="ft-inner">
+    <a href="index.html" class="ft-logo">Amisha Sharma</a>
+    <ul class="ft-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/amisha-sharma-content/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+    </ul>
+    <span class="ft-copy">© 2026 Amisha Sharma · Delhi, India</span>
+  </div>
+</footer>
+
+<script>
+  /* ── CURSOR GLOW ── */
+  const glow = document.querySelector('.cursor-glow');
+  let gx = -999, gy = -999, cx = -999, cy = -999;
+  document.addEventListener('mousemove', e => { gx = e.clientX; gy = e.clientY; });
+  function moveCursor() {
+    cx += (gx - cx) * 0.12;
+    cy += (gy - cy) * 0.12;
+    if (glow) { glow.style.left = cx + 'px'; glow.style.top = cy + 'px'; }
+    requestAnimationFrame(moveCursor);
+  }
+  moveCursor();
+
+  /* ── PROGRESS LINE ── */
+  const pl = document.getElementById('progressLine');
+  window.addEventListener('scroll', () => {
+    const p = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if (pl) pl.style.width = (p * 100) + '%';
+  }, { passive: true });
+
+  /* ── SCROLL-AWARE NAV ── */
+  let lastScroll = 0;
+  const nav = document.querySelector('nav.top-nav');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > 80) nav.classList.add('nav-scrolled'); else nav.classList.remove('nav-scrolled');
+    if (y > lastScroll + 8 && y > 160) nav.classList.add('nav-hidden');
+    else if (y < lastScroll - 8) nav.classList.remove('nav-hidden');
+    lastScroll = y;
+  }, { passive: true });
+
+  /* ── SCROLL REVEAL ── */
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  /* ── ANIMATED COUNTERS ── */
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+  function animateCount(el, target, isDecimal, duration) {
+    const start = performance.now();
+    const step = ts => {
+      const p = easeOutCubic(Math.min((ts - start) / duration, 1));
+      const val = target * p;
+      el.textContent = isDecimal ? val.toFixed(1) : Math.round(val);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = isDecimal ? target.toFixed(1) : Math.round(target);
+    };
+    requestAnimationFrame(step);
+  }
+  const countObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseFloat(el.dataset.target);
+      const isDecimal = !!el.dataset.decimal;
+      animateCount(el, target, isDecimal, 1600);
+      countObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.count-num').forEach(el => countObs.observe(el));
+
+  /* ── HERO TEXT SCRAMBLE ── */
+  const scrambleEl = document.getElementById('scrambleTarget');
+  const finalText = 'asking.';
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!?#';
+  let sFrame = 0, sTotal = 22;
+  function scrambleStep() {
+    if (!scrambleEl) return;
+    scrambleEl.textContent = finalText.split('').map((c, i) => {
+      if (sFrame / sTotal > i / finalText.length) return c;
+      return chars[Math.floor(Math.random() * chars.length)];
+    }).join('');
+    if (sFrame++ < sTotal) setTimeout(scrambleStep, 38);
+    else scrambleEl.textContent = finalText;
+  }
+  setTimeout(scrambleStep, 850);
+
+  /* ── ACCORDION (CSS height) ── */
+  function toggleAcc(id) {
+    var item = document.getElementById(id);
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.acc-item').forEach(el => {
+      el.classList.remove('open');
+      var btn = el.querySelector('.acc-trigger');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      var btn = item.querySelector('.acc-trigger');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  /* ── MAGNETIC BUTTONS ── */
+  document.querySelectorAll('.btn-acc').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * 0.18;
+      const y = (e.clientY - r.top - r.height / 2) * 0.18;
+      btn.style.transform = `translate(${x}px, ${y}px) translateY(-2px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+
+  /* ── SERVICE CARD SPOTLIGHT + 3D TILT ── */
+  document.querySelectorAll('.svc-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = e.clientX - r.left;
+      const y = e.clientY - r.top;
+      card.style.setProperty('--mx', x + 'px');
+      card.style.setProperty('--my', y + 'px');
+      const rx = ((y - r.height / 2) / r.height) * -6;
+      const ry = ((x - r.width  / 2) / r.width)  *  6;
+      card.style.transition = 'background .2s, border-color .25s';
+      card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-5px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.classList.add('tilt-reset');
+      card.style.transform = '';
+      card.style.setProperty('--mx', '-9999px');
+      card.style.setProperty('--my', '-9999px');
+      setTimeout(() => card.classList.remove('tilt-reset'), 450);
+    });
+  });
+
+  /* ── COPY TRANSFORMATION THEATER ── */
+  const ctPairs = [
+    {
+      before: "We provide comprehensive digital marketing solutions designed to help your business achieve its goals.",
+      after:  "Your customers are ready to buy. Your copy just isn't asking."
+    },
+    {
+      before: "Our expert team creates high-quality content that delivers measurable results for your brand.",
+      after:  "You don't need more content. You need content that makes people click."
+    },
+    {
+      before: "Boost your online presence and drive more traffic with our proven SEO strategies.",
+      after:  "The goal isn't ranking. It's the right person reading and saying: yes, this is for me."
+    }
+  ];
+
+  let ctIdx = 0, ctActive = false, ctTimer = null;
+
+  function ctTypeText(el, text, speed, onDone) {
+    el.textContent = '';
+    let i = 0;
+    function step() {
+      if (i < text.length) { el.textContent += text[i++]; setTimeout(step, speed); }
+      else if (onDone) onDone();
+    }
+    step();
+  }
+
+  function ctPlayPair(idx) {
+    const pair = ctPairs[idx];
+    const before = document.getElementById('ctBefore');
+    const after  = document.getElementById('ctAfter');
+    if (!before || !after) return;
+
+    document.querySelectorAll('.ct-dot').forEach((d, i) => d.classList.toggle('on', i === idx));
+
+    before.className = 'ct-text'; after.className = 'ct-text';
+    before.textContent = ''; after.textContent = '';
+
+    ctTypeText(before, pair.before, 24, () => {
+      ctTimer = setTimeout(() => {
+        before.classList.add('ct-struck');
+        ctTimer = setTimeout(() => {
+          ctTypeText(after, pair.after, 30, () => {
+            after.classList.add('ct-lit');
+            ctTimer = setTimeout(() => {
+              before.classList.add('ct-fade');
+              after.classList.add('ct-fade');
+              ctTimer = setTimeout(() => {
+                ctIdx = (idx + 1) % ctPairs.length;
+                ctPlayPair(ctIdx);
+              }, 600);
+            }, 4000);
+          });
+        }, 400);
+      }, 700);
+    });
+  }
+
+  const ctSection = document.getElementById('copyTheater');
+  if (ctSection) {
+    const ctObs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !ctActive) {
+        ctActive = true;
+        setTimeout(() => ctPlayPair(0), 300);
+        ctObs.unobserve(ctSection);
+      }
+    }, { threshold: 0.25 });
+    ctObs.observe(ctSection);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Let's Connect — Amisha Sharma | commasandchaos.com</title>
+  <meta name="description" content="Start a copywriting or content strategy project with Amisha Sharma. ISB alumna, 5+ years experience. Based in Delhi, working globally.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #F9F9F6;
+      --surface: #FFFFFF;
+      --fg:      #1C1C26;
+      --muted:   #6B6B7B;
+      --border:  #E4E4E9;
+      --accent:  #C85C38;
+      --dark:    #1C1C26;
+      --font-d:  'Playfair Display', Georgia, serif;
+      --font-b:  'DM Sans', system-ui, sans-serif;
+      --max:     1140px;
+      --px:      clamp(20px, 5vw, 72px);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--bg); color: var(--fg); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    /* ── NAV ── */
+    nav.top-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(249,249,246,.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-w { max-width: var(--max); margin: 0 auto; padding: 0 var(--px); height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { text-decoration: none; display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-name { display: block; font-family: var(--font-d); font-size: 19px; font-weight: 700; font-style: italic; letter-spacing: -.028em; color: var(--fg); transition: color .22s; }
+    .logo:hover .logo-name { color: var(--accent); }
+    .logo-tag { display: block; font-family: 'SF Mono', ui-monospace, 'Cascadia Code', 'Fira Mono', monospace; font-size: 10px; font-weight: 400; letter-spacing: .035em; color: var(--muted); transition: color .22s; line-height: 1; }
+    .logo-tag .at { color: var(--accent); font-weight: 600; font-size: 11px; }
+    .logo:hover .logo-tag { color: var(--fg); }
+    .nav-menu { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-menu a { font-size: 14.5px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-menu a:hover, .nav-menu a.on { color: var(--fg); }
+    .nav-btn { background: var(--dark) !important; color: #fff !important; padding: 8px 20px; border-radius: 5px; font-size: 14px !important; font-weight: 600 !important; transition: background .2s !important; }
+    .nav-btn:hover { background: var(--accent) !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero { padding-top: 64px; background: var(--dark); }
+    .ph-inner { max-width: var(--max); margin: 0 auto; padding: clamp(52px,7vw,88px) var(--px); }
+    .ph-lbl { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(200,92,56,.9); margin-bottom: 18px; display: block; }
+    .ph-headline { font-family: var(--font-d); font-size: clamp(38px,5vw,72px); font-weight: 900; line-height: 1.06; letter-spacing: -.035em; color: #fff; margin-bottom: 22px; }
+    .ph-headline em { font-style: italic; color: rgba(200,92,56,.9); }
+    .ph-sub { font-size: clamp(16px,1.5vw,19px); color: rgba(255,255,255,.55); line-height: 1.65; max-width: 540px; }
+    .contact-avatar {
+      width: 88px; height: 88px; border-radius: 50%;
+      object-fit: cover; object-position: center 8%;
+      border: 3px solid rgba(200,92,56,.6);
+      box-shadow: 0 0 0 4px rgba(200,92,56,.15), 0 8px 24px rgba(0,0,0,.3);
+      display: block; margin-bottom: 28px;
+      transform: translateZ(0);
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .contact-section { padding: clamp(60px,8vw,100px) var(--px); }
+    .contact-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: start; }
+
+    /* ── FORM ── */
+    .form-wrap {}
+    .form-title { font-family: var(--font-d); font-size: 28px; font-weight: 700; color: var(--fg); margin-bottom: 8px; }
+    .form-sub { font-size: 16px; color: var(--muted); margin-bottom: 36px; line-height: 1.65; }
+
+    form { display: flex; flex-direction: column; gap: 20px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    label { font-size: 13.5px; font-weight: 600; color: var(--fg); letter-spacing: .01em; }
+    label .req { color: var(--accent); margin-left: 2px; }
+    input, select, textarea {
+      width: 100%; font-family: var(--font-b); font-size: 16px;
+      background: var(--surface); color: var(--fg);
+      border: 1.5px solid var(--border); border-radius: 6px;
+      padding: 12px 14px; transition: border-color .2s;
+      outline: none; appearance: none; -webkit-appearance: none;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6B7B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
+    textarea { resize: vertical; min-height: 120px; }
+    .submit-btn {
+      background: var(--accent); color: #fff; border: none;
+      padding: 14px 36px; border-radius: 6px; font-family: var(--font-b);
+      font-size: 16px; font-weight: 600; cursor: pointer;
+      transition: background .2s, transform .15s; align-self: flex-start;
+    }
+    .submit-btn:hover { background: #b04e2e; transform: translateY(-1px); }
+    .submit-btn:disabled { opacity: .6; cursor: default; transform: none; }
+    .form-note { font-size: 13px; color: var(--muted); margin-top: -4px; }
+
+    /* thank you state */
+    .thank-you {
+      display: none; padding: 48px 36px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 8px; text-align: center;
+    }
+    .ty-icon { font-size: 36px; margin-bottom: 16px; }
+    .ty-title { font-family: var(--font-d); font-size: 26px; font-weight: 700; color: var(--fg); margin-bottom: 10px; }
+    .ty-sub { font-size: 16px; color: var(--muted); line-height: 1.65; }
+
+    /* ── SIDEBAR ── */
+    .contact-side { position: sticky; top: 88px; }
+    .side-block { margin-bottom: 32px; }
+    .side-block:last-child { margin-bottom: 0; }
+    .sb-label { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: block; }
+    .sb-title { font-family: var(--font-d); font-size: 20px; font-weight: 700; color: var(--fg); margin-bottom: 14px; }
+    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .step-item { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .step-item:first-child { padding-top: 0; }
+    .step-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .step-num { font-family: var(--font-d); font-size: 22px; font-weight: 700; color: rgba(200,92,56,.25); line-height: 1; flex-shrink: 0; margin-top: 2px; font-variant-numeric: tabular-nums; }
+    .step-text { }
+    .step-title { font-size: 15px; font-weight: 600; color: var(--fg); margin-bottom: 3px; }
+    .step-desc { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+    .info-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; font-size: 15px; color: var(--muted); }
+    .info-item:last-child { margin-bottom: 0; }
+    .info-item svg { margin-top: 2px; flex-shrink: 0; }
+    .info-item strong { color: var(--fg); font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer.site-footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px var(--px); }
+    .ft-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+    .ft-logo { font-family: var(--font-d); font-size: 16px; font-weight: 700; color: var(--fg); text-decoration: none; }
+    .ft-links { display: flex; gap: 22px; list-style: none; }
+    .ft-links a { font-size: 13.5px; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .ft-links a:hover { color: var(--fg); }
+    .ft-copy { font-size: 12.5px; color: var(--muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .contact-inner { grid-template-columns: 1fr; }
+      .contact-side { position: static; }
+    }
+    @media (max-width: 540px) {
+      .field-row { grid-template-columns: 1fr; }
+      .nav-menu li:not(.nav-cta-li) { display: none; }
+      .nav-menu li:first-child, .nav-menu li:last-child { display: flex; }
+    }
+    /* ── DYNAMIC LAYER ── */
+    body { overflow-x: hidden; }
+    .cursor-glow { position: fixed; pointer-events: none; z-index: 9999; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(200,92,56,.07) 0%, transparent 68%); transform: translate(-50%,-50%); top: -999px; left: -999px; opacity: 0; transition: opacity .4s; }
+    body:hover .cursor-glow { opacity: 1; }
+    .progress-line { position: fixed; top: 0; left: 0; height: 2px; z-index: 9998; background: var(--accent); width: 0%; pointer-events: none; transition: width .1s linear; }
+    nav.top-nav { transition: transform .35s cubic-bezier(0.2,0,0,1), box-shadow .3s !important; will-change: transform; }
+    nav.top-nav.nav-hidden { transform: translateY(-100%) !important; }
+    nav.top-nav.nav-scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.06) !important; }
+    /* logo hover handled by .logo-name and .logo-tag rules */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s cubic-bezier(0.2,0,0,1), transform .75s cubic-bezier(0.2,0,0,1); }
+    .reveal.r-right { transform: translateX(28px); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d-1 { transition-delay: .12s; } .d-2 { transition-delay: .24s; }
+    .contact-form input, .contact-form textarea, .contact-form select { transition: border-color .2s, box-shadow .2s !important; }
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--accent) !important; box-shadow: 0 0 0 3px rgba(200,92,56,.12) !important; }
+    .btn-acc:hover { box-shadow: 0 8px 24px rgba(200,92,56,.28) !important; }
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-w">
+    <a href="index.html" class="logo">
+      <span class="logo-name">Amisha Sharma</span>
+      <span class="logo-tag"><span class="at">@</span>commasandchaos.com</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li class="nav-cta-li"><a href="contact.html" class="nav-btn on">Let's Collab</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── PAGE HERO ── -->
+<div class="page-hero">
+  <div class="ph-inner">
+    <img
+      class="contact-avatar"
+      src="photo-about-4k.jpg"
+      alt="Amisha Sharma"
+      loading="eager"
+      decoding="async"
+      style="image-rendering:-webkit-optimize-contrast;filter:contrast(1.06) saturate(1.07);transform:translateZ(0);-webkit-backface-visibility:hidden;"
+    >
+    <span class="ph-lbl">Let's work together</span>
+    <h1 class="ph-headline">Tell me what's<br><em>not working.</em></h1>
+    <p class="ph-sub">I'll tell you how I'd fix it. Personal response within 48 hours. Not a template. Not a boilerplate. An actual reply from me, with honest thoughts on your project.</p>
+  </div>
+</div>
+
+<!-- ── CONTACT SECTION ── -->
+<section class="contact-section">
+  <div class="contact-inner">
+
+    <!-- FORM -->
+    <div class="form-wrap">
+      <h2 class="form-title">Tell me about your project.</h2>
+      <p class="form-sub">No perfect brief required. Just tell me where you're stuck and what you're trying to achieve. The rest we figure out together on the call.</p>
+
+      <form id="contact-form" method="POST" action="https://formspree.io/f/xeojbzwg" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Your name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Priya Mehta" required>
+          </div>
+          <div class="field">
+            <label for="email">Email address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="priya@yourcompany.com" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="company">Company / Brand</label>
+          <input type="text" id="company" name="company" placeholder="YourBrand Inc. (optional)">
+        </div>
+
+        <div class="field">
+          <label for="service">What do you need? <span class="req">*</span></label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Choose a service</option>
+            <option value="copywriting">Copywriting (website, landing pages, emails, Google ads, social ads)</option>
+            <option value="strategy">Content Strategy (SEO, editorial planning)</option>
+            <option value="brand-voice">Brand Voice Development</option>
+            <option value="multiple">Multiple services, let's discuss</option>
+            <option value="unsure">Not sure yet, I need some advice</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="budget">Project budget</label>
+          <select id="budget" name="budget">
+            <option value="" disabled selected>Approximate range (optional)</option>
+            <option value="under-500">Under $500</option>
+            <option value="500-2k">$500 – $2,000</option>
+            <option value="2k-5k">$2,000 – $5,000</option>
+            <option value="5k-plus">$5,000+</option>
+            <option value="discuss">Prefer to discuss</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="brief">Tell me about your project <span class="req">*</span></label>
+          <textarea id="brief" name="brief" rows="5" placeholder="What are you selling? Who's the audience? What's not converting right now? What does a win look like for you? (Don't overthink it.)" required></textarea>
+        </div>
+
+        <p class="form-note">* Required fields. I reply within 48 hours. Usually sooner.</p>
+
+        <button type="submit" class="submit-btn" id="submit-btn">Send brief →</button>
+      </form>
+
+      <div class="thank-you" id="thank-you">
+        <div class="ty-icon">✓</div>
+        <div class="ty-title">Got it. Talk soon.</div>
+        <div class="ty-sub">I'll read it and get back to you within 48 hours with honest thoughts. If it looks like a good fit, I'll suggest a 30-minute discovery call. No pitch. Just an honest conversation about whether I can actually help you.</div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="contact-side">
+      <div class="side-block">
+        <span class="sb-label">What happens next</span>
+        <div class="sb-title">Here's exactly what to expect.</div>
+        <ul class="steps-list">
+          <li class="step-item">
+            <div class="step-num">01</div>
+            <div class="step-text">
+              <div class="step-title">I read your brief</div>
+              <div class="step-desc">Within 48 hours. Honest thoughts, not a canned response. I'll tell you honestly whether I think I can help.</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">02</div>
+            <div class="step-text">
+              <div class="step-title">30-minute discovery call</div>
+              <div class="step-desc">If it looks like a fit, we hop on a call. You ask questions. I ask questions. No pitch. Just an honest conversation.</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">03</div>
+            <div class="step-text">
+              <div class="step-title">Clear proposal</div>
+              <div class="step-desc">Scope, deliverables, flat fee, timeline. You know exactly what you're getting before anything starts.</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">04</div>
+            <div class="step-text">
+              <div class="step-title">We get to work</div>
+              <div class="step-desc">Research first. Copy second. You stay in the loop. No disappearing acts, no black boxes, no surprises.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="side-block" style="padding-top:28px; border-top: 1px solid var(--border);">
+        <span class="sb-label">Contact details</span>
+        <div class="info-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l6 5 6-5M2 4h12v9H2V4z" stroke="#6B6B7B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><strong><a href="mailto:profamisha@gmail.com" style="color:inherit;text-decoration:none;">profamisha@gmail.com</a></strong></span>
+        </div>
+        <div class="info-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2h2.5l1 3-1.5 1c.8 1.6 2 2.8 3.5 3.5l1-1.5 3 1V12c0 .5-.5 1-1 1C6 13 2 9 2 3c0-.5.5-1 1-1z" stroke="#6B6B7B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><a href="tel:+918802246414" style="color:inherit;text-decoration:none;"><strong>+91 88022 46414</strong></a></span>
+        </div>
+        <div class="info-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="7" r="3" stroke="#6B6B7B" stroke-width="1.2"/><path d="M8 1a6 6 0 010 12C5 13 2 10.5 2 7a6 6 0 016-6z" stroke="#6B6B7B" stroke-width="1.2"/></svg>
+          <span>Delhi, India · Works globally</span>
+        </div>
+        <div class="info-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="#6B6B7B" stroke-width="1.2"/><path d="M1 6h14" stroke="#6B6B7B" stroke-width="1.2"/></svg>
+          <span>Currently <strong>accepting new clients</strong></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="ft-inner">
+    <a href="index.html" class="ft-logo">Amisha Sharma</a>
+    <ul class="ft-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/amisha-sharma-content/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+    </ul>
+    <span class="ft-copy">© 2026 Amisha Sharma · Delhi, India</span>
+  </div>
+</footer>
+
+<script>
+  var form = document.getElementById('contact-form');
+  var thankYou = document.getElementById('thank-you');
+  var submitBtn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Basic validation
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var service = document.getElementById('service').value;
+    var brief = document.getElementById('brief').value.trim();
+
+    if (!name || !email || !service || !brief) {
+      // Highlight empty required fields
+      [
+        { id: 'name', val: name },
+        { id: 'email', val: email },
+        { id: 'service', val: service },
+        { id: 'brief', val: brief }
+      ].forEach(function(f) {
+        var el = document.getElementById(f.id);
+        el.style.borderColor = f.val ? '' : 'var(--accent)';
+      });
+      return;
+    }
+
+    // Submit to Formspree
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    fetch('https://formspree.io/f/xeojbzwg', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    }).then(function(r) {
+      if (r.ok) {
+        form.style.display = 'none';
+        thankYou.style.display = 'block';
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send brief →';
+        alert('Something went wrong. Please email profamisha@gmail.com directly.');
+      }
+    }).catch(function() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send brief →';
+      alert('Network error. Please email profamisha@gmail.com directly.');
+    });
+  });
+
+  // Clear error state on input
+  ['name', 'email', 'service', 'brief'].forEach(function(id) {
+    var el = document.getElementById(id);
+    el.addEventListener('input', function() { el.style.borderColor = ''; });
+  });
+</script>
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="progress-line" id="progressLine" aria-hidden="true"></div>
+<script>
+  const glow=document.querySelector('.cursor-glow');
+  let gx=-999,gy=-999,cx=-999,cy=-999;
+  document.addEventListener('mousemove',e=>{gx=e.clientX;gy=e.clientY;});
+  (function loop(){cx+=(gx-cx)*.12;cy+=(gy-cy)*.12;if(glow){glow.style.left=cx+'px';glow.style.top=cy+'px';}requestAnimationFrame(loop);})();
+  const pl=document.getElementById('progressLine');
+  window.addEventListener('scroll',()=>{if(pl)pl.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';},{passive:true});
+  let ls=0;const nav=document.querySelector('nav.top-nav');
+  window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>80)nav.classList.add('nav-scrolled');else nav.classList.remove('nav-scrolled');if(y>ls+8&&y>160)nav.classList.add('nav-hidden');else if(y<ls-8)nav.classList.remove('nav-hidden');ls=y;},{passive:true});
+  const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  const els=['.hero-contact-inner','.contact-inner','.contact-form','.contact-side','.contact-faq'];
+  els.forEach(s=>document.querySelectorAll(s).forEach((el,i)=>{el.classList.add('reveal');if(i%2===1)el.classList.add('d-1');ro.observe(el);}));
+  document.querySelectorAll('.btn-acc').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px) translateY(-2px)`;});btn.addEventListener('mouseleave',()=>{btn.style.transform='';});});
+</script>
+</body>
+</html>

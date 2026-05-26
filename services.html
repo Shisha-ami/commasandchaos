@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services — Amisha Sharma | commasandchaos.com</title>
+  <meta name="description" content="Copywriting, content strategy, and brand voice development from a freelance specialist. ISB alumna. 5+ years. Delhi-based, working globally.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #F9F9F6;
+      --surface: #FFFFFF;
+      --fg:      #1C1C26;
+      --muted:   #6B6B7B;
+      --border:  #E4E4E9;
+      --accent:  #C85C38;
+      --dark:    #1C1C26;
+      --font-d:  'Playfair Display', Georgia, serif;
+      --font-b:  'DM Sans', system-ui, sans-serif;
+      --max:     1140px;
+      --px:      clamp(20px, 5vw, 72px);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--bg); color: var(--fg); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    /* ── NAV ── */
+    nav.top-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(249,249,246,.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-w { max-width: var(--max); margin: 0 auto; padding: 0 var(--px); height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { text-decoration: none; display: flex; flex-direction: column; gap: 4px; line-height: 1; }
+    .logo-name { display: block; font-family: var(--font-d); font-size: 19px; font-weight: 700; font-style: italic; letter-spacing: -.028em; color: var(--fg); transition: color .22s; }
+    .logo:hover .logo-name { color: var(--accent); }
+    .logo-tag { display: block; font-family: 'SF Mono', ui-monospace, 'Cascadia Code', 'Fira Mono', monospace; font-size: 10px; font-weight: 400; letter-spacing: .035em; color: var(--muted); transition: color .22s; line-height: 1; }
+    .logo-tag .at { color: var(--accent); font-weight: 600; font-size: 11px; }
+    .logo:hover .logo-tag { color: var(--fg); }
+    .nav-menu { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-menu a { font-size: 14.5px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-menu a:hover, .nav-menu a.on { color: var(--fg); }
+    .nav-btn { background: var(--dark) !important; color: #fff !important; padding: 8px 20px; border-radius: 5px; font-size: 14px !important; font-weight: 600 !important; transition: background .2s !important; }
+    .nav-btn:hover { background: var(--accent) !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero { padding-top: 64px; background: var(--dark); }
+    .ph-inner {
+      max-width: var(--max); margin: 0 auto;
+      padding: clamp(52px,7vw,88px) var(--px);
+    }
+    .ph-lbl { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(200,92,56,.9); margin-bottom: 18px; display: block; }
+    .ph-headline { font-family: var(--font-d); font-size: clamp(38px, 5vw, 72px); font-weight: 900; line-height: 1.06; letter-spacing: -.035em; color: #fff; margin-bottom: 22px; }
+    .ph-headline em { font-style: italic; color: rgba(200,92,56,.9); }
+    .ph-sub { font-size: clamp(16px,1.5vw,19px); color: rgba(255,255,255,.55); line-height: 1.65; max-width: 560px; }
+
+    /* ── SECTIONS ── */
+    .sec { padding: clamp(60px,8vw,112px) var(--px); }
+    .sec-inner { max-width: var(--max); margin: 0 auto; }
+    .sec-lbl { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: block; }
+    .sec-h { font-family: var(--font-d); font-size: clamp(28px,3.5vw,50px); font-weight: 700; line-height: 1.12; letter-spacing: -.025em; color: var(--fg); }
+
+    /* ── SERVICE SECTIONS ── */
+    .svc-section {
+      border-top: 1px solid var(--border);
+      padding-top: clamp(52px,6vw,88px);
+      padding-bottom: clamp(52px,6vw,88px);
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .svc-section:first-of-type { border-top: none; padding-top: 0; }
+    .svc-left {}
+    .svc-num { font-size: 48px; font-family: var(--font-d); font-weight: 900; color: rgba(200,92,56,.15); line-height: 1; display: block; margin-bottom: 12px; }
+    .svc-title-lg { font-family: var(--font-d); font-size: clamp(28px,3vw,44px); font-weight: 700; line-height: 1.1; letter-spacing: -.025em; color: var(--fg); margin-bottom: 16px; }
+    .svc-lead { font-size: 17px; color: var(--muted); line-height: 1.7; }
+    .svc-cta {
+      display: inline-block; margin-top: 28px;
+      background: var(--accent); color: #fff; padding: 12px 26px;
+      border-radius: 6px; font-size: 15px; font-weight: 600;
+      text-decoration: none; transition: background .2s, transform .15s;
+    }
+    .svc-cta:hover { background: #b04e2e; transform: translateY(-1px); }
+
+    .svc-right {}
+    .deliverables-label { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; display: block; }
+    .deliverables-list { list-style: none; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); }
+    .deliverables-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px 20px; font-size: 15.5px; color: var(--fg); line-height: 1.5;
+      border-bottom: 1px solid var(--border);
+    }
+    .deliverables-list li:last-child { border-bottom: none; }
+    .deliverables-list li::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0; margin-top: 8px;
+    }
+    .for-block {
+      margin-top: 24px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 6px; padding: 18px 20px;
+    }
+    .for-label { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .for-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 12.5px; font-weight: 500; color: var(--muted); }
+
+    /* ── PROCESS ── */
+    .process-bg { background: var(--surface); }
+    .process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: var(--border); margin-top: 44px; }
+    .process-step { background: var(--surface); padding: 28px 22px; }
+    .ps-num { font-family: var(--font-d); font-size: 36px; font-weight: 900; color: rgba(200,92,56,.2); line-height: 1; margin-bottom: 14px; }
+    .ps-title { font-family: var(--font-d); font-size: 17px; font-weight: 700; color: var(--fg); margin-bottom: 8px; }
+    .ps-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+    /* ── FAQ ── */
+    .faq-list { margin-top: 44px; display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; background: none; border: none; text-align: left; cursor: pointer;
+      padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--font-d); font-size: 20px; font-weight: 700; color: var(--fg);
+      line-height: 1.3; gap: 20px;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-icon { font-size: 22px; color: var(--accent); flex-shrink: 0; transition: transform .25s; font-style: normal; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 0 22px; font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 680px; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── CTA ── */
+    .cta-sec { background: rgba(200,92,56,.07); }
+    .cta-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .cta-inner .sec-h { margin-bottom: 16px; }
+    .cta-inner p { font-size: 17px; color: var(--muted); line-height: 1.65; margin-bottom: 36px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-acc { background: var(--accent); color: #fff; padding: 13px 30px; border-radius: 6px; font-size: 15.5px; font-weight: 600; text-decoration: none; transition: background .2s, transform .15s; display: inline-block; }
+    .btn-acc:hover { background: #b04e2e; transform: translateY(-1px); }
+    .btn-outline { display: inline-block; border: 1.5px solid var(--border); color: var(--fg); padding: 12px 26px; border-radius: 6px; font-size: 15px; font-weight: 500; text-decoration: none; transition: border-color .2s; }
+    .btn-outline:hover { border-color: var(--fg); }
+
+    /* ── FOOTER ── */
+    footer.site-footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px var(--px); }
+    .ft-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+    .ft-logo { font-family: var(--font-d); font-size: 16px; font-weight: 700; color: var(--fg); text-decoration: none; }
+    .ft-links { display: flex; gap: 22px; list-style: none; }
+    .ft-links a { font-size: 13.5px; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .ft-links a:hover { color: var(--fg); }
+    .ft-copy { font-size: 12.5px; color: var(--muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .svc-section { grid-template-columns: 1fr; gap: 40px; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-menu li:not(.nav-cta-li) { display: none; }
+      .nav-menu li:first-child, .nav-menu li:last-child { display: flex; }
+      .process-grid { grid-template-columns: 1fr; }
+    }
+    /* ── DYNAMIC LAYER ── */
+    body { overflow-x: hidden; }
+    .cursor-glow { position: fixed; pointer-events: none; z-index: 9999; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(200,92,56,.07) 0%, transparent 68%); transform: translate(-50%,-50%); top: -999px; left: -999px; opacity: 0; transition: opacity .4s; }
+    body:hover .cursor-glow { opacity: 1; }
+    .progress-line { position: fixed; top: 0; left: 0; height: 2px; z-index: 9998; background: var(--accent); width: 0%; pointer-events: none; transition: width .1s linear; }
+    nav.top-nav { transition: transform .35s cubic-bezier(0.2,0,0,1), box-shadow .3s !important; will-change: transform; }
+    nav.top-nav.nav-hidden { transform: translateY(-100%) !important; }
+    nav.top-nav.nav-scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.06) !important; }
+    /* logo hover handled by .logo-name and .logo-tag rules */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s cubic-bezier(0.2,0,0,1), transform .75s cubic-bezier(0.2,0,0,1); }
+    .reveal.r-scale { transform: scale(.96); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d-1 { transition-delay: .1s; } .d-2 { transition-delay: .2s; } .d-3 { transition-delay: .3s; }
+    .svc-dl-item { transition: border-color .25s, transform .25s cubic-bezier(0.2,0,0,1), box-shadow .25s; }
+    .svc-dl-item:hover { transform: translateY(-4px) !important; box-shadow: 0 12px 32px rgba(0,0,0,.07) !important; }
+    .process-step { transition: background .2s, border-color .25s, transform .2s; }
+    .process-step:hover { transform: translateY(-3px); }
+    .btn-acc:hover { box-shadow: 0 8px 24px rgba(200,92,56,.28) !important; }
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-w">
+    <a href="index.html" class="logo">
+      <span class="logo-name">Amisha Sharma</span>
+      <span class="logo-tag"><span class="at">@</span>commasandchaos.com</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="on">Services</a></li>
+      <li class="nav-cta-li"><a href="contact.html" class="nav-btn">Let's Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── PAGE HERO ── -->
+<div class="page-hero">
+  <div class="ph-inner">
+    <span class="ph-lbl">Services</span>
+    <h1 class="ph-headline">Copy that makes<br>people stop, read, and <em>buy.</em></h1>
+    <p class="ph-sub">Every format, every funnel stage. Website copy, landing pages, email sequences, Google ads, social ad copy. I write the words. You get the conversions.</p>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="sec">
+  <div class="sec-inner">
+
+    <!-- COPYWRITING -->
+    <div id="copywriting" class="svc-section">
+      <div class="svc-left">
+        <span class="svc-num">01</span>
+        <h2 class="svc-title-lg">Copywriting</h2>
+        <p class="svc-lead">Here's the truth: your customer reads a lot of words before deciding to buy from you. Your Google ad. Your landing page. Your welcome email. Your nurture sequence. Every single one is either closing the gap or creating it. I make sure it's closing it.</p>
+        <a href="contact.html" class="svc-cta">Start a project →</a>
+      </div>
+      <div class="svc-right">
+        <span class="deliverables-label">What I write</span>
+        <ul class="deliverables-list">
+          <li><strong>Website copy:</strong> Home, About, Services, product pages. The copy that shapes every first impression.</li>
+          <li><strong>Landing pages:</strong> One page, one goal. Built to convert the traffic you're already paying for.</li>
+          <li><strong>Email sequences:</strong> Welcome flows, nurture campaigns, sales sequences. The emails people actually open.</li>
+          <li><strong>Google PPC ad copy:</strong> Headlines and descriptions that earn the click before you pay for it.</li>
+          <li><strong>Social ad copy:</strong> Facebook, Instagram, LinkedIn. Scroll-stopping hooks and copy that converts cold traffic.</li>
+          <li>Discovery questionnaire + audience research before a single word is written</li>
+          <li>Copy brief and outline for approval upfront. No surprises.</li>
+          <li>SEO integration where relevant. Keywords woven in, not bolted on.</li>
+          <li>Two rounds of revisions. We get it right, not just done.</li>
+          <li>Final file in Google Docs or direct CMS upload.</li>
+        </ul>
+        <div class="for-block">
+          <div class="for-label">Best for</div>
+          <div class="for-list">
+            <span class="tag">SaaS</span>
+            <span class="tag">E-commerce</span>
+            <span class="tag">B2B Services</span>
+            <span class="tag">Coaches &amp; Consultants</span>
+            <span class="tag">Agencies</span>
+            <span class="tag">DTC Brands</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT STRATEGY -->
+    <div id="strategy" class="svc-section">
+      <div class="svc-left">
+        <span class="svc-num">02</span>
+        <h2 class="svc-title-lg">Content Strategy</h2>
+        <p class="svc-lead">Here's what most brands get wrong about content strategy: they confuse publishing with progress. A full calendar is not a strategy. A system that brings the right people and moves them toward a decision? That's a strategy. Let's build yours.</p>
+        <a href="contact.html" class="svc-cta">Start a project →</a>
+      </div>
+      <div class="svc-right">
+        <span class="deliverables-label">What's included</span>
+        <ul class="deliverables-list">
+          <li>SEO audit of existing content and keyword gap analysis</li>
+          <li>Topic cluster strategy mapped to your buyer's journey</li>
+          <li>3-month content calendar with priorities, formats, and briefs</li>
+          <li>Competitor content benchmarking. What's working for them and why.</li>
+          <li>Internal linking strategy and content hierarchy recommendations</li>
+          <li>Optional: ongoing monthly strategy retainer</li>
+        </ul>
+        <div class="for-block">
+          <div class="for-label">Best for</div>
+          <div class="for-list">
+            <span class="tag">Scaling Startups</span>
+            <span class="tag">In-house Teams</span>
+            <span class="tag">Media &amp; Publishing</span>
+            <span class="tag">B2B SaaS</span>
+            <span class="tag">Service Businesses</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRAND VOICE -->
+    <div id="brand-voice" class="svc-section">
+      <div class="svc-left">
+        <span class="svc-num">03</span>
+        <h2 class="svc-title-lg">Brand Voice Development</h2>
+        <p class="svc-lead">You can tell when a brand sounds like a committee. The copy is technically fine. There's just no personality. No point of view. Nothing that makes you trust them or remember them. Your brand voice guide is what fixes that. And once it exists, anyone on your team can write a sentence that still sounds like you.</p>
+        <a href="contact.html" class="svc-cta">Start a project →</a>
+      </div>
+      <div class="svc-right">
+        <span class="deliverables-label">What's included</span>
+        <ul class="deliverables-list">
+          <li>Brand voice audit. Review of existing content across all channels.</li>
+          <li>Voice and tone interviews with key team members and stakeholders</li>
+          <li>Brand personality and positioning framework</li>
+          <li>Complete brand voice guide: principles, tone spectrum, do/don't examples</li>
+          <li>Sample rewrites of 3–5 existing pieces in the new voice</li>
+          <li>Team onboarding document for applying the voice guide consistently</li>
+        </ul>
+        <div class="for-block">
+          <div class="for-label">Best for</div>
+          <div class="for-list">
+            <span class="tag">Rebranding</span>
+            <span class="tag">Growing Teams</span>
+            <span class="tag">Funded Startups</span>
+            <span class="tag">DTC Brands</span>
+            <span class="tag">Agencies with Clients</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section class="sec process-bg">
+  <div class="sec-inner">
+    <span class="sec-lbl">How I work</span>
+    <h2 class="sec-h">No mystery. No<br>disappearing acts.</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="ps-num">01</div>
+        <div class="ps-title">Discovery Call</div>
+        <div class="ps-desc">30 minutes. Free. I ask about your brand, your audience, and what's not working. You leave with clarity. Regardless of whether we work together.</div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">02</div>
+        <div class="ps-title">Brief + Scope</div>
+        <div class="ps-desc">Clear deliverables, flat fee, specific timeline. All agreed upfront before a single word is written. No surprises. No scope creep.</div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">03</div>
+        <div class="ps-title">Research + Draft</div>
+        <div class="ps-desc">I research before I write. Audience psychology, competitor positioning, search intent, your customers' exact language. The copy comes after the thinking.</div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">04</div>
+        <div class="ps-title">Review + Refine</div>
+        <div class="ps-desc">Two rounds of revisions built in. I take feedback seriously. We are not done until you are genuinely proud to put this copy into the world.</div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">05</div>
+        <div class="ps-title">Delivery</div>
+        <div class="ps-desc">Clean final files, formatted for your team. Google Docs, CMS upload, or wherever you need it. Handoff call included if you want to walk through it together.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="sec">
+  <div class="sec-inner">
+    <span class="sec-lbl">Common questions</span>
+    <h2 class="sec-h">Things you're probably<br>wondering right now.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What types of copy do you write?
+          <em class="faq-icon" aria-hidden="true">+</em>
+        </button>
+        <div class="faq-a">Website copy, landing pages, email sequences, Google PPC ads, and social ad copy. Basically: all the places your customers read before they decide whether to buy from you. If you're not sure which one you need, that's exactly what the discovery call is for.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What's your typical timeline?
+          <em class="faq-icon" aria-hidden="true">+</em>
+        </button>
+        <div class="faq-a">Copywriting projects: 1 to 2 weeks from brief approval. Content strategy engagements: 2 to 3 weeks. Brand voice development: 3 to 4 weeks. You get a specific timeline in the project scope. And I stick to it. Because your deadline is an actual deadline.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do you work with clients outside India?
+          <em class="faq-icon" aria-hidden="true">+</em>
+        </button>
+        <div class="faq-a">Yes. Most of my clients are international. Delhi-based, but I work with brands across Asia, Europe, Australia, and the Americas. Timezone-flexible. Async-friendly. Very good at Loom.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How does pricing work?
+          <em class="faq-icon" aria-hidden="true">+</em>
+        </button>
+        <div class="faq-a">Flat project fees. Not hourly rates. You get a clear number before anything starts. No scope creep surprises. Send me a brief and I'll have a custom proposal back within 48 hours.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What do you need from me to get started?
+          <em class="faq-icon" aria-hidden="true">+</em>
+        </button>
+        <div class="faq-a">Tell me who you're selling to, what you want them to do, and what's not working right now. That's it. You don't need a perfect brief. We figure out the rest together on the discovery call.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="sec cta-sec">
+  <div class="sec-inner">
+    <div class="cta-inner">
+      <span class="sec-lbl">Ready?</span>
+      <h2 class="sec-h">I take on a limited number<br>of new clients each month.</h2>
+      <p>Tell me what's not working. I'll tell you how I'd fix it. Personal response within 48 hours. Not a template. Not a boilerplate. An actual reply from me.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-acc">Tell me about your project →</a>
+        <a href="about.html" class="btn-outline">More about me →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="ft-inner">
+    <a href="index.html" class="ft-logo">Amisha Sharma</a>
+    <ul class="ft-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/amisha-sharma-content/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+    </ul>
+    <span class="ft-copy">© 2026 Amisha Sharma · Delhi, India</span>
+  </div>
+</footer>
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="progress-line" id="progressLine" aria-hidden="true"></div>
+
+<script>
+  const glow=document.querySelector('.cursor-glow');
+  let gx=-999,gy=-999,cx=-999,cy=-999;
+  document.addEventListener('mousemove',e=>{gx=e.clientX;gy=e.clientY;});
+  (function loop(){cx+=(gx-cx)*.12;cy+=(gy-cy)*.12;if(glow){glow.style.left=cx+'px';glow.style.top=cy+'px';}requestAnimationFrame(loop);})();
+  const pl=document.getElementById('progressLine');
+  window.addEventListener('scroll',()=>{if(pl)pl.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';},{passive:true});
+  let ls=0;const nav=document.querySelector('nav.top-nav');
+  window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>80)nav.classList.add('nav-scrolled');else nav.classList.remove('nav-scrolled');if(y>ls+8&&y>160)nav.classList.add('nav-hidden');else if(y<ls-8)nav.classList.remove('nav-hidden');ls=y;},{passive:true});
+  const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.sec-inner>*,.svc-section,.process-step,.faq-item').forEach((el,i)=>{el.classList.add('reveal');if(i%3===1)el.classList.add('d-1');if(i%3===2)el.classList.add('d-2');ro.observe(el);});
+  document.querySelectorAll('.btn-acc').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px) translateY(-2px)`;});btn.addEventListener('mouseleave',()=>{btn.style.transform='';});});
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el) {
+        el.classList.remove('open');
+        el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
