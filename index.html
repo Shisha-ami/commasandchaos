@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amisha Sharma — commasandchaos.com | Content Strategist & Copywriter</title>
   <meta name="description" content="Freelance content strategist and copywriter. commasandchaos.com. ISB Alumna. 5+ years building content systems that rank, convert, and sound human.">
+  <!-- Preload hero image — LCP element -->
+  <link rel="preload" as="image" href="photo-about-1200.webp" imagesrcset="photo-about-800.webp 800w, photo-about-1200.webp 1200w, photo-about-1600.webp 1600w" imagesizes="(max-width:860px) 100vw, 45vw">
+  <!-- Fonts: preconnect + swap to eliminate render-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"></noscript>
   <style>
     :root {
       --bg:      #F9F9F6;
@@ -1032,11 +1037,10 @@
   <div class="hero-copy">
     <!-- Mobile avatar — only visible ≤860px -->
     <div class="mobile-avatar-wrap" aria-hidden="true">
-      <img
-        class="mobile-avatar"
-        src="photo-hero-4k.jpg"
-        alt=""
-      >
+      <picture>
+        <source type="image/webp" srcset="photo-hero-800.webp 800w, photo-hero-1200.webp 1200w" sizes="80px">
+        <img class="mobile-avatar" src="photo-hero-fallback.jpg" alt="" width="80" height="80" loading="eager" decoding="async">
+      </picture>
     </div>
     <span class="eyebrow">Copywriter + Content Strategist · ISB Alumna</span>
     <h1 class="headline">
@@ -1090,13 +1094,18 @@
     </div>
     <div class="photo-frame">
       <div class="photo-inner">
-        <img
-          class="photo-img"
-          src="photo-about-4k.jpg"
-          alt="Amisha Sharma — Content Strategist and Copywriter"
-          loading="eager"
-          decoding="async"
-        >
+        <picture>
+          <source type="image/webp" srcset="photo-about-800.webp 800w, photo-about-1200.webp 1200w, photo-about-1600.webp 1600w" sizes="(max-width:860px) 100vw, 45vw">
+          <img
+            class="photo-img"
+            src="photo-about-fallback.jpg"
+            alt="Amisha Sharma — Content Strategist and Copywriter"
+            width="600" height="750"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </picture>
       </div>
       <div class="frame-badge">
         <div class="fb-label">Status</div>
@@ -1719,7 +1728,7 @@
   </div>
 </footer>
 
-<script>
+<script defer>
   /* ── CURSOR GLOW ── */
   const glow = document.querySelector('.cursor-glow');
   let gx = -999, gy = -999, cx = -999, cy = -999;

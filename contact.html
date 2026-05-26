@@ -7,7 +7,9 @@
   <meta name="description" content="Start a copywriting or content strategy project with Amisha Sharma. ISB alumna, 5+ years experience. Based in Delhi, working globally.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"></noscript>
   <style>
     :root {
       --bg:      #F9F9F6;
@@ -177,14 +179,18 @@
 <!-- ── PAGE HERO ── -->
 <div class="page-hero">
   <div class="ph-inner">
-    <img
-      class="contact-avatar"
-      src="photo-about-4k.jpg"
-      alt="Amisha Sharma"
-      loading="eager"
-      decoding="async"
-      style="image-rendering:-webkit-optimize-contrast;filter:contrast(1.06) saturate(1.07);transform:translateZ(0);-webkit-backface-visibility:hidden;"
-    >
+    <picture>
+      <source type="image/webp" srcset="photo-about-800.webp 800w, photo-about-1200.webp 1200w" sizes="88px">
+      <img
+        class="contact-avatar"
+        src="photo-about-fallback.jpg"
+        alt="Amisha Sharma"
+        width="88" height="88"
+        loading="eager"
+        decoding="async"
+        style="transform:translateZ(0);"
+      >
+    </picture>
     <span class="ph-lbl">Let's work together</span>
     <h1 class="ph-headline">Tell me what's<br><em>not working.</em></h1>
     <p class="ph-sub">I'll tell you how I'd fix it. Personal response within 48 hours. Not a template. Not a boilerplate. An actual reply from me, with honest thoughts on your project.</p>
@@ -333,7 +339,7 @@
   </div>
 </footer>
 
-<script>
+<script defer>
   var form = document.getElementById('contact-form');
   var thankYou = document.getElementById('thank-you');
   var submitBtn = document.getElementById('submit-btn');
@@ -393,7 +399,7 @@
 </script>
 <div class="cursor-glow" aria-hidden="true"></div>
 <div class="progress-line" id="progressLine" aria-hidden="true"></div>
-<script>
+<script defer>
   const glow=document.querySelector('.cursor-glow');
   let gx=-999,gy=-999,cx=-999,cy=-999;
   document.addEventListener('mousemove',e=>{gx=e.clientX;gy=e.clientY;});
