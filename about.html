@@ -60,7 +60,6 @@
 
     /* ── PAGE HERO — editorial split ── */
     .page-hero {
-      padding-top: 64px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: 100svh;
@@ -68,7 +67,7 @@
     .ph-left {
       background: var(--dark);
       display: flex; flex-direction: column; justify-content: center;
-      padding: clamp(48px, 7vw, 96px) clamp(28px, 5vw, 72px);
+      padding: calc(64px + clamp(48px, 7vw, 96px)) clamp(28px, 5vw, 72px) clamp(48px, 7vw, 96px);
       position: relative; overflow: hidden;
     }
     /* subtle radial glow behind text */
@@ -120,6 +119,32 @@
       pointer-events: none;
     }
 
+    /* ── STATS BAND ── */
+    .stats-band {
+      background: var(--dark); border-top: 1px solid rgba(255,255,255,.07);
+      padding: 0 var(--px);
+    }
+    .stats-band-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(5, 1fr);
+    }
+    .sb-item {
+      padding: 40px 24px; border-right: 1px solid rgba(255,255,255,.07);
+      text-align: center;
+    }
+    .sb-item:last-child { border-right: none; }
+    .sb-val {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 3.5vw, 52px); font-weight: 900; line-height: 1;
+      color: #fff; font-variant-numeric: tabular-nums;
+      display: block; margin-bottom: 8px;
+    }
+    .sb-val span { color: var(--accent); }
+    .sb-lbl {
+      font-size: 11.5px; font-weight: 500; letter-spacing: .08em;
+      color: rgba(255,255,255,.38); line-height: 1.4; display: block;
+    }
+
     /* ── SECTIONS ── */
     .sec { padding: clamp(60px, 8vw, 112px) var(--px); }
     .sec-inner { max-width: var(--max); margin: 0 auto; }
@@ -143,23 +168,55 @@
       padding-left: 24px; margin-block: 36px;
     }
 
-    /* sticky sidebar */
+    /* sticky sidebar — timeline */
     .story-side { position: sticky; top: 88px; }
+    .timeline {
+      display: flex; flex-direction: column;
+      position: relative; padding-left: 20px;
+    }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
+      width: 1.5px; background: linear-gradient(to bottom, var(--accent) 0%, rgba(200,92,56,.15) 100%);
+    }
+    .tl-item { position: relative; padding-bottom: 36px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -24px; top: 5px;
+      width: 9px; height: 9px; border-radius: 50%; background: var(--accent);
+      box-shadow: 0 0 0 3px var(--bg);
+    }
+    .tl-year {
+      font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 5px; display: block;
+    }
+    .tl-title {
+      font-family: var(--font-d); font-size: 17px; font-weight: 700;
+      color: var(--fg); line-height: 1.3; margin-bottom: 5px;
+    }
+    .tl-detail { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+    /* legacy .side-card kept for responsive fallback */
     .side-card {
       background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
       padding: 28px 24px; margin-bottom: 16px;
     }
-    .side-card:last-child { margin-bottom: 0; }
     .sc-label { font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
     .sc-value { font-family: var(--font-d); font-size: 18px; font-weight: 700; color: var(--fg); line-height: 1.3; margin-bottom: 6px; }
     .sc-sub { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
 
     /* ── CREDENTIALS GRID ── */
-    .cred-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); margin-top: 40px; }
-    .cred-card { background: var(--surface); padding: 32px 28px; }
-    .cc-org { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
-    .cc-title { font-family: var(--font-d); font-size: 20px; font-weight: 700; line-height: 1.3; color: var(--fg); margin-bottom: 8px; }
-    .cc-detail { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+    .cred-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+    .cred-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 32px 28px;
+      border-left: 4px solid var(--border);
+      transition: border-left-color .25s, transform .2s, box-shadow .2s;
+    }
+    .cred-card:hover { border-left-color: var(--accent); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,.07); }
+    .cred-card.ac { border-left-color: var(--accent); }
+    .cc-org { font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .cc-org::before { content: ''; display: inline-block; width: 18px; height: 2px; background: var(--accent); border-radius: 2px; }
+    .cc-title { font-family: var(--font-d); font-size: 22px; font-weight: 700; line-height: 1.25; color: var(--fg); margin-bottom: 12px; }
+    .cc-detail { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
     /* ── SHORT VERSION ── */
     .sv-sec { background: var(--dark); padding: clamp(72px, 9vw, 120px) var(--px); }
@@ -203,14 +260,16 @@
     }
 
     /* ── PHILOSOPHY ── */
-    .philosophy-bg { background: var(--surface); }
-    .phil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .phil-copy { }
-    .phil-copy .sec-h { margin-bottom: 20px; }
-    .phil-copy p { font-size: 17px; color: var(--muted); line-height: 1.75; margin-bottom: 18px; }
-    .phil-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-    .phil-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 16px; line-height: 1.55; }
-    .phil-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 8px; }
+    .philosophy-bg { background: var(--fg); }
+    .phil-inner { max-width: var(--max); margin: 0 auto; }
+    .phil-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 24px; }
+    .phil-header { font-family: var(--font-d); font-size: clamp(28px, 3.5vw, 52px); font-weight: 700; line-height: 1.12; letter-spacing: -.025em; color: #fff; margin-bottom: 56px; max-width: 560px; }
+    .manifesto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.06); }
+    .manifesto-item { background: var(--fg); padding: 40px 36px; position: relative; }
+    .manifesto-item:hover { background: rgba(255,255,255,.03); }
+    .m-num { font-family: 'Playfair Display', Georgia, serif; font-size: 72px; font-weight: 900; line-height: 1; color: rgba(255,255,255,.05); position: absolute; top: 20px; right: 24px; user-select: none; }
+    .m-text { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.6; color: rgba(255,255,255,.85); }
+    .m-text strong { font-style: normal; color: #fff; font-weight: 700; }
 
     /* ── CTA ── */
     .cta-sec { background: var(--dark); }
@@ -274,7 +333,11 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .page-hero { grid-template-columns: 1fr; min-height: auto; }
+      .ph-left { padding: calc(64px + clamp(32px, 6vw, 64px)) clamp(20px, 5vw, 40px) clamp(32px, 6vw, 64px); }
       .ph-right { height: 52vw; min-height: 280px; }
+      .stats-band-inner { grid-template-columns: repeat(3, 1fr); }
+      .sb-item:nth-child(4), .sb-item:nth-child(5) { border-top: 1px solid rgba(255,255,255,.07); }
+      .manifesto-grid { grid-template-columns: 1fr 1fr; }
       .ph-stats { gap: 18px; }
       .ph-stat-val { font-size: 22px; }
       .story-layout { grid-template-columns: 1fr; }
@@ -382,6 +445,32 @@
   </div>
 </div>
 
+<!-- ── STATS BAND ── -->
+<div class="stats-band">
+  <div class="stats-band-inner">
+    <div class="sb-item">
+      <span class="sb-val">5<span>+</span></span>
+      <span class="sb-lbl">Years writing copy that converts</span>
+    </div>
+    <div class="sb-item">
+      <span class="sb-val">100<span>+</span></span>
+      <span class="sb-lbl">Brands across 3 continents</span>
+    </div>
+    <div class="sb-item">
+      <span class="sb-val">2</span>
+      <span class="sb-lbl">Publications founded from zero</span>
+    </div>
+    <div class="sb-item">
+      <span class="sb-val"><span>1</span></span>
+      <span class="sb-lbl">ISB Digital Marketing programme</span>
+    </div>
+    <div class="sb-item">
+      <span class="sb-val">0</span>
+      <span class="sb-lbl">Shortcuts. The craft stays human.</span>
+    </div>
+  </div>
+</div>
+
 <!-- ── STORY ── -->
 <section class="sec">
   <div class="sec-inner">
@@ -405,25 +494,43 @@
         <p>Based in <strong>Delhi</strong>. Working with clients across Asia, Europe, and the Americas. Timezone-flexible. Async-friendly.</p>
       </div>
       <div class="story-side">
-        <div class="side-card">
-          <div class="sc-label">Education</div>
-          <div class="sc-value">ISB Alumna</div>
-          <div class="sc-sub">Indian School of Business, one of Asia's top-ranked business institutions.</div>
-        </div>
-        <div class="side-card">
-          <div class="sc-label">Experience</div>
-          <div class="sc-value">5+ Years</div>
-          <div class="sc-sub">Content strategy and copywriting across B2B and B2C brands.</div>
-        </div>
-        <div class="side-card">
-          <div class="sc-label">Current Roles</div>
-          <div class="sc-value">3 Parallel Hats</div>
-          <div class="sc-sub">Content Strategist at CJ&amp;CO. Founder of Audaz Revista. Founder of The Brand Crush.</div>
-        </div>
-        <div class="side-card">
-          <div class="sc-label">Languages &amp; Study</div>
-          <div class="sc-value">Instituto Cervantes</div>
-          <div class="sc-sub">Four years of Spanish language and culture before founding Audaz Revista.</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-year">2019 — 2020</span>
+            <div class="tl-title">Instituto Cervantes</div>
+            <div class="tl-detail">Four years of Spanish language and culture study. The foundation before launching Audaz Revista.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-year">2021</span>
+            <div class="tl-title">Founded Audaz Revista</div>
+            <div class="tl-detail">Built a bilingual publication covering Hispanic culture, business, and lifestyle from zero.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-year">2022</span>
+            <div class="tl-title">ISB Digital Marketing</div>
+            <div class="tl-detail">Indian School of Business. One of Asia's top-ranked institutions. Analytics, SEO, paid media, content strategy.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-year">2022 — Now</span>
+            <div class="tl-title">Content Strategist at CJ&amp;CO</div>
+            <div class="tl-detail">Building content systems for businesses across fintech, beauty, healthcare, and more. 100+ brands.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-year">2023</span>
+            <div class="tl-title">Founded The Brand Crush</div>
+            <div class="tl-detail">Independent brand journalism. Unsponsored. Unafraid. Because I believe brand voice deserves honest analysis.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-year">2024</span>
+            <div class="tl-title">Certified in Generative AI</div>
+            <div class="tl-detail">Airtribe certification. Using AI to build smarter systems, not replace the craft.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -547,23 +654,36 @@
   </div>
 </section>
 
-<!-- ── PHILOSOPHY ── -->
+<!-- ── PHILOSOPHY — manifesto ── -->
 <section class="sec philosophy-bg">
-  <div class="sec-inner">
-    <div class="phil-grid">
-      <div>
-        <span class="sec-lbl">My philosophy</span>
-        <h2 class="sec-h" style="margin-bottom:20px">What I believe<br>about content.</h2>
-        <p>Good content isn't just well-written. It's well-positioned. It knows who it's for, what it needs to do, and how to make someone care enough to keep reading.</p>
-        <p>I work with brands that are tired of content that fills a calendar but doesn't move the needle. The brands that want copy their customers actually want to read, and SEO that brings in people who buy. Not just people who bounce.</p>
+  <div class="phil-inner">
+    <span class="phil-eyebrow">What I believe</span>
+    <h2 class="phil-header">Five things I'll never compromise on.</h2>
+    <div class="manifesto-grid">
+      <div class="manifesto-item">
+        <div class="m-num">01</div>
+        <p class="m-text"><strong>Every sentence earns the next.</strong> If it doesn't earn its place, it doesn't belong. This applies to landing pages. And to every word in your Google ad.</p>
       </div>
-      <ul class="phil-list">
-        <li>Every sentence earns the next one. If it doesn't earn its place, it doesn't belong on the page. (This applies to every word in your Google ad too.)</li>
-        <li>Brand voice is a product decision. Not a style guide footnote. When everything sounds consistent, customers trust you more. Full stop.</li>
-        <li>SEO and good writing are not in conflict. They have never been in conflict. If your SEO content reads like SEO content, the brief was wrong.</li>
-        <li>Depth beats volume. One page that genuinely helps your audience converts better than ten that don't. Every single time.</li>
-        <li>The best copy solves the reader's problem before they finish asking the question. That's the goal.</li>
-      </ul>
+      <div class="manifesto-item">
+        <div class="m-num">02</div>
+        <p class="m-text"><strong>Brand voice is a product decision.</strong> Not a style guide footnote. When your content sounds consistent, customers trust you more. Full stop.</p>
+      </div>
+      <div class="manifesto-item">
+        <div class="m-num">03</div>
+        <p class="m-text"><strong>SEO and good writing are not in conflict.</strong> They have never been in conflict. If your SEO content reads like SEO content, the brief was wrong.</p>
+      </div>
+      <div class="manifesto-item">
+        <div class="m-num">04</div>
+        <p class="m-text"><strong>Depth beats volume.</strong> One page that genuinely helps your audience converts better than ten that don't. Every single time.</p>
+      </div>
+      <div class="manifesto-item">
+        <div class="m-num">05</div>
+        <p class="m-text"><strong>The best copy answers the question</strong> before the reader finishes asking it. That's not a trick. That's the entire job.</p>
+      </div>
+      <div class="manifesto-item" style="background: rgba(200,92,56,.08);">
+        <div class="m-num" style="color:rgba(200,92,56,.15)">★</div>
+        <p class="m-text" style="color:rgba(255,255,255,.6); font-style:normal; font-size:15px;">Sound familiar? It means you're the kind of brand I actually want to work with. <a href="contact.html" style="color:var(--accent); text-decoration:underline; text-underline-offset:3px;">Let's talk. →</a></p>
+      </div>
     </div>
   </div>
 </section>
