@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <title>Amisha Sharma — commasandchaos.com | Content Strategist & Copywriter</title>
   <meta name="description" content="Freelance content strategist and copywriter. commasandchaos.com. ISB Alumna. 5+ years building content systems that rank, convert, and sound human.">
-  <!-- Preload hero image — LCP element -->
-  <link rel="preload" as="image" href="photo-about-1200.webp" imagesrcset="photo-about-800.webp 800w, photo-about-1200.webp 1200w, photo-about-1600.webp 1600w" imagesizes="(max-width:860px) 100vw, 45vw">
+  <!-- Preload hero image — LCP element (desktop only; hidden on mobile) -->
+  <link rel="preload" as="image" href="photo-about-1200.webp" imagesrcset="photo-about-800.webp 800w, photo-about-1200.webp 1200w, photo-about-1600.webp 1600w" imagesizes="45vw" media="(min-width: 861px)">
   <!-- Fonts: preconnect + swap to eliminate render-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"></noscript>
   <style>
@@ -1406,7 +1407,7 @@
 
     <div class="accordion reveal">
       <div class="acc-item" id="acc-beauty">
-        <button class="acc-trigger" onclick="toggleAcc('acc-beauty')" aria-expanded="false">
+        <button class="acc-trigger" onclick="toggleAcc('acc-beauty')" aria-expanded="false" aria-controls="acc-beauty-panel">
           <div class="acc-meta">
             <span class="acc-sector">Dermat &amp; Beauty</span>
             <span class="acc-label">Skincare, Wellness &amp; Beauty Brands</span>
@@ -1416,7 +1417,7 @@
             <div class="acc-arrow">&#8964;</div>
           </div>
         </button>
-        <div class="acc-panel">
+        <div class="acc-panel" id="acc-beauty-panel">
           <div class="client-chips">
             <div class="cc">Lotus Herbals</div>
             <div class="cc">Potenza Wellness</div>
@@ -1426,7 +1427,7 @@
       </div>
 
       <div class="acc-item" id="acc-fintech">
-        <button class="acc-trigger" onclick="toggleAcc('acc-fintech')" aria-expanded="false">
+        <button class="acc-trigger" onclick="toggleAcc('acc-fintech')" aria-expanded="false" aria-controls="acc-fintech-panel">
           <div class="acc-meta">
             <span class="acc-sector">Fintech &amp; BFSI</span>
             <span class="acc-label">Finance, Banking &amp; Lending</span>
@@ -1436,7 +1437,7 @@
             <div class="acc-arrow">&#8964;</div>
           </div>
         </button>
-        <div class="acc-panel">
+        <div class="acc-panel" id="acc-fintech-panel">
           <div class="client-chips">
             <div class="cc">Bajaj Finance</div>
             <div class="cc">Kotak Bank</div>
@@ -1447,7 +1448,7 @@
       </div>
 
       <div class="acc-item" id="acc-aus">
-        <button class="acc-trigger" onclick="toggleAcc('acc-aus')" aria-expanded="false">
+        <button class="acc-trigger" onclick="toggleAcc('acc-aus')" aria-expanded="false" aria-controls="acc-aus-panel">
           <div class="acc-meta">
             <span class="acc-sector">Australia · Healthcare</span>
             <span class="acc-label">Telehealth, Clinics &amp; Healthcare Brands</span>
@@ -1457,7 +1458,7 @@
             <div class="acc-arrow">&#8964;</div>
           </div>
         </button>
-        <div class="acc-panel">
+        <div class="acc-panel" id="acc-aus-panel">
           <div class="client-chips">
             <div class="cc-count">100+ Australian Healthcare Brands</div>
           </div>
