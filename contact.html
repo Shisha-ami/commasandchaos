@@ -476,30 +476,5 @@
   })();
 </script>
 
-<!-- ── FLOATING BUTTONS ── -->
-<a href="contact.html" class="side-msg-tab" aria-label="Send a message">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-  <span class="smt-label">Message</span>
-</a>
-<style>
-.side-msg-tab {
-  position: fixed; left: 0; bottom: 120px; z-index: 998;
-  display: flex; align-items: center; gap: 8px;
-  background: #1C1C26; color: #fff;
-  padding: 12px 14px 12px 12px;
-  border-radius: 0 8px 8px 0;
-  font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
-  text-decoration: none;
-  box-shadow: 2px 4px 16px rgba(0,0,0,.18);
-  transition: transform .25s cubic-bezier(.2,0,0,1), background .2s;
-  transform: translateX(-100%) translateX(36px);
-}
-.side-msg-tab:hover { transform: translateX(0); background: #C85C38; }
-.side-msg-tab svg { flex-shrink: 0; }
-.smt-label { white-space: nowrap; }
-@media (max-width: 600px) {
-  .side-msg-tab { bottom: 80px; transform: translateX(-100%) translateX(28px); font-size: 11px; padding: 10px 12px 10px 10px; }
-}
-</style>
 </body>
 </html>
