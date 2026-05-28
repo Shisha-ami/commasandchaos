@@ -1014,7 +1014,16 @@
     }
     .ct-caption strong { color: rgba(255,255,255,.55); font-weight: 600; }
 
-    .ct-dots { display: flex; justify-content: center; gap: 9px; margin-bottom: 52px; }
+    .ct-nav { display: flex; align-items: center; justify-content: center; gap: 18px; margin-bottom: 52px; }
+    .ct-arrow {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.15); background: none;
+      color: rgba(255,255,255,.5); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .2s, color .2s, background .2s;
+    }
+    .ct-arrow:hover { border-color: var(--accent); color: var(--accent); background: rgba(200,92,56,.08); }
+    .ct-dots { display: flex; justify-content: center; gap: 9px; }
     .ct-dot {
       width: 6px; height: 6px; border-radius: 50%;
       background: rgba(255,255,255,.15); cursor: pointer;
@@ -1314,10 +1323,18 @@
         <div class="ct-text ct-lit" id="ctAfter">You're losing customers to brands with worse products and better copy. Let's fix that — starting with your next landing page.</div>
       </div>
     </div>
-    <div class="ct-dots">
-      <span class="ct-dot on" id="ctd0"></span>
-      <span class="ct-dot" id="ctd1"></span>
-      <span class="ct-dot" id="ctd2"></span>
+    <div class="ct-nav">
+      <button class="ct-arrow ct-prev" id="ctPrev" aria-label="Previous">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 4L6 9L11 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="ct-dots">
+        <span class="ct-dot on" id="ctd0"></span>
+        <span class="ct-dot" id="ctd1"></span>
+        <span class="ct-dot" id="ctd2"></span>
+      </div>
+      <button class="ct-arrow ct-next" id="ctNext" aria-label="Next">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
     <p class="ct-caption">That's the only difference between a page that scrolls and a page that <strong>sells</strong>.</p>
     <a href="contact.html" class="ct-cta">
@@ -1951,48 +1968,68 @@
     }
   ];
 
-  let ctIdx = 0, ctActive = false, ctTimer = null;
+  let ctIdx = 0, ctActive = false, ctTimer = null, ctTyping = false;
+
+  function ctClearTimers() {
+    if (ctTimer) { clearTimeout(ctTimer); ctTimer = null; }
+  }
 
   function ctTypeText(el, text, speed, onDone) {
     el.textContent = '';
+    ctTyping = true;
     let i = 0;
     function step() {
-      if (i < text.length) { el.textContent += text[i++]; setTimeout(step, speed); }
-      else if (onDone) onDone();
+      if (i < text.length) { el.textContent += text[i++]; ctTimer = setTimeout(step, speed); }
+      else { ctTyping = false; if (onDone) onDone(); }
     }
     step();
   }
 
   function ctPlayPair(idx) {
+    ctClearTimers();
+    ctTyping = false;
     const pair = ctPairs[idx];
     const before = document.getElementById('ctBefore');
     const after  = document.getElementById('ctAfter');
     if (!before || !after) return;
 
+    ctIdx = idx;
     document.querySelectorAll('.ct-dot').forEach((d, i) => d.classList.toggle('on', i === idx));
 
     before.className = 'ct-text'; after.className = 'ct-text';
     before.textContent = ''; after.textContent = '';
 
-    ctTypeText(before, pair.before, 24, () => {
+    ctTypeText(before, pair.before, 16, () => {
       ctTimer = setTimeout(() => {
         before.classList.add('ct-struck');
         ctTimer = setTimeout(() => {
-          ctTypeText(after, pair.after, 30, () => {
+          ctTypeText(after, pair.after, 20, () => {
             after.classList.add('ct-lit');
             ctTimer = setTimeout(() => {
               before.classList.add('ct-fade');
               after.classList.add('ct-fade');
               ctTimer = setTimeout(() => {
-                ctIdx = (idx + 1) % ctPairs.length;
-                ctPlayPair(ctIdx);
-              }, 600);
-            }, 4000);
+                ctPlayPair((idx + 1) % ctPairs.length);
+              }, 500);
+            }, 3000);
           });
-        }, 400);
-      }, 700);
+        }, 300);
+      }, 500);
     });
   }
+
+  function ctGoTo(idx) {
+    ctClearTimers();
+    ctPlayPair(idx);
+  }
+
+  document.querySelectorAll('.ct-dot').forEach((dot, i) => {
+    dot.addEventListener('click', () => ctGoTo(i));
+  });
+  var prevBtn = document.getElementById('ctPrev');
+  var nextBtn = document.getElementById('ctNext');
+  if (prevBtn) prevBtn.addEventListener('click', () => ctGoTo((ctIdx - 1 + ctPairs.length) % ctPairs.length));
+  if (nextBtn) nextBtn.addEventListener('click', () => ctGoTo((ctIdx + 1) % ctPairs.length));
 
   const ctSection = document.getElementById('copyTheater');
   if (ctSection) {
