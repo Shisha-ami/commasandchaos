@@ -74,7 +74,7 @@
     .nav-btn { background: var(--dark) !important; color: #fff !important; padding: 8px 20px; border-radius: 5px; font-size: 14px !important; font-weight: 600 !important; transition: background .2s !important; }
     .nav-btn:hover { background: var(--accent) !important; }
 
-    /* ── PAGE HERO — editorial split ── */
+    /* ── PAGE HERO – editorial split ── */
     .page-hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -117,7 +117,7 @@
       font-variant-numeric: tabular-nums;
     }
     .ph-stat-lbl { font-size: 11.5px; color: rgba(255,255,255,.4); margin-top: 5px; letter-spacing: .04em; }
-    /* right — full-bleed photo */
+    /* right – full-bleed photo */
     .ph-right {
       position: relative; overflow: hidden; background: #E8622A;
     }
@@ -185,7 +185,7 @@
       padding-left: 24px; margin-block: 36px;
     }
 
-    /* sticky sidebar — timeline */
+    /* sticky sidebar – timeline */
     .story-side { position: sticky; top: 88px; }
     .timeline {
       display: flex; flex-direction: column;
@@ -278,7 +278,7 @@
       border-top: 1px solid rgba(200,92,56,.3); padding-top: 12px;
     }
 
-    /* ── SHORT VERSION — styles live in the dynamic layer below ── */
+    /* ── SHORT VERSION – styles live in the dynamic layer below ── */
 
     /* ── PHILOSOPHY ── */
     .philosophy-bg { background: var(--fg); }
@@ -428,7 +428,7 @@
 
     /* ── TESTIMONIALS ── */
     .testi-sec {
-      background: var(--fg); /* deep ink — contrasts cleanly */
+      background: var(--fg); /* deep ink – contrasts cleanly */
       padding: clamp(72px, 9vw, 108px) var(--px);
     }
     .testi-inner { max-width: var(--max); margin: 0 auto; }
@@ -524,6 +524,76 @@
     .d-3 { transition-delay: .3s; }
     .btn-acc:hover { box-shadow: 0 8px 24px rgba(200,92,56,.28) !important; }
 
+
+    /* ── HERO ENTRANCE ANIMATION ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .ph-lbl, .ph-headline, .ph-sub, .ph-stats {
+      opacity: 0;
+      animation: fadeUp .7s cubic-bezier(.2,0,0,1) forwards;
+    }
+    .ph-lbl      { animation-delay: .1s; }
+    .ph-headline { animation-delay: .25s; }
+    .ph-sub      { animation-delay: .4s; }
+    .ph-stats    { animation-delay: .6s; }
+
+    /* ── CREDENTIAL CARD HOVER GLOW ── */
+    .cred-card:hover {
+      border-left-color: var(--accent);
+      border-left-width: 5px;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(200,92,56,.1);
+    }
+
+    /* ── CERT BADGE SHIMMER / GLOW ── */
+    .cert-badge {
+      position: relative;
+      overflow: hidden;
+    }
+    .cert-badge::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
+        rgba(200,92,56,.12) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .35s;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .cert-badge:hover::before { opacity: 1; }
+    .cert-badge:hover {
+      border-color: rgba(200,92,56,.55);
+      box-shadow: 0 8px 28px rgba(200,92,56,.08);
+    }
+
+    /* ── MANIFESTO ITEMS — number + hover ── */
+    .m-num {
+      transition: color .3s, transform .4s cubic-bezier(.2,0,0,1), opacity .4s;
+    }
+    .manifesto-item {
+      transition: background .25s;
+    }
+    .manifesto-item:hover .m-num {
+      color: rgba(255,255,255,.12);
+      transform: scale(1.06);
+    }
+    .manifesto-item:hover .m-text {
+      color: rgba(255,255,255,.95);
+    }
+    .m-text {
+      transition: color .25s;
+    }
+
+    /* ── QUOTE CARD SIZE BUMP ── */
+    .sv-qtext {
+      font-size: 15px !important;
+    }
+    .sv-quote-card {
+      padding: 26px 24px !important;
+    }
+
     /* ── cascade fix: these must come AFTER the base grid declarations ── */
     @media (max-width: 900px) {
       .cert-badges { grid-template-columns: 1fr 1fr !important; }
@@ -558,12 +628,12 @@
   </div>
 </nav>
 
-<!-- ── PAGE HERO — editorial split ── -->
+<!-- ── PAGE HERO – editorial split ── -->
 <div class="page-hero">
   <div class="ph-left">
     <span class="ph-lbl">About Amisha</span>
     <h1 class="ph-headline">I build brands<br>through <em>content.</em></h1>
-    <p class="ph-sub">Not the post-three-times-and-pray kind. The kind that ranks, reads well, and makes someone pick up the phone.</p>
+    <p class="ph-sub">The kind that ranks, reads well, and makes someone pick up the phone.</p>
     <div class="ph-stats">
       <div>
         <div class="ph-stat-val">5+</div>
@@ -599,23 +669,23 @@
 <div class="stats-band">
   <div class="stats-band-inner">
     <div class="sb-item">
-      <span class="sb-val">5<span>+</span></span>
+      <span class="sb-val"><span class="count-num" data-target="5">0</span><span>+</span></span>
       <span class="sb-lbl">Years writing copy that converts</span>
     </div>
     <div class="sb-item">
-      <span class="sb-val">100<span>+</span></span>
+      <span class="sb-val"><span class="count-num" data-target="100">0</span><span>+</span></span>
       <span class="sb-lbl">Brands across 3 continents</span>
     </div>
     <div class="sb-item">
-      <span class="sb-val">2</span>
+      <span class="sb-val"><span class="count-num" data-target="2">0</span></span>
       <span class="sb-lbl">Publications founded from zero</span>
     </div>
     <div class="sb-item">
-      <span class="sb-val"><span>1</span></span>
+      <span class="sb-val"><span class="count-num" data-target="1">0</span></span>
       <span class="sb-lbl">ISB Digital Marketing programme</span>
     </div>
     <div class="sb-item">
-      <span class="sb-val">0</span>
+      <span class="sb-val"><span class="count-num" data-target="0">0</span></span>
       <span class="sb-lbl">Shortcuts. The craft stays human.</span>
     </div>
   </div>
@@ -627,17 +697,15 @@
     <div class="story-layout">
       <div class="story-body">
         <span class="sec-lbl">My story</span>
-        <h2 class="sec-h" style="margin-bottom:32px">Here's something I've noticed about most content: it exists to fill a calendar. Not to do a job.</h2>
+        <h2 class="sec-h" style="margin-bottom:32px">Good content has a job. I write the kind that actually does it.</h2>
 
-        <p>Written for algorithms. Approved by committees. Posted because it was Tuesday.</p>
+        <p>I write copy where <strong>every sentence earns the next one</strong>, every page has a single job to do, and the brand voice sounds like an actual person with an actual point of view.</p>
 
-        <p>I write the other kind. The kind where <strong>every sentence earns the next one</strong>, every page has a single job to do, and the brand voice sounds like an actual person had an actual point of view.</p>
-
-        <div class="story-pull">"What I care about: E-E-A-T content, SEO that doesn't read like SEO, and making brands sound like themselves. Not like everyone else."</div>
+        <div class="story-pull">"E-E-A-T content, SEO that reads like real writing, and brands that sound like themselves. That's what I care about."</div>
 
         <p>At an <strong>award-winning Australian digital marketing agency</strong>, I build content systems every day. Website copy, landing pages, email sequences, Google ads, social ad copy, content strategy. The kind brands can actually execute.</p>
 
-        <p>I'm also <strong>Editor-in-Chief of Audaz Revista</strong>, a publication I built from scratch covering Hispanic culture, business, and lifestyle. Before I launched it, I spent four years studying at <strong>Instituto Cervantes</strong>. Not because I had to. Because you can't write credibly about something you don't actually understand. That standard extends to every client I take on.</p>
+        <p>I'm also <strong>Editor-in-Chief of Audaz Revista</strong>, a publication I built from scratch covering Hispanic culture, business, and lifestyle. Before I launched it, I spent four years studying at <strong>Instituto Cervantes</strong>. I wanted to understand the culture deeply enough to write about it with real authority. That standard extends to every client I take on.</p>
 
         <p>I hold a <strong>Digital Marketing certification from ISB</strong>, Indian School of Business. One of Asia's top-ranked institutions. I'm also <strong>Generative AI certified</strong> through Airtribe. I use AI to build smarter systems. The craft stays human.</p>
 
@@ -647,7 +715,7 @@
         <div class="timeline">
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <span class="tl-year">2019 — 2020</span>
+            <span class="tl-year">2019 – 2020</span>
             <div class="tl-title">Instituto Cervantes</div>
             <div class="tl-detail">Four years of Spanish language and culture study. The foundation before launching Audaz Revista.</div>
           </div>
@@ -665,7 +733,7 @@
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <span class="tl-year">2022 — Now</span>
+            <span class="tl-year">2022 – Now</span>
             <div class="tl-title">Content Strategist at Award-Winning Aussie Agency</div>
             <div class="tl-detail">Building content systems for businesses across fintech, beauty, healthcare, and more. 100+ brands.</div>
           </div>
@@ -690,14 +758,14 @@
           <div class="tl-item">
             <div class="tl-dot"></div>
             <span class="tl-year">2023</span>
-            <div class="tl-title">Performance Marketing — Growth School</div>
+            <div class="tl-title">Performance Marketing, Growth School</div>
             <div class="tl-detail">Paid acquisition, funnel optimisation, Google Ads, and Meta strategy.</div>
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
             <span class="tl-year">2024</span>
             <div class="tl-title">Certified in Generative AI</div>
-            <div class="tl-detail">Airtribe certification. Using AI to build smarter systems, not replace the craft.</div>
+            <div class="tl-detail">Airtribe certification. Using AI to build smarter systems while keeping the craft human.</div>
           </div>
         </div>
       </div>
@@ -712,8 +780,8 @@
       <span class="sv-lbl">The short version</span>
       <h2 class="sv-h">You don't need more words.<br>You need the <em>right</em> ones.</h2>
       <div class="sv-body">
-        <p>Most brands sound like they swallowed a marketing textbook. Buzzwords everywhere. Zero personality. And then they wonder why nobody's reading.</p>
-        <p>I fix that. I write copy that sounds like something a human would say. The kind that makes your audience stop, read, and do the thing you want them to do.</p>
+        <p>Your audience can smell corporate speak from three scrolls away. They want a brand that sounds like a real person with something worth saying.</p>
+        <p>That's what I write. Copy that makes your audience stop, read, and do the thing you want them to do.</p>
       </div>
       <a href="contact.html" class="btn-acc" style="margin-top:32px;display:inline-block">Let's talk →</a>
     </div>
@@ -736,7 +804,7 @@
 <section class="sec" style="padding-top:0">
   <div class="sec-inner">
     <span class="sec-lbl">Credentials</span>
-    <h2 class="sec-h">Built on depth,<br>not shortcuts.</h2>
+    <h2 class="sec-h">Built on depth.<br>Every layer earned.</h2>
     <div class="cred-grid">
       <div class="cred-card">
         <div class="cc-org">Indian School of Business</div>
@@ -756,17 +824,17 @@
       <div class="cred-card">
         <div class="cc-org">The Brand Crush</div>
         <div class="cc-title">Founder</div>
-        <div class="cc-detail">Independent brand journalism. Unsponsored. Unafraid. Covers what makes a brand campaign earn its place in culture, and what makes it fall flat. If you want to understand how I think about brand voice, The Brand Crush is the most honest answer I can give you.</div>
+        <div class="cc-detail">Independent brand journalism. Covers what makes a brand campaign earn its place in culture, and what makes it fall flat. If you want to understand how I think about brand voice, The Brand Crush is the most honest answer I can give you.</div>
       </div>
       <div class="cred-card">
         <div class="cc-org">Instituto Cervantes</div>
         <div class="cc-title">Four Years of Study</div>
-        <div class="cc-detail">Studied Spanish language and Hispanic culture for four years before launching Audaz Revista. Because credible editorial work requires understanding the subject. Not just publishing about it. That standard extends to everything I write.</div>
+        <div class="cc-detail">Studied Spanish language and Hispanic culture for four years before launching Audaz Revista. Credible editorial work requires understanding the subject deeply. That standard extends to everything I write.</div>
       </div>
       <div class="cred-card">
         <div class="cc-org">Airtribe</div>
         <div class="cc-title">Certified in Generative AI</div>
-        <div class="cc-detail">Completed Airtribe's Generative AI certification. Because the future of content strategy involves working with AI, not running from it. I use these tools to build smarter systems, not shortcuts. The craft stays human.</div>
+        <div class="cc-detail">Completed Airtribe's Generative AI certification. The future of content strategy involves working with AI deliberately. I use these tools to build smarter systems. The craft stays human.</div>
       </div>
     </div>
   </div>
@@ -780,7 +848,7 @@
       <div>
         <h2 class="sec-h">Credentials that<br><em style="color:var(--accent)">prove the depth.</em></h2>
       </div>
-      <p class="sec-sub" style="color:rgba(255,255,255,.55)">Not just titles. Actual programmes from institutions that don't hand these out for completing a 3-minute quiz.</p>
+      <p class="sec-sub" style="color:rgba(255,255,255,.55)">Real programmes from institutions that require real work. Every one of these shaped how I approach content strategy today.</p>
     </div>
     <div class="cert-badges">
 
@@ -881,7 +949,7 @@
           </div>
         </div>
         <div class="cert-name">Performance Marketing Program</div>
-        <div class="cert-desc">Paid acquisition, funnel optimisation, Google Ads, and Meta — the technical side of making copy spend money wisely.</div>
+        <div class="cert-desc">Paid acquisition, funnel optimisation, Google Ads, and Meta. The technical side of making copy spend money wisely.</div>
         <span class="cert-year">2023</span>
       </div>
 
@@ -918,7 +986,7 @@
         Recommended on LinkedIn
       </div>
       <h2 class="testi-headline">Don't take my word for it.</h2>
-      <p class="testi-sub">Here's what the people I've worked with actually say. (Not paraphrased. Not polished. Just their words.)</p>
+      <p class="testi-sub">Straight from the people I've worked with. Their words, verbatim.</p>
     </div>
 
     <div class="testi-grid">
@@ -1006,9 +1074,9 @@
     <div class="pub-header">
       <div>
         <span class="sec-lbl">My Publications</span>
-        <h2 class="sec-h">I don't just write for brands.<br>I <em>build</em> them.</h2>
+        <h2 class="sec-h">I write for brands.<br>I also <em>build</em> them.</h2>
       </div>
-      <p class="sec-sub" style="max-width:380px">Two publications built from scratch. This is the part of my story that most copywriters don't have. And the reason every client gets editorial-grade thinking, not just execution.</p>
+      <p class="sec-sub" style="max-width:380px">Two publications built from scratch. This is the part of my story that most copywriters can't point to. And the reason every client gets editorial-grade thinking on top of execution.</p>
     </div>
     <div class="pubs-grid">
 
@@ -1043,7 +1111,7 @@
         </div>
         <div class="pub-card-info">
           <span class="pci-lbl">Brand Journalism</span>
-          <p class="pci-desc">Independent brand journalism that takes a real stance. Why did that campaign make you feel something? Did the brand earn it or manufacture it? No sponsors. No softening. This is how I think about brand voice, publicly.</p>
+          <p class="pci-desc">Independent brand journalism that takes a real stance. Why did that campaign make you feel something? Did the brand earn it or manufacture it? Fully independent, fully honest. This is how I think about brand voice, publicly.</p>
           <div class="pub-tags">
             <span class="pub-tag">Brand Analysis</span>
             <span class="pub-tag">Campaign Reviews</span>
@@ -1058,7 +1126,7 @@
   </div>
 </section>
 
-<!-- ── PHILOSOPHY — manifesto ── -->
+<!-- ── PHILOSOPHY – manifesto ── -->
 <section class="sec philosophy-bg">
   <div class="phil-inner">
     <span class="phil-eyebrow">What I believe</span>
@@ -1070,7 +1138,7 @@
       </div>
       <div class="manifesto-item">
         <div class="m-num">02</div>
-        <p class="m-text"><strong>Brand voice is a product decision.</strong> Not a style guide footnote. When your content sounds consistent, customers trust you more. Full stop.</p>
+        <p class="m-text"><strong>Brand voice is a product decision.</strong> It belongs in the strategy room, right next to pricing and positioning. When your content sounds consistent, customers trust you more. Full stop.</p>
       </div>
       <div class="manifesto-item">
         <div class="m-num">03</div>
@@ -1082,7 +1150,7 @@
       </div>
       <div class="manifesto-item">
         <div class="m-num">05</div>
-        <p class="m-text"><strong>The best copy answers the question</strong> before the reader finishes asking it. That's not a trick. That's the entire job.</p>
+        <p class="m-text"><strong>The best copy answers the question</strong> before the reader finishes asking it. That's the entire job.</p>
       </div>
       <div class="manifesto-item" style="background: rgba(200,92,56,.08);">
         <div class="m-num" style="color:rgba(200,92,56,.15)">★</div>
@@ -1098,7 +1166,7 @@
     <div class="cta-inner">
       <span class="sec-lbl">Let's work together</span>
       <h2 class="sec-h">If this is the kind of<br>copywriter you've been looking for...</h2>
-      <p>Tell me about your project. Landing page that's not converting. Email open rates in the basement. Ad spend with nothing to show for it. I take on a limited number of new clients each month. Let's talk before the spot's gone.</p>
+      <p>Tell me about your project. A landing page that needs sharper messaging. An email sequence that should be pulling its weight. Ad copy that deserves better returns. I take on a limited number of new clients each month. Let's talk before the spot's gone.</p>
       <div class="cta-btns">
         <a href="contact.html" class="btn-acc">Let's talk →</a>
         <a href="services.html" class="btn-outline-w">See what I write →</a>
@@ -1135,8 +1203,51 @@
   },{passive:true});
   const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:0,rootMargin:'0px 0px 300px 0px'});
   document.querySelectorAll('.sec-inner>*,.two-col,.cred-grid,.phil-grid,.story-side,.timeline-item').forEach((el,i)=>{el.classList.add('reveal');if(i%3===1)el.classList.add('d-1');if(i%3===2)el.classList.add('d-2');ro.observe(el);});
+  document.querySelectorAll('.reveal').forEach(el=>{if(!el.classList.contains('visible'))ro.observe(el);});
   setTimeout(()=>{document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{el.style.transition='opacity .4s ease,transform .4s ease';el.classList.add('visible');});},1800);
   document.querySelectorAll('.btn-acc').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px) translateY(-2px)`;});btn.addEventListener('mouseleave',()=>{btn.style.transform='';});});
+  /* ── STATS BAND COUNTER ANIMATION ── */
+  function easeOutCubic(t){return 1-Math.pow(1-t,3);}
+  function animateCount(el,target,duration){
+    const start=performance.now();
+    function tick(now){
+      const t=Math.min((now-start)/duration,1);
+      el.textContent=Math.round(easeOutCubic(t)*target);
+      if(t<1)requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const countObs=new IntersectionObserver(es=>{es.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target;
+      const target=parseInt(el.dataset.target,10);
+      animateCount(el,target,1400);
+      countObs.unobserve(el);
+    }
+  });},{threshold:0.3});
+  document.querySelectorAll('.count-num').forEach(el=>countObs.observe(el));
+
+  /* ── CERT BADGE CURSOR-FOLLOW GLOW ── */
+  document.querySelectorAll('.cert-badge').forEach(badge=>{
+    badge.addEventListener('mousemove',e=>{
+      const r=badge.getBoundingClientRect();
+      badge.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+      badge.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+    });
+  });
+
+  /* ── MANIFESTO NUMBER FADE-IN ── */
+  const mNumObs=new IntersectionObserver(es=>{es.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='scale(1)';
+      mNumObs.unobserve(e.target);
+    }
+  });},{threshold:0.2,rootMargin:'0px 0px 100px 0px'});
+  document.querySelectorAll('.m-num').forEach(el=>{
+    el.style.opacity='0';el.style.transform='scale(.85)';
+    mNumObs.observe(el);
+  });
 </script>
 
 <!-- ── FLOATING BUTTONS ── -->
