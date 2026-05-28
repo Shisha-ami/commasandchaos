@@ -446,26 +446,41 @@
     .dark-sec .sec-inner { position: relative; z-index: 1; }
     .dark-sec .sec-lbl { color: rgba(200,92,56,.85); }
     .dark-sec .sec-h { color: #fff; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .about-top { text-align: center; margin-bottom: 48px; }
+    .about-top .sec-lbl { justify-content: center; }
+    .about-top .sec-h { margin: 0 auto 20px; }
     .about-body {
       font-size: 16.5px; line-height: 1.75; color: rgba(255,255,255,.62);
-      margin-top: 20px; margin-bottom: 16px;
+      margin: 0 auto;
     }
-    .creds-ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-top: 8px; }
-    .creds-ul li {
-      display: flex; flex-direction: column; gap: 6px;
-      font-size: 13.5px; color: rgba(255,255,255,.55); line-height: 1.55;
-      padding: 18px 20px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,.07);
-      border-left: 3px solid rgba(200,92,56,.4);
-      transition: background .2s, border-color .2s, transform .2s;
+    .about-highlights {
+      display: grid; grid-template-columns: 200px repeat(4, 1fr); gap: 14px;
+      align-items: stretch;
     }
-    .creds-ul li:hover { background: rgba(255,255,255,.04); border-color: rgba(200,92,56,.4); transform: translateY(-2px); }
-    .creds-ul strong {
-      display: block; color: #fff; font-weight: 700;
-      font-family: var(--font-d); font-size: 15px; line-height: 1.3;
+    .ah-feature {
+      background: var(--accent); border-radius: 14px;
+      padding: 32px 24px; display: flex; flex-direction: column;
+      justify-content: center; text-align: center;
     }
+    .ah-num {
+      font-family: var(--font-d); font-size: 56px; font-weight: 900;
+      color: #fff; line-height: 1;
+    }
+    .ah-num span { font-size: 32px; }
+    .ah-label {
+      font-size: 12px; font-weight: 600; letter-spacing: .06em;
+      color: rgba(255,255,255,.75); margin-top: 8px; line-height: 1.4;
+    }
+    .ah-card {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px; padding: 24px 20px;
+      display: flex; flex-direction: column; gap: 8px;
+      transition: background .25s, border-color .25s, transform .25s;
+    }
+    .ah-card:hover { background: rgba(255,255,255,.07); border-color: rgba(200,92,56,.3); transform: translateY(-3px); }
+    .ah-icon { color: var(--accent); margin-bottom: 4px; }
+    .ah-card strong { font-family: var(--font-d); font-size: 16px; font-weight: 700; color: #fff; line-height: 1.25; }
+    .ah-card span { font-size: 13px; color: rgba(255,255,255,.48); line-height: 1.5; }
     .btn-outline-w {
       display: inline-block; margin-top: 32px;
       border: 1.5px solid rgba(255,255,255,.22); color: #fff;
@@ -736,8 +751,8 @@
       .two-col { grid-template-columns: 1fr; gap: 24px; }
       .diff-cols { grid-template-columns: 1fr; gap: 24px; }
       .svc-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .creds-ul { grid-template-columns: 1fr; }
+      .about-highlights { grid-template-columns: 1fr 1fr; }
+      .ah-feature { grid-column: 1 / -1; flex-direction: row; gap: 16px; align-items: center; text-align: left; }
       .clients-intro { grid-template-columns: 1fr; gap: 16px; }
       .proof-stats { grid-template-columns: 1fr; }
       .pub-card { grid-template-columns: 1fr; }
@@ -1758,24 +1773,50 @@
 
 <!-- ── ABOUT TEASER ── -->
 <section class="sec dark-sec">
-  <div class="sec-inner about-grid">
-    <div class="reveal r-left">
+  <div class="sec-inner">
+    <div class="about-top reveal">
       <span class="sec-lbl">About Amisha</span>
-      <h2 class="sec-h">Not your average<br>copywriter. (On purpose.)</h2>
-      <p class="about-body">I spent four years at Instituto Cervantes before launching Audaz Revista. Not because I had to. Because writing about something you don't understand produces exactly the kind of shallow content I'm trying to replace. That standard applies to every client I take on.</p>
-      <p class="about-body">At an award-winning Australian digital marketing agency, I build content systems daily: landing pages, email sequences, ad copy, SEO strategy. The kind that ranks and gets used. ISB Alumna. Generative AI certified. Five years doing this for paying clients.</p>
-      <a href="about.html" class="btn-outline-w">More about how I work →</a>
+      <h2 class="sec-h" style="color:#fff;max-width:640px">The copywriter who studied<br>four years before writing<br>a single word.</h2>
+      <p class="about-body" style="max-width:580px">Instituto Cervantes. ISB. Six certifications. Two publications built from scratch. I don't take on subjects I haven't studied, and I don't write copy I can't back with strategy.</p>
     </div>
-    <div class="reveal r-right d-2">
-      <ul class="creds-ul">
-        <li><strong>ISB Alumna.</strong> Indian School of Business. Digital Marketing programme. One of Asia's top-ranked institutions. The analytical backbone behind every strategy I write.</li>
-        <li><strong>5+ years of results</strong> Writing copy that converts, across B2B and B2C brands. Measured in revenue, not post count.</li>
-        <li><strong>Content Strategist @ an award-winning Aussie agency.</strong> Building content systems for brands that want to rank, convert, and grow. The kind with measurable results.</li>
-        <li><strong>Founder &amp; Editor-in-Chief, Audaz Revista.</strong> Built from scratch. Covering Hispanic culture, lifestyle, and language. Launched after four years at Instituto Cervantes, because credibility is earned.</li>
-        <li><strong>Founder, The Brand Crush.</strong> Independent brand journalism. Unsponsored. Unafraid. Because the best way to prove you understand brand voice is to publish one of your own.</li>
-        <li><strong>Certified in Generative AI</strong> (Airtribe). I use AI to build smarter systems. The craft stays human.</li>
-        <li style="grid-column:1/-1"><strong>Delhi-based. Timezone-flexible.</strong> Clients across Asia, Europe, and the Americas. Async-friendly by design.</li>
-      </ul>
+
+    <div class="about-highlights reveal d-1">
+      <div class="ah-feature">
+        <div class="ah-num">5<span>+</span></div>
+        <div class="ah-label">Years of writing copy<br>that converts</div>
+      </div>
+      <div class="ah-card">
+        <div class="ah-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
+        </div>
+        <strong>ISB Alumna</strong>
+        <span>Digital Marketing. One of Asia's top business schools.</span>
+      </div>
+      <div class="ah-card">
+        <div class="ah-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+        </div>
+        <strong>Top Aussie Agency 🤫</strong>
+        <span>Content strategist. 100+ brands across 3 continents.</span>
+      </div>
+      <div class="ah-card">
+        <div class="ah-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <strong>2 Publications</strong>
+        <span>Audaz Revista + The Brand Crush. Built from zero.</span>
+      </div>
+      <div class="ah-card">
+        <div class="ah-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <strong>Delhi → Global</strong>
+        <span>Asia, Europe, Australia, Americas. Async-native.</span>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:44px" class="reveal d-2">
+      <a href="about.html" class="btn-outline-w">Read my full story →</a>
     </div>
   </div>
 </section>
