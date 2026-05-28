@@ -304,15 +304,15 @@
     }
 
     /* ── CRED BAR ── */
-    .cred-bar { background: var(--dark); padding: 16px var(--px); overflow: hidden; }
+    .cred-bar { background: var(--dark); padding: 14px var(--px); overflow: hidden; }
     .cb-inner {
       max-width: var(--max); margin: 0 auto;
       display: flex; align-items: center; justify-content: center;
-      gap: clamp(16px, 4vw, 52px); flex-wrap: wrap;
+      gap: clamp(14px, 2.5vw, 36px); flex-wrap: nowrap;
     }
     .cb-item {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 13px; font-weight: 500; color: rgba(255,255,255,.55);
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 500; color: rgba(255,255,255,.55);
       white-space: nowrap; letter-spacing: .02em;
     }
     .cb-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
@@ -728,6 +728,8 @@
     }
 
     @media (max-width: 860px) {
+      .cred-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .cb-inner { justify-content: flex-start; width: max-content; min-width: 100%; }
       .hero { grid-template-columns: 1fr; min-height: auto; padding-block: 96px 60px; }
       .hero-visual { display: none; }
       .mobile-avatar-wrap { display: flex; }
