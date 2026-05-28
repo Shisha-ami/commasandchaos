@@ -108,15 +108,18 @@
     .ph-headline em { font-style: italic; color: rgba(200,92,56,.9); }
     .ph-sub { font-size: clamp(15px, 1.4vw, 18px); color: rgba(255,255,255,.55); line-height: 1.7; max-width: 400px; margin-bottom: 40px; }
     /* mini stats row */
-    .ph-stats {
-      display: flex; gap: 28px; padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,.1);
+    .ph-traits {
+      list-style: none; display: flex; flex-direction: column; gap: 12px;
+      padding-top: 32px; border-top: 1px solid rgba(255,255,255,.1);
     }
-    .ph-stat-val {
-      font-family: var(--font-d); font-size: 26px; font-weight: 700; color: #fff; line-height: 1;
-      font-variant-numeric: tabular-nums;
+    .ph-traits li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.5;
     }
-    .ph-stat-lbl { font-size: 11.5px; color: rgba(255,255,255,.4); margin-top: 5px; letter-spacing: .04em; }
+    .ph-traits li::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+    }
     /* right – full-bleed photo */
     .ph-right {
       position: relative; overflow: hidden; background: #E8622A;
@@ -137,33 +140,28 @@
     }
 
     /* ── STATS BAND ── */
-    .traits-band {
+    .stats-band {
       background: var(--dark); border-top: 1px solid rgba(255,255,255,.07);
-      padding: clamp(36px, 5vw, 56px) var(--px);
+      padding: 0 var(--px);
     }
-    .traits-inner {
+    .stats-band-inner {
       max-width: var(--max); margin: 0 auto;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+      display: grid; grid-template-columns: repeat(5, 1fr);
     }
-    .trait-item {
-      display: flex; align-items: flex-start; gap: 14px;
-      padding: 20px; border-radius: 10px;
-      border: 1px solid rgba(255,255,255,.07);
-      transition: border-color .25s, background .25s;
+    .sb-item {
+      padding: 40px 24px; border-right: 1px solid rgba(255,255,255,.07);
+      text-align: center;
     }
-    .trait-item:hover { border-color: rgba(200,92,56,.35); background: rgba(255,255,255,.03); }
-    .trait-icon {
-      width: 36px; height: 36px; border-radius: 8px;
-      background: rgba(200,92,56,.12);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; color: var(--accent);
+    .sb-item:last-child { border-right: none; }
+    .sb-val {
+      font-family: var(--font-d); font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 900; line-height: 1; color: #fff;
+      font-variant-numeric: tabular-nums; display: block; margin-bottom: 8px;
     }
-    .trait-title {
-      font-family: var(--font-d); font-size: 15px; font-weight: 700;
-      color: #fff; line-height: 1.3; margin-bottom: 5px;
-    }
-    .trait-desc {
-      font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.55;
+    .sb-val span { color: var(--accent); }
+    .sb-lbl {
+      font-size: 11.5px; font-weight: 500; letter-spacing: .08em;
+      color: rgba(255,255,255,.38); line-height: 1.4; display: block;
     }
 
     /* ── SECTIONS ── */
@@ -360,10 +358,11 @@
       .page-hero { grid-template-columns: 1fr; min-height: auto; }
       .ph-left { padding: clamp(32px, 6vw, 64px) clamp(20px, 5vw, 40px); }
       .ph-right { height: 52vw; min-height: 280px; }
-      .traits-inner { grid-template-columns: 1fr 1fr; }
+      .stats-band-inner { grid-template-columns: repeat(3, 1fr); }
+      .sb-item:nth-child(4), .sb-item:nth-child(5) { border-top: 1px solid rgba(255,255,255,.07); }
       .manifesto-grid { grid-template-columns: 1fr 1fr; }
-      .ph-stats { gap: 18px; }
-      .ph-stat-val { font-size: 22px; }
+      .ph-traits { gap: 18px; }
+      .ph-traits li { font-size: 13px; }
       .story-layout { grid-template-columns: 1fr; }
       .story-side { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
       .side-card { margin-bottom: 0; }
@@ -533,14 +532,14 @@
       from { opacity: 0; transform: translateY(32px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .ph-lbl, .ph-headline, .ph-sub, .ph-stats {
+    .ph-lbl, .ph-headline, .ph-sub, .ph-traits {
       opacity: 0;
       animation: fadeUp .7s cubic-bezier(.2,0,0,1) forwards;
     }
     .ph-lbl      { animation-delay: .1s; }
     .ph-headline { animation-delay: .25s; }
     .ph-sub      { animation-delay: .4s; }
-    .ph-stats    { animation-delay: .6s; }
+    .ph-traits    { animation-delay: .6s; }
 
     /* ── CREDENTIAL CARD HOVER GLOW ── */
     .cred-card:hover {
@@ -637,20 +636,12 @@
     <span class="ph-lbl">About Amisha</span>
     <h1 class="ph-headline">I build brands<br>through <em>content.</em></h1>
     <p class="ph-sub">The kind that ranks, reads well, and makes someone pick up the phone.</p>
-    <div class="ph-stats">
-      <div>
-        <div class="ph-stat-val">5+</div>
-        <div class="ph-stat-lbl">Years experience</div>
-      </div>
-      <div>
-        <div class="ph-stat-val">100+</div>
-        <div class="ph-stat-lbl">Brands served</div>
-      </div>
-      <div>
-        <div class="ph-stat-val">2</div>
-        <div class="ph-stat-lbl">Publications founded</div>
-      </div>
-    </div>
+    <ul class="ph-traits">
+      <li>Always upskilling to stay ahead of the AI wave</li>
+      <li>Born experimenter. I test on my own brands first.</li>
+      <li>I work best with clients obsessed with how their brand looks and reads</li>
+      <li>Delhi-based, working globally across time zones</li>
+    </ul>
   </div>
   <div class="ph-right">
     <picture>
@@ -669,43 +660,27 @@
 </div>
 
 <!-- ── STATS BAND ── -->
-<div class="traits-band">
-  <div class="traits-inner">
-    <div class="trait-item">
-      <div class="trait-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-      </div>
-      <div>
-        <div class="trait-title">Always upskilling</div>
-        <div class="trait-desc">I stay ahead of the AI wave by learning constantly. ISB, Airtribe, IISc, Growth School. If the industry moves, I move faster.</div>
-      </div>
+<div class="stats-band">
+  <div class="stats-band-inner">
+    <div class="sb-item">
+      <span class="sb-val">5<span>+</span></span>
+      <span class="sb-lbl">Years writing copy that converts</span>
     </div>
-    <div class="trait-item">
-      <div class="trait-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-      </div>
-      <div>
-        <div class="trait-title">Born experimenter</div>
-        <div class="trait-desc">New formats, new angles, new platforms. I test everything on my own publications before recommending it to a client.</div>
-      </div>
+    <div class="sb-item">
+      <span class="sb-val">100<span>+</span></span>
+      <span class="sb-lbl">Brands across 3 continents</span>
     </div>
-    <div class="trait-item">
-      <div class="trait-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
-      </div>
-      <div>
-        <div class="trait-title">Passionate clients only</div>
-        <div class="trait-desc">I work best with founders and teams who genuinely care how their brand looks, reads, and feels. If you're obsessed with quality, we'll get along.</div>
-      </div>
+    <div class="sb-item">
+      <span class="sb-val">2</span>
+      <span class="sb-lbl">Publications built from scratch</span>
     </div>
-    <div class="trait-item">
-      <div class="trait-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-      </div>
-      <div>
-        <div class="trait-title">Global, async-native</div>
-        <div class="trait-desc">Delhi-based, working across Asia, Europe, Australia, and the Americas. Timezone-flexible. Loom-friendly. Built for remote from day one.</div>
-      </div>
+    <div class="sb-item">
+      <span class="sb-val">6</span>
+      <span class="sb-lbl">Certifications earned</span>
+    </div>
+    <div class="sb-item">
+      <span class="sb-val">3</span>
+      <span class="sb-lbl">Continents served</span>
     </div>
   </div>
 </div>
