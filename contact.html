@@ -81,7 +81,30 @@
 
     /* ── FORM ── */
     .form-wrap {}
-    .form-title { font-family: var(--font-d); font-size: 28px; font-weight: 700; color: var(--fg); margin-bottom: 8px; }
+    .form-title { font-family: var(--font-d); font-size: 28px; font-weight: 700; color: var(--fg); margin-bottom: 8px; line-height: 1.35; }
+    .form-title .rotate-slot {
+      display: inline-block; position: relative;
+      color: var(--accent); font-style: italic;
+      min-width: 200px; text-align: left;
+      overflow: hidden; vertical-align: bottom;
+      height: 1.35em;
+    }
+    .rotate-slot span {
+      display: block;
+      position: absolute; left: 0; top: 0; width: 100%;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity .45s cubic-bezier(.2,0,0,1), transform .45s cubic-bezier(.2,0,0,1);
+      white-space: nowrap;
+    }
+    .rotate-slot span.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .rotate-slot span.exit {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
     .form-sub { font-size: 16px; color: var(--muted); margin-bottom: 36px; line-height: 1.65; }
 
     form { display: flex; flex-direction: column; gap: 20px; }
@@ -219,7 +242,7 @@
 
     <!-- FORM -->
     <div class="form-wrap">
-      <h2 class="form-title">SEO copywriting, website pages, email sequences, ads? Tell me what you need.</h2>
+      <h2 class="form-title"><span class="rotate-slot" id="rotateSlot"><span class="active">SEO copywriting</span><span>Website pages</span><span>Email sequences</span><span>Google ads</span><span>Brand voice</span></span>? Tell me what you need.</h2>
       <p class="form-sub">A rough idea works. If you're not sure where to start, that's exactly what the first conversation is for.</p>
 
       <form id="contact-form" method="POST" action="https://formspree.io/f/xeojbzwg" novalidate>
@@ -429,6 +452,23 @@
   els.forEach(s=>document.querySelectorAll(s).forEach((el,i)=>{el.classList.add('reveal');if(i%2===1)el.classList.add('d-1');ro.observe(el);}));
   setTimeout(()=>{document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{el.style.transition='opacity .4s ease,transform .4s ease';el.classList.add('visible');});},1800);
   document.querySelectorAll('.btn-acc').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px) translateY(-2px)`;});btn.addEventListener('mouseleave',()=>{btn.style.transform='';});});
+
+  /* ── WORD ROTATE ── */
+  (function() {
+    var slot = document.getElementById('rotateSlot');
+    if (!slot) return;
+    var words = slot.querySelectorAll('span');
+    var idx = 0;
+    setInterval(function() {
+      var current = words[idx];
+      current.classList.remove('active');
+      current.classList.add('exit');
+      idx = (idx + 1) % words.length;
+      words[idx].classList.remove('exit');
+      words[idx].classList.add('active');
+      setTimeout(function() { current.classList.remove('exit'); }, 500);
+    }, 2500);
+  })();
 </script>
 
 <!-- ── FLOATING BUTTONS ── -->
