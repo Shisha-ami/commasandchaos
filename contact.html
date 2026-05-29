@@ -134,12 +134,43 @@
 
     /* thank you state */
     .thank-you {
-      display: none; padding: 48px 36px; background: var(--surface);
-      border: 1px solid var(--border); border-radius: 8px; text-align: center;
+      display: none; padding: 56px 40px; text-align: center;
+      background: var(--dark); border-radius: 14px;
+      position: relative; overflow: hidden;
     }
-    .ty-icon { font-size: 36px; margin-bottom: 16px; }
-    .ty-title { font-family: var(--font-d); font-size: 26px; font-weight: 700; color: var(--fg); margin-bottom: 10px; }
-    .ty-sub { font-size: 16px; color: var(--muted); line-height: 1.65; }
+    .thank-you::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(200,92,56,.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .ty-check {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(200,92,56,.15); margin: 0 auto 24px;
+      display: flex; align-items: center; justify-content: center;
+      animation: tyPop .5s cubic-bezier(.2,0,0,1) both;
+    }
+    @keyframes tyPop { from { transform: scale(0); } to { transform: scale(1); } }
+    .ty-check svg { color: var(--accent); }
+    .ty-title {
+      font-family: var(--font-d); font-size: clamp(24px, 3vw, 32px);
+      font-weight: 900; color: #fff; margin-bottom: 14px;
+      position: relative;
+    }
+    .ty-sub {
+      font-size: 16px; color: rgba(255,255,255,.55); line-height: 1.7;
+      max-width: 420px; margin: 0 auto 28px; position: relative;
+    }
+    .ty-next {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 13px; font-weight: 600; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--accent);
+      position: relative;
+    }
+    .ty-next::before {
+      content: ''; width: 8px; height: 8px; border-radius: 50%;
+      background: #4CAF50; animation: tyDot 1.5s ease-in-out infinite;
+    }
+    @keyframes tyDot { 0%,100% { opacity:1; } 50% { opacity:.4; } }
 
     /* ── SIDEBAR ── */
     .contact-side { position: sticky; top: 88px; }
@@ -297,9 +328,12 @@
       </form>
 
       <div class="thank-you" id="thank-you">
-        <div class="ty-icon">✓</div>
-        <div class="ty-title">Landed in my inbox.</div>
-        <div class="ty-sub">I'll read it properly and get back to you within 48 hours with honest, useful thoughts on your project. If it feels like a fit, I'll suggest a 30-minute call and we'll take it from there.</div>
+        <div class="ty-check">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="ty-title">Message received. I'm on it.</div>
+        <div class="ty-sub">I'll read your brief and reply within 48 hours with honest, actionable thoughts on your project. If it looks like a fit, I'll suggest a 30-minute call.</div>
+        <div class="ty-next">Expect a reply within 48 hours</div>
       </div>
     </div>
 
