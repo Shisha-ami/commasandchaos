@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.DS_Store
+backups/
+data/
+docs/
+open-design/
+elementor-mcp-server/
+The-Brand-Crush-Gamma-Prompts/
+CALENDARS/
+scripts/
+pnpm-lock.yaml
