@@ -3,22 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CookieHub Consent -->
+  <script src="https://cdn.cookiehub.eu/c2/6d91ec74.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",function(){window.cookiehub.load({})});</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-49WF51RXBR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-49WF51RXBR');
+  </script>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <title>Hire a Freelance Copywriter | Get in Touch | Amisha Sharma</title>
   <meta name="description" content="Hire freelance copywriter Amisha Sharma for website copy, landing pages, emails, and Google Ads. ISB Alumna. 5+ years. 100+ brands. Personal reply within 48 hours.">
-  <link rel="canonical" href="https://commasandchaos.com/contact.html">
+  <link rel="canonical" href="https://commasandchaos.com/contact">
   <meta name="robots" content="index, follow">
+  <meta name="keywords" content="hire freelance copywriter, freelance copywriter contact, copywriter for hire, get in touch copywriter, freelance content writer India, website copywriter contact">
   <meta name="author" content="Amisha Sharma">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://commasandchaos.com/contact.html">
+  <meta property="og:url" content="https://commasandchaos.com/contact">
   <meta property="og:title" content="Hire a Freelance Copywriter | Get in Touch | Amisha Sharma">
   <meta property="og:description" content="Hire freelance copywriter Amisha Sharma. Website copy, landing pages, emails, Google Ads. ISB Alumna. 5+ years. 100+ brands.">
   <meta property="og:image" content="https://commasandchaos.com/photo-about-1200.webp">
+  <meta property="og:site_name" content="Amisha Sharma | commasandchaos.com">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hire a Freelance Copywriter | Amisha Sharma">
   <meta name="twitter:description" content="Freelance copywriter. Website copy, landing pages, emails, Google Ads. ISB Alumna. 5+ years. 100+ brands.">
   <meta name="twitter:image" content="https://commasandchaos.com/photo-about-1200.webp">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" href="favicon-192.png">
@@ -445,20 +466,25 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
 
+    var data = {};
+    new FormData(form).forEach(function(v, k) { data[k] = v; });
+
     fetch('https://formspree.io/f/xaqkvvkq', {
       method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new FormData(form)
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
     }).then(function(r) {
       if (r.ok) {
         form.style.display = 'none';
         thankYou.style.display = 'block';
       } else {
+        r.json().then(function(d) { console.error('Formspree error:', d); });
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send brief →';
         alert('Something went wrong. Please email profamisha@gmail.com directly.');
       }
-    }).catch(function() {
+    }).catch(function(err) {
+      console.error('Network error:', err);
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send brief →';
       alert('Network error. Please email profamisha@gmail.com directly.');
@@ -521,5 +547,25 @@
 .wa-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(37,211,102,.35); }
 @media (max-width: 600px) { .wa-btn { width: 50px; height: 50px; bottom: 16px; right: 16px; } }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "ProfessionalService",
+    "name": "Amisha Sharma - Freelance Copywriter",
+    "url": "https://commasandchaos.com",
+    "email": "profamisha@gmail.com",
+    "telephone": "+918448330965",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Delhi",
+      "addressCountry": "IN"
+    },
+    "areaServed": "Worldwide",
+    "priceRange": "$$"
+  }
+}
+</script>
 </body>
 </html>
