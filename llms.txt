@@ -1,68 +1,81 @@
-# Amisha Sharma — Freelance Copywriter
+# Amisha Sharma - AI-First Content Marketing Strategist
 
-Amisha Sharma is a freelance copywriter and content strategist based in
-Delhi, India, with 5+ years of experience writing for 100+ global brands
-across the US, UK, Australia, and India. She is an ISB (Indian School of
-Business) alumna who specializes in conversion-focused copy that ranks
-on search engines and reads like a human wrote it.
+AI-first content marketing strategist for regulated industries, based in Delhi, India. 5+ years and 200+ projects across fintech, healthcare, SaaS, and legal. Builds content systems that rank on Google, get cited by AI search engines, and stay compliant with ASIC, AHPRA, and TGA.
 
-This is her portfolio and services website: commasandchaos.com
+Website: commasandchaos.com
 
 ## Services
 
-- **Website Copywriting** — Homepage, about page, service pages, product pages
-- **Landing Page Copy** — High-converting sales and lead-gen pages
-- **SEO Content Writing** — Blog posts, pillar pages, topic clusters optimized for Google and AI search
-- **Email Copywriting** — Welcome sequences, nurture flows, promotional campaigns
-- **Brand Voice Development** — Tone guides, messaging frameworks, vocabulary docs
-- **Google Ads & Social Ads** — PPC ad copy, Meta ads, LinkedIn ads
-- **Content Strategy** — Editorial calendars, content audits, keyword mapping
+- **AI-First Content Strategy** - Editorial calendars, SEO architecture, topic clusters, buyer journey mapping designed for both traditional search and AI search engines.
+- **Generative Engine Optimization (GEO)** - llms.txt implementation, answer capsules, schema markup, entity optimization, AI visibility monitoring across ChatGPT, Perplexity, Gemini, and Google AI Overviews.
+- **Compliance-Aware Content Creation** - Content for ASIC-regulated financial services, AHPRA-regulated healthcare, and TGA-regulated therapeutic goods industries. Every piece reviewed against current advertising codes.
+- **AI Content Workflow Design** - Custom prompt libraries, AI content SOPs, team training, and quality gates. Helps teams produce more content without sacrificing accuracy or compliance.
+- **Executive Ghostwriting** - LinkedIn thought leadership, bylined articles, and conference content for founders and C-suite in regulated industries.
+- **AI Content Audit** - Full content audit with AI visibility check, GEO readiness assessment, compliance gap analysis, and 90-day implementation roadmap.
+- **Brand Voice Development** - Voice frameworks, tone guides, and messaging documentation with AI prompt calibration so LLMs can reproduce the voice consistently.
+- **Case Study Writing** - Interview-based, multi-format case studies for B2B sales enablement and website authority.
 
-## Industries Served
+## Industries
 
-- SaaS & Technology
-- Fintech & Finance
-- Beauty & D2C
-- Healthcare & Wellness
-- E-commerce
-- Real Estate
-- Education & EdTech
-- Australian businesses (healthcare, finance, professional services)
+### Primary (Regulated)
+- Financial Services and Fintech (ASIC-regulated)
+- Healthcare and Allied Health (AHPRA-regulated)
+- NDIS Providers
+- Legal and LegalTech
+- Insurance and InsurTech
+- Medicinal Cannabis Clinics
+- GLP-1 and Weight Loss Clinics
+- Aged Care
 
-## Key Credentials
+### Secondary
+- B2B SaaS and Tech
+- Cybersecurity
+- Proptech
+- Education and EdTech
 
-- ISB (Indian School of Business) alumna
-- IISc, Google, Airtribe, Kairos, GrowthSchool certified
-- Founder & Editor: Audaz Revista (audazrevista.com) — Spanish culture publication
-- Founder & Editor: The Brand Crush (thebrandcrush.com) — marketing analysis publication
-- Content Lead at CJ&CO — manages content for Australian healthcare and professional services brands
+## Credentials
+
+- ISB (Indian School of Business) alumna, Digital Marketing
+- Airtribe Generative AI certification (2024)
+- Google, IISc, Kairos, and GrowthSchool certified
+- Content Lead at CJ&CO, an Australian digital marketing agency
+- Editor of Audaz Revista (audazrevista.com)
+- Editor of The Brand Crush (thebrandcrush.com)
+- 5+ years of content strategy and SEO across 200+ projects
+- Applies GEO (Generative Engine Optimization) to rank content in both Google and AI search
+
+## AI-First Approach
+
+- Uses Claude, ChatGPT, and AI tools as part of the standard content production workflow.
+- The value is the strategic judgment and compliance layer applied on top of AI output. AI generates, human expertise validates, edits, and ensures regulatory safety.
+- Helps clients set up their own AI content workflows with custom prompt libraries, quality gates, and review processes.
+- In regulated industries, AI-generated content that violates advertising guidelines can trigger regulatory action, fines, or license suspension. The compliance layer is not optional.
 
 ## Areas Served
 
+- Australia (primary market)
+- United States
 - India (based in Delhi)
-- United States (remote)
-- Australia (remote, manages AU client content daily)
-- United Kingdom (remote)
+- United Kingdom
 - Global English-language markets
+- Timezone: IST/GMT+5:30
 
 ## Contact
 
 - Website: https://commasandchaos.com
 - Email: profamisha@gmail.com
 - Services: https://commasandchaos.com/services.html
-- Contact form: https://commasandchaos.com/contact.html
+- Contact: https://commasandchaos.com/contact.html
 
 ## Publications
 
-- Audaz Revista: https://audazrevista.com — Spanish language, culture, and travel
-- The Brand Crush: https://thebrandcrush.com — Contrarian marketing analysis
+- Audaz Revista (audazrevista.com) - Spanish language, culture, and travel publication
+- The Brand Crush (thebrandcrush.com) - Contrarian marketing analysis publication
 
-## Why Hire Amisha
+## Why Work With Amisha
 
-She writes copy that ranks AND reads. Five years of writing for
-international brands means she understands US/UK/AU tone, compliance
-requirements, and buyer psychology across markets. Her timezone
-(IST/GMT+5:30) means your copy gets written while you sleep — you wake
-up to drafts in your inbox. She works across the full content stack:
-strategy, SEO, copy, and brand voice — so nothing falls between the
-cracks.
+- 5+ years writing content that ranks. 200+ projects across regulated industries.
+- Knows what works on Google and what gets cited by AI search engines like ChatGPT, Perplexity, and Gemini.
+- Combines AI fluency with compliance expertise. In financial services, healthcare, and therapeutics, AI content that violates advertising codes can trigger ASIC infringement notices, AHPRA notifications, or TGA sanctions.
+- Builds content systems where AI does the heavy lifting and human expertise keeps it legally safe and on-brand.
+- Timezone advantage for Australian and US clients. IST/GMT+5:30 means drafts delivered overnight.

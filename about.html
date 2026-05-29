@@ -23,21 +23,21 @@
   </script>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <title>About Amisha Sharma | Freelance Copywriter India | ISB Alumna, 100+ Brands</title>
-  <meta name="description" content="Freelance copywriter with 5+ years writing for 100+ brands across fintech, healthcare, and beauty. ISB Alumna. Founder of Audaz Revista and The Brand Crush.">
+  <title>About Amisha Sharma | AI-First Content Marketing Strategist for Regulated Industries</title>
+  <meta name="description" content="AI-first content marketing strategist for healthcare, fintech, and regulated industries. 5+ years, 200+ projects, 100+ brands. AHPRA, ASIC, TGA compliance. ISB Alumna. I know what ranks on Google and AI search.">
   <link rel="canonical" href="https://commasandchaos.com/about.html">
   <meta name="robots" content="index, follow">
-  <meta name="keywords" content="freelance copywriter India, about Amisha Sharma, ISB alumni copywriter, content strategist Delhi, copywriter portfolio, brand voice copywriter, freelance writer India">
+  <meta name="keywords" content="AI content marketing strategist, AI-first content strategy, content strategist regulated industries, AHPRA compliant content, ASIC compliant content, TGA advertising compliance, GEO generative engine optimization, AI content systems, healthcare content marketing, fintech content strategy, Amisha Sharma">
   <meta name="author" content="Amisha Sharma">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://commasandchaos.com/about.html">
-  <meta property="og:title" content="About Amisha Sharma | Freelance Copywriter India | ISB Alumna">
-  <meta property="og:description" content="Freelance copywriter with 5+ years writing copy that converts for 100+ global brands. ISB Alumna. Founder of two publications.">
+  <meta property="og:title" content="About Amisha Sharma | AI-First Content Strategist for Regulated Industries">
+  <meta property="og:description" content="AI-first content marketing strategist. 5+ years writing content that ranks on Google and AI search. AHPRA, ASIC, TGA compliance. ISB Alumna. 200+ projects across 3 continents.">
   <meta property="og:image" content="https://commasandchaos.com/photo-about-1200.webp">
   <meta property="og:site_name" content="Amisha Sharma | commasandchaos.com">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About Amisha Sharma | Freelance Copywriter India">
-  <meta name="twitter:description" content="Freelance copywriter. ISB Alumna. 5+ years. 100+ global brands. Website copy, landing pages, emails.">
+  <meta name="twitter:title" content="About Amisha Sharma | AI-First Content Strategist, Regulated Industries">
+  <meta name="twitter:description" content="AI-first content marketing for regulated industries. 5+ years, 200+ projects, 100+ brands. I know what ranks on Google and AI search. ISB Alumna.">
   <meta name="twitter:image" content="https://commasandchaos.com/photo-about-1200.webp">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -97,6 +97,76 @@
     .nav-btn { background: var(--dark) !important; color: #fff !important; padding: 8px 20px; border-radius: 5px; font-size: 14px !important; font-weight: 600 !important; transition: background .2s !important; }
     .nav-btn:hover { background: var(--accent) !important; }
 
+    /* -- NAV DROPDOWN -- */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 4px; }
+    .nav-dropdown > a::after {
+      content: '';
+      display: inline-block;
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid currentColor;
+      transition: transform .2s;
+    }
+    .nav-dropdown:hover > a::after { transform: rotate(180deg); }
+    .nav-dd-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      min-width: 260px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.1);
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s, transform .2s, visibility .2s;
+      z-index: 300;
+    }
+    .nav-dropdown:hover .nav-dd-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dd-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid var(--surface);
+    }
+    .nav-dd-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--fg);
+      text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+    .nav-dd-item:hover { background: rgba(200,92,56,.06); color: var(--accent); }
+    .nav-dd-num {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: .5;
+      min-width: 18px;
+    }
+    .nav-dd-sep {
+      height: 1px;
+      background: var(--border);
+      margin: 6px 16px;
+    }
+
     /* ── PAGE HERO – editorial split ── */
     .page-hero {
       display: grid;
@@ -129,7 +199,33 @@
       margin-bottom: 24px;
     }
     .ph-headline em { font-style: italic; color: rgba(200,92,56,.9); }
-    .ph-sub { font-size: clamp(15px, 1.4vw, 18px); color: rgba(255,255,255,.55); line-height: 1.7; max-width: 400px; margin-bottom: 40px; }
+    .ph-sub { font-size: clamp(15px, 1.4vw, 18px); color: rgba(255,255,255,.55); line-height: 1.7; max-width: 520px; margin-top: 12px; margin-bottom: 40px; }
+    .rough-underline {
+      position: relative;
+      display: inline;
+      white-space: nowrap;
+    }
+    .rough-underline::before,
+    .rough-underline::after {
+      content: '';
+      position: absolute;
+      left: -2px;
+      right: -2px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .rough-underline::before {
+      bottom: -3px;
+      transform: rotate(-0.6deg) scaleX(0.97);
+      transform-origin: left;
+    }
+    .rough-underline::after {
+      bottom: -8px;
+      transform: rotate(0.4deg) scaleX(0.93) translateX(3px);
+      transform-origin: right;
+      opacity: .7;
+    }
     /* mini stats row */
     .ph-traits {
       list-style: none; display: flex; flex-direction: column; gap: 12px;
@@ -664,7 +760,18 @@
       <li><a href="/">Home</a></li>
       <li><a href="/about.html" class="on">About</a></li>
       <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/services.html">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="/services.html">Services</a>
+        <div class="nav-dd-menu">
+          <a href="/services.html#strategy" class="nav-dd-item"><span class="nav-dd-num">01</span> Content Strategy</a>
+          <a href="/services.html#seo-geo" class="nav-dd-item"><span class="nav-dd-num">02</span> SEO &amp; GEO</a>
+          <a href="/services.html#google-ads" class="nav-dd-item"><span class="nav-dd-num">03</span> Google Ads Copy</a>
+          <a href="/services.html#social-ads" class="nav-dd-item"><span class="nav-dd-num">04</span> Social Ads Copy</a>
+          <a href="/services.html#collateral" class="nav-dd-item"><span class="nav-dd-num">05</span> Website Copy &amp; Collateral</a>
+          <div class="nav-dd-sep"></div>
+          <a href="/services.html#audit" class="nav-dd-item" style="color:var(--accent)"><span class="nav-dd-num" style="opacity:1">→</span> Free AI Content Audit</a>
+        </div>
+      </li>
       <li class="nav-cta-li"><a href="/contact.html" class="nav-btn">Let's Connect</a></li>
     </ul>
   </div>
@@ -675,13 +782,13 @@
 <div class="page-hero">
   <div class="ph-left">
     <span class="ph-lbl">About Amisha</span>
-    <h1 class="ph-headline">I build brands<br>through <em>content.</em></h1>
-    <p class="ph-sub">The kind that ranks, reads well, and makes someone pick up the phone.</p>
+    <h1 class="ph-headline">Most content gets<br>ignored. Mine gets<br><em>cited.</em></h1>
+    <p class="ph-sub">5+ years. 200+ projects. I've written for healthcare brands that can't afford a compliance slip, fintech companies where one wrong claim means an ASIC notice, and SaaS startups that needed traffic yesterday. I know what ranks. I know what converts. And I know exactly where AI falls apart.</p>
     <ul class="ph-traits">
-      <li>Always upskilling to stay ahead of the AI wave</li>
-      <li>Born experimenter. I test on my own brands first.</li>
-      <li>I work best with clients obsessed with how their brand looks and reads</li>
-      <li>Delhi-based, working globally across time zones</li>
+      <li>I use AI every day. Claude, ChatGPT, the works. The difference? I know when it's wrong.</li>
+      <li>AHPRA, ASIC, TGA. I've written under all three. Zero breaches. Zero pulled ads.</li>
+      <li>Your next customer might ask Perplexity before they ask Google. My content shows up in both.</li>
+      <li>Delhi-based. You brief me at 5pm. You wake up to finished work. Simple math.</li>
     </ul>
   </div>
   <div class="ph-right">
@@ -705,23 +812,23 @@
   <div class="stats-band-inner">
     <div class="sb-item">
       <span class="sb-val">5<span>+</span></span>
-      <span class="sb-lbl">Years writing copy that converts</span>
+      <span class="sb-lbl">Years. Not months.</span>
+    </div>
+    <div class="sb-item">
+      <span class="sb-val">200<span>+</span></span>
+      <span class="sb-lbl">Projects that ranked.</span>
     </div>
     <div class="sb-item">
       <span class="sb-val">100<span>+</span></span>
-      <span class="sb-lbl">Brands across 3 continents</span>
+      <span class="sb-lbl">Brands. 3 continents.</span>
     </div>
     <div class="sb-item">
-      <span class="sb-val">2</span>
-      <span class="sb-lbl">Publications built from scratch</span>
+      <span class="sb-val">0</span>
+      <span class="sb-lbl">Compliance breaches.</span>
     </div>
     <div class="sb-item">
-      <span class="sb-val">6</span>
-      <span class="sb-lbl">Certifications earned</span>
-    </div>
-    <div class="sb-item">
-      <span class="sb-val">3</span>
-      <span class="sb-lbl">Continents served</span>
+      <span class="sb-val">∞</span>
+      <span class="sb-lbl">Coffee consumed.</span>
     </div>
   </div>
 </div>
@@ -732,19 +839,23 @@
     <div class="story-layout">
       <div class="story-body">
         <span class="sec-lbl">My story</span>
-        <h2 class="sec-h" style="margin-bottom:32px">Good content has a job. I write the kind that actually does it.</h2>
+        <h2 class="sec-h" style="margin-bottom:32px">I didn't start with AI. I started with <span class="rough-underline">200 projects</span> that taught me what actually ranks.</h2>
 
-        <p>I write copy where <strong>every sentence earns the next one</strong>, every page has a single job to do, and the brand voice sounds like an actual person with an actual point of view.</p>
+        <p>Let me save you a conversation. Yes, I use AI. Every day. Claude, ChatGPT, the works. And no, that's not the interesting part.</p>
 
-        <div class="story-pull">"E-E-A-T content, SEO that reads like real writing, and brands that sound like themselves. That's what I care about."</div>
+        <p>The interesting part is the five years before AI was cool. The part where I was obsessively studying what makes a page rank on Google, what makes a visitor click "book now" instead of bouncing, and why most content strategies look great in a deck and produce absolutely nothing in real life.</p>
 
-        <p>At an <strong>award-winning Australian digital marketing agency</strong>, I build content systems every day. Website copy, landing pages, email sequences, Google ads, social ad copy, content strategy. The kind brands can actually execute.</p>
+        <p><span class="rough-underline">200+ projects</span> across fintech, healthcare, SaaS, ecommerce, and D2C. Three continents. Landing pages that tripled conversion rates. Blog strategies that drove six figures in organic traffic. Email sequences with open rates that made marketing directors do a double-take.</p>
 
-        <p>I'm also <strong>Editor-in-Chief of Audaz Revista</strong>, a publication I built from scratch covering Hispanic culture, business, and lifestyle. Before I launched it, I spent four years studying at <strong>Instituto Cervantes</strong>. I wanted to understand the culture deeply enough to write about it with real authority. That standard extends to every client I take on.</p>
+        <div class="story-pull">"AI made me faster. But the five years before it? That's what makes me dangerous."</div>
 
-        <p>I hold a <strong>Digital Marketing certification from ISB</strong>, Indian School of Business. One of Asia's top-ranked institutions. I'm also <strong>Generative AI certified</strong> through Airtribe. I use AI to build smarter systems. The craft stays human.</p>
+        <p>Today I work at <strong>CJ&CO</strong>, one of Australia's top digital agencies. I write and optimize content for healthcare brands under <strong>AHPRA</strong>, fintech companies under <strong>ASIC</strong>, and therapeutic goods businesses under <strong>TGA codes</strong>. These are industries where ChatGPT will confidently write a claim that gets your ad pulled, your listing flagged, or your practice reported. I catch those before they go live. Because I've seen what happens when someone doesn't.</p>
 
-        <p>Based in <strong>Delhi</strong>. Working with clients across Asia, Europe, and the Americas. Timezone-flexible. Async-friendly.</p>
+        <p>Here's what most people miss about AI and content. The writing part was never the hard part. The hard part is knowing which keyword triggers a Google healthcare policy review. Which claim structure survives AHPRA scrutiny. Which page architecture makes Google and ChatGPT both want to cite you. That stuff doesn't come from a prompt. It comes from years of watching what works, what tanks, and what gets a cease-and-desist.</p>
+
+        <p>I'm <strong>ISB-trained</strong> (Indian School of Business, top-ranked in Asia). <strong>Generative AI certified</strong>. And I apply <strong>GEO</strong> to every project, because Google is no longer the only search engine that matters. When someone asks Perplexity or ChatGPT "who's the best physiotherapist in Melbourne" or "which fintech app has the lowest fees," your content either shows up or it doesn't. I make sure it does.</p>
+
+        <p>Based in <strong>Delhi</strong>. Serving brands across Australia, the US, and the UK. My timezone means your content gets built while you sleep. My track record means you skip the part where you pay someone to learn your industry.</p>
       </div>
       <div class="story-side">
         <div class="timeline">
@@ -752,13 +863,13 @@
             <div class="tl-dot"></div>
             <span class="tl-year">2019 – 2020</span>
             <div class="tl-title">Instituto Cervantes</div>
-            <div class="tl-detail">Four years of Spanish language and culture study. The foundation before launching Audaz Revista.</div>
+            <div class="tl-detail">Four years of Spanish language and culture study. The deep-research foundation before launching Audaz Revista.</div>
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
             <span class="tl-year">2021</span>
-            <div class="tl-title">Founded Audaz Revista</div>
-            <div class="tl-detail">Built a bilingual publication covering Hispanic culture, business, and lifestyle from zero.</div>
+            <div class="tl-title">Launched Audaz Revista</div>
+            <div class="tl-detail">Bilingual publication covering Hispanic culture, business, and lifestyle. A personal project born from four years of language study.</div>
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
@@ -769,14 +880,14 @@
           <div class="tl-item">
             <div class="tl-dot"></div>
             <span class="tl-year">2022 – Now</span>
-            <div class="tl-title">Content Strategist at Award-Winning Aussie Agency</div>
-            <div class="tl-detail">Building content systems for businesses across fintech, beauty, healthcare, and more. 100+ brands.</div>
+            <div class="tl-title">Content Strategist, CJ&CO (Australian Agency)</div>
+            <div class="tl-detail">Content strategy and SEO for healthcare, fintech, and regulated brands. AHPRA, ASIC, TGA compliance daily.</div>
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
             <span class="tl-year">2023</span>
-            <div class="tl-title">Founded The Brand Crush</div>
-            <div class="tl-detail">Independent brand journalism. Unsponsored. Unafraid. Because I believe brand voice deserves honest analysis.</div>
+            <div class="tl-title">Launched The Brand Crush</div>
+            <div class="tl-detail">Independent brand journalism. Unsponsored analysis of what makes brand campaigns work and what makes them fall flat.</div>
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
@@ -800,7 +911,13 @@
             <div class="tl-dot"></div>
             <span class="tl-year">2024</span>
             <div class="tl-title">Certified in Generative AI</div>
-            <div class="tl-detail">Airtribe certification. Using AI to build smarter systems while keeping the craft human.</div>
+            <div class="tl-detail">Airtribe certification. The turning point. AI went from tool to workflow. Now it's built into every project.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-year">2025</span>
+            <div class="tl-title">AI-First Content Strategy + GEO</div>
+            <div class="tl-detail">Full pivot to AI-first content marketing for regulated industries. GEO, compliance-aware systems, AI search optimization.</div>
           </div>
         </div>
       </div>
@@ -813,10 +930,10 @@
   <div class="sv-grid">
     <div class="sv-left">
       <span class="sv-lbl">The short version</span>
-      <h2 class="sv-h">You don't need more words.<br>You need the <em>right</em> ones.</h2>
+      <h2 class="sv-h">You don't need<br>more content. You need<br><em>smarter</em> systems.</h2>
       <div class="sv-body">
-        <p>Your audience can smell corporate speak from three scrolls away. They want a brand that sounds like a real person with something worth saying.</p>
-        <p>That's what I write. Copy that makes your audience stop, read, and do the thing you want them to do.</p>
+        <p>Everybody's publishing. Almost nobody's ranking. And the brands that are ranking? Half of them are one compliance audit away from a very expensive problem.</p>
+        <p>I build the system that fixes both. Content that Google loves, AI cites, regulators approve, and humans actually want to read. That's four things most agencies can't get to one.</p>
       </div>
       <a href="/contact.html" class="btn-acc" style="margin-top:32px;display:inline-block">Let's talk →</a>
     </div>
@@ -838,41 +955,36 @@
   </div>
 </section>
 
-<!-- ── CREDENTIALS ── -->
-<section class="sec" style="padding-top:0">
+<!-- ── WHY ME ── -->
+<section class="sec" style="padding-top:clamp(32px,4vw,48px)">
   <div class="sec-inner">
-    <span class="sec-lbl">Credentials</span>
-    <h2 class="sec-h">Built on depth.<br>Every layer earned.</h2>
+    <span class="sec-lbl">The real question</span>
+    <h2 class="sec-h" style="margin-top:8px">Why hire me when<br>you could just use <em>ChatGPT?</em></h2>
+    <p style="color:var(--muted);max-width:580px;margin-bottom:48px;line-height:1.7">Fair question. Honestly, for some things you should. But here's what ChatGPT can't do for you:</p>
     <div class="cred-grid">
-      <div class="cred-card">
-        <div class="cc-org">Indian School of Business</div>
-        <div class="cc-title">ISB Alumna</div>
-        <div class="cc-detail">ISB is consistently ranked among Asia's top business schools. The Digital Marketing programme covers analytics, SEO, paid media, and content strategy frameworks. The foundation of how I approach every client engagement.</div>
+      <div class="cred-card" style="border-left:3px solid var(--accent)">
+        <div class="cc-title" style="color:var(--accent);font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-b);font-weight:700;margin-bottom:8px">01 / GEO. Before your competitors figure it out.</div>
+        <div class="cc-detail">Google is table stakes. The real game now is showing up when someone asks ChatGPT, Perplexity, or Gemini for a recommendation. I build every piece of content to rank in traditional search AND get cited by AI. Most agencies haven't even heard of GEO yet. You'll be years ahead.</div>
       </div>
-      <div class="cred-card">
-        <div class="cc-org">Award-Winning Aussie Agency</div>
-        <div class="cc-title">Content Strategist</div>
-        <div class="cc-detail">Building content systems for businesses across industries: landing pages that convert, SEO strategies that bring the right traffic, and brand voice guides that let teams scale without losing consistency.</div>
+      <div class="cred-card" style="border-left:3px solid var(--accent)">
+        <div class="cc-title" style="color:var(--accent);font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-b);font-weight:700;margin-bottom:8px">02 / 200+ projects worth of "what actually ranks."</div>
+        <div class="cc-detail">I didn't learn SEO from a course. I learned it from watching <span class="rough-underline">200+ projects</span> rank or tank across fintech, healthcare, SaaS, and ecommerce. I know which headline structures get clicks. Which page architectures Google rewards. Which claims AHPRA flags. AI has the internet. I have the pattern recognition.</div>
       </div>
-      <div class="cred-card">
-        <div class="cc-org">Audaz Revista</div>
-        <div class="cc-title">Founder &amp; Editor-in-Chief</div>
-        <div class="cc-detail">Built a publication from zero covering Hispanic culture, business, and lifestyle. Every editorial decision, from voice to structure to topic selection, is made with the same conviction I bring to client work: every page has a job to do.</div>
+      <div class="cred-card" style="border-left:3px solid var(--accent)">
+        <div class="cc-title" style="color:var(--accent);font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-b);font-weight:700;margin-bottom:8px">03 / World-class skills. Without the world-class invoice.</div>
+        <div class="cc-detail">I'm based in Delhi. My overhead is a fraction of what a Sydney or New York strategist charges. You get ISB-trained strategy, compliance expertise from working with Australian regulated brands daily, and 5+ years of SEO results. At a price point that makes your CFO smile. Not sorry about it.</div>
       </div>
-      <div class="cred-card">
-        <div class="cc-org">The Brand Crush</div>
-        <div class="cc-title">Founder</div>
-        <div class="cc-detail">Independent brand journalism. Covers what makes a brand campaign earn its place in culture, and what makes it fall flat. If you want to understand how I think about brand voice, The Brand Crush is the most honest answer I can give you.</div>
+      <div class="cred-card" style="border-left:3px solid var(--accent)">
+        <div class="cc-title" style="color:var(--accent);font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-b);font-weight:700;margin-bottom:8px">04 / Your timezone's secret weapon.</div>
+        <div class="cc-detail">You brief me at 5pm your time. I work while you sleep. You wake up to finished drafts, strategy docs, and content ready for review. It's like having a night shift that doesn't need coffee. Or overtime pay.</div>
       </div>
-      <div class="cred-card">
-        <div class="cc-org">Instituto Cervantes</div>
-        <div class="cc-title">Four Years of Study</div>
-        <div class="cc-detail">Studied Spanish language and Hispanic culture for four years before launching Audaz Revista. Credible editorial work requires understanding the subject deeply. That standard extends to everything I write.</div>
+      <div class="cred-card" style="border-left:3px solid var(--accent)">
+        <div class="cc-title" style="color:var(--accent);font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-b);font-weight:700;margin-bottom:8px">05 / I actually use AI. Like, properly.</div>
+        <div class="cc-detail">I'm not pretending AI doesn't exist. Claude and ChatGPT are in my workflow every single day. I use them for research, first drafts, data analysis, and schema generation. Then I add the stuff AI literally cannot: compliance judgment, brand voice, conversion instinct, and the experience to know when AI is confidently wrong. You get AI speed with human quality control. Best of both worlds.</div>
       </div>
-      <div class="cred-card">
-        <div class="cc-org">Airtribe</div>
-        <div class="cc-title">Certified in Generative AI</div>
-        <div class="cc-detail">Completed Airtribe's Generative AI certification. The future of content strategy involves working with AI deliberately. I use these tools to build smarter systems. The craft stays human.</div>
+      <div class="cred-card" style="border-left:3px solid var(--accent)">
+        <div class="cc-title" style="color:var(--accent);font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-b);font-weight:700;margin-bottom:8px">06 / Compliance is my Tuesday.</div>
+        <div class="cc-detail">AHPRA. ASIC. TGA. Google's healthcare ad policy. Meta's financial services restrictions. I work inside these frameworks every single day at CJ&CO. While other writers Google "can I say this in a health ad?", I already know the answer. And I know the workaround.</div>
       </div>
     </div>
   </div>
@@ -886,7 +998,7 @@
       <div>
         <h2 class="sec-h">Credentials that<br><em style="color:var(--accent)">prove the depth.</em></h2>
       </div>
-      <p class="sec-sub" style="color:rgba(255,255,255,.55)">Real programmes from institutions that require real work. Every one of these shaped how I approach content strategy today.</p>
+      <p class="sec-sub" style="color:rgba(255,255,255,.55)">No weekend webinars. No "complete 3 modules and get a PDF." These actually changed how I work.</p>
     </div>
     <div class="cert-badges">
 
@@ -907,7 +1019,7 @@
           </div>
         </div>
         <div class="cert-name">SEO Workshop</div>
-        <div class="cert-desc">Search engine optimisation fundamentals and advanced application from one of India's top research institutions.</div>
+        <div class="cert-desc">India's top research institution. This is where SEO stopped being a checklist and started being a discipline.</div>
         <span class="cert-year">2023</span>
       </div>
 
@@ -926,7 +1038,7 @@
           </div>
         </div>
         <div class="cert-name">Certified in Generative AI</div>
-        <div class="cert-desc">Using AI to build smarter content systems. The craft stays human. The workflow gets sharper.</div>
+        <div class="cert-desc">Where AI stopped being a toy and became my daily workflow. The strategic judgment? Still very much human.</div>
         <span class="cert-year">2024</span>
       </div>
 
@@ -948,7 +1060,7 @@
           </div>
         </div>
         <div class="cert-name">Fundamentals of Digital Marketing</div>
-        <div class="cert-desc">Google's accredited digital marketing certification covering search, social, email, and analytics fundamentals.</div>
+        <div class="cert-desc">The one everyone has. The difference is I actually use it. Daily. On real campaigns with real budgets.</div>
         <span class="cert-year">2022</span>
       </div>
 
@@ -967,7 +1079,7 @@
           </div>
         </div>
         <div class="cert-name">Flagship Marketing Fellowship</div>
-        <div class="cert-desc">Intensive fellowship programme covering brand positioning, growth marketing, and content-led acquisition strategies.</div>
+        <div class="cert-desc">Selective cohort. Brand positioning, growth marketing, content-led acquisition. Where I learned to think in systems, not blog posts.</div>
         <span class="cert-year">2023</span>
       </div>
 
@@ -987,7 +1099,7 @@
           </div>
         </div>
         <div class="cert-name">Performance Marketing Program</div>
-        <div class="cert-desc">Paid acquisition, funnel optimisation, Google Ads, and Meta. The technical side of making copy spend money wisely.</div>
+        <div class="cert-desc">Google Ads. Meta. Funnels. The part where strategy meets someone's actual credit card. Makes you write differently when you know what each click costs.</div>
         <span class="cert-year">2023</span>
       </div>
 
@@ -1007,7 +1119,7 @@
           </div>
         </div>
         <div class="cert-name">Digital Marketing Alumna</div>
-        <div class="cert-desc">One of Asia's top-ranked business schools. Analytics, SEO, paid media, content strategy. The foundation everything else is built on.</div>
+        <div class="cert-desc">Ranked #1 in India, #7 globally (FT). Analytics, SEO, paid media, content strategy. The foundation everything else sits on.</div>
         <span class="cert-year">2022</span>
       </div>
 
@@ -1111,10 +1223,10 @@
   <div class="sec-inner">
     <div class="pub-header">
       <div>
-        <span class="sec-lbl">My Publications</span>
-        <h2 class="sec-h">I write for brands.<br>I also <em>build</em> them.</h2>
+        <span class="sec-lbl">Side projects</span>
+        <h2 class="sec-h">I also run two publications.<br>Because <em>talk is cheap.</em></h2>
       </div>
-      <p class="sec-sub" style="max-width:380px">Two publications built from scratch. This is the part of my story that most copywriters can't point to. And the reason every client gets editorial-grade thinking on top of execution.</p>
+      <p class="sec-sub" style="max-width:380px">Advisors who don't invest their own money? Suspicious. Content strategists who don't publish their own content? Same energy.</p>
     </div>
     <div class="pubs-grid">
 
@@ -1124,11 +1236,11 @@
             <div class="pcb-name">Audaz<br>Revista</div>
             <div class="pcb-tagline">"Stop 'Just Studying' Spanish.<br>Start Living It."</div>
           </div>
-          <div class="pcb-founder">Founder &amp; Editor-in-Chief</div>
+          <div class="pcb-founder">Editor-in-Chief</div>
         </div>
         <div class="pub-card-info">
           <span class="pci-lbl">Cultural Magazine</span>
-          <p class="pci-desc">Hispanic culture, language, lifestyle, and travel. Four years at Instituto Cervantes before I launched it. Because writing about a culture you don't understand produces exactly the kind of shallow content I'm trying to replace.</p>
+          <p class="pci-desc">Hispanic culture, language, lifestyle, and travel. Four years of Spanish study before I wrote a single word. That's the standard. I don't write about things I haven't studied.</p>
           <div class="pub-tags">
             <span class="pub-tag">Hispanic Culture</span>
             <span class="pub-tag">Language</span>
@@ -1145,11 +1257,11 @@
             <div class="pcb-name">The<br>Brand<br>Crush</div>
             <div class="pcb-tagline">"Unsponsored.<br>Unafraid."</div>
           </div>
-          <div class="pcb-founder">Founder</div>
+          <div class="pcb-founder">Editor</div>
         </div>
         <div class="pub-card-info">
           <span class="pci-lbl">Brand Journalism</span>
-          <p class="pci-desc">Independent brand journalism that takes a real stance. Why did that campaign make you feel something? Did the brand earn it or manufacture it? Fully independent, fully honest. This is how I think about brand voice, publicly.</p>
+          <p class="pci-desc">Unsponsored brand analysis. No clients to protect, no punches pulled. If a campaign is brilliant, I'll say why. If it's garbage, same treatment. This is where I think out loud.</p>
           <div class="pub-tags">
             <span class="pub-tag">Brand Analysis</span>
             <span class="pub-tag">Campaign Reviews</span>
@@ -1168,31 +1280,31 @@
 <section class="sec philosophy-bg">
   <div class="phil-inner">
     <span class="phil-eyebrow">What I believe</span>
-    <h2 class="phil-header">Five things I'll never compromise on.</h2>
+    <h2 class="phil-header">The stuff nobody says out loud.</h2>
     <div class="manifesto-grid">
       <div class="manifesto-item">
         <div class="m-num">01</div>
-        <p class="m-text"><strong>Every sentence earns the next.</strong> If it doesn't earn its place, it doesn't belong. This applies to landing pages. And to every word in your Google ad.</p>
+        <p class="m-text"><strong>AI didn't kill writing. Bad strategy did.</strong> I use Claude and ChatGPT every single day. They're incredible tools. But a tool without direction produces noise. The direction, the judgment, the "this will get your ad pulled" instinct? That's the actual job.</p>
       </div>
       <div class="manifesto-item">
         <div class="m-num">02</div>
-        <p class="m-text"><strong>Brand voice is a product decision.</strong> It belongs in the strategy room, right next to pricing and positioning. When your content sounds consistent, customers trust you more. Full stop.</p>
+        <p class="m-text"><strong>Most "compliant" content is just boring content with a disclaimer.</strong> In regulated industries, brands water down their messaging until it says nothing. That's not compliance. That's surrender. Real skill is writing something that hits hard and still passes regulatory review.</p>
       </div>
       <div class="manifesto-item">
         <div class="m-num">03</div>
-        <p class="m-text"><strong>SEO and good writing are not in conflict.</strong> They have never been in conflict. If your SEO content reads like SEO content, the brief was wrong.</p>
+        <p class="m-text"><strong>If you're only ranking on Google, you're already behind.</strong> Your next customer might ask Perplexity before they ever type a search. GEO (Generative Engine Optimization) isn't a nice-to-have anymore. It's where your competitors are headed. I'm already there.</p>
       </div>
       <div class="manifesto-item">
         <div class="m-num">04</div>
-        <p class="m-text"><strong>Depth beats volume.</strong> One page that genuinely helps your audience converts better than ten that don't. Every single time.</p>
+        <p class="m-text"><strong>One blog post is a lottery ticket. A content system is a pipeline.</strong> Posting and praying is not a strategy. A system that maps keywords to buyer stages, structures content for AI citation, and compounds over time? That's what actually moves revenue.</p>
       </div>
       <div class="manifesto-item">
         <div class="m-num">05</div>
-        <p class="m-text"><strong>The best copy answers the question</strong> before the reader finishes asking it. That's the entire job.</p>
+        <p class="m-text"><strong>Depth wins. Volume is just expensive noise.</strong> One page that genuinely answers the question your customer is asking will outperform fifty AI-generated filler posts. Google knows it. ChatGPT knows it. Your bounce rate proves it.</p>
       </div>
       <div class="manifesto-item" style="background: rgba(200,92,56,.08);">
         <div class="m-num" style="color:rgba(200,92,56,.15)">★</div>
-        <p class="m-text" style="color:rgba(255,255,255,.6); font-style:normal; font-size:15px;">Sound familiar? It means you're the kind of brand I actually want to work with. <a href="/contact.html" style="color:var(--accent); text-decoration:underline; text-underline-offset:3px;">Let's talk. →</a></p>
+        <p class="m-text" style="color:rgba(255,255,255,.6); font-style:normal; font-size:15px;">Tired of content that ranks nowhere and says nothing? Same. <a href="/contact.html" style="color:var(--accent); text-decoration:underline; text-underline-offset:3px;">Let's fix it. →</a></p>
       </div>
     </div>
   </div>
@@ -1203,11 +1315,11 @@
   <div class="sec-inner">
     <div class="cta-inner">
       <span class="sec-lbl">Let's work together</span>
-      <h2 class="sec-h">If this is the kind of<br>copywriter you've been looking for...</h2>
-      <p>Tell me about your project. A landing page that needs sharper messaging. An email sequence that should be pulling its weight. Ad copy that deserves better returns. I take on a limited number of new clients each month. Let's talk before the spot's gone.</p>
+      <h2 class="sec-h">Still here? Good.<br>Most people bounce by now.</h2>
+      <p>The fact that you're still reading means one of two things. Either you're procrastinating (fair) or you actually need someone who gets your industry, knows what ranks, and won't write something that makes your compliance officer twitch. I take on a handful of clients at a time. If the timing works, let's talk. If not, bookmark this page. I'll still be here.</p>
       <div class="cta-btns">
         <a href="/contact.html" class="btn-acc">Let's talk →</a>
-        <a href="/services.html" class="btn-outline-w">See what I write →</a>
+        <a href="/services.html" class="btn-outline-w">See what I build →</a>
       </div>
     </div>
   </div>
@@ -1372,7 +1484,8 @@
   "mainEntity": {
     "@type": "Person",
     "name": "Amisha Sharma",
-    "jobTitle": "Freelance Copywriter & Content Strategist",
+    "jobTitle": "AI-First Content Marketing Strategist for Regulated Industries",
+    "description": "AI-first content marketing strategist for healthcare, fintech, and regulated industries. 5+ years, 200+ projects. AHPRA, ASIC, TGA compliance. GEO-optimized content that ranks on Google and AI search.",
     "url": "https://commasandchaos.com",
     "email": "profamisha@gmail.com",
     "address": {
@@ -1384,7 +1497,7 @@
       "@type": "EducationalOrganization",
       "name": "Indian School of Business (ISB)"
     },
-    "knowsAbout": ["Copywriting", "Content Strategy", "SEO", "Brand Voice", "Landing Pages", "Email Marketing", "Google Ads"],
+    "knowsAbout": ["AI Content Strategy", "Generative Engine Optimization (GEO)", "Content Marketing for Regulated Industries", "AHPRA Compliance", "ASIC Compliance", "TGA Advertising Compliance", "SEO", "AI-Powered Content Systems", "Healthcare Content Marketing", "Fintech Content Strategy", "Brand Voice", "Claude AI", "ChatGPT"],
     "sameAs": [
       "https://www.linkedin.com/in/amisha-sharma-content/",
       "https://audazrevista.com",

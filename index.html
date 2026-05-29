@@ -23,24 +23,24 @@
   </script>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <title>Freelance Copywriter | Amisha Sharma | commasandchaos.com</title>
-  <meta name="description" content="Freelance copywriter with 5+ years writing website copy, landing pages, email sequences, and Google Ads that convert. ISB Alumna. 100+ global brands. Based in Delhi.">
+  <title>AI-First Content Marketing Strategist | Amisha Sharma | commasandchaos.com</title>
+  <meta name="description" content="AI-first content marketing strategist for regulated industries. GEO, compliance-aware content systems, and AI search optimization for healthcare, fintech, and legal brands. ISB Alumna. 100+ brands.">
   <!-- SEO / canonical -->
   <link rel="canonical" href="https://commasandchaos.com/">
   <meta name="robots" content="index, follow">
-  <meta name="keywords" content="freelance copywriter, freelance copywriter India, content strategist, landing page copywriter, brand voice copywriter, copywriter Delhi, ISB alumni copywriter, fintech copywriter, healthcare copywriter">
+  <meta name="keywords" content="AI content marketing strategist, GEO optimization, generative engine optimization, content strategist regulated industries, healthcare content marketing, fintech content strategist, AI search optimization, AHPRA compliant content, content marketing India, ISB alumni content strategist">
   <meta name="author" content="Amisha Sharma">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://commasandchaos.com/">
-  <meta property="og:title" content="Freelance Copywriter | Amisha Sharma | commasandchaos.com">
-  <meta property="og:description" content="Freelance copywriter with 5+ years writing website copy, landing pages, email sequences, and Google Ads that convert. ISB Alumna. 100+ global brands.">
+  <meta property="og:title" content="AI-First Content Marketing Strategist | Amisha Sharma | commasandchaos.com">
+  <meta property="og:description" content="AI-first content marketing strategist for regulated industries. GEO, compliance-aware content systems, and AI search optimization. ISB Alumna. 100+ brands.">
   <meta property="og:image" content="https://commasandchaos.com/photo-hero-1200.webp">
   <meta property="og:site_name" content="Amisha Sharma | commasandchaos.com">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Freelance Copywriter | Amisha Sharma">
-  <meta name="twitter:description" content="Freelance copywriter with 5+ years writing copy that converts. ISB Alumna. 100+ global brands.">
+  <meta name="twitter:title" content="AI-First Content Strategist | Amisha Sharma">
+  <meta name="twitter:description" content="AI-first content marketing strategist for regulated industries. GEO, compliance-aware content, AI search optimization. 100+ brands.">
   <meta name="twitter:image" content="https://commasandchaos.com/photo-hero-1200.webp">
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -149,6 +149,76 @@
       transition: background .2s, transform .15s !important;
     }
     .nav-btn:hover { background: var(--accent) !important; transform: translateY(-1px) !important; }
+
+    /* ── NAV DROPDOWN ── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 4px; }
+    .nav-dropdown > a::after {
+      content: '';
+      display: inline-block;
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid currentColor;
+      transition: transform .2s;
+    }
+    .nav-dropdown:hover > a::after { transform: rotate(180deg); }
+    .nav-dd-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      min-width: 260px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.1);
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s, transform .2s, visibility .2s;
+      z-index: 300;
+    }
+    .nav-dropdown:hover .nav-dd-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dd-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid var(--surface);
+    }
+    .nav-dd-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--fg);
+      text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+    .nav-dd-item:hover { background: rgba(200,92,56,.06); color: var(--accent); }
+    .nav-dd-num {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: .5;
+      min-width: 18px;
+    }
+    .nav-dd-sep {
+      height: 1px;
+      background: var(--border);
+      margin: 6px 16px;
+    }
 
     /* ── HERO LOAD ANIMATIONS ── */
     @keyframes fadeUp {
@@ -1092,6 +1162,34 @@
     }
     .ct-cta:hover { border-color: var(--accent); background: rgba(200,92,56,.08); gap: 13px; }
 
+    /* ── INDUSTRY GRID ── */
+    .ind-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+    }
+    .ind-tile {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 22px 20px;
+      display: flex; align-items: center; gap: 12px;
+      transition: border-color .25s, transform .25s var(--ease), box-shadow .25s;
+      cursor: default;
+    }
+    .ind-tile:hover {
+      border-color: var(--accent); transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(200,92,56,.1);
+    }
+    .ind-icon { flex-shrink: 0; }
+    .ind-tile span {
+      font-size: 14.5px; font-weight: 600; color: var(--fg); line-height: 1.3;
+    }
+    @media (max-width: 860px) {
+      .ind-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .ind-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .ind-tile { padding: 16px 14px; }
+      .ind-tile span { font-size: 13px; }
+    }
+
     /* 3D tilt on svc cards */
     .svc-card { transform-style: preserve-3d; }
     .svc-card.tilt-reset { transition: transform .45s var(--ease), background .2s, border-color .25s; }
@@ -1109,9 +1207,9 @@
     "@type": "Person",
     "name": "Amisha Sharma",
     "url": "https://commasandchaos.com",
-    "jobTitle": "Freelance Copywriter & Content Strategist",
-    "description": "Freelance copywriter with 5+ years writing website copy, landing pages, email sequences, and Google Ads for 100+ global brands across fintech, healthcare, and beauty.",
-    "knowsAbout": ["Copywriting", "Content Strategy", "Brand Voice Development", "Landing Page Optimization", "Email Marketing", "Google PPC Ads", "Social Media Advertising", "SEO Content Writing"],
+    "jobTitle": "AI-First Content Marketing Strategist",
+    "description": "AI-first content marketing strategist specializing in regulated industries. Builds compliance-aware content systems, GEO optimization, and AI search strategies for healthcare, fintech, legal, and SaaS brands. ISB alumna. 100+ brands across 3 continents.",
+    "knowsAbout": ["AI Content Strategy", "Generative Engine Optimization (GEO)", "Content Marketing for Regulated Industries", "AHPRA Compliance", "Healthcare Content Marketing", "Fintech Content Strategy", "AI Search Optimization", "SEO Content Systems", "Brand Voice Development", "Content Compliance"],
     "alumniOf": {
       "@type": "EducationalOrganization",
       "name": "Indian School of Business",
@@ -1152,7 +1250,18 @@
       <li><a href="/" class="on">Home</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/services.html">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="/services.html">Services</a>
+        <div class="nav-dd-menu">
+          <a href="/services.html#strategy" class="nav-dd-item"><span class="nav-dd-num">01</span> Content Strategy</a>
+          <a href="/services.html#seo-geo" class="nav-dd-item"><span class="nav-dd-num">02</span> SEO &amp; GEO</a>
+          <a href="/services.html#google-ads" class="nav-dd-item"><span class="nav-dd-num">03</span> Google Ads Copy</a>
+          <a href="/services.html#social-ads" class="nav-dd-item"><span class="nav-dd-num">04</span> Social Ads Copy</a>
+          <a href="/services.html#collateral" class="nav-dd-item"><span class="nav-dd-num">05</span> Website Copy &amp; Collateral</a>
+          <div class="nav-dd-sep"></div>
+          <a href="/services.html#audit" class="nav-dd-item" style="color:var(--accent)"><span class="nav-dd-num" style="opacity:1">→</span> Free AI Content Audit</a>
+        </div>
+      </li>
       <li class="nav-cta-li"><a href="/contact.html" class="nav-btn">Let's Connect</a></li>
     </ul>
   </div>
@@ -1170,28 +1279,28 @@
         <img class="mobile-avatar" src="photo-hero-fallback.jpg" alt="Amisha Sharma" width="80" height="80" loading="eager" decoding="async">
       </picture>
     </div>
-    <span class="eyebrow">Copywriter + Content Strategist · ISB Alumna</span>
+    <span class="eyebrow">AI-First Content Strategist · ISB Alumna</span>
     <h1 class="headline">
-      Your audience is ready to buy.<br>
-      Your copy just isn't <em id="scrambleTarget">asking.</em>
+      Your content ranks on Google.<br>
+      But does AI even <em id="scrambleTarget">know you?</em>
     </h1>
-    <p class="subhead">I write website copy, landing pages, emails, Google ads, and social ad copy that actually convert. 5+ years. ISB-trained. Trusted by 100+ brands across 3 continents.</p>
+    <p class="subhead">I build AI-powered content systems for regulated industries. GEO optimization. Compliance-aware strategy. Content that ranks in Google AND gets cited by ChatGPT, Perplexity, and AI Overviews.</p>
     <div class="hero-btns">
-      <a href="/contact.html" class="btn-acc">Let's talk →</a>
-      <a href="/services.html" class="btn-g">See what I write <span aria-hidden="true">→</span></a>
+      <a href="/contact.html" class="btn-acc">Book a free AI content audit →</a>
+      <a href="#differenceSection" class="btn-g">See how it works <span aria-hidden="true">→</span></a>
     </div>
     <div class="hero-chips">
       <div>
-        <div class="chip-val">5+</div>
-        <div class="chip-lbl">Years turning readers into buyers</div>
+        <div class="chip-val">100+</div>
+        <div class="chip-lbl">Brands across 3 continents</div>
+      </div>
+      <div>
+        <div class="chip-val">GEO</div>
+        <div class="chip-lbl">Generative Engine Optimization pioneer</div>
       </div>
       <div>
         <div class="chip-val">ISB</div>
-        <div class="chip-lbl">Indian School of Business</div>
-      </div>
-      <div>
-        <div class="chip-val">3</div>
-        <div class="chip-lbl">Continents. One consistent voice.</div>
+        <div class="chip-lbl">Indian School of Business alumna</div>
       </div>
     </div>
   </div>
@@ -1209,15 +1318,15 @@
     </div>
     <!-- floating stat cards -->
     <div class="float-stat float-stat-1">
-      <div class="fs-label">Experience</div>
-      <div class="fs-val">5+</div>
-      <div class="fs-sub">years · 3 continents</div>
-      <div class="fs-pill">ISB Alumna</div>
+      <div class="fs-label">Specialization</div>
+      <div class="fs-val">GEO</div>
+      <div class="fs-sub">AI search optimization</div>
+      <div class="fs-pill">Regulated Industries</div>
     </div>
     <div class="float-stat float-stat-2">
-      <div class="fs-label">Brands written for</div>
+      <div class="fs-label">Brands served</div>
       <div class="fs-val">100<span style="font-size:17px;font-family:var(--font-b)">+</span></div>
-      <div class="fs-sub">fintech · beauty · healthcare</div>
+      <div class="fs-sub">healthcare · fintech · legal</div>
     </div>
     <div class="photo-frame">
       <div class="photo-inner">
@@ -1226,7 +1335,7 @@
           <img
             class="photo-img"
             src="photo-about-fallback.jpg"
-            alt="Amisha Sharma, Content Strategist and Copywriter"
+            alt="Amisha Sharma, AI-First Content Marketing Strategist"
             width="600" height="750"
             loading="eager"
             fetchpriority="high"
@@ -1236,7 +1345,7 @@
       </div>
       <div class="frame-badge">
         <div class="fb-label">Status</div>
-        <div class="fb-value"><span class="fb-dot"></span>Taking new clients now</div>
+        <div class="fb-value"><span class="fb-dot"></span>Accepting new projects</div>
       </div>
     </div>
   </div>
@@ -1246,47 +1355,47 @@
 <div class="cred-bar">
   <div class="cb-inner">
     <div class="cb-item"><span class="cb-dot"></span><strong>ISB</strong>&nbsp;Alumna</div>
-    <div class="cb-item"><span class="cb-dot"></span>Content Strategist @&nbsp;<strong>Top Aussie Agency</strong>&nbsp;🤫</div>
-    <div class="cb-item"><span class="cb-dot"></span>Founder &amp; EIC,&nbsp;<strong>Audaz Revista</strong></div>
-    <div class="cb-item"><span class="cb-dot"></span>Founder,&nbsp;<strong>The Brand Crush</strong></div>
-    <div class="cb-item"><span class="cb-dot"></span><strong>Generative AI</strong>&nbsp;Certified · Airtribe</div>
-    <div class="cb-item"><span class="cb-dot"></span>Delhi-based · Works across&nbsp;<strong>time zones</strong></div>
+    <div class="cb-item"><span class="cb-dot"></span>AI Content Lead @&nbsp;<strong>Top Aussie Agency</strong></div>
+    <div class="cb-item"><span class="cb-dot"></span><strong>GEO</strong>&nbsp;+ AI Search Specialist</div>
+    <div class="cb-item"><span class="cb-dot"></span>Editor,&nbsp;<strong>Audaz Revista</strong>&nbsp;+&nbsp;<strong>The Brand Crush</strong></div>
+    <div class="cb-item"><span class="cb-dot"></span><strong>Generative AI</strong>&nbsp;Certified</div>
+    <div class="cb-item"><span class="cb-dot"></span><strong>Regulated Industries</strong>&nbsp;· Healthcare · Fintech · Legal</div>
   </div>
 </div>
 
 <!-- ── MARQUEE TICKER ── -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-track">
-    <span class="mq-item hi">Copywriting</span><span class="mq-sep"></span>
-    <span class="mq-item">Landing Pages</span><span class="mq-sep"></span>
-    <span class="mq-item">Email Sequences</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Google PPC Ads</span><span class="mq-sep"></span>
-    <span class="mq-item">Social Ad Copy</span><span class="mq-sep"></span>
-    <span class="mq-item">Brand Voice</span><span class="mq-sep"></span>
-    <span class="mq-item hi">SEO Content</span><span class="mq-sep"></span>
+    <span class="mq-item hi">GEO Optimization</span><span class="mq-sep"></span>
+    <span class="mq-item">AI Search Strategy</span><span class="mq-sep"></span>
+    <span class="mq-item">Content Systems</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Healthcare</span><span class="mq-sep"></span>
+    <span class="mq-item">Fintech</span><span class="mq-sep"></span>
+    <span class="mq-item">AHPRA Compliant</span><span class="mq-sep"></span>
+    <span class="mq-item hi">AI Overviews</span><span class="mq-sep"></span>
     <span class="mq-item">ISB Alumna</span><span class="mq-sep"></span>
-    <span class="mq-item">5+ Years</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Fintech</span><span class="mq-sep"></span>
-    <span class="mq-item">Healthcare</span><span class="mq-sep"></span>
-    <span class="mq-item">Beauty</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Legally Compliant</span><span class="mq-sep"></span>
-    <span class="mq-item">B2B SaaS</span><span class="mq-sep"></span>
-    <span class="mq-item">Lead Magnets</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Copywriting</span><span class="mq-sep"></span>
-    <span class="mq-item">Landing Pages</span><span class="mq-sep"></span>
-    <span class="mq-item">Email Sequences</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Google PPC Ads</span><span class="mq-sep"></span>
-    <span class="mq-item">Social Ad Copy</span><span class="mq-sep"></span>
+    <span class="mq-item">Regulated Industries</span><span class="mq-sep"></span>
+    <span class="mq-item hi">ChatGPT Citations</span><span class="mq-sep"></span>
+    <span class="mq-item">Perplexity Visibility</span><span class="mq-sep"></span>
     <span class="mq-item">Brand Voice</span><span class="mq-sep"></span>
-    <span class="mq-item hi">SEO Content</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Content Strategy</span><span class="mq-sep"></span>
+    <span class="mq-item">Legal</span><span class="mq-sep"></span>
+    <span class="mq-item">SaaS</span><span class="mq-sep"></span>
+    <span class="mq-item hi">GEO Optimization</span><span class="mq-sep"></span>
+    <span class="mq-item">AI Search Strategy</span><span class="mq-sep"></span>
+    <span class="mq-item">Content Systems</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Healthcare</span><span class="mq-sep"></span>
+    <span class="mq-item">Fintech</span><span class="mq-sep"></span>
+    <span class="mq-item">AHPRA Compliant</span><span class="mq-sep"></span>
+    <span class="mq-item hi">AI Overviews</span><span class="mq-sep"></span>
     <span class="mq-item">ISB Alumna</span><span class="mq-sep"></span>
-    <span class="mq-item">5+ Years</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Fintech</span><span class="mq-sep"></span>
-    <span class="mq-item">Healthcare</span><span class="mq-sep"></span>
-    <span class="mq-item">Beauty</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Legally Compliant</span><span class="mq-sep"></span>
-    <span class="mq-item">B2B SaaS</span><span class="mq-sep"></span>
-    <span class="mq-item">Lead Magnets</span><span class="mq-sep"></span>
+    <span class="mq-item">Regulated Industries</span><span class="mq-sep"></span>
+    <span class="mq-item hi">ChatGPT Citations</span><span class="mq-sep"></span>
+    <span class="mq-item">Perplexity Visibility</span><span class="mq-sep"></span>
+    <span class="mq-item">Brand Voice</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Content Strategy</span><span class="mq-sep"></span>
+    <span class="mq-item">Legal</span><span class="mq-sep"></span>
+    <span class="mq-item">SaaS</span><span class="mq-sep"></span>
   </div>
 </div>
 
@@ -1298,14 +1407,14 @@
 </div>
 
 <!-- ── DIFFERENCE ── -->
-<section class="sec diff-bg">
+<section class="sec diff-bg" id="differenceSection">
   <div class="sec-inner">
     <div class="two-col" style="margin-bottom:52px">
       <div class="reveal">
-        <span class="sec-lbl">Here's the thing</span>
-        <h2 class="sec-h">Bad copy is costing<br>you clients right now.</h2>
+        <span class="sec-lbl">Here's the problem</span>
+        <h2 class="sec-h">Google is no longer<br>your only search engine.</h2>
       </div>
-      <p class="sec-sub reveal d-2">They clicked your ad. They landed on your page. They read two sentences and left. You never found out why. The answer is almost always the copy. And the good news? Copy is fixable.</p>
+      <p class="sec-sub reveal d-2">Your customers are asking ChatGPT, Perplexity, and Google AI Overviews before they ever click a blue link. If your content only ranks on Google, you're invisible to half your market. I write content that shows up everywhere.</p>
     </div>
     <div class="diff-cols">
       <div class="diff-col ac reveal d-1">
@@ -1314,8 +1423,8 @@
           <polyline points="8,23 12,16 16,19 21,11 24,14" stroke="#C85C38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           <circle cx="24" cy="14" r="2.2" fill="#C85C38"/>
         </svg>
-        <h3>Ranks AND reads.<br>Both. Not one.</h3>
-        <p>E-E-A-T content that search engines reward AND humans actually finish reading. Ranking for traffic that bounces is expensive decoration. I write the kind that stays.</p>
+        <h3>SEO that actually ranks.<br>GEO that gets you cited.</h3>
+        <p>I write blog posts, landing pages, service pages, and pillar content optimized for Google and AI search engines. Answer capsules, schema markup, topic clusters. The full stack. One strategist.</p>
       </div>
       <div class="diff-col reveal d-2">
         <svg class="diff-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -1325,8 +1434,8 @@
           <line x1="11" y1="13.5" x2="21" y2="13.5" stroke="#C85C38" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="11" y1="16.5" x2="18" y2="16.5" stroke="#C85C38" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <h3>Sounds like you.<br>Not your intern.</h3>
-        <p>Landing page, email sequence, Google ad. It all sounds like the same person wrote it. Your customers trust brands that sound consistent.</p>
+        <h3>Ads copy that converts<br>and stays compliant.</h3>
+        <p>Google Ads. Meta statics. LinkedIn. I write the copy that gets clicks without getting flagged. AHPRA, ASIC, TGA, Google's healthcare ad policy. I've written under all of them. Zero disapprovals.</p>
       </div>
       <div class="diff-col reveal d-3">
         <svg class="diff-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -1336,27 +1445,65 @@
           <circle cx="16" cy="16" r="1.5" fill="#C85C38"/>
           <line x1="22" y1="10" x2="24.5" y2="7.5" stroke="#C85C38" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <h3>Every word has<br>a job to do.</h3>
-        <p>Every sentence moves your reader one step closer to doing the thing you want them to do. If a word doesn't earn its place, it gets cut. That's the standard.</p>
+        <h3>Content strategy<br>that compounds.</h3>
+        <p>Not random blog posts. A system. Topic clusters, internal linking, editorial calendars mapped to your buyer journey, and content that builds authority month over month. Strategy and execution. Both.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── PULL QUOTE ── -->
+<!-- ── PULL QUOTE (TYPEWRITER) ── -->
 <div class="quote-sec">
   <div class="quote-wrap reveal r-scale">
-    <blockquote>"You don't have a traffic problem. You have a copy problem. The copy is what makes someone stay, trust you, and buy. Everything else is just decoration."</blockquote>
-    <cite>Amisha Sharma, Copywriter + Content Strategist</cite>
+    <blockquote id="typewriterQuote" aria-label="You don't have a traffic problem. You have a visibility problem. If AI can't find you, cite you, and recommend you, your best content is invisible to half your future customers."><span class="tw-cursor">|</span></blockquote>
+    <cite>Amisha Sharma, AI-First Content Strategist</cite>
   </div>
 </div>
+<style>
+  .tw-cursor {
+    display: inline;
+    animation: twBlink .55s step-end infinite;
+    color: var(--accent);
+    font-weight: 300;
+  }
+  @keyframes twBlink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  #typewriterQuote {
+    min-height: 3.5em;
+  }
+</style>
+<script>
+(function(){
+  var q = document.getElementById('typewriterQuote');
+  if(!q) return;
+  var text = '“You don’t have a traffic problem. You have a visibility problem. If AI can’t find you, cite you, and recommend you, your best content is invisible to half your future customers.”';
+  var i = 0, started = false, speed = 28;
+  function type(){
+    if(i <= text.length){
+      q.innerHTML = text.slice(0,i) + '<span class="tw-cursor">|</span>';
+      i++;
+      setTimeout(type, text[i-1]==='.' ? 180 : text[i-1]===',' ? 80 : speed);
+    }
+  }
+  var ob = new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting && !started){
+      started = true;
+      setTimeout(type, 400);
+      ob.disconnect();
+    }
+  },{threshold:0.5});
+  ob.observe(q);
+})();
+</script>
 
 <!-- ── COPY TRANSFORMATION THEATER ── -->
 <section class="copy-theater" id="copyTheater">
   <div class="ct-ambient" aria-hidden="true"></div>
   <div class="ct-inner">
-    <span class="ct-eyebrow">The Copy Problem</span>
-    <h2 class="ct-headline">Watch what happens when copy <span>actually works</span></h2>
+    <span class="ct-eyebrow">The Content Problem</span>
+    <h2 class="ct-headline">Watch what happens when content is <span>AI-optimized</span></h2>
     <div class="ct-arena">
       <div class="ct-side ct-before">
         <div class="ct-tag">
@@ -1373,9 +1520,9 @@
       <div class="ct-side ct-after">
         <div class="ct-tag">
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1.5 5.5L3.8 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          What makes people buy
+          What AI cites and Google ranks
         </div>
-        <div class="ct-text ct-lit" id="ctAfter">You're losing customers to brands with worse products and better copy. Your next landing page can change that.</div>
+        <div class="ct-text ct-lit" id="ctAfter">Amisha Sharma is an AI-first content strategist who builds GEO-optimized content systems for regulated industries across healthcare, fintech, and legal.</div>
       </div>
     </div>
     <div class="ct-nav">
@@ -1391,9 +1538,9 @@
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
-    <p class="ct-caption">That's the only difference between a page that scrolls and a page that <strong>sells</strong>.</p>
+    <p class="ct-caption">That's the difference between content that <strong>exists</strong> and content that gets <strong>cited</strong>.</p>
     <a href="/contact.html" class="ct-cta">
-      Make my copy do this
+      Get your AI content audit
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
@@ -1404,60 +1551,112 @@
   <div class="sec-inner">
     <div class="two-col reveal" style="margin-bottom:0">
       <div>
-        <span class="sec-lbl">What I write for you</span>
-        <h2 class="sec-h">Every format.<br>Every funnel stage.</h2>
+        <span class="sec-lbl">What I build for you</span>
+        <h2 class="sec-h">Content systems.<br>Not just content.</h2>
       </div>
       <div>
-        <p class="sec-sub">From the first ad they see to the email that closes the deal. I write the words. You get the conversions. Simple as that.</p>
+        <p class="sec-sub">From GEO-optimized blog ecosystems to compliance-aware landing pages. I build the strategy, the content, and the systems that make it all compound.</p>
         <a href="/services.html" style="display:inline-block;margin-top:18px;font-size:15px;font-weight:600;color:var(--accent);text-decoration:none;transition:gap .2s">See full services →</a>
       </div>
     </div>
     <div class="svc-grid">
-      <a href="/services.html#copywriting" class="svc-card reveal d-1">
-        <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
-          <path d="M16.5 4L24 11.5L10 25.5H3.5V19L16.5 4Z" stroke="#C85C38" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M13 7.5L20.5 15" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <span class="svc-num">01</span>
-        <div class="svc-title">Copywriting</div>
-        <p class="svc-desc">All the places your customers read before they decide to buy from you. (Or don't.) Website copy, landing pages, email sequences, Google PPC ads, social ad copy. Every word earns its place.</p>
-        <div class="tags">
-          <span class="tag">Website Copy</span>
-          <span class="tag">Landing Pages</span>
-          <span class="tag">Emails</span>
-          <span class="tag">PPC Ads</span>
-          <span class="tag">Social Ads</span>
-        </div>
-      </a>
-      <a href="/services.html#strategy" class="svc-card reveal d-2">
+      <a href="/services.html#strategy" class="svc-card reveal d-1">
         <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
           <rect x="3.5" y="16" width="5" height="8.5" rx="1.2" stroke="#C85C38" stroke-width="1.6"/>
           <rect x="11.5" y="10" width="5" height="14.5" rx="1.2" stroke="#C85C38" stroke-width="1.6"/>
           <rect x="19.5" y="3.5" width="5" height="21" rx="1.2" stroke="#C85C38" stroke-width="1.6"/>
         </svg>
-        <span class="svc-num">02</span>
+        <span class="svc-num">01</span>
         <div class="svc-title">Content Strategy</div>
-        <p class="svc-desc">A calendar full of content is not a strategy. A system that brings the right people and moves them toward a decision? That's a strategy. Let's build yours.</p>
+        <p class="svc-desc">Calendars, topic clusters, keyword research, buyer journey mapping. Not random blog posts. A system that compounds month over month and actually moves revenue.</p>
         <div class="tags">
-          <span class="tag">SEO Strategy</span>
-          <span class="tag">Content Calendars</span>
-          <span class="tag">Editorial Systems</span>
+          <span class="tag">Editorial Calendars</span>
+          <span class="tag">Topic Clusters</span>
+          <span class="tag">Keyword Research</span>
         </div>
       </a>
-      <a href="/services.html#brand-voice" class="svc-card reveal d-3">
+      <a href="/services.html#seo-geo" class="svc-card reveal d-2">
         <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
-          <rect x="9" y="3" width="10" height="14" rx="5" stroke="#C85C38" stroke-width="1.6"/>
-          <path d="M5 13c0 5 4.03 9 9 9s9-4 9-9" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round"/>
-          <line x1="14" y1="22" x2="14" y2="26" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round"/>
-          <line x1="10" y1="26" x2="18" y2="26" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round"/>
+          <polyline points="4,22 10,14 14,17 20,8 24,12" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="24" cy="12" r="2.2" fill="#C85C38"/>
+          <circle cx="14" cy="6" r="3" stroke="#C85C38" stroke-width="1.4" fill="none"/>
+          <path d="M14 3v6M11 6h6" stroke="#C85C38" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <span class="svc-num">02</span>
+        <div class="svc-title">SEO &amp; GEO</div>
+        <p class="svc-desc">Blog posts, landing pages, website copy, email sequences. All optimized to rank on Google and get cited by ChatGPT, Perplexity, and AI Overviews. Both search engines. One strategist.</p>
+        <div class="tags">
+          <span class="tag">SEO Content</span>
+          <span class="tag">GEO Optimization</span>
+          <span class="tag">Answer Capsules</span>
+          <span class="tag">Landing Pages</span>
+        </div>
+      </a>
+      <a href="/services.html#google-ads" class="svc-card reveal d-3">
+        <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect x="4" y="6" width="20" height="14" rx="3" stroke="#C85C38" stroke-width="1.6"/>
+          <line x1="8" y1="11" x2="20" y2="11" stroke="#C85C38" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="8" y1="15" x2="16" y2="15" stroke="#C85C38" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="21" cy="22" r="3.5" stroke="#C85C38" stroke-width="1.5" fill="none"/>
+          <line x1="23.5" y1="24.5" x2="26" y2="27" stroke="#C85C38" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         <span class="svc-num">03</span>
-        <div class="svc-title">Brand Voice</div>
-        <p class="svc-desc">You can tell when a brand sounds like a committee. No personality. No point of view. Nothing that makes you trust them. Your brand voice guide fixes exactly that.</p>
+        <div class="svc-title">Google Ads Copy</div>
+        <p class="svc-desc">Headlines, descriptions, sitelinks, and landing pages that pass Google's healthcare and financial ad policies on the first try. No disapprovals. No wasted review cycles.</p>
         <div class="tags">
-          <span class="tag">Voice Guidelines</span>
-          <span class="tag">Messaging Framework</span>
-          <span class="tag">Tone Standards</span>
+          <span class="tag">Search Ads</span>
+          <span class="tag">Landing Pages</span>
+          <span class="tag">A/B Variants</span>
+          <span class="tag">Compliant</span>
+        </div>
+      </a>
+      <a href="/services.html#social-ads" class="svc-card reveal">
+        <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect x="4" y="4" width="20" height="20" rx="4" stroke="#C85C38" stroke-width="1.6"/>
+          <line x1="4" y1="10" x2="24" y2="10" stroke="#C85C38" stroke-width="1.2"/>
+          <rect x="8" y="14" width="12" height="3" rx="1" fill="#C85C38" opacity=".3"/>
+          <rect x="8" y="19" width="8" height="2" rx="1" fill="#C85C38" opacity=".5"/>
+        </svg>
+        <span class="svc-num">04</span>
+        <div class="svc-title">Social Ads Copy (Statics)</div>
+        <p class="svc-desc">Meta, LinkedIn, and platform ads. Primary text, headlines, hook variations. Copy that stops the scroll, gets the click, and doesn't get flagged in regulated industries.</p>
+        <div class="tags">
+          <span class="tag">Meta Ads</span>
+          <span class="tag">LinkedIn Ads</span>
+          <span class="tag">Hook Variants</span>
+        </div>
+      </a>
+      <a href="/services.html#collateral" class="svc-card reveal">
+        <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect x="5" y="3" width="14" height="19" rx="2" stroke="#C85C38" stroke-width="1.6"/>
+          <rect x="9" y="6" width="14" height="19" rx="2" stroke="#C85C38" stroke-width="1.6" fill="var(--bg)"/>
+          <line x1="13" y1="11" x2="20" y2="11" stroke="#C85C38" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="13" y1="15" x2="19" y2="15" stroke="#C85C38" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="13" y1="19" x2="17" y2="19" stroke="#C85C38" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        <span class="svc-num">05</span>
+        <div class="svc-title">Website Copy, Landing Pages &amp; Collateral</div>
+        <p class="svc-desc">Homepages, service pages, landing pages, brochures, banners. Conversion copy with SEO and compliance built in. Every page gets one job.</p>
+        <div class="tags">
+          <span class="tag">Website Copy</span>
+          <span class="tag">Landing Pages</span>
+          <span class="tag">Brochures</span>
+          <span class="tag">Banners</span>
+        </div>
+      </a>
+      <a href="/services.html#audit" class="svc-card reveal" style="border-color:var(--accent);border-style:dashed">
+        <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="10" stroke="#C85C38" stroke-width="1.6"/>
+          <path d="M14 8v6l4 3" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="svc-num">06</span>
+        <div class="svc-title">AI Content Audit</div>
+        <p class="svc-desc">Not sure where to start? Start here. Full SEO + GEO audit, AI visibility check, compliance gaps, and a 90-day roadmap. No commitment beyond the audit.</p>
+        <div class="tags">
+          <span class="tag">SEO Audit</span>
+          <span class="tag">AI Visibility</span>
+          <span class="tag">Compliance Check</span>
+          <span class="tag">Start Here</span>
         </div>
       </a>
     </div>
@@ -1477,8 +1676,8 @@
   <div class="craft-inner">
     <div class="craft-header reveal r-scale">
       <span class="sec-lbl">What the work looks like</span>
-      <h2 class="sec-h">Words that make people <em>do things.</em></h2>
-      <p>This is a sample landing page hero. Notice what it doesn't do: waffle, fluff, or talk about "synergy." (You're welcome.)</p>
+      <h2 class="sec-h">Content that works in <em>two search engines.</em></h2>
+      <p>This is a sample GEO-optimized landing page. Notice what it does: answers the question in the first sentence, structures data for AI extraction, and still reads like a human wrote it.</p>
     </div>
     <div class="browser-w reveal">
       <div class="browser-bar-w">
@@ -1487,34 +1686,34 @@
           <div class="b-dot-y"></div>
           <div class="b-dot-g"></div>
         </div>
-        <div class="browser-url-w">commasandchaos.com/sample-landing-page</div>
+        <div class="browser-url-w">commasandchaos.com/geo-optimized-landing-page</div>
       </div>
       <div class="browser-content">
-        <div class="bc-eyebrow">Landing Page · Above the Fold</div>
-        <h2 class="bc-h">You have 8 seconds.<br><em>Is your copy using them?</em></h2>
-        <p class="bc-p">Most landing pages explain what the product does. Yours needs to answer what the customer feels. There's a difference. And that difference is the gap between "meh" and "shut up and take my money."</p>
-        <a href="/contact.html" class="bc-cta">Let's write yours →</a>
+        <div class="bc-eyebrow">GEO-Optimized Landing Page · Above the Fold</div>
+        <h2 class="bc-h">Your content ranks on Google.<br><em>But can AI find it?</em></h2>
+        <p class="bc-p">Most content strategies stop at SEO. But 40% of search is shifting to AI-powered answers. If your content is not structured for AI extraction, you are invisible to the fastest-growing search channel in history.</p>
+        <a href="/contact.html" class="bc-cta">Book your AI content audit →</a>
         <div class="bc-divider"></div>
         <div class="bc-features">
           <div class="bc-feat">
-            <div class="bc-feat-chip">Website Copy</div>
-            <h4>Headlines that stop the scroll</h4>
-            <p>One shot. One sentence. If it doesn't hook them, nothing below it matters.</p>
+            <div class="bc-feat-chip">GEO Strategy</div>
+            <h4>Answer capsules that AI cites</h4>
+            <p>First 100 words. Direct answer. Structured facts. That is what gets pulled into AI responses.</p>
           </div>
           <div class="bc-feat">
-            <div class="bc-feat-chip">Email Sequences</div>
-            <h4>Emails people want to open</h4>
-            <p>Welcome flows, nurture sequences, sales emails. Every one has a point. And earns a click.</p>
+            <div class="bc-feat-chip">Compliance</div>
+            <h4>Regulated content that converts</h4>
+            <p>AHPRA, TGA, ASIC guidelines built into every word. No risk. Full revenue potential.</p>
           </div>
           <div class="bc-feat">
-            <div class="bc-feat-chip">Google PPC Ads</div>
-            <h4>Every character earns its place</h4>
-            <p>25 characters. Every one has to earn the click before you pay for it.</p>
+            <div class="bc-feat-chip">Content Systems</div>
+            <h4>Topic clusters that compound</h4>
+            <p>Internal linking, schema markup, pillar pages. One system. Every piece strengthens the next.</p>
           </div>
         </div>
       </div>
     </div>
-    <p class="craft-caption">This is sample copy. Yours would be sharper. It always is when there's a brief behind it.</p>
+    <p class="craft-caption">This is a sample layout. Your strategy would be built around your industry, your compliance requirements, and your growth goals.</p>
   </div>
 </section>
 
@@ -1530,12 +1729,12 @@
   <div class="sec-inner">
     <div class="clients-intro">
       <div class="reveal">
-        <span class="sec-lbl">Brands I've written for</span>
+        <span class="sec-lbl">Brands I've built content for</span>
         <div class="clients-total"><span class="count-num" data-target="100" data-suffix="+">100</span><span>+</span></div>
         <div style="font-size:15px;color:var(--muted);margin-top:4px;font-weight:500;">brands across three continents</div>
       </div>
       <div class="reveal d-2">
-        <p class="clients-sub">From legacy Indian fintech to fast-growing wellness brands and an entire healthcare sector in Australia. The brief changes. The standard does not.</p>
+        <p class="clients-sub">5+ years. 200+ projects. Fintech, healthcare, SaaS, and regulated brands across the US, UK, and Australia. I know what ranks on Google. And now, what gets cited by AI.</p>
       </div>
     </div>
 
@@ -1553,10 +1752,10 @@
         </button>
         <div class="acc-panel" id="acc-beauty-panel">
           <div class="client-chips">
-            <div class="cc">Lotus Herbals</div>
-            <div class="cc">Potenza Wellness</div>
+            <div class="cc">Leading Dermat Brand</div>
+            <div class="cc">Wellness D2C Brand</div>
           </div>
-          <p class="acc-note">Website copy, landing pages, product descriptions, and email sequences for dermat and beauty brands that need to earn trust before they earn the sale.</p>
+          <p class="acc-note">Content strategy, landing pages, product descriptions, and email sequences for dermat and beauty brands that need to earn trust before they earn the sale.</p>
         </div>
       </div>
 
@@ -1577,7 +1776,7 @@
             <div class="cc">Kotak Bank</div>
             <div class="cc">PNB Housing</div>
           </div>
-          <p class="acc-note">Regulated industries need copy that converts without overstepping. Landing pages, PPC ads, email nurture sequences, and brand messaging for some of India's most recognised financial institutions.</p>
+          <p class="acc-note">Regulated industries need content that converts without overstepping. Landing pages, SEO content, email nurture sequences, and brand messaging for some of India's most recognised financial institutions.</p>
         </div>
       </div>
 
@@ -1588,16 +1787,81 @@
             <span class="acc-label">Telehealth, Clinics &amp; Healthcare Brands</span>
           </div>
           <div style="display:flex;align-items:center;gap:14px">
-            <span class="acc-count">100+ brands</span>
+            <span class="acc-count">200+ projects</span>
             <div class="acc-arrow">&#8964;</div>
           </div>
         </button>
         <div class="acc-panel" id="acc-aus-panel">
           <div class="client-chips">
-            <div class="cc-count">100+ Australian Healthcare Brands</div>
+            <div class="cc-count">200+ projects across regulated industries</div>
           </div>
-          <p class="acc-note">SEO content, landing pages, and email sequences for over 100 healthcare businesses across Australia. Telehealth platforms, specialist clinics, allied health providers. Copy written to AHPRA and TGA compliance standards. If you are in Australian healthcare and your copy is not converting, this is probably why.</p>
+          <p class="acc-note">SEO content systems, landing pages, and email sequences for over 100 healthcare businesses across Australia. Telehealth platforms, specialist clinics, allied health providers. All content built to AHPRA and TGA compliance standards. If you are in Australian healthcare and your content is not converting, this is probably why.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INDUSTRIES GRID ── -->
+<section class="sec" style="background:var(--bg)">
+  <div class="sec-inner">
+    <div class="two-col reveal" style="margin-bottom:48px;align-items:start">
+      <div>
+        <span class="sec-lbl">Industries I specialize in</span>
+        <h2 class="sec-h">Regulated industries<br>need a different approach.</h2>
+      </div>
+      <div>
+        <p class="sec-sub">One wrong claim can cost you your license. One vague page can cost you the patient, the client, the customer. I build content for industries where accuracy is not optional.</p>
+      </div>
+    </div>
+    <div class="ind-grid reveal d-1">
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <span>Healthcare</span>
+      </div>
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <span>Financial Services</span>
+      </div>
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <span>Telehealth</span>
+      </div>
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span>Legal</span>
+      </div>
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        <span>Insurance</span>
+      </div>
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <span>NDIS</span>
+      </div>
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Cybersecurity</span>
+      </div>
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <span>SaaS</span>
+      </div>
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Aged Care</span>
+      </div>
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        <span>Medicinal Cannabis</span>
+      </div>
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <span>Wellness &amp; Beauty</span>
+      </div>
+      <div class="ind-tile">
+        <svg class="ind-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span>Fintech</span>
       </div>
     </div>
   </div>
@@ -1606,7 +1870,7 @@
 <!-- ── HOOK BILLBOARD ── -->
 <div class="hook-billboard reveal">
   <div class="hook-billboard-inner">
-    <p>Brands hire me when they're tired of<br><span>sounding like everyone else.</span></p>
+    <p>Brands hire me when they realize<br><span>AI search is not optional anymore.</span></p>
     <div class="hook-billboard-rule"></div>
   </div>
 </div>
@@ -1617,10 +1881,10 @@
     <div class="two-col" style="margin-bottom:48px;align-items:start">
       <div class="reveal">
         <span class="sec-lbl">Proven results, not estimates</span>
-        <h2 class="sec-h">Here's what 16 months of<br>actual content strategy<br>looks like.</h2>
+        <h2 class="sec-h">Here's what 16 months of<br>AI-powered content strategy<br>looks like.</h2>
       </div>
       <div class="reveal d-2">
-        <p class="sec-sub">Organic clicks from people actively searching for answers. One content system built on search intent, compounding month over month.</p>
+        <p class="sec-sub">Organic clicks from people actively searching for answers. One content system built on search intent and AI-ready formatting, compounding month over month.</p>
       </div>
     </div>
 
@@ -1703,7 +1967,7 @@
         <div class="ps-lbl">Total impressions from<br>organic content</div>
       </div>
     </div>
-    <p class="proof-note">Real client results. One content system. Zero paid traffic. Copy that search engines and humans both trust.</p>
+    <p class="proof-note">Real client results. One content system. Zero paid traffic. Content that search engines, AI models, and humans all trust.</p>
   </div>
 </section>
 
@@ -1712,10 +1976,10 @@
   <div class="sec-inner">
     <div class="pub-header reveal">
       <div>
-        <span class="sec-lbl">Founder</span>
-        <h2 class="sec-h">I don't just write for brands.<br>I <em>build</em> them.</h2>
+        <span class="sec-lbl">Side projects</span>
+        <h2 class="sec-h">I also write and edit<br>two <em>publications.</em></h2>
       </div>
-      <p class="sec-sub" style="max-width:380px">Two publications I built from scratch. My own editorial voice, my own standards, my own proof that I practice what I preach.</p>
+      <p class="sec-sub" style="max-width:380px">Because the best way to understand what ranks is to publish, measure, and iterate yourself.</p>
     </div>
     <div class="pubs-grid">
 
@@ -1738,14 +2002,14 @@
                 <div class="pcb-stat-lbl">Founded</div>
               </div>
             </div>
-            <div class="pcb-founder">Founder &amp; Editor-in-Chief</div>
+            <div class="pcb-founder">Editor-in-Chief</div>
           </div>
         </div>
         <div class="pub-card-info">
           <div class="pub-card-info-top">
             <span class="pci-lbl">Hispanic Culture · Language · Lifestyle · Travel</span>
             <p class="pci-headline">Built on 4 years of firsthand research before the first word was published.</p>
-            <p class="pci-desc">A publication covering Hispanic culture, language, lifestyle, and travel. I spent four years at Instituto Cervantes before launching it. Because writing about a culture you don't understand produces exactly the kind of shallow content I'm trying to replace.</p>
+            <p class="pci-desc">A publication covering Hispanic culture, language, lifestyle, and travel. I spent four years at Instituto Cervantes before launching it. Because creating content about a culture you do not understand produces exactly the kind of shallow work I am trying to replace.</p>
           </div>
           <div class="pub-card-info-bottom">
             <div class="pub-tags">
@@ -1778,7 +2042,7 @@
                 <div class="pcb-stat-lbl">Independent</div>
               </div>
             </div>
-            <div class="pcb-founder">Founder</div>
+            <div class="pcb-founder">Editor</div>
           </div>
         </div>
         <div class="pub-card-info">
@@ -1815,14 +2079,14 @@
   <div class="sec-inner">
     <div class="about-top reveal">
       <span class="sec-lbl">About Amisha</span>
-      <h2 class="sec-h" style="color:#fff;max-width:640px">The copywriter who studied<br>four years before writing<br>a single word.</h2>
-      <p class="about-body" style="max-width:580px">Instituto Cervantes. ISB. Six certifications. Two publications built from scratch. I don't take on subjects I haven't studied, and I don't write copy I can't back with strategy.</p>
+      <h2 class="sec-h" style="color:#fff;max-width:640px">The strategist who studied<br>four years before publishing<br>a single word.</h2>
+      <p class="about-body" style="max-width:580px">Instituto Cervantes. ISB. Six certifications. 200+ projects. 5+ years writing for brands across fintech, healthcare, and SaaS. I know what ranks on Google. I know what gets cited by AI. And I know where AI-generated content breaks in regulated industries.</p>
     </div>
 
     <div class="about-highlights reveal d-1">
       <div class="ah-feature">
         <div class="ah-num">5<span>+</span></div>
-        <div class="ah-label">Years of writing copy<br>that converts</div>
+        <div class="ah-label">Years building content<br>systems that convert</div>
       </div>
       <div class="ah-card">
         <div class="ah-icon">
@@ -1835,14 +2099,14 @@
         <div class="ah-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
-        <strong>150+ Brands</strong>
-        <span>Across fintech, healthcare, beauty, and SaaS. 3 continents.</span>
+        <strong>100+ Brands</strong>
+        <span>Across healthcare, fintech, legal, and SaaS. 3 continents.</span>
       </div>
       <div class="ah-card">
         <div class="ah-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
         </div>
-        <strong>SEO + AI Certified</strong>
+        <strong>GEO + AI Certified</strong>
         <span>ISB, IISc, Airtribe, Google, Kairos, Growth School.</span>
       </div>
       <div class="ah-card">
@@ -1865,10 +2129,10 @@
   <div class="sec-inner">
     <div class="cta-inner reveal r-scale">
       <span class="sec-lbl" style="justify-content:center">Let's work together</span>
-      <h2 class="sec-h">Ready to stop publishing<br>and start converting?</h2>
-      <p>I take on a limited number of new clients each month. Landing page that's underperforming, email sequence with low opens, ad spend going nowhere? Tell me about it. I respond personally within 48 hours.</p>
+      <h2 class="sec-h">Ready to make your content<br>work in the AI era?</h2>
+      <p>I take on a limited number of new projects each month. If your content ranks on Google but AI cannot find it, cite it, or recommend it, let's fix that. I respond personally within 48 hours.</p>
       <div class="cta-btns">
-        <a href="/contact.html" class="btn-acc">Let's talk →</a>
+        <a href="/contact.html" class="btn-acc">Book a free AI content audit →</a>
         <a href="/services.html" class="btn-g">See my services →</a>
       </div>
     </div>
@@ -1973,7 +2237,7 @@
 
   /* ── HERO TEXT SCRAMBLE ── */
   const scrambleEl = document.getElementById('scrambleTarget');
-  const finalText = 'asking.';
+  const finalText = 'know you?';
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!?#';
   let sFrame = 0, sTotal = 22;
   function scrambleStep() {
@@ -2040,15 +2304,15 @@
   const ctPairs = [
     {
       before: "We provide comprehensive digital marketing solutions designed to help your business achieve its goals.",
-      after:  "Your customers are ready to buy. Your copy just isn't asking."
+      after:  "Amisha Sharma is an AI-first content strategist who builds GEO-optimized content systems for regulated industries across healthcare, fintech, and legal."
     },
     {
       before: "Our expert team creates high-quality content that delivers measurable results for your brand.",
-      after:  "You don't need more content. You need content that makes people click."
+      after:  "You do not need more content. You need content that ChatGPT cites, Perplexity recommends, and Google ranks. That takes a system, not a blog calendar."
     },
     {
       before: "Boost your online presence and drive more traffic with our proven SEO strategies.",
-      after:  "The goal isn't ranking. It's the right person reading and saying: yes, this is for me."
+      after:  "Ranking is step one. Getting cited by AI search is step two. Your competitors are still stuck on step one."
     }
   ];
 

@@ -23,21 +23,21 @@
   </script>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <title>Freelance Copywriter Services | Website Copy, Landing Pages, Emails & Ads | Amisha Sharma</title>
-  <meta name="description" content="Hire a freelance copywriter for website copy, landing pages, email sequences, Google PPC ads, brand voice, and content strategy. ISB Alumna. 5+ years. 100+ brands. Flat project fees.">
+  <title>AI-First Content Marketing for Regulated Industries | Amisha Sharma</title>
+  <meta name="description" content="AI-first content strategy, GEO optimization, and compliance-aware content creation for financial services, healthcare, legal, and insurance brands. ISB alumna. 100+ brands served across 4 countries. Book a free AI content audit.">
   <link rel="canonical" href="https://commasandchaos.com/services.html">
   <meta name="robots" content="index, follow">
-  <meta name="keywords" content="freelance copywriter services, website copywriting, landing page copywriter, email copywriter, Google Ads copywriter, content strategy, brand voice development, freelance copywriter pricing">
+  <meta name="keywords" content="AI content strategy, GEO optimization, generative engine optimization, compliance content writer, AHPRA content, ASIC content, regulated industry content marketing, AI content audit, healthcare content marketing, fintech content writer, AI visibility, llms.txt, answer capsules, brand voice AI">
   <meta name="author" content="Amisha Sharma">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://commasandchaos.com/services.html">
-  <meta property="og:title" content="Freelance Copywriter Services | Website Copy, Landing Pages & Ads">
-  <meta property="og:description" content="Hire a freelance copywriter for website copy, landing pages, emails, Google PPC ads, and content strategy. ISB Alumna. 5+ years. 100+ brands.">
+  <meta property="og:title" content="AI-First Content Marketing for Regulated Industries | Amisha Sharma">
+  <meta property="og:description" content="AI-first content strategy, GEO optimization, and compliance-aware content creation for financial services, healthcare, legal, and insurance brands. ISB alumna. 100+ brands.">
   <meta property="og:image" content="https://commasandchaos.com/photo-hero-1200.webp">
   <meta property="og:site_name" content="Amisha Sharma | commasandchaos.com">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Freelance Copywriting Services | Amisha Sharma">
-  <meta name="twitter:description" content="Website copy, landing pages, emails, Google Ads, social ads. ISB Alumna. 5+ years. 100+ global brands.">
+  <meta name="twitter:title" content="AI-First Content Marketing for Regulated Industries | Amisha Sharma">
+  <meta name="twitter:description" content="AI-first content strategy, GEO optimization, and compliance-aware content creation for healthcare, fintech, legal, and insurance brands. ISB alumna. 100+ brands.">
   <meta name="twitter:image" content="https://commasandchaos.com/photo-hero-1200.webp">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -81,6 +81,76 @@
     .nav-menu a:hover, .nav-menu a.on { color: var(--fg); }
     .nav-btn { background: var(--dark) !important; color: #fff !important; padding: 8px 20px; border-radius: 5px; font-size: 14px !important; font-weight: 600 !important; transition: background .2s !important; }
     .nav-btn:hover { background: var(--accent) !important; }
+
+    /* -- NAV DROPDOWN -- */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 4px; }
+    .nav-dropdown > a::after {
+      content: '';
+      display: inline-block;
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid currentColor;
+      transition: transform .2s;
+    }
+    .nav-dropdown:hover > a::after { transform: rotate(180deg); }
+    .nav-dd-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      min-width: 260px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.1);
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s, transform .2s, visibility .2s;
+      z-index: 300;
+    }
+    .nav-dropdown:hover .nav-dd-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dd-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid var(--surface);
+    }
+    .nav-dd-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--fg);
+      text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+    .nav-dd-item:hover { background: rgba(200,92,56,.06); color: var(--accent); }
+    .nav-dd-num {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: .5;
+      min-width: 18px;
+    }
+    .nav-dd-sep {
+      height: 1px;
+      background: var(--border);
+      margin: 6px 16px;
+    }
 
     /* ── PAGE HERO ── */
     .page-hero { padding-top: 64px; background: var(--dark); }
@@ -144,7 +214,7 @@
       padding: 10px 16px; font-size: 13.5px; color: var(--fg); line-height: 1.45;
     }
     .dl-detail::before {
-      content: '✓'; font-size: 12px; font-weight: 700; color: var(--accent); flex-shrink: 0;
+      content: '\2713'; font-size: 12px; font-weight: 700; color: var(--accent); flex-shrink: 0;
     }
 
     /* legacy list for strategy/brand voice sections */
@@ -274,20 +344,42 @@
     .process-step { transition: background .2s, border-color .25s, transform .2s; }
     .process-step:hover { transform: translateY(-3px); }
     .btn-acc:hover { box-shadow: 0 8px 24px rgba(200,92,56,.28) !important; }
+
+    /* ── ENTRY POINT HIGHLIGHT ── */
+    .svc-section.svc-entry {
+      background: rgba(200,92,56,.03);
+      border: 1.5px dashed rgba(200,92,56,.25);
+      border-radius: 12px;
+      padding: clamp(36px,5vw,60px) clamp(28px,4vw,48px);
+      margin-top: 12px;
+    }
+    .svc-entry .svc-num { color: rgba(200,92,56,.3); }
+    .entry-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
   </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Amisha Sharma, Freelance Copywriter",
+    "name": "Amisha Sharma, AI-First Content Strategist",
     "url": "https://commasandchaos.com/services.html",
-    "description": "Freelance copywriting and content strategy services including website copy, landing pages, email sequences, Google PPC ads, and social media ad copy.",
+    "description": "AI-first content marketing services for regulated industries including content strategy, GEO optimization, compliance-aware content creation, brand voice development, AI workflow design, and executive ghostwriting for financial services, healthcare, legal, and insurance brands.",
     "provider": {
       "@type": "Person",
       "name": "Amisha Sharma",
-      "jobTitle": "Freelance Copywriter"
+      "jobTitle": "AI-First Content Strategist"
     },
-    "serviceType": ["Copywriting", "Content Strategy", "Landing Page Copywriting", "Email Copywriting", "Google Ads Copywriting", "Social Media Advertising Copy", "Brand Voice Development"],
+    "serviceType": ["AI Content Strategy", "Generative Engine Optimization (GEO)", "Compliance-Aware Content Creation", "Brand Voice Development", "AI Workflow Design", "Executive Ghostwriting", "AI Content Audit", "SEO Content Assets", "Conversion Architecture"],
     "areaServed": ["India", "Australia", "United Kingdom", "United States"],
     "email": "profamisha@gmail.com"
   }
@@ -306,7 +398,18 @@
       <li><a href="/">Home</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/services.html" class="on">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="/services.html" class="on">Services</a>
+        <div class="nav-dd-menu">
+          <a href="/services.html#strategy" class="nav-dd-item"><span class="nav-dd-num">01</span> Content Strategy</a>
+          <a href="/services.html#seo-geo" class="nav-dd-item"><span class="nav-dd-num">02</span> SEO &amp; GEO</a>
+          <a href="/services.html#google-ads" class="nav-dd-item"><span class="nav-dd-num">03</span> Google Ads Copy</a>
+          <a href="/services.html#social-ads" class="nav-dd-item"><span class="nav-dd-num">04</span> Social Ads Copy</a>
+          <a href="/services.html#collateral" class="nav-dd-item"><span class="nav-dd-num">05</span> Website Copy &amp; Collateral</a>
+          <div class="nav-dd-sep"></div>
+          <a href="/services.html#audit" class="nav-dd-item" style="color:var(--accent)"><span class="nav-dd-num" style="opacity:1">→</span> Free AI Content Audit</a>
+        </div>
+      </li>
       <li class="nav-cta-li"><a href="/contact.html" class="nav-btn">Let's Connect</a></li>
     </ul>
   </div>
@@ -317,8 +420,8 @@
 <div class="page-hero">
   <div class="ph-inner">
     <span class="ph-lbl">Services</span>
-    <h1 class="ph-headline">Copy that makes<br>people stop, read, and <em>buy.</em></h1>
-    <p class="ph-sub">Every format, every funnel stage. Website copy, landing pages, email sequences, Google ads, social ad copy. I write the words. You get the conversions.</p>
+    <h1 class="ph-headline">AI-first content for<br>industries that can't afford<br>to get it <em>wrong.</em></h1>
+    <p class="ph-sub">Content strategy, GEO optimization, and compliance-aware creation for financial services, healthcare, legal, and insurance brands. Built with AI speed. Governed by human expertise. Visible in Google, ChatGPT, and Perplexity.</p>
   </div>
 </div>
 
@@ -326,102 +429,219 @@
 <section class="sec">
   <div class="sec-inner">
 
-    <!-- COPYWRITING -->
-    <div id="copywriting" class="svc-section">
-      <div class="svc-left">
-        <span class="svc-num">01</span>
-        <h2 class="svc-title-lg">Copywriting</h2>
-        <p class="svc-lead">Your customer reads a lot of words before deciding to buy from you. Your Google ad. Your landing page. Your welcome email. Your nurture sequence. Every single one is either closing the gap or widening it. I make sure it's closing it.</p>
-        <a href="/contact.html" class="svc-cta">Start a project →</a>
-      </div>
-      <div class="svc-right">
-        <span class="deliverables-label">What I write</span>
-        <div class="dl-cards">
-          <div class="dl-card"><strong>Website copy</strong><span>Home, About, Services, product pages. The copy that shapes every first impression.</span></div>
-          <div class="dl-card"><strong>Landing pages</strong><span>One page, one goal. Built to convert the traffic you're already paying for.</span></div>
-          <div class="dl-card"><strong>Email sequences</strong><span>Welcome flows, nurture campaigns, sales sequences. The emails people actually open.</span></div>
-          <div class="dl-card"><strong>Google PPC ads</strong><span>Headlines and descriptions that earn the click before you pay for it.</span></div>
-          <div class="dl-card"><strong>Social ad copy</strong><span>Facebook, Instagram, LinkedIn. Scroll-stopping hooks that convert cold traffic.</span></div>
-          <div class="dl-card"><strong>Brand voice</strong><span>Consistent tone across every channel. Your brand sounds like one person wrote it.</span></div>
-        </div>
-        <div class="dl-details">
-          <div class="dl-detail">Audience research before a word is written</div>
-          <div class="dl-detail">Copy brief for approval upfront</div>
-          <div class="dl-detail">SEO keywords woven in, not bolted on</div>
-          <div class="dl-detail">Two rounds of revisions</div>
-          <div class="dl-detail">Final file in Docs or direct CMS upload</div>
-        </div>
-        <div class="for-block">
-          <div class="for-label">Best for</div>
-          <div class="for-list">
-            <span class="tag">SaaS</span>
-            <span class="tag">E-commerce</span>
-            <span class="tag">B2B Services</span>
-            <span class="tag">Coaches &amp; Consultants</span>
-            <span class="tag">Agencies</span>
-            <span class="tag">DTC Brands</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTENT STRATEGY -->
+    <!-- SERVICE 1: CONTENT STRATEGY -->
     <div id="strategy" class="svc-section">
       <div class="svc-left">
-        <span class="svc-num">02</span>
+        <span class="svc-num">01</span>
         <h2 class="svc-title-lg">Content Strategy</h2>
-        <p class="svc-lead">Most brands confuse publishing with progress. A full calendar means nothing if it's not bringing the right people and moving them toward a decision. I build the system that does exactly that.</p>
-        <a href="/contact.html" class="svc-cta">Start a project →</a>
+        <p class="svc-lead">Most content strategies are just a list of blog topics in a spreadsheet. That's not strategy. That's a to-do list. I build the system underneath: what to publish, when to publish it, who it's for, and exactly how it turns a stranger into a booked appointment or a signed contract.</p>
+        <a href="/contact.html" class="svc-cta">Book a strategy call</a>
       </div>
       <div class="svc-right">
         <span class="deliverables-label">What's included</span>
-        <ul class="deliverables-list">
-          <li>SEO audit of existing content and keyword gap analysis</li>
-          <li>Topic cluster strategy mapped to your buyer's journey</li>
-          <li>3-month content calendar with priorities, formats, and briefs</li>
-          <li>Competitor content benchmarking. What's working for them and why.</li>
-          <li>Internal linking strategy and content hierarchy recommendations</li>
-          <li>Optional: ongoing monthly strategy retainer</li>
-        </ul>
+        <div class="dl-cards">
+          <div class="dl-card"><strong>Content calendars</strong><span>Topic clusters mapped to your buyer journey. Not random posts. A system that compounds month over month.</span></div>
+          <div class="dl-card"><strong>Keyword &amp; gap analysis</strong><span>Competitive keyword research, content gaps your competitors missed, and search intent mapping so every piece has a job.</span></div>
+          <div class="dl-card"><strong>Brand voice &amp; messaging</strong><span>Voice governance, tone guidelines, and AI prompt libraries calibrated to your brand. So your content sounds like you, not like ChatGPT.</span></div>
+          <div class="dl-card"><strong>Performance reporting</strong><span>Monthly tracking across rankings, traffic, and conversions. Numbers, not narratives.</span></div>
+        </div>
+        <div class="dl-details">
+          <div class="dl-detail">Full content audit before strategy begins</div>
+          <div class="dl-detail">Topic clusters built around buyer intent, not vanity keywords</div>
+          <div class="dl-detail">Compliance-aware for ASIC, AHPRA, TGA industries</div>
+          <div class="dl-detail">90-day rolling content roadmap with priorities</div>
+          <div class="dl-detail">Monthly strategy reviews and iteration</div>
+        </div>
         <div class="for-block">
           <div class="for-label">Best for</div>
           <div class="for-list">
-            <span class="tag">Scaling Startups</span>
-            <span class="tag">In-house Teams</span>
-            <span class="tag">Media &amp; Publishing</span>
+            <span class="tag">Financial Services</span>
+            <span class="tag">Healthcare</span>
+            <span class="tag">Legal</span>
+            <span class="tag">Insurance</span>
             <span class="tag">B2B SaaS</span>
-            <span class="tag">Service Businesses</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- BRAND VOICE -->
-    <div id="brand-voice" class="svc-section">
+    <!-- SERVICE 2: SEO & GEO -->
+    <div id="seo-geo" class="svc-section">
+      <div class="svc-left">
+        <span class="svc-num">02</span>
+        <h2 class="svc-title-lg">SEO &amp; GEO</h2>
+        <p class="svc-lead">Google is still the front door. But ChatGPT, Perplexity, and Google AI Overviews are now where your next customer starts their search. If your content only ranks on Google, you're invisible to half your market. I write the pages that rank on both. Blog posts, landing pages, service pages, pillar content. All of it SEO-optimized and GEO-optimized so it performs in traditional search and gets cited by AI.</p>
+        <a href="/contact.html" class="svc-cta">Start a project</a>
+      </div>
+      <div class="svc-right">
+        <span class="deliverables-label">What I create</span>
+        <div class="dl-cards">
+          <div class="dl-card"><strong>SEO content</strong><span>Blog posts, guides, pillar pages, and educational content. Research-backed, compliance-aware, and built to rank. Not filler.</span></div>
+          <div class="dl-card"><strong>GEO optimization</strong><span>llms.txt, answer capsules, schema markup, and structured data. The infrastructure that gets your brand cited by ChatGPT and Perplexity.</span></div>
+          <div class="dl-card"><strong>Website copy</strong><span>Homepage, about, service pages, product pages. Conversion architecture that moves the right people toward the right action.</span></div>
+          <div class="dl-card"><strong>Landing pages</strong><span>Campaign pages for paid media, launches, and lead gen. One page, one goal, zero compliance headaches.</span></div>
+          <div class="dl-card"><strong>Email sequences</strong><span>Welcome flows, nurture sequences, re-engagement campaigns. Content that builds trust and converts over time.</span></div>
+          <div class="dl-card"><strong>Answer capsules</strong><span>Every piece opens with an AI-extractable summary. The format that gets your brand pulled into AI search results.</span></div>
+        </div>
+        <div class="dl-details">
+          <div class="dl-detail">Built-in ASIC, AHPRA, and TGA compliance awareness</div>
+          <div class="dl-detail">Answer capsules in every piece for AI citation</div>
+          <div class="dl-detail">Structured data and schema markup included</div>
+          <div class="dl-detail">Two revision rounds per deliverable</div>
+          <div class="dl-detail">Final files in Docs, CMS, or your preferred format</div>
+        </div>
+        <div class="for-block">
+          <div class="for-label">Best for</div>
+          <div class="for-list">
+            <span class="tag">Financial Advisers</span>
+            <span class="tag">Allied Health</span>
+            <span class="tag">Law Firms</span>
+            <span class="tag">NDIS Providers</span>
+            <span class="tag">Insurtechs</span>
+            <span class="tag">Medicinal Cannabis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICE 3: GOOGLE ADS COPY -->
+    <div id="google-ads" class="svc-section">
       <div class="svc-left">
         <span class="svc-num">03</span>
-        <h2 class="svc-title-lg">Brand Voice Development</h2>
-        <p class="svc-lead">You can tell when a brand sounds like a committee. The copy is technically fine, but there's zero personality. Zero point of view. A brand voice guide fixes that. Once it exists, anyone on your team can write a sentence that still sounds like you.</p>
-        <a href="/contact.html" class="svc-cta">Start a project →</a>
+        <h2 class="svc-title-lg">Google Ads Copy</h2>
+        <p class="svc-lead">Your Google Ads account is only as good as the words inside it. I write headlines, descriptions, sitelinks, and callouts that pass Google's healthcare and financial services ad policies on the first submission. No disapprovals. No wasted review cycles. Just ads that get approved, get clicked, and get people to convert.</p>
+        <a href="/contact.html" class="svc-cta">Start a project</a>
       </div>
       <div class="svc-right">
         <span class="deliverables-label">What's included</span>
+        <div class="dl-cards">
+          <div class="dl-card"><strong>Search ad copy</strong><span>Headlines and descriptions written to maximize quality score and click-through rate. Tested against Google's healthcare and financial ad policies before delivery.</span></div>
+          <div class="dl-card"><strong>Landing page copy</strong><span>The page your ad sends traffic to matters more than the ad itself. I write landing pages that match ad intent and convert.</span></div>
+          <div class="dl-card"><strong>Ad extensions</strong><span>Sitelinks, callouts, structured snippets, and call extensions. Every character slot working toward the click.</span></div>
+          <div class="dl-card"><strong>A/B test variants</strong><span>Multiple headline and description combinations so your team can test what performs. Data beats opinions.</span></div>
+        </div>
+        <div class="dl-details">
+          <div class="dl-detail">Written for Google's healthcare and medications ad policy</div>
+          <div class="dl-detail">Financial services ad policy compliance (ASIC-aware)</div>
+          <div class="dl-detail">Character count optimized for every ad format</div>
+          <div class="dl-detail">Message-match between ad copy and landing page</div>
+          <div class="dl-detail">Two revision rounds per ad group</div>
+        </div>
+        <div class="for-block">
+          <div class="for-label">Best for</div>
+          <div class="for-list">
+            <span class="tag">Healthcare Clinics</span>
+            <span class="tag">Financial Advisers</span>
+            <span class="tag">Law Firms</span>
+            <span class="tag">SaaS</span>
+            <span class="tag">Ecommerce</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICE 4: SOCIAL ADS COPY (STATICS) -->
+    <div id="social-ads" class="svc-section">
+      <div class="svc-left">
+        <span class="svc-num">04</span>
+        <h2 class="svc-title-lg">Social Ads Copy (Statics)</h2>
+        <p class="svc-lead">Static ads on Meta, LinkedIn, and other platforms live or die by the copy. The image stops the scroll. The words make them click. I write primary text, headlines, descriptions, and CTA combinations that convert, stay within platform ad policies, and don't get your ad account flagged in regulated industries.</p>
+        <a href="/contact.html" class="svc-cta">Start a project</a>
+      </div>
+      <div class="svc-right">
+        <span class="deliverables-label">What's included</span>
+        <div class="dl-cards">
+          <div class="dl-card"><strong>Meta ad copy</strong><span>Primary text, headlines, and descriptions for Facebook and Instagram. Multiple variants per ad set for testing. Compliant with Meta's healthcare and financial ad policies.</span></div>
+          <div class="dl-card"><strong>LinkedIn ad copy</strong><span>Sponsored content, message ads, and text ads. Written for B2B decision-makers who scroll past anything that smells like a pitch.</span></div>
+          <div class="dl-card"><strong>Static creative direction</strong><span>Copy-led briefs for your designer. Headline hierarchy, text overlay direction, and CTA placement so the words and visuals work together.</span></div>
+          <div class="dl-card"><strong>A/B test variants</strong><span>Hook variations, CTA tests, long vs. short primary text. Built for performance marketers who want to test, not guess.</span></div>
+        </div>
+        <div class="dl-details">
+          <div class="dl-detail">Meta healthcare and financial services ad policy compliant</div>
+          <div class="dl-detail">AHPRA and ASIC-aware for regulated industries</div>
+          <div class="dl-detail">Multiple hook and CTA variations per campaign</div>
+          <div class="dl-detail">Copy-first creative briefs for your design team</div>
+          <div class="dl-detail">Two revision rounds per campaign</div>
+        </div>
+        <div class="for-block">
+          <div class="for-label">Best for</div>
+          <div class="for-list">
+            <span class="tag">Healthcare Clinics</span>
+            <span class="tag">Fintech</span>
+            <span class="tag">NDIS Providers</span>
+            <span class="tag">D2C Brands</span>
+            <span class="tag">SaaS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICE 5: WEBSITE COPY, LANDING PAGES & COLLATERAL -->
+    <div id="collateral" class="svc-section">
+      <div class="svc-left">
+        <span class="svc-num">05</span>
+        <h2 class="svc-title-lg">Website Copy, Landing Pages &amp; Collateral</h2>
+        <p class="svc-lead">Your website is doing one of two things right now. Converting visitors into customers, or leaking them to competitors. I write homepages, service pages, landing pages, sales decks, and brochure copy that does the first thing. Every page gets one job. Every line earns its spot.</p>
+        <a href="/contact.html" class="svc-cta">Start a project</a>
+      </div>
+      <div class="svc-right">
+        <span class="deliverables-label">What's included</span>
+        <div class="dl-cards">
+          <div class="dl-card"><strong>Website copy</strong><span>Homepage, about, service pages, product pages. Conversion-focused structure with SEO and GEO built in from the first draft.</span></div>
+          <div class="dl-card"><strong>Landing pages</strong><span>Campaign pages for paid media, launches, and lead gen. One page, one goal, one CTA. Tested against compliance before delivery.</span></div>
+          <div class="dl-card"><strong>Sales collateral</strong><span>Brochures, one-pagers, pitch decks, capability statements. The stuff that closes deals when you're not in the room.</span></div>
+          <div class="dl-card"><strong>Banner &amp; display copy</strong><span>Headlines and body copy for digital banners, retargeting ads, and static display. Short, sharp, compliant.</span></div>
+        </div>
+        <div class="dl-details">
+          <div class="dl-detail">SEO and GEO optimized (answer capsules, schema)</div>
+          <div class="dl-detail">AHPRA, ASIC, TGA compliance awareness</div>
+          <div class="dl-detail">Wireframe-ready copy with CTA hierarchy</div>
+          <div class="dl-detail">Two revision rounds per deliverable</div>
+          <div class="dl-detail">Print-ready and web-ready formats</div>
+        </div>
+        <div class="for-block">
+          <div class="for-label">Best for</div>
+          <div class="for-list">
+            <span class="tag">Healthcare Clinics</span>
+            <span class="tag">Financial Advisers</span>
+            <span class="tag">SaaS</span>
+            <span class="tag">Law Firms</span>
+            <span class="tag">Ecommerce</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICE 6: AI CONTENT AUDIT (ENTRY POINT) -->
+    <div id="audit" class="svc-section svc-entry">
+      <div class="svc-left">
+        <span class="svc-num">06</span>
+        <span class="entry-badge">Start here</span>
+        <h2 class="svc-title-lg">AI Content Audit</h2>
+        <p class="svc-lead">Not sure where to start? Start here. Most brands have no idea whether they show up in AI-powered search. This audit gives you the full picture: what's working, what's broken, and exactly what to fix first. No commitment beyond the audit itself.</p>
+        <a href="/contact.html" class="svc-cta">Book your audit</a>
+      </div>
+      <div class="svc-right">
+        <span class="deliverables-label">What you get</span>
         <ul class="deliverables-list">
-          <li>Brand voice audit. Review of existing content across all channels.</li>
-          <li>Voice and tone interviews with key team members and stakeholders</li>
-          <li>Brand personality and positioning framework</li>
-          <li>Complete brand voice guide: principles, tone spectrum, do/don't examples</li>
-          <li>Sample rewrites of 3–5 existing pieces in the new voice</li>
-          <li>Team onboarding document for applying the voice guide consistently</li>
+          <li>Full content and SEO audit of your existing assets</li>
+          <li>GEO assessment: do you show up in ChatGPT, Perplexity, and Google AI Overviews?</li>
+          <li>AI visibility score benchmarked against your top 3 competitors</li>
+          <li>Compliance gap identification (ASIC, AHPRA, TGA as applicable)</li>
+          <li>90-day AI-first content roadmap with prioritized actions</li>
+          <li>30-minute strategy call to walk through findings and recommendations</li>
         </ul>
         <div class="for-block">
           <div class="for-label">Best for</div>
           <div class="for-list">
-            <span class="tag">Rebranding</span>
-            <span class="tag">Growing Teams</span>
-            <span class="tag">Funded Startups</span>
-            <span class="tag">DTC Brands</span>
-            <span class="tag">Agencies with Clients</span>
+            <span class="tag">Financial Services</span>
+            <span class="tag">Healthcare &amp; Allied Health</span>
+            <span class="tag">Legal</span>
+            <span class="tag">Insurance</span>
+            <span class="tag">NDIS Providers</span>
+            <span class="tag">Medicinal Cannabis</span>
+            <span class="tag">Cybersecurity</span>
+            <span class="tag">B2B SaaS</span>
           </div>
         </div>
       </div>
@@ -436,9 +656,9 @@
     <div class="process-header">
       <div>
         <span class="sec-lbl">How it works</span>
-        <h2 class="sec-h">Four steps.<br>Complete clarity.</h2>
+        <h2 class="sec-h">Four steps.<br>AI speed, human judgment.</h2>
       </div>
-      <p class="process-intro-text">You shouldn't have to wonder what's happening with your project. Here's exactly what working with me looks like, start to finish.</p>
+      <p class="process-intro-text">Every engagement follows the same proven framework. AI accelerates the work. Human expertise governs the quality. You see exactly what's happening at every stage.</p>
     </div>
     <div class="process-track">
       <div class="process-step-new">
@@ -447,9 +667,9 @@
           <div class="psn-line"></div>
         </div>
         <div class="psn-right">
-          <div class="psn-title">Strategy Session</div>
-          <div class="psn-desc">We get on a call to talk about your brand, your audience, and where your copy is letting you down. Come with your biggest challenge and we'll figure out the brief together. This call is where the real work starts.</div>
-          <div class="psn-note">30 min call. Free. Pure strategy.</div>
+          <div class="psn-title">Audit</div>
+          <div class="psn-desc">We start with a full content audit, AI visibility check, and compliance gap analysis. I look at your existing content, your competitors' content, and where you currently show up in both Google and AI-powered search. This is where most surprises live.</div>
+          <div class="psn-note">Content audit. AI visibility assessment. Compliance review.</div>
         </div>
       </div>
       <div class="process-step-new">
@@ -458,9 +678,9 @@
           <div class="psn-line"></div>
         </div>
         <div class="psn-right">
-          <div class="psn-title">Research</div>
-          <div class="psn-desc">I dig into your competition and keyword landscape to understand the space you're operating in. What your competitors are saying. What they're not saying. What your audience is actually searching for. The copy I write is informed by data, not guesswork.</div>
-          <div class="psn-note">Audience research. Competitor benchmarking. Search intent mapping.</div>
+          <div class="psn-title">Strategy</div>
+          <div class="psn-desc">Based on the audit, I build your AI-first content roadmap. Topic clusters mapped to buyer intent. GEO architecture designed for AI citation. Keyword targets, content formats, and publishing cadence. All prioritized by impact, not volume.</div>
+          <div class="psn-note">AI-first content roadmap. GEO architecture. 90-day priorities.</div>
         </div>
       </div>
       <div class="process-step-new">
@@ -469,9 +689,9 @@
           <div class="psn-line"></div>
         </div>
         <div class="psn-right">
-          <div class="psn-title">Draft + Deliver</div>
-          <div class="psn-desc">I write and send you the first draft with strategic recommendations attached. Every choice comes with a brief explanation of why it was made. You understand the thinking, not just the output.</div>
-          <div class="psn-note">First draft delivered to timeline. With notes.</div>
+          <div class="psn-title">Build</div>
+          <div class="psn-desc">Content creation at AI speed with human compliance oversight. Every piece includes answer capsules for AI citation, structured data for search engines, and built-in regulatory awareness. I use AI tools to accelerate research and drafting, then apply human judgment to every word that goes live.</div>
+          <div class="psn-note">AI-accelerated creation. Human compliance review. Every time.</div>
         </div>
       </div>
       <div class="process-step-new last">
@@ -479,9 +699,9 @@
           <div class="psn-num">04</div>
         </div>
         <div class="psn-right">
-          <div class="psn-title">Refine Together</div>
-          <div class="psn-desc">We go through your feedback and I incorporate it. Two full rounds of revisions included. I am not done until you are genuinely proud to publish this copy. That's the standard we work to. Every time.</div>
-          <div class="psn-note">Two revision rounds. Final files in your format of choice.</div>
+          <div class="psn-title">Optimize</div>
+          <div class="psn-desc">We track performance across Google rankings, AI citations, and conversion metrics. Monthly reporting shows exactly what's working. I iterate on content, update schema markup, refresh answer capsules, and monitor your AI visibility score against competitors.</div>
+          <div class="psn-note">Performance tracking. AI citation monitoring. Continuous iteration.</div>
         </div>
       </div>
     </div>
@@ -496,38 +716,38 @@
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          What types of copy do you write?
+          What is GEO? What is Generative Engine Optimization?
           <em class="faq-icon" aria-hidden="true">+</em>
         </button>
-        <div class="faq-a">Website copy, landing pages, email sequences, Google PPC ads, and social ad copy. Basically: all the places your customers read before they decide whether to buy from you. If you're not sure which one you need, that's exactly what the discovery call is for.</div>
+        <div class="faq-a">GEO (Generative Engine Optimization) is the practice of optimizing your content to appear in AI-powered search results, including ChatGPT, Perplexity, Google AI Overviews, and Claude. Traditional SEO gets you into Google's blue links. GEO gets you cited when someone asks an AI a question about your industry. It involves specific techniques like answer capsules, llms.txt files, structured data, and content formatting that AI models can extract and reference. If you're only doing SEO, you're optimizing for half the search landscape.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          What's your typical timeline?
+          How do you use AI in content creation?
           <em class="faq-icon" aria-hidden="true">+</em>
         </button>
-        <div class="faq-a">Copywriting projects: 1 to 2 weeks from brief approval. Content strategy engagements: 2 to 3 weeks. Brand voice development: 3 to 4 weeks. You get a specific timeline in the project scope. And I stick to it. Because your deadline is an actual deadline.</div>
+        <div class="faq-a">AI accelerates the research, outlining, and first-draft stages of content creation. But here's what it doesn't do: make compliance judgments, understand your brand's nuances, or know what your regulator flagged last quarter. I use AI tools to move faster on the parts that benefit from speed, then apply human judgment on everything that requires expertise. Every piece goes through manual compliance review, voice calibration, and strategic editing before it reaches you. The result is content produced at AI speed with the quality and safety of human oversight.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          Do you work with clients outside India?
+          What regulated industries do you serve?
           <em class="faq-icon" aria-hidden="true">+</em>
         </button>
-        <div class="faq-a">Yes. Most of my clients are international. Delhi-based, but I work with brands across Asia, Europe, Australia, and the Americas. Timezone-flexible. Async-friendly. Very good at Loom.</div>
+        <div class="faq-a">Financial services (financial advisers, fintechs, insurtechs, NBFCs), healthcare and allied health (clinics, telehealth, medicinal cannabis, NDIS providers), legal (law firms, legal tech), and cybersecurity. I have specific experience with ASIC, AHPRA, and TGA compliance requirements, especially for Australian markets. If your industry has a regulator looking over your shoulder, I probably work in it.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          How does pricing work?
+          How is this different from hiring a regular content agency?
           <em class="faq-icon" aria-hidden="true">+</em>
         </button>
-        <div class="faq-a">Flat project fees. You get a clear number before anything starts, and the scope is locked so the number stays the same. Send me a brief and I'll have a custom proposal back within 48 hours.</div>
+        <div class="faq-a">Three ways. First, most agencies optimize for Google only. I optimize for Google AND AI-powered search (ChatGPT, Perplexity, AI Overviews) from day one. Second, most agencies treat compliance as a checkbox. I build compliance awareness into the writing process itself, so your legal team isn't rewriting everything after the fact. Third, I build AI workflow systems for your team, not just content. You get prompt libraries, SOPs, and quality gates so your internal team can produce compliant, on-brand content at scale even when you're not working with me.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          What do you need from me to get started?
+          What does an AI content audit include?
           <em class="faq-icon" aria-hidden="true">+</em>
         </button>
-        <div class="faq-a">Tell me who you're selling to, what you want them to do, and what's not working right now. That's it. You don't need a perfect brief. We figure out the rest together on the discovery call.</div>
+        <div class="faq-a">The audit covers three layers. Content and SEO: what you've published, how it's performing, and where the gaps are. AI visibility: whether your brand shows up when someone asks ChatGPT, Perplexity, or Google AI Overviews a question in your space. And compliance: whether your existing content has regulatory gaps that could create risk. You get a scored report, a competitor benchmark, and a prioritized 90-day roadmap with specific actions. Most clients are surprised by the AI visibility findings. That's the point.</div>
       </div>
     </div>
   </div>
@@ -569,7 +789,7 @@
           <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="stc-quote">"I hired Amisha to write the email welcome sequence for our Lotus Herbals D2C launch. Open rates hit 48%. Click-through was double our benchmark. More importantly, the emails sounded like us. Not like a template. That's hard to find."</p>
+        <p class="stc-quote">"I hired Amisha to write the email welcome sequence for our D2C skincare launch. Open rates hit 48%. Click-through was double our benchmark. More importantly, the emails sounded like us. Not like a template. That's hard to find."</p>
         <div class="stc-author">
           <div class="stc-avatar" style="background:#2E7D32">PR</div>
           <div>
@@ -605,7 +825,7 @@
       </div>
     </div>
     <div style="text-align:center;margin-top:36px">
-      <a href="https://www.linkedin.com/in/amisha-sharma-content/" target="_blank" rel="noopener" class="btn-outline">Read all recommendations on LinkedIn ↗</a>
+      <a href="https://www.linkedin.com/in/amisha-sharma-content/" target="_blank" rel="noopener" class="btn-outline">Read all recommendations on LinkedIn</a>
     </div>
   </div>
 </section>
@@ -615,11 +835,11 @@
   <div class="sec-inner">
     <div class="cta-inner">
       <span class="sec-lbl">Ready?</span>
-      <h2 class="sec-h">I take on a limited number<br>of new clients each month.</h2>
-      <p>Tell me what's not working. I'll tell you how I'd fix it. Every message gets a personal reply within 48 hours with honest, actionable thoughts.</p>
+      <h2 class="sec-h">Most brands don't know<br>they're invisible to AI search.</h2>
+      <p>Book a free AI content audit. I'll show you where you rank in Google, whether you show up in ChatGPT and Perplexity, and exactly what to fix first. No pitch. Just a clear picture of where you stand.</p>
       <div class="cta-btns">
-        <a href="/contact.html" class="btn-acc">Tell me about your project →</a>
-        <a href="/about.html" class="btn-outline">More about me →</a>
+        <a href="/contact.html" class="btn-acc">Book your free AI content audit</a>
+        <a href="/about.html" class="btn-outline">More about me</a>
       </div>
     </div>
   </div>
@@ -635,10 +855,10 @@
       <li><a href="/services.html">Services</a></li>
       <li><a href="/blog.html">Blog</a></li>
       <li><a href="/contact.html">Contact</a></li>
-      <li><a href="https://www.linkedin.com/in/amisha-sharma-content/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      <li><a href="https://www.linkedin.com/in/amisha-sharma-content/" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul>
     <div class="ft-legal"><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a></div>
-    <span class="ft-copy">© 2026 Amisha Sharma · Delhi, India</span>
+    <span class="ft-copy">&copy; 2026 Amisha Sharma · Delhi, India</span>
   </div>
 </footer>
 <div class="cursor-glow" aria-hidden="true"></div>

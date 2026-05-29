@@ -82,6 +82,76 @@
     .nav-btn { background: var(--dark) !important; color: #fff !important; padding: 8px 20px; border-radius: 5px; font-size: 14px !important; font-weight: 600 !important; transition: background .2s !important; }
     .nav-btn:hover { background: var(--accent) !important; }
 
+    /* -- NAV DROPDOWN -- */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 4px; }
+    .nav-dropdown > a::after {
+      content: '';
+      display: inline-block;
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid currentColor;
+      transition: transform .2s;
+    }
+    .nav-dropdown:hover > a::after { transform: rotate(180deg); }
+    .nav-dd-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      min-width: 260px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.1);
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s, transform .2s, visibility .2s;
+      z-index: 300;
+    }
+    .nav-dropdown:hover .nav-dd-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dd-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid var(--surface);
+    }
+    .nav-dd-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--fg);
+      text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+    .nav-dd-item:hover { background: rgba(200,92,56,.06); color: var(--accent); }
+    .nav-dd-num {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: .5;
+      min-width: 18px;
+    }
+    .nav-dd-sep {
+      height: 1px;
+      background: var(--border);
+      margin: 6px 16px;
+    }
+
     /* ── PAGE HERO ── */
     .page-hero { padding-top: 64px; background: var(--dark); }
     .ph-inner { max-width: var(--max); margin: 0 auto; padding: clamp(52px,7vw,88px) var(--px); }
@@ -355,7 +425,18 @@
     <ul class="nav-menu">
       <li><a href="/">Home</a></li>
       <li><a href="/about.html">About</a></li>
-      <li><a href="/services.html">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="/services.html">Services</a>
+        <div class="nav-dd-menu">
+          <a href="/services.html#strategy" class="nav-dd-item"><span class="nav-dd-num">01</span> Content Strategy</a>
+          <a href="/services.html#seo-geo" class="nav-dd-item"><span class="nav-dd-num">02</span> SEO &amp; GEO</a>
+          <a href="/services.html#google-ads" class="nav-dd-item"><span class="nav-dd-num">03</span> Google Ads Copy</a>
+          <a href="/services.html#social-ads" class="nav-dd-item"><span class="nav-dd-num">04</span> Social Ads Copy</a>
+          <a href="/services.html#collateral" class="nav-dd-item"><span class="nav-dd-num">05</span> Website Copy &amp; Collateral</a>
+          <div class="nav-dd-sep"></div>
+          <a href="/services.html#audit" class="nav-dd-item" style="color:var(--accent)"><span class="nav-dd-num" style="opacity:1">→</span> Free AI Content Audit</a>
+        </div>
+      </li>
       <li class="nav-cta-li"><a href="/contact.html" class="nav-btn">Let's Connect</a></li>
     </ul>
   </div>
@@ -375,10 +456,10 @@
 <div class="filter-bar" id="filterBar">
   <div class="filter-inner">
     <button class="filter-pill active" data-filter="all">All</button>
-    <button class="filter-pill" data-filter="copywriting">Copywriting</button>
     <button class="filter-pill" data-filter="ai-content">AI &amp; Content</button>
-    <button class="filter-pill" data-filter="freelancing">Freelancing</button>
-    <button class="filter-pill" data-filter="brand-voice">Brand Voice</button>
+    <button class="filter-pill" data-filter="seo-geo">SEO &amp; GEO</button>
+    <button class="filter-pill" data-filter="strategy">Content Strategy</button>
+    <button class="filter-pill" data-filter="regulated">Regulated Industries</button>
     <button class="filter-pill" data-filter="industry-takes">Industry Takes</button>
   </div>
 </div>
@@ -387,7 +468,7 @@
 <section class="sec" id="blogContent">
   <div class="sec-inner">
 
-    <a href="#" class="featured-post" data-category="ai-content" aria-label="Read: AI Can Write Your Copy. Here's Why That's the Wrong Question.">
+    <a href="#" class="featured-post" data-category="ai-content" aria-label="Read: AI Can Write Your Content. Here's Why That's the Wrong Question.">
       <div class="fp-meta">
         <span class="fp-cat">AI &amp; Content</span>
         <span class="fp-dot"></span>
@@ -395,8 +476,8 @@
         <span class="fp-dot"></span>
         <time class="fp-date" datetime="2026-05">May 2026</time>
       </div>
-      <h2 class="fp-title">AI Can Write Your Copy. Here's Why That's the Wrong Question.</h2>
-      <p class="fp-excerpt">Everyone's asking whether AI will replace copywriters. They're asking the wrong thing. The real question is whether your audience can tell the difference. And right now, they absolutely can.</p>
+      <h2 class="fp-title">AI Can Write Your Content. Here's Why That's the Wrong Question.</h2>
+      <p class="fp-excerpt">Everyone's debating whether AI will replace content marketers. Wrong question. The right one: can your AI-generated content pass an AHPRA review, rank on page one, AND get cited by ChatGPT? Because right now, it can't.</p>
       <span class="fp-read" aria-hidden="true">Read this post <span>→</span></span>
     </a>
 
@@ -405,13 +486,13 @@
 
       <!-- Post 1 -->
       <article>
-        <a href="#" class="blog-card" data-category="copywriting">
+        <a href="#" class="blog-card" data-category="seo-geo">
           <div class="bc-meta">
-            <span class="bc-cat-pill">Copywriting</span>
-            <span class="bc-read-time">5 min read</span>
+            <span class="bc-cat-pill">SEO &amp; GEO</span>
+            <span class="bc-read-time">8 min read</span>
           </div>
-          <h3 class="bc-title">The 8-Second Landing Page Test (That Most Pages Fail)</h3>
-          <p class="bc-excerpt">Your visitor decided whether to stay before they finished your headline. Here's the framework I use to make those 8 seconds count.</p>
+          <h3 class="bc-title">GEO vs SEO: Why Ranking on Google Isn't Enough Anymore</h3>
+          <p class="bc-excerpt">Fewer than 10% of AI-cited sources overlap with Google's top 10 results. If your content strategy only targets traditional search, you're invisible to half your market. Here's the fix.</p>
           <div class="bc-footer">
             <time class="bc-date" datetime="2026-05">May 2026</time>
             <span class="bc-arrow" aria-hidden="true">→</span>
@@ -421,15 +502,15 @@
 
       <!-- Post 2 -->
       <article>
-        <a href="#" class="blog-card" data-category="freelancing">
+        <a href="#" class="blog-card" data-category="seo-geo">
           <div class="bc-meta">
-            <span class="bc-cat-pill">Freelancing</span>
-            <span class="bc-read-time">4 min read</span>
+            <span class="bc-cat-pill">SEO &amp; GEO</span>
+            <span class="bc-read-time">5 min read</span>
           </div>
-          <h3 class="bc-title">I Stopped Calling Myself a Freelancer. Revenue Went Up.</h3>
-          <p class="bc-excerpt">The word "freelancer" carries baggage. Clients hear it and immediately think cheaper, faster, more disposable. I changed one word in my positioning and everything shifted.</p>
+          <h3 class="bc-title">The 8-Second Landing Page Test (That Most Pages Fail)</h3>
+          <p class="bc-excerpt">Your visitor decided whether to stay before they finished your headline. Here's the conversion framework I use across healthcare and fintech landing pages to make those 8 seconds count.</p>
           <div class="bc-footer">
-            <time class="bc-date" datetime="2026-04">April 2026</time>
+            <time class="bc-date" datetime="2026-05">May 2026</time>
             <span class="bc-arrow" aria-hidden="true">→</span>
           </div>
         </a>
@@ -437,13 +518,13 @@
 
       <!-- Post 3 -->
       <article>
-        <a href="#" class="blog-card" data-category="brand-voice">
+        <a href="#" class="blog-card" data-category="regulated">
           <div class="bc-meta">
-            <span class="bc-cat-pill">Brand Voice</span>
+            <span class="bc-cat-pill">Regulated Industries</span>
             <span class="bc-read-time">7 min read</span>
           </div>
-          <h3 class="bc-title">Your Brand Voice Guide Is Probably Useless. Here's Why.</h3>
-          <p class="bc-excerpt">Most brand voice guides are 40-page PDFs that nobody reads. The ones that actually work fit on a single page. I'll show you the framework.</p>
+          <h3 class="bc-title">I Asked ChatGPT to Write AHPRA-Compliant Content. Every Mistake It Made.</h3>
+          <p class="bc-excerpt">I gave ChatGPT a real client brief for a physiotherapy clinic. It wrote confident, fluent copy that would have triggered three separate AHPRA violations. Here's what went wrong and what it means for your content.</p>
           <div class="bc-footer">
             <time class="bc-date" datetime="2026-04">April 2026</time>
             <span class="bc-arrow" aria-hidden="true">→</span>
@@ -453,15 +534,15 @@
 
       <!-- Post 4 -->
       <article>
-        <a href="#" class="blog-card" data-category="freelancing">
+        <a href="#" class="blog-card" data-category="strategy">
           <div class="bc-meta">
-            <span class="bc-cat-pill">Freelancing</span>
-            <span class="bc-read-time">5 min read</span>
+            <span class="bc-cat-pill">Content Strategy</span>
+            <span class="bc-read-time">4 min read</span>
           </div>
-          <h3 class="bc-title">What 150+ Client Projects Taught Me About Scope Creep</h3>
-          <p class="bc-excerpt">Scope creep isn't a client problem. It's a brief problem. After 150+ projects, here's the system that eliminated it.</p>
+          <h3 class="bc-title">I Stopped Selling Blog Posts. Revenue Went Up.</h3>
+          <p class="bc-excerpt">The word "blog post" carries baggage. Clients hear it and think $200, 800 words, done by Tuesday. I started selling content systems instead. One word change. Completely different business.</p>
           <div class="bc-footer">
-            <time class="bc-date" datetime="2026-03">March 2026</time>
+            <time class="bc-date" datetime="2026-04">April 2026</time>
             <span class="bc-arrow" aria-hidden="true">→</span>
           </div>
         </a>
@@ -469,13 +550,13 @@
 
       <!-- Post 5 -->
       <article>
-        <a href="#" class="blog-card" data-category="copywriting">
+        <a href="#" class="blog-card" data-category="seo-geo">
           <div class="bc-meta">
-            <span class="bc-cat-pill">Copywriting</span>
+            <span class="bc-cat-pill">SEO &amp; GEO</span>
             <span class="bc-read-time">8 min read</span>
           </div>
           <h3 class="bc-title">The SEO Content Playbook Nobody Talks About</h3>
-          <p class="bc-excerpt">Keyword research is table stakes. The brands actually winning organic are doing something completely different with their content architecture.</p>
+          <p class="bc-excerpt">Keyword research is table stakes. The brands actually winning organic are building topic cluster architecture, answer capsules, and AI-ready formatting. Here's the system behind it.</p>
           <div class="bc-footer">
             <time class="bc-date" datetime="2026-03">March 2026</time>
             <span class="bc-arrow" aria-hidden="true">→</span>
