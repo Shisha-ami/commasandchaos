@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CookieHub Consent -->
-  <script src="https://cdn.cookiehub.eu/c2/6d91ec74.js"></script>
+  <script defer src="https://cdn.cookiehub.eu/c2/6d91ec74.js"></script>
   <script>document.addEventListener("DOMContentLoaded",function(){window.cookiehub.load({})});</script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-49WF51RXBR"></script>
@@ -122,7 +122,7 @@
     .hero-stats { display: flex; gap: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.1); }
     .hero-stat { }
     .hero-stat-val { font-family: var(--font-d); font-size: clamp(32px,4vw,48px); font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
-    .hero-stat-lbl { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.4; }
+    .hero-stat-lbl { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.4; }
 
     /* ── SECTIONS ── */
     .sec { padding: clamp(80px,10vw,140px) var(--px); }
@@ -164,12 +164,12 @@
     .dlv-sec .sec-lbl { color: var(--accent); }
     .dlv-sec .sec-lbl::before { background: var(--accent); }
     .dlv-sec .sec-h { color: #fff; }
-    .dlv-sec .sec-p { color: rgba(255,255,255,.5); }
+    .dlv-sec .sec-p { color: rgba(255,255,255,.7); }
     .dlv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
     .dlv-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 32px; transition: background .3s, border-color .3s, transform .3s var(--ease); }
     .dlv-card:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.15); transform: translateY(-4px); }
-    .dlv-card h4 { font-family: var(--font-d); font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; }
-    .dlv-card p { font-size: 14.5px; color: rgba(255,255,255,.55); line-height: 1.65; margin-bottom: 18px; }
+    .dlv-card h3 { font-family: var(--font-d); font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .dlv-card p { font-size: 14.5px; color: rgba(255,255,255,.7); line-height: 1.65; margin-bottom: 18px; }
     .dlv-checks { display: flex; flex-wrap: wrap; gap: 12px; }
     .dlv-check { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; color: rgba(255,255,255,.75); }
     .dlv-check::before { content: ''; width: 16px; height: 16px; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%234CAF50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center/contain no-repeat; flex-shrink: 0; }
@@ -184,7 +184,7 @@
     .comp-rule-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; font-weight: 700; }
     .comp-rule-icon.no { background: rgba(200,92,56,.1); color: var(--accent); }
     .comp-rule-icon.yes { background: var(--green-light); color: var(--green); }
-    .comp-rule-text h4 { font-size: 15.5px; font-weight: 600; color: var(--fg); margin-bottom: 4px; }
+    .comp-rule-text h3 { font-size: 15.5px; font-weight: 600; color: var(--fg); margin-bottom: 4px; }
     .comp-rule-text p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
     .comp-explainer { }
     .comp-explainer h3 { font-family: var(--font-d); font-size: 28px; font-weight: 700; color: var(--fg); margin-bottom: 24px; line-height: 1.2; }
@@ -255,7 +255,7 @@
     .cta-sec::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(45,90,61,.2) 0%, transparent 70%); top: 50%; right: -200px; transform: translateY(-50%); pointer-events: none; }
     .cta-w { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
     .cta-w .sec-h { color: #fff; margin-bottom: 20px; }
-    .cta-w p { font-size: 18px; color: rgba(255,255,255,.55); line-height: 1.7; margin-bottom: 40px; }
+    .cta-w p { font-size: 18px; color: rgba(255,255,255,.7); line-height: 1.7; margin-bottom: 40px; }
     .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
     /* ── FOOTER ── */
@@ -486,7 +486,7 @@
     <p class="sec-p reveal d2">Every project is scoped to your campaign goals. Here's the full menu.</p>
     <div class="dlv-grid">
       <div class="dlv-card reveal d1">
-        <h4>Static Ad Copy Deck</h4>
+        <h3>Static Ad Copy Deck</h3>
         <p>Complete copy for each ad variant: primary text, headline, description, and CTA. Organised by campaign objective, audience segment, and funnel stage. Ready to paste into Ads Manager.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Primary text variants</span>
@@ -495,7 +495,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d2">
-        <h4>Creative Direction Briefs</h4>
+        <h3>Creative Direction Briefs</h3>
         <p>Detailed briefs your designer can action immediately. Image direction, text overlay copy, colour guidance, and visual hierarchy for every ad in the deck.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Image direction</span>
@@ -504,7 +504,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d3">
-        <h4>Hook Variant Matrix</h4>
+        <h3>Hook Variant Matrix</h3>
         <p>Three to five hook angles per ad concept, mapped to different pain points, benefits, and audience motivations. Structured for systematic A/B testing with clear hypotheses.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Pain-point hooks</span>
@@ -513,7 +513,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d4">
-        <h4>Compliance Review Notes</h4>
+        <h3>Compliance Review Notes</h3>
         <p>Line-by-line compliance annotations showing why each word choice was made. Flagged phrases, safe alternatives, and platform policy references your team can use for future campaigns.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Policy references</span>
@@ -522,7 +522,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d1">
-        <h4>Landing Page Copy Alignment</h4>
+        <h3>Landing Page Copy Alignment</h3>
         <p>Matching landing page headlines and above-the-fold copy that maintains message-match from ad to page. Better quality scores. Higher conversion rates. Lower cost per acquisition.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Headline match</span>
@@ -531,7 +531,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d2">
-        <h4>Performance Refresh Pack</h4>
+        <h3>Performance Refresh Pack</h3>
         <p>When creative fatigue sets in, a fresh batch of hook variants, angles, and copy rotations. Designed to extend campaign life without starting from scratch.</p>
         <div class="dlv-checks">
           <span class="dlv-check">New hooks</span>
@@ -553,42 +553,42 @@
         <div class="comp-rule">
           <div class="comp-rule-icon no">&#10005;</div>
           <div class="comp-rule-text">
-            <h4>No personal health references in ad copy</h4>
+              <h3>No personal health references in ad copy</h3>
             <p>Meta prohibits implying knowledge of a user's health condition. "Struggling with anxiety?" gets flagged. "Living with diabetes?" gets rejected.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon no">&#10005;</div>
           <div class="comp-rule-text">
-            <h4>No guaranteed financial outcomes</h4>
+              <h3>No guaranteed financial outcomes</h3>
             <p>LinkedIn and Meta both restrict claims about specific returns, income, or financial results. "Earn $10K/month" or "guaranteed returns" triggers immediate rejection.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon no">&#10005;</div>
           <div class="comp-rule-text">
-            <h4>No before/after transformation claims</h4>
+              <h3>No before/after transformation claims</h3>
             <p>Implying guaranteed results from a health treatment or financial product violates both Meta's and LinkedIn's restricted content policies.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon yes">&#10003;</div>
           <div class="comp-rule-text">
-            <h4>Education and awareness framing is allowed</h4>
+              <h3>Education and awareness framing is allowed</h3>
             <p>"Learn how Australian healthcare providers are approaching X" reframes the message without making personal health assumptions.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon yes">&#10003;</div>
           <div class="comp-rule-text">
-            <h4>Process and service descriptions are safe</h4>
+              <h3>Process and service descriptions are safe</h3>
             <p>"Book a consultation with a licensed provider" describes a service action, not a health or financial outcome. Approved consistently.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon yes">&#10003;</div>
           <div class="comp-rule-text">
-            <h4>Social proof without outcome claims works</h4>
+              <h3>Social proof without outcome claims works</h3>
             <p>"Trusted by 500+ Australian businesses" or "4.8 stars from 200+ reviews" builds credibility without promising results.</p>
           </div>
         </div>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CookieHub Consent -->
-  <script src="https://cdn.cookiehub.eu/c2/6d91ec74.js"></script>
+  <script defer src="https://cdn.cookiehub.eu/c2/6d91ec74.js"></script>
   <script>document.addEventListener("DOMContentLoaded",function(){window.cookiehub.load({})});</script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-49WF51RXBR"></script>
@@ -122,7 +122,7 @@
     .hero-stats { display: flex; gap: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.1); }
     .hero-stat { }
     .hero-stat-val { font-family: var(--font-d); font-size: clamp(32px,4vw,48px); font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
-    .hero-stat-lbl { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.4; }
+    .hero-stat-lbl { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.4; }
 
     /* ── SECTIONS ── */
     .sec { padding: clamp(80px,10vw,140px) var(--px); }
@@ -164,12 +164,12 @@
     .dlv-sec .sec-lbl { color: var(--accent); }
     .dlv-sec .sec-lbl::before { background: var(--accent); }
     .dlv-sec .sec-h { color: #fff; }
-    .dlv-sec .sec-p { color: rgba(255,255,255,.5); }
+    .dlv-sec .sec-p { color: rgba(255,255,255,.7); }
     .dlv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
     .dlv-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 32px; transition: background .3s, border-color .3s, transform .3s var(--ease); }
     .dlv-card:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.15); transform: translateY(-4px); }
-    .dlv-card h4 { font-family: var(--font-d); font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; }
-    .dlv-card p { font-size: 14.5px; color: rgba(255,255,255,.55); line-height: 1.65; margin-bottom: 18px; }
+    .dlv-card h3 { font-family: var(--font-d); font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .dlv-card p { font-size: 14.5px; color: rgba(255,255,255,.7); line-height: 1.65; margin-bottom: 18px; }
     .dlv-checks { display: flex; flex-wrap: wrap; gap: 12px; }
     .dlv-check { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; color: rgba(255,255,255,.75); }
     .dlv-check::before { content: ''; width: 16px; height: 16px; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%234CAF50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center/contain no-repeat; flex-shrink: 0; }
@@ -184,7 +184,7 @@
     .comp-rule-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; font-weight: 700; }
     .comp-rule-icon.no { background: rgba(200,92,56,.1); color: var(--accent); }
     .comp-rule-icon.yes { background: var(--green-light); color: var(--green); }
-    .comp-rule-text h4 { font-size: 15.5px; font-weight: 600; color: var(--fg); margin-bottom: 4px; }
+    .comp-rule-text h3 { font-size: 15.5px; font-weight: 600; color: var(--fg); margin-bottom: 4px; }
     .comp-rule-text p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
     .comp-explainer { }
     .comp-explainer h3 { font-family: var(--font-d); font-size: 28px; font-weight: 700; color: var(--fg); margin-bottom: 24px; line-height: 1.2; }
@@ -255,7 +255,7 @@
     .cta-sec::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(45,90,61,.2) 0%, transparent 70%); top: 50%; right: -200px; transform: translateY(-50%); pointer-events: none; }
     .cta-w { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
     .cta-w .sec-h { color: #fff; margin-bottom: 20px; }
-    .cta-w p { font-size: 18px; color: rgba(255,255,255,.55); line-height: 1.7; margin-bottom: 40px; }
+    .cta-w p { font-size: 18px; color: rgba(255,255,255,.7); line-height: 1.7; margin-bottom: 40px; }
     .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
     /* ── FOOTER ── */
@@ -492,7 +492,7 @@
     <p class="sec-p reveal d2">Here's exactly what lands in your inbox after the audit. Nothing more, nothing less.</p>
     <div class="dlv-grid">
       <div class="dlv-card reveal d1">
-        <h4>Scored Audit Report</h4>
+        <h3>Scored Audit Report</h3>
         <p>A document covering your Google rankings for key terms and manual AI visibility spot-checks. You'll see which queries return your business in AI results and which don't. Scored so you can track progress over time.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Google rankings snapshot</span>
@@ -501,7 +501,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d2">
-        <h4>Competitor Content Comparison</h4>
+        <h3>Competitor Content Comparison</h3>
         <p>A side-by-side look at what your top competitors are publishing, how their content is structured, and where their coverage exceeds yours. Focused on content strategy, not vanity metrics.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Content gap analysis</span>
@@ -510,7 +510,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d3">
-        <h4>Compliance Gap Notes</h4>
+        <h3>Compliance Gap Notes</h3>
         <p>Specific flags on existing content that could attract regulatory attention. Not legal advice, but a practical review of language, claims, and structures that commonly get flagged in your industry.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Claim identification</span>
@@ -519,7 +519,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d4">
-        <h4>GEO Readiness Checklist</h4>
+        <h3>GEO Readiness Checklist</h3>
         <p>A yes/no checklist of the technical foundations AI models look for: llms.txt file, answer capsules, schema markup, heading structure, and robots.txt configuration. You'll see exactly what's missing.</p>
         <div class="dlv-checks">
           <span class="dlv-check">llms.txt status</span>
@@ -528,7 +528,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d1">
-        <h4>Prioritised 90-Day Roadmap</h4>
+        <h3>Prioritised 90-Day Roadmap</h3>
         <p>A sequenced action plan with fixes and opportunities ranked by impact and effort. Week-by-week priorities so you know what to tackle first, whether you do it yourself or hire someone.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Quick wins identified</span>
@@ -537,7 +537,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d2">
-        <h4>30-Minute Walkthrough Call</h4>
+        <h3>30-Minute Walkthrough Call</h3>
         <p>A live call to walk through every finding, answer your questions, and discuss next steps. You'll leave with a complete understanding of where you stand and what to prioritise. No sales pitch attached.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Live Q&amp;A</span>
@@ -559,56 +559,56 @@
         <div class="comp-rule">
           <div class="comp-rule-icon yes">✓</div>
           <div class="comp-rule-text">
-            <h4>Google search rankings for key terms</h4>
+              <h3>Google search rankings for key terms</h3>
             <p>Current positions for your most important commercial and informational queries.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon yes">✓</div>
           <div class="comp-rule-text">
-            <h4>Manual AI visibility spot-checks</h4>
+              <h3>Manual AI visibility spot-checks</h3>
             <p>Real queries tested in ChatGPT, Perplexity, and Google AI Overviews to see if you appear.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon yes">✓</div>
           <div class="comp-rule-text">
-            <h4>Competitor content and structure comparison</h4>
+              <h3>Competitor content and structure comparison</h3>
             <p>What your competitors publish, how often, and how their content is organised.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon yes">✓</div>
           <div class="comp-rule-text">
-            <h4>Compliance flags for regulated content</h4>
+              <h3>Compliance flags for regulated content</h3>
             <p>Claims, testimonials, and language that could attract regulatory attention.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon yes">✓</div>
           <div class="comp-rule-text">
-            <h4>GEO technical readiness</h4>
+              <h3>GEO technical readiness</h3>
             <p>llms.txt, answer capsules, schema markup, heading structure, robots.txt for AI crawlers.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon no">✕</div>
           <div class="comp-rule-text">
-            <h4>Automated AI citation tracking</h4>
+              <h3>Automated AI citation tracking</h3>
             <p>AI spot-checks are manual, not automated. No software-generated citation scores.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon no">✕</div>
           <div class="comp-rule-text">
-            <h4>Monthly monitoring or ongoing tracking</h4>
+              <h3>Monthly monitoring or ongoing tracking</h3>
             <p>The audit is a one-time snapshot. Ongoing monitoring is a separate engagement.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon no">✕</div>
           <div class="comp-rule-text">
-            <h4>File deployment or implementation</h4>
+              <h3>File deployment or implementation</h3>
             <p>The audit tells you what to build. It doesn't deploy llms.txt, schema, or content for you.</p>
           </div>
         </div>

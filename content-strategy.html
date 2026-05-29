@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CookieHub Consent -->
-  <script src="https://cdn.cookiehub.eu/c2/6d91ec74.js"></script>
+  <script defer src="https://cdn.cookiehub.eu/c2/6d91ec74.js"></script>
   <script>document.addEventListener("DOMContentLoaded",function(){window.cookiehub.load({})});</script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-49WF51RXBR"></script>
@@ -122,7 +122,7 @@
     .hero-stats { display: flex; gap: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.1); }
     .hero-stat { }
     .hero-stat-val { font-family: var(--font-d); font-size: clamp(32px,4vw,48px); font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
-    .hero-stat-lbl { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.4; }
+    .hero-stat-lbl { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.4; }
 
     /* ── SECTIONS ── */
     .sec { padding: clamp(80px,10vw,140px) var(--px); }
@@ -164,12 +164,12 @@
     .dlv-sec .sec-lbl { color: var(--accent); }
     .dlv-sec .sec-lbl::before { background: var(--accent); }
     .dlv-sec .sec-h { color: #fff; }
-    .dlv-sec .sec-p { color: rgba(255,255,255,.5); }
+    .dlv-sec .sec-p { color: rgba(255,255,255,.7); }
     .dlv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
     .dlv-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 32px; transition: background .3s, border-color .3s, transform .3s var(--ease); }
     .dlv-card:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.15); transform: translateY(-4px); }
-    .dlv-card h4 { font-family: var(--font-d); font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; }
-    .dlv-card p { font-size: 14.5px; color: rgba(255,255,255,.55); line-height: 1.65; margin-bottom: 18px; }
+    .dlv-card h3 { font-family: var(--font-d); font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .dlv-card p { font-size: 14.5px; color: rgba(255,255,255,.7); line-height: 1.65; margin-bottom: 18px; }
     .dlv-checks { display: flex; flex-wrap: wrap; gap: 12px; }
     .dlv-check { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; color: rgba(255,255,255,.75); }
     .dlv-check::before { content: ''; width: 16px; height: 16px; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%234CAF50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center/contain no-repeat; flex-shrink: 0; }
@@ -184,7 +184,7 @@
     .comp-rule-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; font-weight: 700; }
     .comp-rule-icon.no { background: rgba(200,92,56,.1); color: var(--accent); }
     .comp-rule-icon.yes { background: var(--green-light); color: var(--green); }
-    .comp-rule-text h4 { font-size: 15.5px; font-weight: 600; color: var(--fg); margin-bottom: 4px; }
+    .comp-rule-text h3 { font-size: 15.5px; font-weight: 600; color: var(--fg); margin-bottom: 4px; }
     .comp-rule-text p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
     .comp-explainer { }
     .comp-explainer h3 { font-family: var(--font-d); font-size: 28px; font-weight: 700; color: var(--fg); margin-bottom: 24px; line-height: 1.2; }
@@ -255,7 +255,7 @@
     .cta-sec::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(45,90,61,.2) 0%, transparent 70%); top: 50%; right: -200px; transform: translateY(-50%); pointer-events: none; }
     .cta-w { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
     .cta-w .sec-h { color: #fff; margin-bottom: 20px; }
-    .cta-w p { font-size: 18px; color: rgba(255,255,255,.55); line-height: 1.7; margin-bottom: 40px; }
+    .cta-w p { font-size: 18px; color: rgba(255,255,255,.7); line-height: 1.7; margin-bottom: 40px; }
     .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
     /* ── FOOTER ── */
@@ -490,7 +490,7 @@
     <p class="sec-p reveal d2">Every engagement is scoped to your business. Here is the full deliverable set.</p>
     <div class="dlv-grid">
       <div class="dlv-card reveal d1">
-        <h4>Content Audit &amp; Competitive Analysis</h4>
+        <h3>Content Audit &amp; Competitive Analysis</h3>
         <p>A scored assessment of your existing content, search rankings, AI visibility, and how you compare to the top three competitors in your space. You see exactly where you stand.</p>
         <div class="dlv-checks">
           <span class="dlv-check">SEO gap analysis</span>
@@ -499,7 +499,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d2">
-        <h4>90-Day Content Roadmap</h4>
+        <h3>90-Day Content Roadmap</h3>
         <p>A prioritised content calendar with topics mapped to search intent, funnel stage, and compliance requirements. You know exactly what to publish, when, and why.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Keyword targets</span>
@@ -508,7 +508,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d3">
-        <h4>GEO Implementation Plan</h4>
+        <h3>GEO Implementation Plan</h3>
         <p>Full AI visibility infrastructure: llms.txt file, answer capsule templates, structured data specifications, and a checklist for making every page citable by AI search engines.</p>
         <div class="dlv-checks">
           <span class="dlv-check">llms.txt guide</span>
@@ -517,7 +517,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d4">
-        <h4>Content Briefs (10 per quarter)</h4>
+        <h3>Content Briefs (10 per quarter)</h3>
         <p>Detailed briefs for each content piece: target keyword, search intent, outline, compliance guardrails, internal linking targets, and CTA placement. Hand these to any writer and get consistent results.</p>
         <div class="dlv-checks">
           <span class="dlv-check">SEO-optimised outlines</span>
@@ -526,7 +526,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d1">
-        <h4>Brand Voice &amp; Messaging Guide</h4>
+        <h3>Brand Voice &amp; Messaging Guide</h3>
         <p>A documented voice guide so every piece of content sounds like your brand, whether I write it or your internal team does. Tone, vocabulary, compliance boundaries, and example copy.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Tone guidelines</span>
@@ -535,7 +535,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d2">
-        <h4>Monthly Performance Reports</h4>
+        <h3>Monthly Performance Reports</h3>
         <p>Rankings, traffic, manual AI visibility spot-checks, and recommended adjustments. You see what is working, what is not, and what to prioritise next. No vanity metrics.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Search rankings</span>
@@ -557,42 +557,42 @@
         <div class="comp-rule">
           <div class="comp-rule-icon yes">✓</div>
           <div class="comp-rule-text">
-            <h4>AI-first workflow, not AI-afterthought</h4>
+              <h3>AI-first workflow, not AI-afterthought</h3>
             <p>AI tools built into every stage of research, analysis, and drafting. You get faster delivery and lower costs without sacrificing quality.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon yes">✓</div>
           <div class="comp-rule-text">
-            <h4>Compliance baked in from the start</h4>
+              <h3>Compliance baked in from the start</h3>
             <p>AHPRA, ASIC, TGA, and APPs frameworks are applied at the planning stage, not as a last-minute review. No redlining after the fact.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon yes">✓</div>
           <div class="comp-rule-text">
-            <h4>GEO-optimised for AI search visibility</h4>
+              <h3>GEO-optimised for AI search visibility</h3>
             <p>Structured for citation by ChatGPT, Perplexity, and Google AI Overviews. Most strategists still only optimise for traditional search.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon no">✕</div>
           <div class="comp-rule-text">
-            <h4>No vanity content</h4>
+              <h3>No vanity content</h3>
             <p>Every piece is mapped to a business outcome. If it does not drive traffic, leads, or conversions, it does not make the calendar.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon no">✕</div>
           <div class="comp-rule-text">
-            <h4>No agency overhead</h4>
+              <h3>No agency overhead</h3>
             <p>You work directly with me. No account managers, no junior writers, no game of telephone. One strategist, one point of contact.</p>
           </div>
         </div>
         <div class="comp-rule">
           <div class="comp-rule-icon no">✕</div>
           <div class="comp-rule-text">
-            <h4>No one-size-fits-all templates</h4>
+              <h3>No one-size-fits-all templates</h3>
             <p>A healthcare content strategy looks nothing like a fintech one. Every strategy is built for your industry, your regulations, your audience.</p>
           </div>
         </div>

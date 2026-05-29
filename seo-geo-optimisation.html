@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CookieHub Consent -->
-  <script src="https://cdn.cookiehub.eu/c2/6d91ec74.js"></script>
+  <script defer src="https://cdn.cookiehub.eu/c2/6d91ec74.js"></script>
   <script>document.addEventListener("DOMContentLoaded",function(){window.cookiehub.load({})});</script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-49WF51RXBR"></script>
@@ -122,7 +122,7 @@
     .hero-stats { display: flex; gap: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.1); }
     .hero-stat { }
     .hero-stat-val { font-family: var(--font-d); font-size: clamp(32px,4vw,48px); font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
-    .hero-stat-lbl { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.4; }
+    .hero-stat-lbl { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.4; }
 
     /* ── SECTIONS ── */
     .sec { padding: clamp(80px,10vw,140px) var(--px); }
@@ -164,12 +164,12 @@
     .dlv-sec .sec-lbl { color: var(--accent); }
     .dlv-sec .sec-lbl::before { background: var(--accent); }
     .dlv-sec .sec-h { color: #fff; }
-    .dlv-sec .sec-p { color: rgba(255,255,255,.5); }
+    .dlv-sec .sec-p { color: rgba(255,255,255,.7); }
     .dlv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
     .dlv-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 32px; transition: background .3s, border-color .3s, transform .3s var(--ease); }
     .dlv-card:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.15); transform: translateY(-4px); }
-    .dlv-card h4 { font-family: var(--font-d); font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; }
-    .dlv-card p { font-size: 14.5px; color: rgba(255,255,255,.55); line-height: 1.65; margin-bottom: 18px; }
+    .dlv-card h3 { font-family: var(--font-d); font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .dlv-card p { font-size: 14.5px; color: rgba(255,255,255,.7); line-height: 1.65; margin-bottom: 18px; }
     .dlv-checks { display: flex; flex-wrap: wrap; gap: 12px; }
     .dlv-check { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; color: rgba(255,255,255,.75); }
     .dlv-check::before { content: ''; width: 16px; height: 16px; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%234CAF50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center/contain no-repeat; flex-shrink: 0; }
@@ -181,10 +181,10 @@
     .comp-capsule { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
     .capsule-label { padding: 14px 24px 0; font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
     .capsule-old { display: flex; align-items: flex-start; gap: 14px; padding: 14px 24px; opacity: .55; }
-    .capsule-old h4 { font-size: 15px; font-weight: 600; color: var(--fg); text-decoration: line-through; text-decoration-color: rgba(200,92,56,.4); margin-bottom: 2px; }
+    .capsule-old h3 { font-size: 15px; font-weight: 600; color: var(--fg); text-decoration: line-through; text-decoration-color: rgba(200,92,56,.4); margin-bottom: 2px; }
     .capsule-old p { font-size: 13px; color: var(--muted); line-height: 1.5; }
     .capsule-new { display: flex; align-items: flex-start; gap: 14px; padding: 14px 24px 20px; background: var(--green-light); border-top: 1px solid rgba(45,90,61,.1); }
-    .capsule-new h4 { font-size: 15.5px; font-weight: 700; color: var(--fg); margin-bottom: 2px; }
+    .capsule-new h3 { font-size: 15.5px; font-weight: 700; color: var(--fg); margin-bottom: 2px; }
     .capsule-new p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
     .capsule-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; margin-top: 1px; }
     .capsule-icon.no { background: rgba(200,92,56,.1); color: var(--accent); }
@@ -258,7 +258,7 @@
     .cta-sec::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(45,90,61,.2) 0%, transparent 70%); top: 50%; right: -200px; transform: translateY(-50%); pointer-events: none; }
     .cta-w { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
     .cta-w .sec-h { color: #fff; margin-bottom: 20px; }
-    .cta-w p { font-size: 18px; color: rgba(255,255,255,.55); line-height: 1.7; margin-bottom: 40px; }
+    .cta-w p { font-size: 18px; color: rgba(255,255,255,.7); line-height: 1.7; margin-bottom: 40px; }
     .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
     /* ── FOOTER ── */
@@ -489,7 +489,7 @@
     <p class="sec-p reveal d2">Every engagement is scoped to your business and industry. Here is the full menu.</p>
     <div class="dlv-grid">
       <div class="dlv-card reveal d1">
-        <h4>SEO + GEO Audit Report</h4>
+        <h3>SEO + GEO Audit Report</h3>
         <p>A scored assessment of your current Google rankings, manual AI visibility spot-checks across ChatGPT and Perplexity, competitor content analysis, and a prioritised 90-day roadmap. You see exactly where you stand and what to fix first.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Google rankings</span>
@@ -498,7 +498,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d2">
-        <h4>llms.txt + Structured Data Package</h4>
+        <h3>llms.txt + Structured Data Package</h3>
         <p>Custom llms.txt file and JSON-LD schema markup written and ready to implement: Service, FAQPage, Article, Organisation, and BreadcrumbList types. Delivered with clear instructions for your dev team.</p>
         <div class="dlv-checks">
           <span class="dlv-check">llms.txt file</span>
@@ -507,7 +507,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d3">
-        <h4>GEO-Optimised Blog Content</h4>
+        <h3>GEO-Optimised Blog Content</h3>
         <p>1,500 to 2,500 word articles with answer capsules in the first 100 words, question-based H2/H3 headings, FAQ sections, and internal linking. Every piece built for both Google indexing and AI extraction.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Answer capsules</span>
@@ -516,7 +516,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d4">
-        <h4>On-Page SEO Optimisation</h4>
+        <h3>On-Page SEO Optimisation</h3>
         <p>Meta titles, descriptions, heading hierarchy, image alt text, internal linking, and keyword density across your existing pages. Technical fixes that move rankings without a full site rebuild.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Meta optimisation</span>
@@ -525,7 +525,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d1">
-        <h4>Local Landing Pages</h4>
+        <h3>Local Landing Pages</h3>
         <p>City-specific pages for Sydney, Melbourne, Brisbane, Perth, Adelaide, and regional areas. Unique content per location with local schema markup ready for your dev team to implement.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Local schema</span>
@@ -534,7 +534,7 @@
         </div>
       </div>
       <div class="dlv-card reveal d2">
-        <h4>Monthly Performance Report</h4>
+        <h3>Monthly Performance Report</h3>
         <p>Google rankings, organic traffic trends, and manual AI visibility spot-checks across ChatGPT, Perplexity, and Google AI Overviews. Actionable recommendations on what to publish, refresh, or prioritise next.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Ranking reports</span>
@@ -558,14 +558,14 @@
           <div class="capsule-old">
             <span class="capsule-icon no">✕</span>
             <div>
-              <h4>Optimise for keywords only</h4>
+              <h3>Optimise for keywords only</h3>
               <p>Keyword density and placement to rank in Google's blue links.</p>
             </div>
           </div>
           <div class="capsule-new">
             <span class="capsule-icon yes">✓</span>
             <div>
-              <h4>Optimise for extractable answers</h4>
+              <h3>Optimise for extractable answers</h3>
               <p>Direct, factual answers in the first 100 words that AI systems can cite verbatim. 44.2% of all LLM citations come from the first 30% of a page.</p>
             </div>
           </div>
@@ -575,14 +575,14 @@
           <div class="capsule-old">
             <span class="capsule-icon no">✕</span>
             <div>
-              <h4>Build backlinks for authority</h4>
+              <h3>Build backlinks for authority</h3>
               <p>Backlinks have a 0.218 correlation with AI visibility. They still matter for Google, but less for AI.</p>
             </div>
           </div>
           <div class="capsule-new">
             <span class="capsule-icon yes">✓</span>
             <div>
-              <h4>Build brand mentions for citation</h4>
+              <h3>Build brand mentions for citation</h3>
               <p>Brand web mentions have a 0.664 correlation with AI visibility. YouTube mentions score 0.737. Four or more platform mentions make a brand 2.8x more likely to appear in ChatGPT responses.</p>
             </div>
           </div>
@@ -592,14 +592,14 @@
           <div class="capsule-old">
             <span class="capsule-icon no">✕</span>
             <div>
-              <h4>Rely on meta tags and sitemaps</h4>
+              <h3>Rely on meta tags and sitemaps</h3>
               <p>Google reads your sitemap.xml, but AI crawlers need additional structured guidance.</p>
             </div>
           </div>
           <div class="capsule-new">
             <span class="capsule-icon yes">✓</span>
             <div>
-              <h4>Deploy llms.txt and structured data</h4>
+              <h3>Deploy llms.txt and structured data</h3>
               <p>AI crawlers read llms.txt to understand your site. JSON-LD schema helps them extract facts. Content with structured data gets cited 3.2x more by AI systems.</p>
             </div>
           </div>
