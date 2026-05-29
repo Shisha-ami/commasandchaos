@@ -4,34 +4,36 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  <!-- Core Pages -->
   <url>
     <loc>https://commasandchaos.com/</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://commasandchaos.com/about.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://commasandchaos.com/services.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://commasandchaos.com/blog/</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <loc>https://commasandchaos.com/contact.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
+  <!-- Service Pages -->
   <url>
     <loc>https://commasandchaos.com/content-strategy.html</loc>
     <lastmod>2026-05-30</lastmod>
@@ -61,13 +63,6 @@
   </url>
 
   <url>
-    <loc>https://commasandchaos.com/free-ai-content-audit.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
     <loc>https://commasandchaos.com/website-copy.html</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -75,17 +70,82 @@
   </url>
 
   <url>
-    <loc>https://commasandchaos.com/contact.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://commasandchaos.com/free-ai-content-audit.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://commasandchaos.com/content-marketing-medicinal-cannabis.html</loc>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog -->
   <url>
-    <loc>https://commasandchaos.com/blog.html</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://commasandchaos.com/blog/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://commasandchaos.com/blog/geo-vs-seo-why-ranking-on-google-isnt-enough.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://commasandchaos.com/blog/how-much-does-a-freelance-copywriter-cost-in-2026.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://commasandchaos.com/blog/i-asked-chatgpt-to-write-ahpra-compliant-content.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://commasandchaos.com/blog/i-stopped-selling-blog-posts-revenue-went-up.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://commasandchaos.com/blog/the-8-second-landing-page-test.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://commasandchaos.com/blog/the-seo-content-playbook-nobody-talks-about.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://commasandchaos.com/privacy.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://commasandchaos.com/terms.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
