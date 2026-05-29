@@ -56,6 +56,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"></noscript>
   <style>
+    .skip-link { position: absolute; top: -100%; left: 16px; background: var(--dark, #1C1C26); color: #fff; padding: 12px 24px; border-radius: 8px; z-index: 9999; font-size: 14px; text-decoration: none; font-family: system-ui, sans-serif; }
+    .skip-link:focus { top: 16px; }
     :root {
       --bg:      #F9F9F6;
       --surface: #FFFFFF;
@@ -648,6 +650,9 @@
     .ft-links { display: flex; gap: 22px; list-style: none; }
     .ft-links a { font-size: 13.5px; color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
     .ft-links a:hover { color: rgba(255,255,255,.85); }
+    .ft-legal { margin: 12px 0 4px; font-size: 12px; }
+    .ft-legal a { color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
+    .ft-legal a:hover { color: rgba(255,255,255,.7); }
     .ft-copy { font-size: 12.5px; color: rgba(255,255,255,.3); }
 
     /* ── PUBLICATIONS ── */
@@ -785,7 +790,7 @@
     @media (max-width: 560px) {
       .nav-menu { gap: 10px; }
       .nav-menu a { font-size: 12px; }
-      .nav-btn { padding: 6px 12px; font-size: 11.5px !important; }
+      .nav-btn { padding: 10px 16px; font-size: 11.5px !important; min-height: 44px; display: inline-flex; align-items: center; }
       .logo-name { font-size: 16px; }
       .logo-tag { font-size: 8.5px; }
       .hero-chips { gap: 18px; }
@@ -1132,6 +1137,7 @@
   </script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 
 <div class="cursor-glow" aria-hidden="true"></div>
 <div class="progress-line" id="progressLine" aria-hidden="true"></div>
@@ -1152,6 +1158,7 @@
 </nav>
 
 <!-- ── HERO ── -->
+<main id="main">
 <div class="hero" aria-label="Hero">
   <div class="hero-blob" aria-hidden="true"></div>
   <div class="hero-copy">
@@ -1159,7 +1166,7 @@
     <div class="mobile-avatar-wrap" aria-hidden="true">
       <picture>
         <source type="image/webp" srcset="photo-hero-800.webp 800w, photo-hero-1200.webp 1200w" sizes="80px">
-        <img class="mobile-avatar" src="photo-hero-fallback.jpg" alt="" width="80" height="80" loading="eager" decoding="async">
+        <img class="mobile-avatar" src="photo-hero-fallback.jpg" alt="Amisha Sharma" width="80" height="80" loading="eager" decoding="async">
       </picture>
     </div>
     <span class="eyebrow">Copywriter + Content Strategist · ISB Alumna</span>
@@ -1405,7 +1412,7 @@
       </div>
     </div>
     <div class="svc-grid">
-      <a href="/services#copywriting" class="svc-card reveal d-1">
+      <a href="/services.html#copywriting" class="svc-card reveal d-1">
         <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
           <path d="M16.5 4L24 11.5L10 25.5H3.5V19L16.5 4Z" stroke="#C85C38" stroke-width="1.6" stroke-linejoin="round"/>
           <path d="M13 7.5L20.5 15" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round"/>
@@ -1421,7 +1428,7 @@
           <span class="tag">Social Ads</span>
         </div>
       </a>
-      <a href="/services#strategy" class="svc-card reveal d-2">
+      <a href="/services.html#strategy" class="svc-card reveal d-2">
         <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
           <rect x="3.5" y="16" width="5" height="8.5" rx="1.2" stroke="#C85C38" stroke-width="1.6"/>
           <rect x="11.5" y="10" width="5" height="14.5" rx="1.2" stroke="#C85C38" stroke-width="1.6"/>
@@ -1436,7 +1443,7 @@
           <span class="tag">Editorial Systems</span>
         </div>
       </a>
-      <a href="/services#brand-voice" class="svc-card reveal d-3">
+      <a href="/services.html#brand-voice" class="svc-card reveal d-3">
         <svg class="svc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
           <rect x="9" y="3" width="10" height="14" rx="5" stroke="#C85C38" stroke-width="1.6"/>
           <path d="M5 13c0 5 4.03 9 9 9s9-4 9-9" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round"/>
@@ -1868,6 +1875,7 @@
 </section>
 
 <!-- ── FOOTER ── -->
+</main>
 <footer class="site-footer">
   <div class="ft-inner">
     <a href="/" class="ft-logo">Amisha Sharma</a>
@@ -1878,6 +1886,7 @@
       <li><a href="/contact.html">Contact</a></li>
       <li><a href="https://www.linkedin.com/in/amisha-sharma-content/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
     </ul>
+    <div class="ft-legal"><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a></div>
     <span class="ft-copy">© 2026 Amisha Sharma · Delhi, India</span>
   </div>
 </footer>
