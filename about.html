@@ -373,9 +373,8 @@
       .pub-header { flex-direction: column; margin-bottom: 32px; }
       .phil-grid { grid-template-columns: 1fr; gap: 40px; }
       .sv-grid { grid-template-columns: 1fr; gap: 48px; }
-      .sv-photo-col { padding-bottom: 48px; }
-      .sv-photo-img { height: 320px; }
-      .sv-quote-card { left: 0; right: 0; bottom: -32px; }
+      .sv-reviews-col { min-height: 340px; }
+      .sv-review-stack { height: 320px; }
       .testi-grid { grid-template-columns: 1fr; gap: 16px; }
     }
     @media (min-width: 600px) and (max-width: 900px) {
@@ -404,29 +403,51 @@
     .sv-h em { font-style: italic; color: var(--accent); }
     .sv-body p { font-size: 16px; color: rgba(255,255,255,.58); line-height: 1.75; margin-bottom: 14px; }
     .sv-body p:last-child { margin-bottom: 0; }
-    /* right: photo + quote card */
-    .sv-photo-col { position: relative; padding-bottom: 28px; }
-    .sv-photo-wrap { position: relative; border-radius: 12px; overflow: visible; }
-    .sv-photo-img {
-      width: 100%; height: 480px; object-fit: cover; object-position: center 32%;
-      display: block; border-radius: 12px;
-      transform: translateZ(0); backface-visibility: hidden;
+    /* right: stacked review carousel */
+    .sv-reviews-col { position: relative; min-height: 380px; }
+    .sv-review-stack { position: relative; width: 100%; height: 360px; }
+    .sv-review-card {
+      position: absolute; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px; padding: 32px 28px;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      opacity: 0; transform: scale(.92) translateY(20px);
+      transition: opacity .5s cubic-bezier(.2,0,0,1), transform .5s cubic-bezier(.2,0,0,1);
+      pointer-events: none;
     }
-    .sv-quote-card {
-      position: absolute; bottom: -24px; left: -18px; right: 28px;
-      background: rgba(10,10,20,.88);
-      border: 1px solid rgba(200,92,56,.28);
-      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-      border-radius: 10px; padding: 22px 20px;
+    .sv-review-card.sv-active {
+      opacity: 1; transform: scale(1) translateY(0); z-index: 3; pointer-events: auto;
     }
-    .sv-qtext {
+    .sv-review-card.sv-behind-1 {
+      opacity: .4; transform: scale(.95) translateY(14px) rotate(2deg); z-index: 2;
+    }
+    .sv-review-card.sv-behind-2 {
+      opacity: .2; transform: scale(.9) translateY(28px) rotate(-1.5deg); z-index: 1;
+    }
+    .sv-review-card:hover { border-color: rgba(200,92,56,.35); }
+    .sv-stars { display: flex; gap: 3px; margin-bottom: 18px; }
+    .sv-review-quote {
       font-family: var(--font-d); font-style: italic;
-      font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,.86); margin-bottom: 14px;
+      font-size: 17px; line-height: 1.65; color: rgba(255,255,255,.88);
+      margin-bottom: 24px; min-height: 110px;
     }
-    .sv-attr {
-      font-size: 10px; font-weight: 700; letter-spacing: .2em;
-      text-transform: uppercase; color: var(--accent);
+    .sv-reviewer { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.08); }
+    .sv-reviewer-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(200,92,56,.15); color: var(--accent);
+      font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-d); flex-shrink: 0;
     }
+    .sv-reviewer-name { font-size: 14px; font-weight: 600; color: #fff; }
+    .sv-reviewer-role { font-size: 12px; color: rgba(255,255,255,.4); margin-top: 2px; }
+    .sv-review-dots { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
+    .sv-rdot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,.2); cursor: pointer;
+      transition: background .3s, transform .3s;
+    }
+    .sv-rdot.sv-rdot-on { background: var(--accent); transform: scale(1.4); }
 
     /* ── TESTIMONIALS ── */
     .testi-sec {
@@ -588,20 +609,10 @@
       transition: color .25s;
     }
 
-    /* ── QUOTE CARD SIZE BUMP ── */
-    .sv-qtext {
-      font-size: 15px !important;
-    }
-    .sv-quote-card {
-      padding: 26px 24px !important;
-    }
-
     /* ── cascade fix: these must come AFTER the base grid declarations ── */
     @media (max-width: 900px) {
       .cert-badges { grid-template-columns: 1fr 1fr !important; }
       .sv-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
-      .sv-photo-img { height: 320px !important; }
-      .sv-quote-card { left: 0 !important; right: 0 !important; bottom: -32px !important; }
       .testi-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
     }
     @media (max-width: 540px) {
@@ -779,17 +790,20 @@
       </div>
       <a href="contact.html" class="btn-acc" style="margin-top:32px;display:inline-block">Let's talk →</a>
     </div>
-    <div class="sv-photo-col">
-      <div class="sv-photo-wrap">
-        <picture>
-          <source type="image/webp" srcset="photo-about-800.webp 800w, photo-about-1200.webp 1200w" sizes="420px">
-          <img src="photo-about-fallback.jpg" alt="Amisha Sharma" class="sv-photo-img" width="420" height="480" loading="lazy" decoding="async">
-        </picture>
-        <div class="sv-quote-card">
-          <p class="sv-qtext">"She didn't just write copy. She rewired how our entire brand speaks. Conversions up 40% and our inbox hasn't stopped since."</p>
-          <div class="sv-attr">Happy Client. Hopefully You Next.</div>
+    <div class="sv-reviews-col" id="svReviews">
+      <div class="sv-review-stack">
+        <div class="sv-review-card sv-active">
+          <div class="sv-stars"></div>
+          <p class="sv-review-quote"></p>
+          <div class="sv-reviewer">
+            <div class="sv-reviewer-avatar"></div>
+            <div><div class="sv-reviewer-name"></div><div class="sv-reviewer-role"></div></div>
+          </div>
         </div>
+        <div class="sv-review-card sv-behind-1"></div>
+        <div class="sv-review-card sv-behind-2"></div>
       </div>
+      <div class="sv-review-dots" id="svDots"></div>
     </div>
   </div>
 </section>
@@ -1242,6 +1256,71 @@
     el.style.opacity='0';el.style.transform='scale(.85)';
     mNumObs.observe(el);
   });
+
+  /* ── REVIEW CAROUSEL ── */
+  (function(){
+    var reviews = [
+      { quote: '"She diagnosed what was actually wrong with our messaging and fixed it. Our landing page conversions jumped within the first month."', name: 'Sarah K.', role: 'Marketing Director, Fintech Startup', initials: 'SK' },
+      { quote: '"She asked questions I hadn\'t thought to ask, and the brief she built from my vague idea became the clearest strategy document I\'ve ever seen."', name: 'Rahul G.', role: 'Founder, D2C Health Brand', initials: 'RG' },
+      { quote: '"She understood our audience better than people who\'d been in the business for years. Our competitors started sounding like background noise."', name: 'Priya M.', role: 'CMO, Australian Healthcare Brand', initials: 'PM' },
+      { quote: '"The email welcome sequence hit 48% open rates. Click-through was double our benchmark. More importantly, the emails sounded like us."', name: 'Priya R.', role: 'Brand Manager, Beauty & Personal Care', initials: 'PR' },
+      { quote: '"She understood AHPRA requirements without needing to be briefed twice. The SEO articles she wrote are consistently ranking."', name: 'James M.', role: 'Account Director, Healthcare Agency', initials: 'JM' }
+    ];
+    var starSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="#C85C38"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+    var stars5 = Array(5).fill(starSvg).join('');
+    var wrap = document.getElementById('svReviews');
+    if (!wrap) return;
+    var cards = wrap.querySelectorAll('.sv-review-card');
+    var dotsWrap = document.getElementById('svDots');
+    var idx = 0, timer = null;
+
+    reviews.forEach(function(_, i) {
+      var dot = document.createElement('span');
+      dot.className = 'sv-rdot' + (i === 0 ? ' sv-rdot-on' : '');
+      dot.addEventListener('click', function() { goTo(i); });
+      dotsWrap.appendChild(dot);
+    });
+
+    function render(i) {
+      var r = reviews[i];
+      var card = cards[0];
+      card.querySelector('.sv-stars').innerHTML = stars5;
+      card.querySelector('.sv-review-quote').textContent = r.quote;
+      card.querySelector('.sv-reviewer-avatar').textContent = r.initials;
+      card.querySelector('.sv-reviewer-name').textContent = r.name;
+      card.querySelector('.sv-reviewer-role').textContent = r.role;
+      dotsWrap.querySelectorAll('.sv-rdot').forEach(function(d, j) {
+        d.classList.toggle('sv-rdot-on', j === i);
+      });
+    }
+
+    function goTo(i) {
+      clearInterval(timer);
+      idx = i;
+      cards[0].classList.remove('sv-active');
+      cards[0].offsetHeight;
+      render(idx);
+      cards[0].classList.add('sv-active');
+      startTimer();
+    }
+
+    function next() {
+      idx = (idx + 1) % reviews.length;
+      cards[0].classList.remove('sv-active');
+      setTimeout(function() {
+        render(idx);
+        cards[0].classList.add('sv-active');
+      }, 300);
+    }
+
+    function startTimer() { timer = setInterval(next, 4000); }
+
+    render(0);
+    startTimer();
+
+    wrap.addEventListener('mouseenter', function() { clearInterval(timer); });
+    wrap.addEventListener('mouseleave', function() { startTimer(); });
+  })();
 </script>
 
 </body>
