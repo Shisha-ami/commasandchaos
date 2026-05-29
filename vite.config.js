@@ -25,6 +25,7 @@ export default defineConfig({
         googleAds: 'google-ads-copy.html',
         socialAds: 'social-ads-copy.html',
         websiteCopy: 'website-copy.html',
+        freeAudit: 'free-ai-content-audit.html',
         ...blogFiles
       }
     }

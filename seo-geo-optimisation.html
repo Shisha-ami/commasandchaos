@@ -177,15 +177,18 @@
     /* ── SEO VS GEO ── */
     .comp-sec { background: linear-gradient(180deg, var(--green-light) 0%, var(--bg) 100%); }
     .comp-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 72px; align-items: start; margin-top: 56px; }
-    .comp-rules { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-    .comp-rule { padding: 22px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 16px; transition: background .2s; }
-    .comp-rule:last-child { border-bottom: none; }
-    .comp-rule:hover { background: var(--green-light); }
-    .comp-rule-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; font-weight: 700; }
-    .comp-rule-icon.no { background: rgba(200,92,56,.1); color: var(--accent); }
-    .comp-rule-icon.yes { background: var(--green-light); color: var(--green); }
-    .comp-rule-text h4 { font-size: 15.5px; font-weight: 600; color: var(--fg); margin-bottom: 4px; }
-    .comp-rule-text p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+    .comp-rules { display: flex; flex-direction: column; gap: 20px; }
+    .comp-capsule { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .capsule-label { padding: 14px 24px 0; font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+    .capsule-old { display: flex; align-items: flex-start; gap: 14px; padding: 14px 24px; opacity: .55; }
+    .capsule-old h4 { font-size: 15px; font-weight: 600; color: var(--fg); text-decoration: line-through; text-decoration-color: rgba(200,92,56,.4); margin-bottom: 2px; }
+    .capsule-old p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .capsule-new { display: flex; align-items: flex-start; gap: 14px; padding: 14px 24px 20px; background: var(--green-light); border-top: 1px solid rgba(45,90,61,.1); }
+    .capsule-new h4 { font-size: 15.5px; font-weight: 700; color: var(--fg); margin-bottom: 2px; }
+    .capsule-new p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+    .capsule-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700; margin-top: 1px; }
+    .capsule-icon.no { background: rgba(200,92,56,.1); color: var(--accent); }
+    .capsule-icon.yes { background: var(--green); color: #fff; }
     .comp-explainer { }
     .comp-explainer h3 { font-family: var(--font-d); font-size: 28px; font-weight: 700; color: var(--fg); margin-bottom: 24px; line-height: 1.2; }
     .comp-explainer p { font-size: 16.5px; color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
@@ -341,7 +344,7 @@
           <a href="/social-ads-copy.html" class="nav-dd-item"><span class="nav-dd-num">04</span> Social Ads Copy</a>
           <a href="/website-copy.html" class="nav-dd-item"><span class="nav-dd-num">05</span> Website Copy</a>
           <div class="nav-dd-sep"></div>
-          <a href="/services.html#audit" class="nav-dd-item" style="color:var(--accent)"><span class="nav-dd-num" style="opacity:1">→</span> Free AI Content Audit</a>
+          <a href="/free-ai-content-audit.html" class="nav-dd-item" style="color:var(--accent)"><span class="nav-dd-num" style="opacity:1">→</span> Free AI Content Audit</a>
         </div>
       </li>
       <li><a href="/contact.html" class="nav-btn">Let's Connect</a></li>
@@ -391,7 +394,7 @@
         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
         Quick Answer
       </div>
-      <p><strong>Amisha Sharma provides combined SEO and GEO (Generative Engine Optimisation) services for regulated industries in Australia, including healthcare, fintech, legal, insurance, and NDIS providers.</strong> Services include traditional search engine optimisation, AI search visibility through answer capsules and llms.txt implementation, structured data markup, compliance-aware content strategy, and ongoing AI citation monitoring. Businesses get found in both Google results and AI-powered search tools like ChatGPT, Perplexity, and Google AI Overviews, without breaching AHPRA, ASIC, or TGA advertising rules. <a href="/contact.html">Free SEO + GEO audit available</a> for Australian regulated businesses.</p>
+      <p><strong>Amisha Sharma provides combined SEO and GEO (Generative Engine Optimisation) services for regulated industries in Australia, including healthcare, fintech, legal, insurance, and NDIS providers.</strong> Services include traditional search engine optimisation, AI search visibility through answer capsules and llms.txt implementation, structured data markup, compliance-aware content strategy, and ongoing AI visibility spot-checks. Businesses get found in both Google results and AI-powered search tools like ChatGPT, Perplexity, and Google AI Overviews, without breaching AHPRA, ASIC, or TGA advertising rules. <a href="/contact.html">Free SEO + GEO audit available</a> for Australian regulated businesses.</p>
     </div>
   </div>
 </section>
@@ -447,7 +450,7 @@
       <div class="sol-card reveal d2">
         <div class="sol-num">02</div>
         <h3>llms.txt implementation</h3>
-        <p>A structured summary file at your site root that AI crawlers read to understand your business. Think of it as a sitemap for large language models. I write, deploy, and maintain it for you.</p>
+        <p>A structured summary file at your site root that AI crawlers read to understand your business. Think of it as a sitemap for large language models. I write the file and provide deployment instructions for your team.</p>
         <span class="sol-tag">AI Crawlability</span>
       </div>
       <div class="sol-card reveal d3">
@@ -465,13 +468,13 @@
       <div class="sol-card reveal d2">
         <div class="sol-num">05</div>
         <h3>Local SEO for Australian markets</h3>
-        <p>City-specific landing pages, Google Business Profile optimisation, and local schema markup. When someone searches "NDIS provider Sydney" or "financial adviser Brisbane," your name appears first.</p>
+        <p>City-specific landing pages and local schema markup ready for implementation. When someone searches "NDIS provider Sydney" or "financial adviser Brisbane," your name appears first.</p>
         <span class="sol-tag">Local Visibility</span>
       </div>
       <div class="sol-card reveal d3">
         <div class="sol-num">06</div>
-        <h3>AI citation monitoring and reporting</h3>
-        <p>Monthly tracking of where and how AI systems cite your brand. I monitor ChatGPT, Perplexity, Google AI Overviews, and Claude to measure your AI visibility score and identify new citation opportunities.</p>
+        <h3>Ongoing AI visibility spot-checks</h3>
+        <p>Manual monthly checks of how AI systems reference your brand across ChatGPT, Perplexity, and Google AI Overviews. I identify where you are being cited, where you are absent, and what to prioritise next.</p>
         <span class="sol-tag">Ongoing Optimisation</span>
       </div>
     </div>
@@ -487,20 +490,20 @@
     <div class="dlv-grid">
       <div class="dlv-card reveal d1">
         <h4>SEO + GEO Audit Report</h4>
-        <p>A scored assessment of your current Google rankings, AI visibility across ChatGPT and Perplexity, competitor citation analysis, and a prioritised 90-day roadmap. You see exactly where you stand in both search ecosystems.</p>
+        <p>A scored assessment of your current Google rankings, manual AI visibility spot-checks across ChatGPT and Perplexity, competitor content analysis, and a prioritised 90-day roadmap. You see exactly where you stand and what to fix first.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Google rankings</span>
-          <span class="dlv-check">AI citation check</span>
+          <span class="dlv-check">AI visibility spot-check</span>
           <span class="dlv-check">Competitor analysis</span>
         </div>
       </div>
       <div class="dlv-card reveal d2">
         <h4>llms.txt + Structured Data Package</h4>
-        <p>Custom llms.txt file written and deployed to your site root. Full JSON-LD schema markup across all key pages: Service, FAQPage, Article, Organisation, and BreadcrumbList types.</p>
+        <p>Custom llms.txt file and JSON-LD schema markup written and ready to implement: Service, FAQPage, Article, Organisation, and BreadcrumbList types. Delivered with clear instructions for your dev team.</p>
         <div class="dlv-checks">
           <span class="dlv-check">llms.txt file</span>
           <span class="dlv-check">JSON-LD schema</span>
-          <span class="dlv-check">robots.txt update</span>
+          <span class="dlv-check">Implementation guide</span>
         </div>
       </div>
       <div class="dlv-card reveal d3">
@@ -523,19 +526,19 @@
       </div>
       <div class="dlv-card reveal d1">
         <h4>Local Landing Pages</h4>
-        <p>City-specific pages for Sydney, Melbourne, Brisbane, Perth, Adelaide, and regional areas. Unique content per location, local schema markup, and Google Business Profile alignment.</p>
+        <p>City-specific pages for Sydney, Melbourne, Brisbane, Perth, Adelaide, and regional areas. Unique content per location with local schema markup ready for your dev team to implement.</p>
         <div class="dlv-checks">
           <span class="dlv-check">Local schema</span>
           <span class="dlv-check">City-specific copy</span>
-          <span class="dlv-check">GBP optimisation</span>
+          <span class="dlv-check">Location keywords</span>
         </div>
       </div>
       <div class="dlv-card reveal d2">
-        <h4>Monthly AI Visibility Report</h4>
-        <p>Tracking your brand's citation frequency across ChatGPT, Perplexity, Google AI Overviews, and Claude. Rankings, traffic, AI citation score, and actionable recommendations every month.</p>
+        <h4>Monthly Performance Report</h4>
+        <p>Google rankings, organic traffic trends, and manual AI visibility spot-checks across ChatGPT, Perplexity, and Google AI Overviews. Actionable recommendations on what to publish, refresh, or prioritise next.</p>
         <div class="dlv-checks">
-          <span class="dlv-check">AI citation tracking</span>
           <span class="dlv-check">Ranking reports</span>
+          <span class="dlv-check">AI spot-checks</span>
           <span class="dlv-check">Strategic recommendations</span>
         </div>
       </div>
@@ -550,46 +553,55 @@
     <h2 class="sec-h reveal d1">What is the difference between<br>SEO and GEO?</h2>
     <div class="comp-grid">
       <div class="comp-rules reveal d2">
-        <div class="comp-rule">
-          <div class="comp-rule-icon no">Old</div>
-          <div class="comp-rule-text">
-            <h4>Optimise for keywords only</h4>
-            <p>Traditional SEO focuses on keyword density and placement to rank in Google's blue links.</p>
+        <div class="comp-capsule">
+          <div class="capsule-label">Discovery</div>
+          <div class="capsule-old">
+            <span class="capsule-icon no">✕</span>
+            <div>
+              <h4>Optimise for keywords only</h4>
+              <p>Keyword density and placement to rank in Google's blue links.</p>
+            </div>
+          </div>
+          <div class="capsule-new">
+            <span class="capsule-icon yes">✓</span>
+            <div>
+              <h4>Optimise for extractable answers</h4>
+              <p>Direct, factual answers in the first 100 words that AI systems can cite verbatim. 44.2% of all LLM citations come from the first 30% of a page.</p>
+            </div>
           </div>
         </div>
-        <div class="comp-rule">
-          <div class="comp-rule-icon yes">New</div>
-          <div class="comp-rule-text">
-            <h4>Optimise for extractable answers</h4>
-            <p>GEO requires direct, factual answers in the first 100 words that AI systems can cite verbatim.</p>
+        <div class="comp-capsule">
+          <div class="capsule-label">Authority</div>
+          <div class="capsule-old">
+            <span class="capsule-icon no">✕</span>
+            <div>
+              <h4>Build backlinks for authority</h4>
+              <p>Backlinks have a 0.218 correlation with AI visibility. They still matter for Google, but less for AI.</p>
+            </div>
+          </div>
+          <div class="capsule-new">
+            <span class="capsule-icon yes">✓</span>
+            <div>
+              <h4>Build brand mentions for citation</h4>
+              <p>Brand web mentions have a 0.664 correlation with AI visibility. YouTube mentions score 0.737. Four or more platform mentions make a brand 2.8x more likely to appear in ChatGPT responses.</p>
+            </div>
           </div>
         </div>
-        <div class="comp-rule">
-          <div class="comp-rule-icon no">Old</div>
-          <div class="comp-rule-text">
-            <h4>Build backlinks for authority</h4>
-            <p>Backlinks had a 0.218 correlation with AI visibility. They still matter for Google, but less for AI.</p>
+        <div class="comp-capsule">
+          <div class="capsule-label">Structure</div>
+          <div class="capsule-old">
+            <span class="capsule-icon no">✕</span>
+            <div>
+              <h4>Rely on meta tags and sitemaps</h4>
+              <p>Google reads your sitemap.xml, but AI crawlers need additional structured guidance.</p>
+            </div>
           </div>
-        </div>
-        <div class="comp-rule">
-          <div class="comp-rule-icon yes">New</div>
-          <div class="comp-rule-text">
-            <h4>Build brand mentions for citation</h4>
-            <p>Brand web mentions have a 0.664 correlation with AI visibility. Mentions on YouTube score 0.737.</p>
-          </div>
-        </div>
-        <div class="comp-rule">
-          <div class="comp-rule-icon no">Old</div>
-          <div class="comp-rule-text">
-            <h4>Rely on meta tags and sitemaps</h4>
-            <p>Google reads your sitemap.xml, but AI crawlers need additional structured guidance.</p>
-          </div>
-        </div>
-        <div class="comp-rule">
-          <div class="comp-rule-icon yes">New</div>
-          <div class="comp-rule-text">
-            <h4>Deploy llms.txt and structured data</h4>
-            <p>AI crawlers read llms.txt to understand your site. JSON-LD schema helps them extract facts.</p>
+          <div class="capsule-new">
+            <span class="capsule-icon yes">✓</span>
+            <div>
+              <h4>Deploy llms.txt and structured data</h4>
+              <p>AI crawlers read llms.txt to understand your site. JSON-LD schema helps them extract facts. Content with structured data gets cited 3.2x more by AI systems.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -689,7 +701,7 @@
         </div>
         <div class="process-step-right">
           <div class="process-step-title">Implement and Publish</div>
-          <div class="process-step-desc">I deploy your llms.txt file, implement structured data across key pages, write GEO-optimised blog content with answer capsules, and optimise existing pages for both search ecosystems. AI tools accelerate research and drafting. Human judgment and compliance review on every word before it goes live. Two revision rounds included.</div>
+          <div class="process-step-desc">I write your llms.txt file, structured data markup, and GEO-optimised blog content with answer capsules, and provide implementation guides for your dev team. AI tools accelerate research and drafting. Human judgment and compliance review on every word before it goes live. Two revision rounds included.</div>
         </div>
       </div>
       <div class="process-step last reveal d4">
@@ -698,7 +710,7 @@
         </div>
         <div class="process-step-right">
           <div class="process-step-title">Monitor, Report, and Optimise</div>
-          <div class="process-step-desc">Monthly reporting tracks Google rankings, organic traffic, AI citation frequency, and conversion metrics. I identify which content is being cited by AI systems, refresh content that has plateaued, and continuously optimise your visibility in both ecosystems. You see exactly where your leads are coming from.</div>
+          <div class="process-step-desc">Monthly reporting tracks Google rankings and organic traffic, plus manual AI visibility spot-checks across ChatGPT, Perplexity, and Google AI Overviews. I identify what is working, refresh content that has plateaued, and recommend what to prioritise next. You see exactly where your leads are coming from.</div>
         </div>
       </div>
     </div>
@@ -759,21 +771,21 @@
           Do I need to rebuild my website to implement GEO?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><p>No. GEO is implemented as a layer on top of your existing website. An llms.txt file is placed at your site root. Answer capsules are added to the opening paragraphs of existing content. Structured data is injected into page headers. Your current design, CMS, and hosting remain unchanged. Most implementations require no developer involvement beyond deploying the llms.txt file.</p></div>
+        <div class="faq-a"><p>No. GEO is a layer on top of your existing website. I write your llms.txt file and structured data markup, and your dev team adds them to your site. Answer capsules are written into the opening paragraphs of existing content. Your current design, CMS, and hosting remain unchanged. Most of the work is content and copywriting, not development.</p></div>
       </div>
       <div class="faq-item reveal d1">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           What is included in the free SEO + GEO audit?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><p>A scored report covering your current Google rankings for target keywords, an AI visibility check across ChatGPT, Perplexity, and Google AI Overviews, competitor citation analysis, structured data and llms.txt status, compliance gap identification, and a prioritised 90-day action roadmap. Plus a 30-minute video call to walk through findings. No commitment required beyond the audit itself.</p></div>
+        <div class="faq-a"><p>A scored report covering your current Google rankings for target keywords, manual AI visibility spot-checks across ChatGPT, Perplexity, and Google AI Overviews, competitor content analysis, structured data and llms.txt status, compliance gap identification, and a prioritised 90-day action roadmap. Plus a 30-minute call to walk through findings. No commitment required beyond the audit itself.</p></div>
       </div>
       <div class="faq-item reveal d2">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           How do you measure AI visibility and track citations?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><p>I run structured queries across ChatGPT, Perplexity, Google AI Overviews, and Claude for your target keywords and service areas every month. Each query is logged with the response and whether your brand was cited, mentioned, or absent. This produces an AI visibility score that tracks your progress over time. Combined with Google Search Console data and traffic analytics, you get a complete picture of your performance across both traditional and AI search ecosystems.</p></div>
+        <div class="faq-a"><p>I manually run queries across ChatGPT, Perplexity, and Google AI Overviews for your target keywords and service areas each month. Each query is logged with whether your brand was cited, mentioned, or absent. There is no automated tool for this yet, so I do it by hand. Combined with Google Search Console data and traffic analytics, you get a practical picture of how you are performing across both traditional and AI search.</p></div>
       </div>
     </div>
   </div>
@@ -813,7 +825,7 @@
       "name": "Do I need to rebuild my website to implement GEO?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. GEO is implemented as a layer on top of your existing website. An llms.txt file is placed at your site root, answer capsules are added to existing content, and structured data is injected into page headers. Your current design, CMS, and hosting remain unchanged."
+        "text": "No. GEO is a layer on top of your existing website. The llms.txt file and structured data are written by me and deployed by your dev team. Answer capsules are written into existing content. Your current design, CMS, and hosting remain unchanged."
       }
     },
     {
@@ -821,7 +833,7 @@
       "name": "What is included in the free SEO and GEO audit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A scored report covering Google rankings, AI visibility across ChatGPT, Perplexity, and Google AI Overviews, competitor citation analysis, structured data and llms.txt status, compliance gap identification, and a prioritised 90-day roadmap. Plus a 30-minute video call to walk through findings."
+        "text": "A scored report covering Google rankings, manual AI visibility spot-checks across ChatGPT, Perplexity, and Google AI Overviews, competitor content analysis, structured data and llms.txt status, compliance gap identification, and a prioritised 90-day roadmap. Plus a 30-minute call to walk through findings."
       }
     },
     {
@@ -829,7 +841,7 @@
       "name": "How do you measure AI visibility and track citations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Structured queries are run across ChatGPT, Perplexity, Google AI Overviews, and Claude for target keywords every month. Each query is logged with whether the brand was cited, mentioned, or absent. This produces an AI visibility score tracked over time, combined with Google Search Console data for a complete picture."
+        "text": "Manual queries are run across ChatGPT, Perplexity, and Google AI Overviews for target keywords each month. Each query is logged with whether the brand was cited, mentioned, or absent. There is no automated tool for this yet, so it is done by hand. Combined with Google Search Console data for a practical picture of performance."
       }
     }
   ]
