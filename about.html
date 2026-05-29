@@ -413,6 +413,30 @@
     .m-text { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.6; color: rgba(255,255,255,.85); }
     .m-text strong { font-style: normal; color: #fff; font-weight: 700; }
 
+    /* ── FAQ ── */
+    .faq-sec { padding: clamp(60px, 8vw, 112px) var(--px); }
+    .faq-grid { max-width: 780px; margin: 40px auto 0; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      width: 100%; padding: 24px 0; background: none; border: none;
+      cursor: pointer; text-align: left;
+      font-family: var(--font-b); font-size: 16px; font-weight: 600;
+      color: var(--fg); line-height: 1.4; gap: 16px;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-icon {
+      flex-shrink: 0; width: 24px; height: 24px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: var(--accent); transition: transform .25s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s;
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding-bottom: 24px; }
+    .faq-a p { font-size: 15.5px; color: var(--muted); line-height: 1.7; }
+
     /* ── CTA ── */
     .cta-sec { background: var(--dark); }
     .cta-inner { max-width: 680px; margin: 0 auto; text-align: center; }
@@ -1309,6 +1333,100 @@
     </div>
   </div>
 </section>
+
+<!-- ── FAQ ── -->
+<section class="sec" id="faq">
+  <div class="sec-inner">
+    <span class="sec-lbl">FAQ</span>
+    <h2 class="sec-h">A few things people ask.</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Do you work solo or with a team?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Solo. You brief me, I do the work, I deliver it. There's no account manager translating your vision to a junior writer you'll never meet. For larger projects that need design, development, or paid media execution, I partner with trusted specialists I've worked with for years. But the strategy and the writing? That's always me.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What timezone are you in and how does async work?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>I'm in Delhi (IST, UTC+5:30). For clients in Australia, the UK, and the US, this is a feature, not a bug. You brief me at your end of day, I work while you sleep, and you wake up to finished drafts in your inbox. Communication happens over email, Slack, or Loom. We sync live when needed, but most of my best client relationships run almost entirely async.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How did you get into regulated industry content?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Through CJ&CO, one of Australia's top digital agencies. They handed me healthcare clients under AHPRA, fintech clients under ASIC, and therapeutic goods brands under TGA. I learned compliance the hard way: by writing content that had to pass regulatory review before going live. Three years later, I've built a track record of zero compliance breaches and zero pulled ads. Now it's what I'm known for.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Are you taking new clients right now?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Usually, yes, but I cap my active client list to keep quality high. If you're reading this page, there's likely a spot open. The fastest way to find out is to book a call or send me a message on the contact page. If the timing doesn't work, I'll tell you honestly and put you on the shortlist for the next opening.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Can I see examples of your work?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Most of my client work is under NDA, which is standard in regulated industries. But you can see my thinking in action at The Brand Crush (brand analysis) and Audaz Revista (cultural journalism). Both are publications I built from scratch. For client-specific samples in your industry, reach out and I'll share relevant case studies privately.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you work solo or with a team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo. You brief me, I do the work, I deliver it. There's no account manager translating your vision to a junior writer you'll never meet. For larger projects that need design, development, or paid media execution, I partner with trusted specialists I've worked with for years. But the strategy and the writing? That's always me."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What timezone are you in and how does async work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I'm in Delhi (IST, UTC+5:30). For clients in Australia, the UK, and the US, this is a feature, not a bug. You brief me at your end of day, I work while you sleep, and you wake up to finished drafts in your inbox. Communication happens over email, Slack, or Loom. We sync live when needed, but most of my best client relationships run almost entirely async."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How did you get into regulated industry content?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Through CJ&CO, one of Australia's top digital agencies. They handed me healthcare clients under AHPRA, fintech clients under ASIC, and therapeutic goods brands under TGA. I learned compliance the hard way: by writing content that had to pass regulatory review before going live. Three years later, I've built a track record of zero compliance breaches and zero pulled ads. Now it's what I'm known for."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you taking new clients right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually, yes, but I cap my active client list to keep quality high. If you're reading this page, there's likely a spot open. The fastest way to find out is to book a call or send me a message on the contact page. If the timing doesn't work, I'll tell you honestly and put you on the shortlist for the next opening."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I see examples of your work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most of my client work is under NDA, which is standard in regulated industries. But you can see my thinking in action at The Brand Crush (brand analysis) and Audaz Revista (cultural journalism). Both are publications I built from scratch. For client-specific samples in your industry, reach out and I'll share relevant case studies privately."
+      }
+    }
+  ]
+}
+</script>
 
 <!-- ── CTA ── -->
 <section class="sec cta-sec">

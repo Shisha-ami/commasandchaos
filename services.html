@@ -277,18 +277,28 @@
 
     /* ── FAQ ── */
     .faq-list { margin-top: 44px; display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
+    .faq-sec { padding: clamp(60px, 8vw, 112px) var(--px); }
+    .faq-grid { max-width: 780px; margin: 40px auto 0; }
     .faq-item { border-bottom: 1px solid var(--border); }
     .faq-q {
-      width: 100%; background: none; border: none; text-align: left; cursor: pointer;
-      padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
-      font-family: var(--font-d); font-size: 20px; font-weight: 700; color: var(--fg);
-      line-height: 1.3; gap: 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      width: 100%; padding: 24px 0; background: none; border: none;
+      cursor: pointer; text-align: left;
+      font-family: var(--font-b); font-size: 16px; font-weight: 600;
+      color: var(--fg); line-height: 1.4; gap: 16px;
     }
     .faq-q:hover { color: var(--accent); }
-    .faq-icon { font-size: 22px; color: var(--accent); flex-shrink: 0; transition: transform .25s; font-style: normal; }
+    .faq-icon {
+      flex-shrink: 0; width: 24px; height: 24px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: var(--accent); transition: transform .25s;
+    }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-a { display: none; padding: 0 0 22px; font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 680px; }
-    .faq-item.open .faq-a { display: block; }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s;
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding-bottom: 24px; }
+    .faq-a p { font-size: 15.5px; color: var(--muted); line-height: 1.7; }
 
     /* ── CTA ── */
     .cta-sec { background: rgba(200,92,56,.07); }
@@ -709,49 +719,143 @@
 </section>
 
 <!-- ── FAQ ── -->
-<section class="sec">
+<section class="sec" id="faq">
   <div class="sec-inner">
-    <span class="sec-lbl">Common questions</span>
-    <h2 class="sec-h">Things you're probably<br>wondering right now.</h2>
+    <span class="sec-lbl">FAQ</span>
+    <h2 class="sec-h">Questions about working together.</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          What is GEO? What is Generative Engine Optimization?
-          <em class="faq-icon" aria-hidden="true">+</em>
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What's the difference between content strategy and content creation?
+          <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">GEO (Generative Engine Optimization) is the practice of optimizing your content to appear in AI-powered search results, including ChatGPT, Perplexity, Google AI Overviews, and Claude. Traditional SEO gets you into Google's blue links. GEO gets you cited when someone asks an AI a question about your industry. It involves specific techniques like answer capsules, llms.txt files, structured data, and content formatting that AI models can extract and reference. If you're only doing SEO, you're optimizing for half the search landscape.</div>
+        <div class="faq-a"><p>Content creation is the writing. Content strategy is the thinking that makes the writing worth doing. Strategy covers what to publish, who it's for, which keywords to target, how each piece maps to your buyer journey, and what success looks like in numbers. Without strategy, you're just publishing and hoping. I do both, but I'll never write a word until the strategy makes sense.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          How do you use AI in content creation?
-          <em class="faq-icon" aria-hidden="true">+</em>
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Do you write for industries you haven't worked in before?
+          <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">AI accelerates the research, outlining, and first-draft stages of content creation. But here's what it doesn't do: make compliance judgments, understand your brand's nuances, or know what your regulator flagged last quarter. I use AI tools to move faster on the parts that benefit from speed, then apply human judgment on everything that requires expertise. Every piece goes through manual compliance review, voice calibration, and strategic editing before it reaches you. The result is content produced at AI speed with the quality and safety of human oversight.</div>
+        <div class="faq-a"><p>Sometimes, yes. But only if the industry has a clear regulatory framework I can study and internalize before writing a single word. My core expertise is regulated industries: healthcare under AHPRA, financial services under ASIC, therapeutics under TGA. If your industry has compliance guardrails, I'll learn them properly. If it's a category with zero regulatory complexity, honestly, you might not need me. A generalist would do fine.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          What regulated industries do you serve?
-          <em class="faq-icon" aria-hidden="true">+</em>
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What platforms do you write Google Ads copy for?
+          <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Financial services (financial advisers, fintechs, insurtechs, NBFCs), healthcare and allied health (clinics, telehealth, medicinal cannabis, NDIS providers), legal (law firms, legal tech), and cybersecurity. I have specific experience with ASIC, AHPRA, and TGA compliance requirements, especially for Australian markets. If your industry has a regulator looking over your shoulder, I probably work in it.</div>
+        <div class="faq-a"><p>Google Search, Display, Performance Max, and YouTube (text overlays and scripts). I write headlines, descriptions, sitelinks, callouts, and structured snippets. Every ad is checked against Google's healthcare and financial services ad policies before delivery. I also write the landing pages your ads point to, because the best ad copy in the world is wasted if the landing page doesn't convert.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          How is this different from hiring a regular content agency?
-          <em class="faq-icon" aria-hidden="true">+</em>
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Can you write content that's compliant with AHPRA and ASIC?
+          <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Three ways. First, most agencies optimize for Google only. I optimize for Google AND AI-powered search (ChatGPT, Perplexity, AI Overviews) from day one. Second, most agencies treat compliance as a checkbox. I build compliance awareness into the writing process itself, so your legal team isn't rewriting everything after the fact. Third, I build AI workflow systems for your team, not just content. You get prompt libraries, SOPs, and quality gates so your internal team can produce compliant, on-brand content at scale even when you're not working with me.</div>
+        <div class="faq-a"><p>That's the entire point. I write under AHPRA, ASIC, and TGA frameworks every day at CJ&CO, one of Australia's top digital agencies. I know which claims trigger reviews, which testimonial structures are prohibited, and which disclaimers actually protect you versus just taking up space. Your legal team will spend less time redlining my drafts than anyone else's. That's not a promise. It's a pattern.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          What does an AI content audit include?
-          <em class="faq-icon" aria-hidden="true">+</em>
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What's included in a GEO optimization project?
+          <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">The audit covers three layers. Content and SEO: what you've published, how it's performing, and where the gaps are. AI visibility: whether your brand shows up when someone asks ChatGPT, Perplexity, or Google AI Overviews a question in your space. And compliance: whether your existing content has regulatory gaps that could create risk. You get a scored report, a competitor benchmark, and a prioritized 90-day roadmap with specific actions. Most clients are surprised by the AI visibility findings. That's the point.</div>
+        <div class="faq-a"><p>GEO (Generative Engine Optimization) makes your brand visible in AI search results from ChatGPT, Perplexity, and Google AI Overviews. A full project includes an AI visibility audit, llms.txt implementation, answer capsule architecture, structured data and schema markup, content reformatting for AI extraction, and ongoing monitoring. You'll know exactly where you show up, where you don't, and what changed after optimization.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Do you offer retainer packages or project-based pricing?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Both. Most clients start with a project (an AI content audit or a single campaign) and then move to a monthly retainer once they see the results. Retainers work better for ongoing content strategy, SEO, and GEO because consistency compounds. Project-based works for one-off needs like a website rewrite or a landing page sprint. We'll figure out which fits during the first call.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How do you handle revisions?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Two rounds of revisions are included with every deliverable. In practice, most clients use one or zero. That's not because I'm lucky. It's because I front-load the research and ask the right questions before I start writing. If you need a third round, we'll talk, but in 200+ projects it's happened maybe twice.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What happens after the AI content audit?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>You get a scored report, a competitor benchmark, and a prioritized 90-day roadmap. Then we hop on a 30-minute call where I walk you through every finding and recommendation. After that, you decide. Some clients hand me the roadmap and say "go." Others take it to their internal team. Either way, you leave with a clear picture of where you stand in Google, ChatGPT, and Perplexity, and exactly what to fix first.</p></div>
       </div>
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between content strategy and content creation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Content creation is the writing. Content strategy is the thinking that makes the writing worth doing. Strategy covers what to publish, who it's for, which keywords to target, how each piece maps to your buyer journey, and what success looks like in numbers. Without strategy, you're just publishing and hoping. I do both, but I'll never write a word until the strategy makes sense."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you write for industries you haven't worked in before?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sometimes, yes. But only if the industry has a clear regulatory framework I can study and internalize before writing a single word. My core expertise is regulated industries: healthcare under AHPRA, financial services under ASIC, therapeutics under TGA. If your industry has compliance guardrails, I'll learn them properly. If it's a category with zero regulatory complexity, honestly, you might not need me. A generalist would do fine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What platforms do you write Google Ads copy for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google Search, Display, Performance Max, and YouTube (text overlays and scripts). I write headlines, descriptions, sitelinks, callouts, and structured snippets. Every ad is checked against Google's healthcare and financial services ad policies before delivery. I also write the landing pages your ads point to, because the best ad copy in the world is wasted if the landing page doesn't convert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you write content that's compliant with AHPRA and ASIC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's the entire point. I write under AHPRA, ASIC, and TGA frameworks every day at CJ&CO, one of Australia's top digital agencies. I know which claims trigger reviews, which testimonial structures are prohibited, and which disclaimers actually protect you versus just taking up space. Your legal team will spend less time redlining my drafts than anyone else's. That's not a promise. It's a pattern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's included in a GEO optimization project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO (Generative Engine Optimization) makes your brand visible in AI search results from ChatGPT, Perplexity, and Google AI Overviews. A full project includes an AI visibility audit, llms.txt implementation, answer capsule architecture, structured data and schema markup, content reformatting for AI extraction, and ongoing monitoring. You'll know exactly where you show up, where you don't, and what changed after optimization."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer retainer packages or project-based pricing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. Most clients start with a project (an AI content audit or a single campaign) and then move to a monthly retainer once they see the results. Retainers work better for ongoing content strategy, SEO, and GEO because consistency compounds. Project-based works for one-off needs like a website rewrite or a landing page sprint. We'll figure out which fits during the first call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle revisions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two rounds of revisions are included with every deliverable. In practice, most clients use one or zero. That's not because I'm lucky. It's because I front-load the research and ask the right questions before I start writing. If you need a third round, we'll talk, but in 200+ projects it's happened maybe twice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after the AI content audit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You get a scored report, a competitor benchmark, and a prioritized 90-day roadmap. Then we hop on a 30-minute call where I walk you through every finding and recommendation. After that, you decide. Some clients hand me the roadmap and say 'go.' Others take it to their internal team. Either way, you leave with a clear picture of where you stand in Google, ChatGPT, and Perplexity, and exactly what to fix first."
+      }
+    }
+  ]
+}
+</script>
 
 <!-- ── TESTIMONIALS ── -->
 <section class="sec svc-testi-sec">
@@ -877,20 +981,7 @@
   document.querySelectorAll('.sec-inner>*,.svc-section,.process-step-new,.svc-testi-card,.faq-item').forEach((el,i)=>{el.classList.add('reveal');if(i%3===1)el.classList.add('d-1');if(i%3===2)el.classList.add('d-2');ro.observe(el);});
   setTimeout(()=>{document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{el.style.transition='opacity .4s ease,transform .4s ease';el.classList.add('visible');});},1800);
   document.querySelectorAll('.btn-acc').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px) translateY(-2px)`;});btn.addEventListener('mouseleave',()=>{btn.style.transform='';});});
-  document.querySelectorAll('.faq-q').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var item = btn.closest('.faq-item');
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(el) {
-        el.classList.remove('open');
-        el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
+  /* FAQ toggle handled by inline onclick */
 </script>
 
 <!-- ── WHATSAPP BUTTON ── -->

@@ -1199,6 +1199,95 @@
       .ct-divider { display: none; }
       .ct-text { min-height: 0; }
     }
+
+    /* -- CASE STUDIES -- */
+    .cases-sec { background: var(--dark); padding: clamp(60px, 8vw, 112px) var(--px); }
+    .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    .case-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: border-color .2s, transform .2s;
+    }
+    .case-card:hover { border-color: rgba(200,92,56,.3); transform: translateY(-3px); }
+    .case-industry {
+      font-size: 11px; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+    }
+    .case-stat {
+      font-family: var(--font-d); font-size: clamp(36px, 4vw, 52px);
+      font-weight: 900; color: #fff; line-height: 1; margin-bottom: 8px;
+    }
+    .case-label { font-size: 14px; color: rgba(255,255,255,.5); margin-bottom: 20px; }
+    .case-desc { font-size: 14.5px; color: rgba(255,255,255,.45); line-height: 1.6; }
+    .case-placeholder {
+      display: inline-block; margin-top: 12px;
+      font-size: 12px; color: rgba(200,92,56,.6);
+      font-style: italic;
+    }
+    @media (max-width: 860px) { .cases-grid { grid-template-columns: 1fr; } }
+
+    /* -- TESTIMONIALS -- */
+    .testi-sec { background: var(--surface); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .testi-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 12px; padding: 32px 28px;
+      position: relative;
+      transition: border-color .25s, transform .25s var(--ease), box-shadow .25s;
+    }
+    .testi-card:hover {
+      border-color: rgba(200,92,56,.25); transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,.07);
+    }
+    .testi-card::before {
+      content: '\201C';
+      font-family: var(--font-d); font-size: 72px; font-weight: 900;
+      color: rgba(200,92,56,.1); line-height: 1;
+      position: absolute; top: 16px; left: 24px;
+      pointer-events: none; user-select: none;
+    }
+    .testi-quote {
+      font-size: 15px; color: var(--fg); line-height: 1.7;
+      margin-bottom: 24px; position: relative; z-index: 1;
+    }
+    .testi-quote strong { color: var(--accent); font-weight: 600; }
+    .testi-footer { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--accent); display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-d); font-size: 16px; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .testi-name { font-size: 14px; font-weight: 600; color: var(--fg); line-height: 1.3; }
+    .testi-role { font-size: 12.5px; color: var(--muted); line-height: 1.3; }
+    @media (max-width: 860px) { .testi-grid { grid-template-columns: 1fr; } }
+
+    /* -- FAQ -- */
+    .faq-sec { padding: clamp(60px, 8vw, 112px) var(--px); }
+    .faq-grid { max-width: 780px; margin: 40px auto 0; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      width: 100%; padding: 24px 0; background: none; border: none;
+      cursor: pointer; text-align: left;
+      font-family: var(--font-b); font-size: 16px; font-weight: 600;
+      color: var(--fg); line-height: 1.4; gap: 16px;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-icon {
+      flex-shrink: 0; width: 24px; height: 24px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: var(--accent); transition: transform .25s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s;
+      padding: 0 0 0 0;
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding-bottom: 24px; }
+    .faq-a p { font-size: 15.5px; color: var(--muted); line-height: 1.7; }
   </style>
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -1802,6 +1891,85 @@
   </div>
 </section>
 
+<!-- ── CASE STUDIES ── -->
+<section class="cases-sec reveal">
+  <div class="sec-inner">
+    <span class="sec-lbl" style="color:var(--accent)">Results</span>
+    <h2 class="sec-h" style="color:#fff">What happens when content<br>is built to <em style="color:var(--accent)">perform.</em></h2>
+    <p style="color:rgba(255,255,255,.45);max-width:560px;margin-bottom:0;line-height:1.7">Anonymized results from real projects. The industries are different. The approach is the same: research, strategy, compliance, execution, measurement.</p>
+    <div class="cases-grid">
+      <div class="case-card reveal d-1">
+        <div class="case-industry">Healthcare</div>
+        <div class="case-stat">142%</div>
+        <div class="case-label">organic traffic growth in 16 months</div>
+        <div class="case-desc">Allied health practice. Zero paid traffic. Content strategy built around topic clusters and local SEO. Blog posts, service pages, and FAQ schema drove consistent organic growth from month 3 onward.</div>
+        <span class="case-placeholder">*Client details anonymized*</span>
+      </div>
+      <div class="case-card reveal d-2">
+        <div class="case-industry">Fintech</div>
+        <div class="case-stat">3.2x</div>
+        <div class="case-label">conversion rate improvement on landing pages</div>
+        <div class="case-desc">ASIC-regulated fintech. Rewrote all product landing pages and onboarding email sequences. A/B tested headline structures and CTA placement. Compliance review built into every draft.</div>
+        <span class="case-placeholder">*Client details anonymized*</span>
+      </div>
+      <div class="case-card reveal d-3">
+        <div class="case-industry">B2B SaaS</div>
+        <div class="case-stat">847K</div>
+        <div class="case-label">organic impressions in 12 months</div>
+        <div class="case-desc">Early-stage SaaS. Built a 26-week content system from zero. Pillar pages, supporting clusters, internal linking architecture. GEO-optimized from day one with answer capsules and schema markup.</div>
+        <span class="case-placeholder">*Client details anonymized*</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="sec testi-sec reveal">
+  <div class="sec-inner">
+    <div class="two-col" style="margin-bottom:0;align-items:start">
+      <div>
+        <span class="sec-lbl">What clients say</span>
+        <h2 class="sec-h">The work speaks.<br>So do they.</h2>
+      </div>
+      <div>
+        <p class="sec-sub">Real feedback from real projects. Names abbreviated for confidentiality. Results are not.</p>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal d-1">
+        <p class="testi-quote">She did not just write content. She built us an entire system. Topic clusters, internal linking, FAQ schema. We went from publishing random blog posts to having a strategy that actually compounds. <strong>Organic traffic up 89% in the first 6 months.</strong></p>
+        <div class="testi-footer">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Radhika S.</div>
+            <div class="testi-role">Marketing Director, Allied Health Group (AU)</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal d-2">
+        <p class="testi-quote">We had three agencies before Amisha. They all wrote content that got flagged by compliance. She understood ASIC guidelines from day one. Wrote landing pages that converted and passed legal review on the first draft. <strong>Landing page conversion rate jumped from 2.1% to 6.8%.</strong></p>
+        <div class="testi-footer">
+          <div class="testi-avatar">V</div>
+          <div>
+            <div class="testi-name">Vikram P.</div>
+            <div class="testi-role">Head of Growth, Fintech Startup (APAC)</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal d-3">
+        <p class="testi-quote">The clearest strategy document I have ever seen. She mapped out 26 weeks of content, built topic clusters, showed us exactly how each piece connects. We stopped guessing and started ranking. <strong>From zero to 12 first-page keywords in 4 months.</strong></p>
+        <div class="testi-footer">
+          <div class="testi-avatar">D</div>
+          <div>
+            <div class="testi-name">Daniel K.</div>
+            <div class="testi-role">Co-founder, B2B SaaS (US)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── INDUSTRIES GRID ── -->
 <section class="sec" style="background:var(--bg)">
   <div class="sec-inner">
@@ -2123,6 +2291,186 @@
     </div>
   </div>
 </section>
+
+<!-- ── FAQ ── -->
+<section class="sec faq-sec">
+  <div class="sec-inner">
+    <span class="sec-lbl">FAQ</span>
+    <h2 class="sec-h">Questions I get asked<br>before the first call.</h2>
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What is GEO and why should I care about it?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>GEO stands for Generative Engine Optimization. It is the practice of structuring your content so AI search engines like ChatGPT, Perplexity, and Google AI Overviews can find, extract, and cite it. Traditional SEO gets you ranked on Google. GEO gets you mentioned in AI-generated answers, which is where 40%+ of search is heading. If your competitors show up in AI responses and you do not, you are losing deals you will never even know about. I build content systems that cover both.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How is this different from hiring a regular content writer?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>A content writer gives you words. I give you a system. Every piece I create is built on keyword research, topic clustering, AI-ready formatting (answer capsules, schema markup, structured headings), and compliance awareness for regulated industries. I also handle the strategy layer: editorial calendars, internal linking architecture, and GEO optimization. You are not hiring someone to fill a blog. You are hiring someone to build a content engine that compounds over time. That is the difference.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Do you work with businesses outside Australia?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Yes. I have worked with 100+ brands across Australia, the US, the UK, and India. My compliance expertise is deepest in Australian regulatory frameworks (AHPRA, TGA, ASIC), but I adapt to any jurisdiction. I work async, so time zones are never an issue. Most of my clients are in Australia, but the content strategy principles and GEO frameworks I use work globally. If you are in a regulated industry anywhere in the world, we can make it work.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What industries do you specialize in?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Regulated ones. Healthcare (telehealth, clinics, allied health, medicinal cannabis), financial services (fintech, lending, insurance), legal, NDIS, aged care, cybersecurity, and SaaS. These are industries where one wrong claim can get you fined, flagged, or worse. I know the compliance boundaries for AHPRA, TGA, ASIC, and Google's healthcare ad policies. That is not something you can fake or learn from a template. If your industry has rules about what you can and cannot say, I am probably the right person to write it.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How do you use AI in your content process?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>AI is a tool in my workflow, not a replacement for thinking. I use AI for research acceleration, competitive analysis, content gap identification, and first-draft ideation. But every piece of content is strategized, structured, compliance-checked, and edited by me. The strategy is human. The voice is human. The compliance judgment is human. AI helps me move faster without sacrificing quality. What I do not do: generate a blog post with ChatGPT and hand it to you. That is not strategy. That is a liability.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What does an AI content audit include?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>A full diagnostic of your content across both traditional and AI search. I analyze your current Google rankings, check whether AI models (ChatGPT, Perplexity, Google AI Overviews) can find and cite your brand, review your schema markup and content structure, identify compliance gaps, and map out a 90-day content roadmap. You get a clear picture of where you stand and exactly what to fix. The audit is free, no strings attached. If you want me to execute the roadmap, we can talk about that after. <a href="/contact.html" style="color:var(--accent);text-decoration:underline">Book yours here.</a></p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How long before I see results from SEO content?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>SEO is not instant, and anyone who tells you otherwise is lying. You will typically start seeing traction in 3 to 4 months, with meaningful compounding by month 6. GEO results (AI citations and mentions) can show up faster because AI models re-index content more frequently than Google crawls. I built a system for one client that grew organic traffic 142% in 16 months with zero paid spend. That is what a real content strategy looks like: slow to start, impossible to ignore once it compounds.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Can you write Google Ads and social ads copy too?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Yes. Google Search Ads (headlines, descriptions, sitelinks, landing pages), Meta ads, and LinkedIn ads. I write the copy that gets clicks without getting flagged. In regulated industries, ad disapprovals waste weeks. I have written under Google's healthcare and financial services ad policies, AHPRA guidelines, and TGA advertising rules. Zero disapprovals on my record. If you are running paid campaigns in a regulated space, the copy needs to convert AND pass review on the first submission.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What does "compliance-aware content" actually mean?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>It means every piece of content I write is built with regulatory boundaries in mind from the start, not checked after the fact. For healthcare brands in Australia, that means AHPRA and TGA compliance: no testimonials that imply guaranteed outcomes, no unsubstantiated claims, no comparative advertising without evidence. For financial services, that means ASIC guidelines: balanced risk disclosure, no misleading projections, clear product warnings. I do not just write content that sounds good. I write content that will not get you a compliance notice. That is the bar.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How much do your services cost?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>It depends on scope. A one-off landing page is different from a 6-month content system with weekly publishing, GEO optimization, and compliance review. I price based on the value of the outcome, not the number of words. Most ongoing engagements start at a monthly retainer. One-off projects (audits, landing pages, ad copy) are quoted per project. The best way to get a number is to <a href="/contact.html" style="color:var(--accent);text-decoration:underline">book the free AI content audit</a>. I will assess what you need and give you a clear quote with no pressure.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is GEO and why should I care about it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO stands for Generative Engine Optimization. It is the practice of structuring your content so AI search engines like ChatGPT, Perplexity, and Google AI Overviews can find, extract, and cite it. Traditional SEO gets you ranked on Google. GEO gets you mentioned in AI-generated answers, which is where 40%+ of search is heading. If your competitors show up in AI responses and you do not, you are losing deals you will never even know about."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from hiring a regular content writer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A content writer gives you words. I give you a system. Every piece I create is built on keyword research, topic clustering, AI-ready formatting (answer capsules, schema markup, structured headings), and compliance awareness for regulated industries. I also handle the strategy layer: editorial calendars, internal linking architecture, and GEO optimization. You are not hiring someone to fill a blog. You are hiring someone to build a content engine that compounds over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with businesses outside Australia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I have worked with 100+ brands across Australia, the US, the UK, and India. My compliance expertise is deepest in Australian regulatory frameworks (AHPRA, TGA, ASIC), but I adapt to any jurisdiction. I work async, so time zones are never an issue. Most of my clients are in Australia, but the content strategy principles and GEO frameworks I use work globally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What industries do you specialize in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Regulated ones. Healthcare (telehealth, clinics, allied health, medicinal cannabis), financial services (fintech, lending, insurance), legal, NDIS, aged care, cybersecurity, and SaaS. These are industries where one wrong claim can get you fined, flagged, or worse. I know the compliance boundaries for AHPRA, TGA, ASIC, and Google's healthcare ad policies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you use AI in your content process?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI is a tool in my workflow, not a replacement for thinking. I use AI for research acceleration, competitive analysis, content gap identification, and first-draft ideation. But every piece of content is strategized, structured, compliance-checked, and edited by me. The strategy is human. The voice is human. The compliance judgment is human. AI helps me move faster without sacrificing quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does an AI content audit include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A full diagnostic of your content across both traditional and AI search. I analyze your current Google rankings, check whether AI models (ChatGPT, Perplexity, Google AI Overviews) can find and cite your brand, review your schema markup and content structure, identify compliance gaps, and map out a 90-day content roadmap. You get a clear picture of where you stand and exactly what to fix. The audit is free, no strings attached."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long before I see results from SEO content?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO is not instant, and anyone who tells you otherwise is lying. You will typically start seeing traction in 3 to 4 months, with meaningful compounding by month 6. GEO results (AI citations and mentions) can show up faster because AI models re-index content more frequently than Google crawls. I built a system for one client that grew organic traffic 142% in 16 months with zero paid spend."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you write Google Ads and social ads copy too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Google Search Ads (headlines, descriptions, sitelinks, landing pages), Meta ads, and LinkedIn ads. I write the copy that gets clicks without getting flagged. In regulated industries, ad disapprovals waste weeks. I have written under Google's healthcare and financial services ad policies, AHPRA guidelines, and TGA advertising rules. Zero disapprovals on my record."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does 'compliance-aware content' actually mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It means every piece of content I write is built with regulatory boundaries in mind from the start, not checked after the fact. For healthcare brands in Australia, that means AHPRA and TGA compliance: no testimonials that imply guaranteed outcomes, no unsubstantiated claims, no comparative advertising without evidence. For financial services, that means ASIC guidelines: balanced risk disclosure, no misleading projections, clear product warnings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do your services cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on scope. A one-off landing page is different from a 6-month content system with weekly publishing, GEO optimization, and compliance review. I price based on the value of the outcome, not the number of words. Most ongoing engagements start at a monthly retainer. One-off projects (audits, landing pages, ad copy) are quoted per project. The best way to get a number is to book the free AI content audit."
+      }
+    }
+  ]
+}
+</script>
 
 <!-- ── CTA ── -->
 <section class="sec cta-sec">
