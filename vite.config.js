@@ -20,6 +20,11 @@ export default defineConfig({
         about: 'about.html',
         services: 'services.html',
         contact: 'contact.html',
+        contentStrategy: 'content-strategy.html',
+        seoGeo: 'seo-geo-optimisation.html',
+        googleAds: 'google-ads-copy.html',
+        socialAds: 'social-ads-copy.html',
+        websiteCopy: 'website-copy.html',
         ...blogFiles
       }
     }
