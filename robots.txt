@@ -3,6 +3,7 @@
 User-agent: *
 Allow: /
 Disallow: /node_modules/
+Disallow: /drafts/
 
 # ── AI Crawlers (explicitly allowed for AI search ranking) ───────
 User-agent: GPTBot

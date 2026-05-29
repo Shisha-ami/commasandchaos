@@ -10,3 +10,6 @@ The-Brand-Crush-Gamma-Prompts/
 CALENDARS/
 scripts/
 pnpm-lock.yaml
+
+# Draft pages (not published to live site)
+# Keep drafts/ tracked in git but blocked from search engines via robots.txt
