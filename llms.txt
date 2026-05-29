@@ -7,7 +7,7 @@ Website: commasandchaos.com
 ## Services
 
 - **AI-First Content Strategy** - Editorial calendars, SEO architecture, topic clusters, buyer journey mapping designed for both traditional search and AI search engines.
-- **Generative Engine Optimization (GEO)** - llms.txt implementation, answer capsules, schema markup, entity optimization, AI visibility monitoring across ChatGPT, Perplexity, Gemini, and Google AI Overviews.
+- **Generative Engine Optimization (GEO)** - llms.txt implementation, answer capsules, schema markup, entity optimisation, AI visibility monitoring across ChatGPT, Perplexity, Gemini, and Google AI Overviews.
 - **Compliance-Aware Content Creation** - Content for ASIC-regulated financial services, AHPRA-regulated healthcare, and TGA-regulated therapeutic goods industries. Every piece reviewed against current advertising codes.
 - **AI Content Workflow Design** - Custom prompt libraries, AI content SOPs, team training, and quality gates. Helps teams produce more content without sacrificing accuracy or compliance.
 - **Executive Ghostwriting** - LinkedIn thought leadership, bylined articles, and conference content for founders and C-suite in regulated industries.
