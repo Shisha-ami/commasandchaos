@@ -41,7 +41,7 @@
       --px:      clamp(20px, 5vw, 72px);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body { font-family: var(--font-b); background: var(--bg); color: var(--fg); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
     /* ── NAV ── */
@@ -224,8 +224,9 @@
       .process-header { grid-template-columns: 1fr; gap: 16px; }
     }
     @media (max-width: 600px) {
-      .nav-menu li:not(.nav-cta-li) { display: none; }
-      .nav-menu li:first-child, .nav-menu li:last-child { display: flex; }
+      .nav-menu { gap: 14px; }
+      .nav-menu a { font-size: 13px; }
+      .nav-btn { padding: 7px 14px; font-size: 12.5px !important; }
       .svc-testi-grid { grid-template-columns: 1fr; }
       .process-step-new { grid-template-columns: 60px 1fr; }
     }

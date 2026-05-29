@@ -52,7 +52,7 @@
       --ease:    cubic-bezier(0.2, 0, 0, 1);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: var(--font-b);
       background: var(--bg);
@@ -743,7 +743,8 @@
     }
 
     @media (max-width: 860px) {
-      .cred-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .cred-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; -ms-overflow-style: none; scrollbar-width: none; }
+      .cred-bar::-webkit-scrollbar { display: none; }
       .cb-inner { justify-content: flex-start; width: max-content; min-width: 100%; }
       .hero { grid-template-columns: 1fr; min-height: auto; padding-block: 96px 60px; }
       .hero-visual { display: none; }
@@ -763,8 +764,9 @@
       .pub-header { flex-direction: column; margin-bottom: 32px; }
     }
     @media (max-width: 560px) {
-      .nav-menu li:not(.nav-cta-li) { display: none; }
-      .nav-menu li:first-child, .nav-menu li:last-child { display: flex; }
+      .nav-menu { gap: 14px; }
+      .nav-menu a { font-size: 13px; }
+      .nav-btn { padding: 7px 14px; font-size: 12.5px !important; }
       .hero-chips { gap: 18px; }
     }
 
