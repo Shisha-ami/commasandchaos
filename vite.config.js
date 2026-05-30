@@ -26,6 +26,10 @@ export default defineConfig({
         socialAds: 'social-ads-copy.html',
         websiteCopy: 'website-copy.html',
         freeAudit: 'free-ai-content-audit.html',
+        blog: 'blog.html',
+        privacy: 'privacy.html',
+        terms: 'terms.html',
+        notFound: '404.html',
         ...blogFiles
       }
     }
