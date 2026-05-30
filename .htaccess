@@ -38,7 +38,9 @@ ErrorDocument 404 /404.html
   </FilesMatch>
 </IfModule>
 
-# ── MIME type for WebP ────────────────────────────────────────────
+# ── MIME types ────────────────────────────────────────────────────
 <IfModule mod_mime.c>
   AddType image/webp .webp
+  AddType application/xml .xml
+  AddType text/plain .txt
 </IfModule>
