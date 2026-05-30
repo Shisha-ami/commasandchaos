@@ -23,24 +23,24 @@
   </script>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <title>AI-First Content Marketing Strategist | Amisha Sharma | commasandchaos.com</title>
-  <meta name="description" content="AI-first content marketing strategist for regulated industries. GEO, compliance-aware content systems, and AI search optimization for healthcare, fintech, and legal brands. ISB Alumna. 100+ brands.">
+  <title>Compliance-First Content Strategist for Regulated Industries | Amisha Sharma</title>
+  <meta name="description" content="Compliance-first content strategist for healthcare, fintech, and regulated industries. AHPRA, TGA, ASIC-compliant copy that ranks on Google and gets cited by AI. 200+ projects. Zero breaches.">
   <!-- SEO / canonical -->
   <link rel="canonical" href="https://commasandchaos.com/">
   <meta name="robots" content="index, follow">
-  <meta name="keywords" content="AI content marketing strategist, GEO optimization, generative engine optimization, content strategist regulated industries, healthcare content marketing, fintech content strategist, AI search optimization, AHPRA compliant content, content marketing India, ISB alumni content strategist">
+  <meta name="keywords" content="compliance content strategist, AHPRA compliant content writer, TGA advertising compliance, ASIC content compliance, regulated industry copywriter, healthcare content marketing, fintech content strategist, SEO GEO AEO content, compliance-first content, content marketing India">
   <meta name="author" content="Amisha Sharma">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://commasandchaos.com/">
-  <meta property="og:title" content="AI-First Content Marketing Strategist | Amisha Sharma | commasandchaos.com">
-  <meta property="og:description" content="AI-first content marketing strategist for regulated industries. GEO, compliance-aware content systems, and AI search optimization. ISB Alumna. 100+ brands.">
+  <meta property="og:title" content="Compliance-First Content Strategist | Amisha Sharma | commasandchaos.com">
+  <meta property="og:description" content="Compliance-first content strategist for regulated industries. AHPRA, TGA, ASIC-compliant copy that ranks on Google and gets cited by AI. 200+ projects. Zero breaches.">
   <meta property="og:image" content="https://commasandchaos.com/photo-hero-1200.webp">
   <meta property="og:site_name" content="Amisha Sharma | commasandchaos.com">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI-First Content Strategist | Amisha Sharma">
-  <meta name="twitter:description" content="AI-first content marketing strategist for regulated industries. GEO, compliance-aware content, AI search optimization. 100+ brands.">
+  <meta name="twitter:title" content="Compliance-First Content Strategist | Amisha Sharma">
+  <meta name="twitter:description" content="Compliance-first content strategist for regulated industries. AHPRA, TGA, ASIC-compliant copy that ranks. 200+ projects. Zero breaches.">
   <meta name="twitter:image" content="https://commasandchaos.com/photo-hero-1200.webp">
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -271,9 +271,9 @@
       font-family: var(--font-d);
       font-size: clamp(42px, 5vw, 68px);
       font-weight: 900; line-height: 1.04; letter-spacing: -.035em;
-      color: var(--fg); margin-bottom: 24px;
+      color: var(--fg); margin-bottom: 8px;
     }
-    h1.headline em { font-style: italic; color: var(--accent); }
+    h1.headline em { font-style: italic; color: var(--accent); font-size: inherit; }
     /* .hook-line moved to billboard section below clients */
     .hook-billboard {
       padding: clamp(56px, 7vw, 96px) var(--px);
@@ -306,6 +306,20 @@
       width: 48px; height: 3px; background: var(--accent);
       margin: 28px auto 0; border-radius: 2px;
     }
+    .headline-top {
+      display: block;
+    }
+    .headline-dim {
+      display: block;
+    }
+    .hero-tagline {
+      font-family: var(--font-d);
+      font-size: clamp(16px, 1.5vw, 20px);
+      color: var(--accent);
+      margin-top: 4px;
+      margin-bottom: 24px;
+      animation: fadeUp .6s .48s both;
+    }
     .subhead {
       font-size: clamp(16px, 1.5vw, 18px);
       color: var(--muted); line-height: 1.65; max-width: 480px; margin-bottom: 38px;
@@ -326,14 +340,27 @@
     }
     .btn-g:hover { color: var(--fg); gap: 10px; }
     .hero-chips {
-      display: flex; gap: 24px; margin-top: 48px; padding-top: 32px;
+      display: flex; gap: 0; margin-top: 48px; padding-top: 32px;
       border-top: 1px solid var(--border);
+    }
+    .hero-chips > div {
+      flex: 1;
+      padding-right: 24px;
+      border-right: 1px solid var(--border);
+    }
+    .hero-chips > div:last-child {
+      border-right: none;
+      padding-right: 0;
+      padding-left: 24px;
+    }
+    .hero-chips > div:nth-child(2) {
+      padding-left: 24px;
     }
     .chip-val {
       font-family: var(--font-d); font-size: 28px; font-weight: 700;
       line-height: 1; color: var(--fg); font-variant-numeric: tabular-nums;
     }
-    .chip-lbl { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+    .chip-lbl { font-size: 12.5px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
 
     /* ── PHOTO FRAME ── */
     .hero-visual { display: flex; justify-content: center; align-items: center; padding-top: 64px; position: relative; z-index: 1; }
@@ -1015,6 +1042,20 @@
     .bc-feat h4 { font-size: 13.5px; font-weight: 600; color: var(--fg); margin-bottom: 5px; }
     .bc-feat p { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
     .craft-caption { text-align: center; margin-top: 22px; font-size: 12.5px; color: rgba(255,255,255,.28); font-style: italic; }
+    .bc-annotations {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-top: 28px; padding: 28px 0 0;
+    }
+    .bc-anno {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px; padding: 20px;
+    }
+    .bc-anno-label {
+      font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    .bc-anno p { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.6; }
+    @media (max-width: 700px) { .bc-annotations { grid-template-columns: 1fr; } }
 
     /* ── RESPONSIVE PATCH (geo + craft) ── */
     @media (max-width: 900px) {
@@ -1296,9 +1337,9 @@
     "@type": "Person",
     "name": "Amisha Sharma",
     "url": "https://commasandchaos.com",
-    "jobTitle": "AI-First Content Marketing Strategist",
-    "description": "AI-first content marketing strategist specializing in regulated industries. Builds compliance-aware content systems, GEO optimization, and AI search strategies for healthcare, fintech, legal, and SaaS brands. ISB alumna. 100+ brands across 3 continents.",
-    "knowsAbout": ["AI Content Strategy", "Generative Engine Optimization (GEO)", "Content Marketing for Regulated Industries", "AHPRA Compliance", "Healthcare Content Marketing", "Fintech Content Strategy", "AI Search Optimization", "SEO Content Systems", "Brand Voice Development", "Content Compliance"],
+    "jobTitle": "Compliance-First Content Strategist",
+    "description": "Compliance-first content strategist for regulated industries. Writes AHPRA, TGA, and ASIC-compliant copy that ranks on Google and gets cited by AI search engines. 200+ projects across healthcare, fintech, and SaaS. Zero compliance breaches. ISB alumna.",
+    "knowsAbout": ["AHPRA Compliance", "TGA Advertising Compliance", "ASIC Content Compliance", "Regulated Industry Content Marketing", "Healthcare Content Marketing", "SEO", "Generative Engine Optimization (GEO)", "AEO", "Fintech Content Strategy", "Content Compliance", "Brand Voice Development"],
     "alumniOf": {
       "@type": "EducationalOrganization",
       "name": "Indian School of Business",
@@ -1348,7 +1389,7 @@
           <a href="/social-ads-copy.html" class="nav-dd-item"><span class="nav-dd-num">04</span> Social Ads Copy</a>
           <a href="/website-copy.html" class="nav-dd-item"><span class="nav-dd-num">05</span> Website Copy &amp; Collateral</a>
           <div class="nav-dd-sep"></div>
-          <a href="/free-ai-content-audit.html" class="nav-dd-item" style="color:var(--accent)"><span class="nav-dd-num" style="opacity:1">→</span> Free AI Content Audit</a>
+          <a href="/free-ai-content-audit.html" class="nav-dd-item" style="color:var(--accent)"><span class="nav-dd-num" style="opacity:1">→</span> SEO, GEO, AEO &amp; Compliance Audit</a>
         </div>
       </li>
       <li class="nav-cta-li"><a href="/contact.html" class="nav-btn">Let's Connect</a></li>
@@ -1368,28 +1409,29 @@
         <img class="mobile-avatar" src="photo-hero-fallback.jpg" alt="Amisha Sharma" width="80" height="80" loading="eager" decoding="async">
       </picture>
     </div>
-    <span class="eyebrow">AI-First Content Strategist · ISB Alumna</span>
+    <span class="eyebrow">Compliance-First Content Strategist · ISB Alumna</span>
     <h1 class="headline">
-      Your content ranks on Google.<br>
-      But does AI even <em id="scrambleTarget">know you?</em>
+      <span class="headline-top">I write content</span>
+      that <em id="scrambleTarget">ranks.</em>
+      <span class="headline-dim">for regulated industries.</span>
     </h1>
-    <p class="subhead">I build AI-powered content systems for regulated industries. GEO optimisation. Compliance-aware strategy. Content that ranks in Google AND gets cited by ChatGPT, Perplexity, and AI Overviews.</p>
+    <p class="subhead">I write copy for regulated industries that converts, stays compliant, and ranks. AHPRA. TGA. ASIC. 200+ projects. Zero breaches. SEO, GEO, and AEO built into every piece.</p>
     <div class="hero-btns">
-      <a href="/contact.html" class="btn-acc">Book a free AI content audit →</a>
+      <a href="/contact.html" class="btn-acc">Let's work together →</a>
       <a href="#differenceSection" class="btn-g">See how it works <span aria-hidden="true">→</span></a>
     </div>
     <div class="hero-chips">
       <div>
-        <div class="chip-val">100+</div>
-        <div class="chip-lbl">Brands across 3 continents</div>
+        <div class="chip-val">1500+</div>
+        <div class="chip-lbl">Passed audits</div>
       </div>
       <div>
-        <div class="chip-val">GEO</div>
-        <div class="chip-lbl">Generative Engine Optimization pioneer</div>
+        <div class="chip-val">200+</div>
+        <div class="chip-lbl">Projects in regulated industries</div>
       </div>
       <div>
-        <div class="chip-val">ISB</div>
-        <div class="chip-lbl">Indian School of Business alumna</div>
+        <div class="chip-val">SEO + GEO</div>
+        <div class="chip-lbl">Compliant copy that ranks</div>
       </div>
     </div>
   </div>
@@ -1407,15 +1449,15 @@
     </div>
     <!-- floating stat cards -->
     <div class="float-stat float-stat-1">
-      <div class="fs-label">Specialisation</div>
-      <div class="fs-val">GEO</div>
-      <div class="fs-sub">AI search optimisation</div>
-      <div class="fs-pill">Regulated Industries</div>
+      <div class="fs-label">Track record</div>
+      <div class="fs-val">200<span style="font-size:17px;font-family:var(--font-b)">+</span></div>
+      <div class="fs-sub">projects · zero breaches</div>
+      <div class="fs-pill">AHPRA · TGA · ASIC</div>
     </div>
     <div class="float-stat float-stat-2">
-      <div class="fs-label">Brands served</div>
-      <div class="fs-val">100<span style="font-size:17px;font-family:var(--font-b)">+</span></div>
-      <div class="fs-sub">healthcare · fintech · legal</div>
+      <div class="fs-label">Why clients stay</div>
+      <div class="fs-val" style="font-size:22px;line-height:1.2">Compliant<span style="font-size:17px;font-family:var(--font-b)"> +</span> Page 1</div>
+      <div class="fs-sub">the combo nobody else offers</div>
     </div>
     <div class="photo-frame">
       <div class="photo-inner">
@@ -1424,7 +1466,7 @@
           <img
             class="photo-img"
             src="photo-about-fallback.jpg"
-            alt="Amisha Sharma, AI-First Content Marketing Strategist"
+            alt="Amisha Sharma, Compliance-First Content Strategist"
             width="600" height="750"
             loading="eager"
             fetchpriority="high"
@@ -1443,60 +1485,58 @@
 <!-- ── CREDIBILITY BAR ── -->
 <div class="cred-bar">
   <div class="cb-inner">
-    <div class="cb-item"><span class="cb-dot"></span><strong>ISB</strong>&nbsp;Alumna</div>
-    <div class="cb-item"><span class="cb-dot"></span>AI Content Lead @&nbsp;<strong>Top Aussie Agency</strong></div>
-    <div class="cb-item"><span class="cb-dot"></span><strong>GEO</strong>&nbsp;+ AI Search Specialist</div>
+    <div class="cb-item"><span class="cb-dot"></span><strong>Zero</strong>&nbsp;Compliance Breaches</div>
+    <div class="cb-item"><span class="cb-dot"></span><strong>AHPRA</strong>&nbsp;+&nbsp;<strong>TGA</strong>&nbsp;+&nbsp;<strong>ASIC</strong>&nbsp;Expert</div>
+    <div class="cb-item"><span class="cb-dot"></span><strong>200+</strong>&nbsp;Projects in Regulated Industries</div>
+    <div class="cb-item"><span class="cb-dot"></span><strong>SEO</strong>&nbsp;+&nbsp;<strong>GEO</strong>&nbsp;+&nbsp;<strong>AEO</strong>&nbsp;Built In</div>
+    <div class="cb-item"><span class="cb-dot"></span><strong>ISB</strong>&nbsp;Alumna&nbsp;·&nbsp;Content Lead @&nbsp;<strong>Top Aussie Agency</strong></div>
     <div class="cb-item"><span class="cb-dot"></span>Editor,&nbsp;<strong>Audaz Revista</strong>&nbsp;+&nbsp;<strong>The Brand Crush</strong></div>
-    <div class="cb-item"><span class="cb-dot"></span><strong>Generative AI</strong>&nbsp;Certified</div>
-    <div class="cb-item"><span class="cb-dot"></span><strong>Regulated Industries</strong>&nbsp;· Healthcare · Fintech · Legal</div>
   </div>
 </div>
 
 <!-- ── MARQUEE TICKER ── -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-track">
-    <span class="mq-item hi">SEO + GEO</span><span class="mq-sep"></span>
-    <span class="mq-item">AI Search Strategy</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Healthcare</span><span class="mq-sep"></span>
-    <span class="mq-item">Allied Health</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Compliance-Ready Copy</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Compliance-First Copy</span><span class="mq-sep"></span>
+    <span class="mq-item hi">AHPRA Compliant</span><span class="mq-sep"></span>
+    <span class="mq-item">Healthcare</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Zero Breaches</span><span class="mq-sep"></span>
+    <span class="mq-item">Telehealth</span><span class="mq-sep"></span>
+    <span class="mq-item hi">TGA-Compliant Content</span><span class="mq-sep"></span>
     <span class="mq-item">Fintech</span><span class="mq-sep"></span>
-    <span class="mq-item">AHPRA Compliant</span><span class="mq-sep"></span>
-    <span class="mq-item hi">ChatGPT Citations</span><span class="mq-sep"></span>
-    <span class="mq-item">Perplexity Visibility</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Content Strategy</span><span class="mq-sep"></span>
-    <span class="mq-item">NDIS Providers</span><span class="mq-sep"></span>
-    <span class="mq-item hi">AI Overviews</span><span class="mq-sep"></span>
-    <span class="mq-item">Brand Voice</span><span class="mq-sep"></span>
-    <span class="mq-item">Legal</span><span class="mq-sep"></span>
-    <span class="mq-item hi">TGA-Aware Content</span><span class="mq-sep"></span>
-    <span class="mq-item">Medicinal Cannabis</span><span class="mq-sep"></span>
-    <span class="mq-item">Insurance</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Google Ads Copy</span><span class="mq-sep"></span>
-    <span class="mq-item">Website Copy</span><span class="mq-sep"></span>
     <span class="mq-item hi">ASIC Compliant</span><span class="mq-sep"></span>
-    <span class="mq-item">SaaS</span><span class="mq-sep"></span>
-    <span class="mq-item hi">SEO + GEO</span><span class="mq-sep"></span>
-    <span class="mq-item">AI Search Strategy</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Healthcare</span><span class="mq-sep"></span>
     <span class="mq-item">Allied Health</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Compliance-Ready Copy</span><span class="mq-sep"></span>
-    <span class="mq-item">Fintech</span><span class="mq-sep"></span>
-    <span class="mq-item">AHPRA Compliant</span><span class="mq-sep"></span>
-    <span class="mq-item hi">ChatGPT Citations</span><span class="mq-sep"></span>
-    <span class="mq-item">Perplexity Visibility</span><span class="mq-sep"></span>
-    <span class="mq-item hi">Content Strategy</span><span class="mq-sep"></span>
+    <span class="mq-item hi">SEO + GEO + AEO</span><span class="mq-sep"></span>
     <span class="mq-item">NDIS Providers</span><span class="mq-sep"></span>
-    <span class="mq-item hi">AI Overviews</span><span class="mq-sep"></span>
-    <span class="mq-item">Brand Voice</span><span class="mq-sep"></span>
-    <span class="mq-item">Legal</span><span class="mq-sep"></span>
-    <span class="mq-item hi">TGA-Aware Content</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Copy That Ranks</span><span class="mq-sep"></span>
     <span class="mq-item">Medicinal Cannabis</span><span class="mq-sep"></span>
-    <span class="mq-item">Insurance</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Content Strategy</span><span class="mq-sep"></span>
+    <span class="mq-item">Legal</span><span class="mq-sep"></span>
     <span class="mq-item hi">Google Ads Copy</span><span class="mq-sep"></span>
+    <span class="mq-item">Insurance</span><span class="mq-sep"></span>
     <span class="mq-item">Website Copy</span><span class="mq-sep"></span>
-    <span class="mq-item hi">ASIC Compliant</span><span class="mq-sep"></span>
     <span class="mq-item">SaaS</span><span class="mq-sep"></span>
+    <span class="mq-item">Brand Voice</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Compliance-First Copy</span><span class="mq-sep"></span>
+    <span class="mq-item hi">AHPRA Compliant</span><span class="mq-sep"></span>
+    <span class="mq-item">Healthcare</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Zero Breaches</span><span class="mq-sep"></span>
+    <span class="mq-item">Telehealth</span><span class="mq-sep"></span>
+    <span class="mq-item hi">TGA-Compliant Content</span><span class="mq-sep"></span>
+    <span class="mq-item">Fintech</span><span class="mq-sep"></span>
+    <span class="mq-item hi">ASIC Compliant</span><span class="mq-sep"></span>
+    <span class="mq-item">Allied Health</span><span class="mq-sep"></span>
+    <span class="mq-item hi">SEO + GEO + AEO</span><span class="mq-sep"></span>
+    <span class="mq-item">NDIS Providers</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Copy That Ranks</span><span class="mq-sep"></span>
+    <span class="mq-item">Medicinal Cannabis</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Content Strategy</span><span class="mq-sep"></span>
+    <span class="mq-item">Legal</span><span class="mq-sep"></span>
+    <span class="mq-item hi">Google Ads Copy</span><span class="mq-sep"></span>
+    <span class="mq-item">Insurance</span><span class="mq-sep"></span>
+    <span class="mq-item">Website Copy</span><span class="mq-sep"></span>
+    <span class="mq-item">SaaS</span><span class="mq-sep"></span>
+    <span class="mq-item">Brand Voice</span><span class="mq-sep"></span>
   </div>
 </div>
 
@@ -1513,9 +1553,9 @@
     <div class="two-col" style="margin-bottom:52px">
       <div class="reveal">
         <span class="sec-lbl">Here's the problem</span>
-        <h2 class="sec-h">Google is no longer<br>your only search engine.</h2>
+        <h2 class="sec-h">Compliant doesn't<br>mean <em>boring.</em></h2>
       </div>
-      <p class="sec-sub reveal d-2">Your customers are asking ChatGPT, Perplexity, and Google AI Overviews before they ever click a blue link. If your content only ranks on Google, you're invisible to half your market. I write content that shows up everywhere.</p>
+      <p class="sec-sub reveal d-2">Your competitors are choosing between safe-but-boring and persuasive-but-risky. I eliminate that false choice. Content that converts, stays compliant, and ranks on Google, ChatGPT, Perplexity, and AI Overviews.</p>
     </div>
     <div class="diff-cols">
       <div class="diff-col ac reveal d-1">
@@ -1524,8 +1564,8 @@
           <polyline points="8,23 12,16 16,19 21,11 24,14" stroke="#C85C38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           <circle cx="24" cy="14" r="2.2" fill="#C85C38"/>
         </svg>
-        <h3>SEO that actually ranks.<br>GEO that gets you cited.</h3>
-        <p>I write blog posts, landing pages, service pages, and pillar content optimised for Google and AI search engines. Answer capsules, schema markup, topic clusters. The full stack. One strategist.</p>
+        <h3>Compliance-first.<br>Not compliance-last.</h3>
+        <p>Every word I write is built inside AHPRA, TGA, and ASIC frameworks from the first draft. Not slapped on after the fact. Not reviewed by legal and sent back three times. Built right the first time.</p>
       </div>
       <div class="diff-col reveal d-2">
         <svg class="diff-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -1535,8 +1575,8 @@
           <line x1="11" y1="13.5" x2="21" y2="13.5" stroke="#C85C38" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="11" y1="16.5" x2="18" y2="16.5" stroke="#C85C38" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <h3>Ads copy that converts<br>and stays compliant.</h3>
-        <p>Google Ads. Meta statics. LinkedIn. I write the copy that gets clicks without getting flagged. AHPRA, ASIC, TGA, Google's healthcare ad policy. I've written under all of them. Zero disapprovals.</p>
+        <h3>Copy that ranks on Google<br>AND gets cited by AI.</h3>
+        <p>SEO, GEO, and AEO built into every piece. Blog posts, landing pages, and ads optimised for Google rankings, ChatGPT citations, and AI Overviews. Compliant copy that actually gets found.</p>
       </div>
       <div class="diff-col reveal d-3">
         <svg class="diff-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -1546,8 +1586,8 @@
           <circle cx="16" cy="16" r="1.5" fill="#C85C38"/>
           <line x1="22" y1="10" x2="24.5" y2="7.5" stroke="#C85C38" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <h3>Content strategy<br>that compounds.</h3>
-        <p>Not random blog posts. A system. Topic clusters, internal linking, editorial calendars mapped to your buyer journey, and content that builds authority month over month. Strategy and execution. Both.</p>
+        <h3>The combination<br>nobody else offers.</h3>
+        <p>Compliance auditors don't write ranking copy. SEO writers don't understand AHPRA. I do both. 200+ projects, zero breaches, and content that actually moves the needle. Strategy and execution. Both.</p>
       </div>
     </div>
   </div>
@@ -1556,8 +1596,8 @@
 <!-- ── PULL QUOTE (TYPEWRITER) ── -->
 <div class="quote-sec">
   <div class="quote-wrap reveal r-scale">
-    <blockquote id="typewriterQuote" aria-label="You don't have a traffic problem. You have a visibility problem. If AI can't find you, cite you, and recommend you, your best content is invisible to half your future customers."><span class="tw-cursor">|</span></blockquote>
-    <cite>Amisha Sharma, AI-First Content Strategist</cite>
+    <blockquote id="typewriterQuote" aria-label="You don't have a content problem. You have a compliance problem. Your copy either converts and gets flagged, or stays safe and gets ignored. I write the kind that does both."><span class="tw-cursor">|</span></blockquote>
+    <cite>Amisha Sharma, Compliance-First Content Strategist</cite>
   </div>
 </div>
 <style>
@@ -1579,7 +1619,7 @@
 (function(){
   var q = document.getElementById('typewriterQuote');
   if(!q) return;
-  var text = '“You don’t have a traffic problem. You have a visibility problem. If AI can’t find you, cite you, and recommend you, your best content is invisible to half your future customers.”';
+  var text = ““You don’t have a content problem. You have a compliance problem. Your copy either converts and gets flagged, or stays safe and gets ignored. I write the kind that does both.””;
   var i = 0, started = false, speed = 28;
   function type(){
     if(i <= text.length){
@@ -1603,15 +1643,15 @@
 <section class="copy-theater" id="copyTheater">
   <div class="ct-ambient" aria-hidden="true"></div>
   <div class="ct-inner">
-    <span class="ct-eyebrow">The Content Problem</span>
-    <h2 class="ct-headline">Watch what happens when content is <span>AI-optimised</span></h2>
+    <span class="ct-eyebrow">The Compliance Advantage</span>
+    <h2 class="ct-headline">Watch what happens when content is <span>compliance-proofed</span></h2>
     <div class="ct-arena">
       <div class="ct-side ct-before">
         <div class="ct-tag">
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          What most brands publish
+          What gets flagged
         </div>
-        <div class="ct-text" id="ctBefore">We provide comprehensive digital marketing solutions to help your business grow and achieve its online goals with our expert team.</div>
+        <div class="ct-text" id="ctBefore">Our telehealth doctors guarantee the best treatment outcomes. Patients love our life-changing weight loss injections. Book now for fast results.</div>
       </div>
       <div class="ct-divider" aria-hidden="true">
         <div class="ct-divider-line"></div>
@@ -1621,9 +1661,9 @@
       <div class="ct-side ct-after">
         <div class="ct-tag">
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1.5 5.5L3.8 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          What AI cites and Google ranks
+          What converts AND stays compliant
         </div>
-        <div class="ct-text ct-lit" id="ctAfter">Your customers are ready to buy. Your copy just isn't asking.</div>
+        <div class="ct-text ct-lit" id="ctAfter">Our telehealth platform connects you with qualified practitioners for personalised consultations. Treatment suitability is assessed on a case-by-case basis. Book your consultation today.</div>
       </div>
     </div>
     <div class="ct-nav">
@@ -1639,9 +1679,9 @@
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
-    <p class="ct-caption">That's the difference between content that <strong>exists</strong> and content that gets <strong>cited</strong>.</p>
+    <p class="ct-caption">That's the difference between copy that gets <strong>flagged</strong> and copy that <strong>converts</strong>.</p>
     <a href="/contact.html" class="ct-cta">
-      Get your AI content audit
+      Let's work together
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
@@ -1653,10 +1693,10 @@
     <div class="two-col reveal" style="margin-bottom:0">
       <div>
         <span class="sec-lbl">What I build for you</span>
-        <h2 class="sec-h">Content systems.<br>Not just content.</h2>
+        <h2 class="sec-h">Compliant copy<br>that <em>ranks.</em></h2>
       </div>
       <div>
-        <p class="sec-sub">From GEO-optimised blog ecosystems to compliance-aware landing pages. I build the strategy, the content, and the systems that make it all compound.</p>
+        <p class="sec-sub">From AHPRA-compliant blog ecosystems to TGA-safe landing pages. Every piece built to convert, stay compliant, and rank on Google and AI search.</p>
         <a href="/services.html" style="display:inline-block;margin-top:18px;font-size:15px;font-weight:600;color:var(--accent);text-decoration:none;transition:gap .2s">See full services →</a>
       </div>
     </div>
@@ -1751,12 +1791,12 @@
           <path d="M14 8v6l4 3" stroke="#C85C38" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span class="svc-num">06</span>
-        <div class="svc-title">AI Content Audit</div>
-        <p class="svc-desc">Not sure where to start? Start here. Full SEO + GEO audit, AI visibility check, compliance gaps, and a 90-day roadmap. No commitment beyond the audit.</p>
+        <div class="svc-title">SEO, GEO, AEO &amp; Compliance Audit</div>
+        <p class="svc-desc">I use my own proprietary compliance, SEO, and AEO audit tools. Built for regulated industries. Full compliance gap analysis, SEO + GEO + AEO check, and a 90-day roadmap. Pricing based on site size. Drop a message.</p>
         <div class="tags">
-          <span class="tag">SEO Audit</span>
-          <span class="tag">AI Visibility</span>
-          <span class="tag">Compliance Check</span>
+          <span class="tag">Proprietary Tools</span>
+          <span class="tag">Compliance + SEO + AEO</span>
+          <span class="tag">90-Day Roadmap</span>
           <span class="tag">Start Here</span>
         </div>
       </a>
@@ -1777,8 +1817,8 @@
   <div class="craft-inner">
     <div class="craft-header reveal r-scale">
       <span class="sec-lbl">What the work looks like</span>
-      <h2 class="sec-h">Content that works in <em>two search engines.</em></h2>
-      <p>This is a sample GEO-optimised landing page. Notice what it does: answers the question in the first sentence, structures data for AI extraction, and still reads like a human wrote it.</p>
+      <h2 class="sec-h">This is what compliant copy<br>looks like <em>when it's done right.</em></h2>
+      <p>A real telehealth landing page . Written to convert, structured for Google and AI search, and fully compliant with AHPRA advertising guidelines. Every word stress-tested. Zero violations.</p>
     </div>
     <div class="browser-w reveal">
       <div class="browser-bar-w">
@@ -1787,34 +1827,33 @@
           <div class="b-dot-y"></div>
           <div class="b-dot-g"></div>
         </div>
-        <div class="browser-url-w">commasandchaos.com/geo-optimized-landing-page</div>
+        <div class="browser-url-w">sample-clinic.com.au/telehealth</div>
       </div>
       <div class="browser-content">
-        <div class="bc-eyebrow">GEO-Optimised Landing Page · Above the Fold</div>
-        <h2 class="bc-h">Your content ranks on Google.<br><em>But can AI find it?</em></h2>
-        <p class="bc-p">Most content strategies stop at SEO. But 40% of search is shifting to AI-powered answers. If your content is not structured for AI extraction, you are invisible to the fastest-growing search channel in history.</p>
-        <a href="/contact.html" class="bc-cta">Book your AI content audit →</a>
-        <div class="bc-divider"></div>
-        <div class="bc-features">
-          <div class="bc-feat">
-            <div class="bc-feat-chip">GEO Strategy</div>
-            <h4>Answer capsules that AI cites</h4>
-            <p>First 100 words. Direct answer. Structured facts. That is what gets pulled into AI responses.</p>
-          </div>
-          <div class="bc-feat">
-            <div class="bc-feat-chip">Compliance</div>
-            <h4>Regulated content that converts</h4>
-            <p>AHPRA, TGA, ASIC guidelines built into every word. No risk. Full revenue potential.</p>
-          </div>
-          <div class="bc-feat">
-            <div class="bc-feat-chip">Content Systems</div>
-            <h4>Topic clusters that compound</h4>
-            <p>Internal linking, schema markup, pillar pages. One system. Every piece strengthens the next.</p>
-          </div>
+        <div class="bc-eyebrow">Telehealth Consultations · Australia-Wide</div>
+        <h2 class="bc-h">Healthcare consultations<br><em>from wherever you are.</em></h2>
+        <p class="bc-p">Connect with qualified, experienced practitioners for real-time video consultations. Your practitioner will assess your suitability for treatment on a case-by-case basis, and may recommend further investigation, referral, or no treatment depending on your circumstances.</p>
+        <a href="#" class="bc-cta" onclick="return false">Book your consultation →</a>
+        <div style="margin-top:24px;padding-top:14px;border-top:1px solid var(--border)">
+          <p style="font-size:11px;color:var(--muted);line-height:1.55;max-width:520px"><em>Individual results vary based on your unique biology and circumstances. Telehealth is not suitable for all health concerns. Your practitioner may recommend in-person assessment, specialist referral, or no treatment.</em></p>
         </div>
       </div>
     </div>
-    <p class="craft-caption">This is a sample layout. Your strategy would be built around your industry, your compliance requirements, and your growth goals.</p>
+    <div class="bc-annotations">
+      <div class="bc-anno">
+        <div class="bc-anno-label">Compliant</div>
+        <p>No superlatives, no outcome claims, no substance names. "Qualified practitioners" not "AHPRA-registered." Every word passes regulatory review.</p>
+      </div>
+      <div class="bc-anno">
+        <div class="bc-anno-label">SEO + GEO</div>
+        <p>Answer capsule in the first 100 words. Direct, factual, structured for Google rankings and AI citation. Extractable by every search engine.</p>
+      </div>
+      <div class="bc-anno">
+        <div class="bc-anno-label">Conversion</div>
+        <p>One CTA per page. No urgency tricks, no inducements. Clear next step. The disclaimer builds trust, not friction.</p>
+      </div>
+    </div>
+    <p class="craft-caption">Sample layout only. Every engagement is built around your industry, your regulatory requirements, and your growth goals. That's the point. Compliance-first copy that still converts.</p>
   </div>
 </section>
 
@@ -1898,38 +1937,6 @@
           </div>
           <p class="acc-note">SEO content systems, landing pages, and email sequences for over 100 healthcare businesses across Australia. Telehealth platforms, specialist clinics, allied health providers. All content built to AHPRA and TGA compliance standards. If you are in Australian healthcare and your content is not converting, this is probably why.</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CASE STUDIES ── -->
-<section class="cases-sec reveal">
-  <div class="sec-inner">
-    <span class="sec-lbl" style="color:var(--accent)">Results</span>
-    <h2 class="sec-h" style="color:#fff">What happens when content<br>is built to <em style="color:var(--accent)">perform.</em></h2>
-    <p style="color:rgba(255,255,255,.45);max-width:560px;margin-bottom:0;line-height:1.7">Anonymized results from real projects. The industries are different. The approach is the same: research, strategy, compliance, execution, measurement.</p>
-    <div class="cases-grid">
-      <div class="case-card reveal d-1">
-        <div class="case-industry">Healthcare</div>
-        <div class="case-stat">142%</div>
-        <div class="case-label">organic traffic growth in 16 months</div>
-        <div class="case-desc">Allied health practice. Zero paid traffic. Content strategy built around topic clusters and local SEO. Blog posts, service pages, and FAQ schema drove consistent organic growth from month 3 onward.</div>
-        <span class="case-placeholder">*Client details anonymized*</span>
-      </div>
-      <div class="case-card reveal d-2">
-        <div class="case-industry">Fintech</div>
-        <div class="case-stat">3.2x</div>
-        <div class="case-label">conversion rate improvement on landing pages</div>
-        <div class="case-desc">ASIC-regulated fintech. Rewrote all product landing pages and onboarding email sequences. A/B tested headline structures and CTA placement. Compliance review built into every draft.</div>
-        <span class="case-placeholder">*Client details anonymized*</span>
-      </div>
-      <div class="case-card reveal d-3">
-        <div class="case-industry">B2B SaaS</div>
-        <div class="case-stat">847K</div>
-        <div class="case-label">organic impressions in 12 months</div>
-        <div class="case-desc">Early-stage SaaS. Built a 26-week content system from zero. Pillar pages, supporting clusters, internal linking architecture. GEO-optimised from day one with answer capsules and schema markup.</div>
-        <span class="case-placeholder">*Client details anonymized*</span>
       </div>
     </div>
   </div>
@@ -2050,7 +2057,7 @@
 <!-- ── HOOK BILLBOARD ── -->
 <div class="hook-billboard reveal">
   <div class="hook-billboard-inner">
-    <p>Brands hire me when they realize<br><span>AI search is not optional anymore.</span></p>
+    <p>Brands hire me when they realize<br><span>compliance and conversion aren't opposites.</span></p>
     <div class="hook-billboard-rule"></div>
   </div>
 </div>
@@ -2260,13 +2267,13 @@
     <div class="about-top reveal">
       <span class="sec-lbl">About Amisha</span>
       <h2 class="sec-h" style="color:#fff;max-width:640px">The strategist who studied<br>four years before publishing<br>a single word.</h2>
-      <p class="about-body" style="max-width:580px">Certified in copywriting, SEO, and PPC Ads. ISB-certified marketer (ranked #1 in India, #7 globally by the Financial Times). Generative AI certified. 200+ projects. 5+ years. I know what ranks on Google. I know what gets cited by AI. And I know where AI-generated content breaks in regulated industries.</p>
+      <p class="about-body" style="max-width:580px">Writes under AHPRA, TGA, and ASIC every single day. 200+ projects in regulated industries. Zero compliance breaches. ISB-certified marketer. SEO, GEO, and AEO built into every piece. I know what ranks, what converts, and what keeps your licence intact.</p>
     </div>
 
     <div class="about-highlights reveal d-1">
       <div class="ah-feature">
         <div class="ah-num">5<span>+</span></div>
-        <div class="ah-label">Years building content<br>systems that convert</div>
+        <div class="ah-label">Years writing compliant<br>copy that ranks</div>
       </div>
       <div class="ah-card">
         <div class="ah-icon">
@@ -2279,15 +2286,15 @@
         <div class="ah-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
-        <strong>100+ Brands</strong>
+        <strong>200+ Brands</strong>
         <span>Across healthcare, fintech, legal, and SaaS. 3 continents.</span>
       </div>
       <div class="ah-card">
         <div class="ah-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
         </div>
-        <strong>GEO + AI Certified</strong>
-        <span>ISB, IISc, Airtribe, Google, Kairos, Growth School.</span>
+        <strong>Zero Compliance Breaches</strong>
+        <span>AHPRA, TGA, ASIC. 200+ regulated projects. Clean record.</span>
       </div>
       <div class="ah-card">
         <div class="ah-icon">
@@ -2313,26 +2320,10 @@
 
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What is GEO and why should I care about it?
+          What does "compliance-first content" actually mean?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><p>GEO stands for Generative Engine Optimization. It is the practice of structuring your content so AI search engines like ChatGPT, Perplexity, and Google AI Overviews can find, extract, and cite it. Traditional SEO gets you ranked on Google. GEO gets you mentioned in AI-generated answers, which is where 40%+ of search is heading. If your competitors show up in AI responses and you do not, you are losing deals you will never even know about. I build content systems that cover both.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          How is this different from hiring a regular content writer?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><p>A content writer gives you words. I give you a system. Every piece I create is built on keyword research, topic clustering, AI-ready formatting (answer capsules, schema markup, structured headings), and compliance awareness for regulated industries. I also handle the strategy layer: editorial calendars, internal linking architecture, and GEO optimisation. You are not hiring someone to fill a blog. You are hiring someone to build a content engine that compounds over time. That is the difference.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do you work with businesses outside Australia?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><p>Yes. I have worked with 100+ brands across Australia, the US, the UK, and India. My compliance expertise is deepest in Australian regulatory frameworks (AHPRA, TGA, ASIC), but I adapt to any jurisdiction. I work async, so time zones are never an issue. Most of my clients are in Australia, but the content strategy principles and GEO frameworks I use work globally. If you are in a regulated industry anywhere in the world, we can make it work.</p></div>
+        <div class="faq-a"><p>It means every piece of content I write is built with regulatory boundaries in mind from the first draft, not checked after the fact. For healthcare brands in Australia, that means AHPRA and TGA compliance: no testimonials that imply guaranteed outcomes, no unsubstantiated claims, no comparative advertising without evidence. For financial services, that means ASIC guidelines: balanced risk disclosure, no misleading projections, clear product warnings. I do not just write content that sounds good. I write content that will not get you a compliance notice. And then I make it rank.</p></div>
       </div>
 
       <div class="faq-item">
@@ -2345,26 +2336,34 @@
 
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          How do you use AI in your content process?
+          How is this different from hiring a regular content writer?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><p>AI is a tool in my workflow, not a replacement for thinking. I use AI for research acceleration, competitive analysis, content gap identification, and first-draft ideation. But every piece of content is strategized, structured, compliance-checked, and edited by me. The strategy is human. The voice is human. The compliance judgment is human. AI helps me move faster without sacrificing quality. What I do not do: generate a blog post with ChatGPT and hand it to you. That is not strategy. That is a liability.</p></div>
+        <div class="faq-a"><p>A content writer gives you words. I give you compliant content that ranks. Every piece I create is built on compliance expertise (AHPRA, TGA, ASIC), keyword research, topic clustering, AI-ready formatting (answer capsules, schema markup, structured headings), and SEO + GEO optimisation. You are not hiring someone to fill a blog. You are hiring someone who builds content that converts, stays compliant, and gets found on Google and AI search. That is the difference.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What does an AI content audit include?
+          What does a compliance content audit include?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><p>A full diagnostic of your content across both traditional and AI search. I analyse your current Google rankings, check whether AI models (ChatGPT, Perplexity, Google AI Overviews) can find and cite your brand, review your schema markup and content structure, identify compliance gaps, and map out a 90-day content roadmap. You get a clear picture of where you stand and exactly what to fix. The audit is free, no strings attached. If you want me to execute the roadmap, we can talk about that after. <a href="/contact.html" style="color:var(--accent);text-decoration:underline">Book yours here.</a></p></div>
+        <div class="faq-a"><p>A full diagnostic of your content across compliance, SEO, and AI search. I identify compliance gaps against AHPRA, TGA, or ASIC guidelines, analyse your Google rankings, check whether AI models (ChatGPT, Perplexity, Google AI Overviews) can find and cite your brand, review your schema markup and content structure, and map out a 90-day content roadmap. You get a clear picture of where you stand and exactly what to fix. <a href="/contact.html" style="color:var(--accent);text-decoration:underline">Get in touch to book yours.</a></p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          How long before I see results from SEO content?
+          What is GEO and AEO, and why should I care?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><p>SEO is not instant, and anyone who tells you otherwise is lying. You will typically start seeing traction in 3 to 4 months, with meaningful compounding by month 6. GEO results (AI citations and mentions) can show up faster because AI models re-index content more frequently than Google crawls. I built a system for one client that grew organic traffic 142% in 16 months with zero paid spend. That is what a real content strategy looks like: slow to start, impossible to ignore once it compounds.</p></div>
+        <div class="faq-a"><p>GEO (Generative Engine Optimization) and AEO (Answer Engine Optimization) are the practice of structuring your content so AI search engines like ChatGPT, Perplexity, and Google AI Overviews can find, extract, and cite it. Traditional SEO gets you ranked on Google. GEO and AEO get you mentioned in AI-generated answers, which is where search is heading. I build every piece of content for both. And in regulated industries, I do it without crossing compliance lines. That combination is what most competitors cannot offer.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Do you work with businesses outside Australia?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>Yes. I have worked with 200+ brands across Australia, the US, the UK, and India. My compliance expertise is deepest in Australian regulatory frameworks (AHPRA, TGA, ASIC), but I adapt to any jurisdiction. I work async, so time zones are never an issue. Most of my clients are in Australia, but the content strategy principles and compliance frameworks I use work globally. If you are in a regulated industry anywhere in the world, we can make it work.</p></div>
       </div>
 
       <div class="faq-item">
@@ -2377,10 +2376,18 @@
 
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What does "compliance-aware content" actually mean?
+          How do you use AI in your content process?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><p>It means every piece of content I write is built with regulatory boundaries in mind from the start, not checked after the fact. For healthcare brands in Australia, that means AHPRA and TGA compliance: no testimonials that imply guaranteed outcomes, no unsubstantiated claims, no comparative advertising without evidence. For financial services, that means ASIC guidelines: balanced risk disclosure, no misleading projections, clear product warnings. I do not just write content that sounds good. I write content that will not get you a compliance notice. That is the bar.</p></div>
+        <div class="faq-a"><p>AI is a tool in my workflow, not a replacement for judgment. I use AI for research acceleration, competitive analysis, content gap identification, and first-draft ideation. But every piece of content is strategized, structured, compliance-checked, and edited by me. The strategy is human. The compliance judgment is human. AI helps me move faster without sacrificing quality. What I do not do: generate a blog post with ChatGPT and hand it to you. In regulated industries, that is not a shortcut. That is a liability.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How long before I see results from SEO content?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>SEO is not instant, and anyone who tells you otherwise is lying. You will typically start seeing traction in 3 to 4 months, with meaningful compounding by month 6. GEO and AEO results (AI citations and mentions) can show up faster because AI models re-index content more frequently than Google crawls. I built a system for one client that grew organic traffic 142% in 16 months with zero paid spend. That is what a real content strategy looks like: slow to start, impossible to ignore once it compounds.</p></div>
       </div>
 
       <div class="faq-item">
@@ -2388,7 +2395,7 @@
           How much do your services cost?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><p>It depends on scope. A one-off landing page is different from a 6-month content system with weekly publishing, GEO optimisation, and compliance review. I price based on the value of the outcome, not the number of words. Most ongoing engagements start at a monthly retainer. One-off projects (audits, landing pages, ad copy) are quoted per project. The best way to get a number is to <a href="/contact.html" style="color:var(--accent);text-decoration:underline">book the free AI content audit</a>. I will assess what you need and give you a clear quote with no pressure.</p></div>
+        <div class="faq-a"><p>It depends on scope. A one-off landing page is different from a 6-month content system with weekly publishing, SEO + GEO optimisation, and compliance review. I price based on the value of the outcome, not the number of words. Most ongoing engagements start at a monthly retainer. One-off projects (audits, landing pages, ad copy) are quoted per project. The best way to get a number is to <a href="/contact.html" style="color:var(--accent);text-decoration:underline">get in touch</a>. I will assess what you need and give you a clear quote.</p></div>
       </div>
 
     </div>
@@ -2402,26 +2409,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is GEO and why should I care about it?",
+      "name": "What does compliance-first content actually mean?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "GEO stands for Generative Engine Optimization. It is the practice of structuring your content so AI search engines like ChatGPT, Perplexity, and Google AI Overviews can find, extract, and cite it. Traditional SEO gets you ranked on Google. GEO gets you mentioned in AI-generated answers, which is where 40%+ of search is heading. If your competitors show up in AI responses and you do not, you are losing deals you will never even know about."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is this different from hiring a regular content writer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A content writer gives you words. I give you a system. Every piece I create is built on keyword research, topic clustering, AI-ready formatting (answer capsules, schema markup, structured headings), and compliance awareness for regulated industries. I also handle the strategy layer: editorial calendars, internal linking architecture, and GEO optimization. You are not hiring someone to fill a blog. You are hiring someone to build a content engine that compounds over time."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with businesses outside Australia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. I have worked with 100+ brands across Australia, the US, the UK, and India. My compliance expertise is deepest in Australian regulatory frameworks (AHPRA, TGA, ASIC), but I adapt to any jurisdiction. I work async, so time zones are never an issue. Most of my clients are in Australia, but the content strategy principles and GEO frameworks I use work globally."
+        "text": "It means every piece of content I write is built with regulatory boundaries in mind from the first draft, not checked after the fact. For healthcare brands in Australia, that means AHPRA and TGA compliance: no testimonials that imply guaranteed outcomes, no unsubstantiated claims, no comparative advertising without evidence. For financial services, that means ASIC guidelines: balanced risk disclosure, no misleading projections, clear product warnings. And then I make it rank."
       }
     },
     {
@@ -2434,26 +2425,34 @@
     },
     {
       "@type": "Question",
-      "name": "How do you use AI in your content process?",
+      "name": "How is this different from hiring a regular content writer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "AI is a tool in my workflow, not a replacement for thinking. I use AI for research acceleration, competitive analysis, content gap identification, and first-draft ideation. But every piece of content is strategized, structured, compliance-checked, and edited by me. The strategy is human. The voice is human. The compliance judgment is human. AI helps me move faster without sacrificing quality."
+        "text": "A content writer gives you words. I give you compliant content that ranks. Every piece I create is built on compliance expertise (AHPRA, TGA, ASIC), keyword research, topic clustering, AI-ready formatting (answer capsules, schema markup, structured headings), and SEO + GEO optimisation. You are not hiring someone to fill a blog. You are hiring someone who builds content that converts, stays compliant, and gets found on Google and AI search."
       }
     },
     {
       "@type": "Question",
-      "name": "What does an AI content audit include?",
+      "name": "What does a compliance content audit include?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A full diagnostic of your content across both traditional and AI search. I analyze your current Google rankings, check whether AI models (ChatGPT, Perplexity, Google AI Overviews) can find and cite your brand, review your schema markup and content structure, identify compliance gaps, and map out a 90-day content roadmap. You get a clear picture of where you stand and exactly what to fix. The audit is free, no strings attached."
+        "text": "A full diagnostic of your content across compliance, SEO, and AI search. I identify compliance gaps against AHPRA, TGA, or ASIC guidelines, analyse your Google rankings, check whether AI models can find and cite your brand, review your schema markup and content structure, and map out a 90-day content roadmap. You get a clear picture of where you stand and exactly what to fix."
       }
     },
     {
       "@type": "Question",
-      "name": "How long before I see results from SEO content?",
+      "name": "What is GEO and AEO, and why should I care?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SEO is not instant, and anyone who tells you otherwise is lying. You will typically start seeing traction in 3 to 4 months, with meaningful compounding by month 6. GEO results (AI citations and mentions) can show up faster because AI models re-index content more frequently than Google crawls. I built a system for one client that grew organic traffic 142% in 16 months with zero paid spend."
+        "text": "GEO (Generative Engine Optimization) and AEO (Answer Engine Optimization) are the practice of structuring your content so AI search engines like ChatGPT, Perplexity, and Google AI Overviews can find, extract, and cite it. Traditional SEO gets you ranked on Google. GEO and AEO get you mentioned in AI-generated answers. I build every piece of content for both, without crossing compliance lines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with businesses outside Australia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I have worked with 200+ brands across Australia, the US, the UK, and India. My compliance expertise is deepest in Australian regulatory frameworks (AHPRA, TGA, ASIC), but I adapt to any jurisdiction. I work async, so time zones are never an issue."
       }
     },
     {
@@ -2466,10 +2465,10 @@
     },
     {
       "@type": "Question",
-      "name": "What does 'compliance-aware content' actually mean?",
+      "name": "How long before I see results from SEO content?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It means every piece of content I write is built with regulatory boundaries in mind from the start, not checked after the fact. For healthcare brands in Australia, that means AHPRA and TGA compliance: no testimonials that imply guaranteed outcomes, no unsubstantiated claims, no comparative advertising without evidence. For financial services, that means ASIC guidelines: balanced risk disclosure, no misleading projections, clear product warnings."
+        "text": "SEO is not instant, and anyone who tells you otherwise is lying. You will typically start seeing traction in 3 to 4 months, with meaningful compounding by month 6. GEO and AEO results (AI citations and mentions) can show up faster because AI models re-index content more frequently than Google crawls. I built a system for one client that grew organic traffic 142% in 16 months with zero paid spend."
       }
     },
     {
@@ -2477,7 +2476,7 @@
       "name": "How much do your services cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It depends on scope. A one-off landing page is different from a 6-month content system with weekly publishing, GEO optimization, and compliance review. I price based on the value of the outcome, not the number of words. Most ongoing engagements start at a monthly retainer. One-off projects (audits, landing pages, ad copy) are quoted per project. The best way to get a number is to book the free AI content audit."
+        "text": "It depends on scope. A one-off landing page is different from a 6-month content system with weekly publishing, SEO + GEO optimisation, and compliance review. I price based on the value of the outcome, not the number of words. Most ongoing engagements start at a monthly retainer. One-off projects (audits, landing pages, ad copy) are quoted per project."
       }
     }
   ]
@@ -2489,10 +2488,10 @@
   <div class="sec-inner">
     <div class="cta-inner reveal r-scale">
       <span class="sec-lbl" style="justify-content:center">Let's work together</span>
-      <h2 class="sec-h">Ready to make your content<br>work in the AI era?</h2>
-      <p>I take on a limited number of new projects each month. If your content ranks on Google but AI cannot find it, cite it, or recommend it, let's fix that. I respond personally within 48 hours.</p>
+      <h2 class="sec-h">Content that <em style="color:var(--accent)">converts</em> and<br>stays <em style="color:var(--accent)">compliant</em>. Let's talk.</h2>
+      <p>I take on a limited number of new projects each month. If your content team spends more time on compliance reviews than on strategy, let's fix that. I respond personally within 48 hours.</p>
       <div class="cta-btns">
-        <a href="/contact.html" class="btn-acc">Book a free AI content audit →</a>
+        <a href="/contact.html" class="btn-acc">Let's work together →</a>
         <a href="/services.html" class="btn-g">See my services →</a>
       </div>
     </div>
@@ -2509,7 +2508,7 @@
       <li><a href="/services.html">Services</a></li>
       <li><a href="/blog.html">Blog</a></li>
       <li><a href="/contact.html">Contact</a></li>
-      <li><a href="https://www.linkedin.com/in/amisha-sharma-content/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      <li><a href="https://www.linkedin.com/in/amisha-sharma-content-marketer" target="_blank" rel="noopener">LinkedIn ↗</a></li>
     </ul>
     <div class="ft-legal"><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a></div>
     <span class="ft-copy">© 2026 Amisha Sharma · Delhi, India</span>
@@ -2595,21 +2594,26 @@
     });
   }, 2000);
 
-  /* ── HERO TEXT SCRAMBLE ── */
-  const scrambleEl = document.getElementById('scrambleTarget');
-  const finalText = 'know you?';
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!?#';
-  let sFrame = 0, sTotal = 22;
-  function scrambleStep() {
-    if (!scrambleEl) return;
-    scrambleEl.textContent = finalText.split('').map((c, i) => {
-      if (sFrame / sTotal > i / finalText.length) return c;
-      return chars[Math.floor(Math.random() * chars.length)];
-    }).join('');
-    if (sFrame++ < sTotal) setTimeout(scrambleStep, 38);
-    else scrambleEl.textContent = finalText;
+  /* ── HERO WORD CYCLE ── */
+  const cycleEl = document.getElementById('scrambleTarget');
+  const cycleWords = ['ranks.', 'hooks.', 'converts.', 'outperforms.', 'dominates.', 'compounds.'];
+  let cycleIdx = 0;
+  function cycleWord() {
+    if (!cycleEl) return;
+    cycleEl.style.opacity = '0';
+    cycleEl.style.transform = 'translateY(12px)';
+    setTimeout(function() {
+      cycleIdx = (cycleIdx + 1) % cycleWords.length;
+      cycleEl.textContent = cycleWords[cycleIdx];
+      cycleEl.style.opacity = '1';
+      cycleEl.style.transform = 'translateY(0)';
+    }, 350);
   }
-  setTimeout(scrambleStep, 850);
+  if (cycleEl) {
+    cycleEl.style.transition = 'opacity .35s, transform .35s';
+    cycleEl.style.display = 'inline-block';
+    setInterval(cycleWord, 2200);
+  }
 
   /* ── ACCORDION (CSS height) ── */
   function toggleAcc(id) {
@@ -2663,16 +2667,16 @@
   /* ── COPY TRANSFORMATION THEATER ── */
   const ctPairs = [
     {
-      before: "We provide comprehensive digital marketing solutions designed to help your business achieve its goals.",
-      after:  "Your customers are ready to buy. Your copy just isn't asking."
+      before: "Our telehealth doctors guarantee the best treatment outcomes. Patients love our life-changing weight loss injections. Book now for fast results.",
+      after:  "Our telehealth platform connects you with qualified practitioners for personalised consultations. Treatment suitability is assessed on a case-by-case basis."
     },
     {
-      before: "Our expert team creates high-quality content that delivers measurable results for your brand.",
-      after:  "You don't need more content. You need content that makes people click."
+      before: "We're the #1 rated financial adviser in Australia. Our investment strategies outperform the market every year. Guaranteed returns.",
+      after:  "Our financial advisers hold current AFSL licences and provide personalised strategies based on your financial situation. Past performance is not indicative of future results."
     },
     {
-      before: "Boost your online presence and drive more traffic with our proven SEO strategies.",
-      after:  "The goal isn't ranking. It's the right person reading and saying: yes, this is for me."
+      before: "This supplement cures anxiety and depression naturally. Thousands of patients have been healed. Doctor recommended.",
+      after:  "This practitioner-only supplement may support emotional wellbeing as part of a broader treatment plan. Consult your healthcare provider to determine suitability."
     }
   ];
 

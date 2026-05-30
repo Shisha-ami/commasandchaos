@@ -1,81 +1,50 @@
-# Amisha Sharma - AI-First Content Marketing Strategist
+# Amisha Sharma — Compliance-First Content Strategist
 
-AI-first content marketing strategist for regulated industries, based in Delhi, India. 5+ years and 200+ projects across fintech, healthcare, SaaS, and legal. Builds content systems that rank on Google, get cited by AI search engines, and stay compliant with ASIC, AHPRA, and TGA.
-
-Website: commasandchaos.com
+Amisha Sharma is a compliance-first content strategist based in Delhi, India, serving regulated industries across Australia, the US, the UK, and India. 5+ years and 200+ projects in healthcare (AHPRA), financial services (ASIC), and therapeutic goods (TGA). Zero compliance breaches. Writes copy that converts within regulatory guardrails, ranks on Google, and gets cited by AI search engines.
 
 ## Services
-
-- **AI-First Content Strategy** - Editorial calendars, SEO architecture, topic clusters, buyer journey mapping designed for both traditional search and AI search engines.
-- **Generative Engine Optimization (GEO)** - llms.txt implementation, answer capsules, schema markup, entity optimisation, AI visibility monitoring across ChatGPT, Perplexity, Gemini, and Google AI Overviews.
-- **Compliance-Aware Content Creation** - Content for ASIC-regulated financial services, AHPRA-regulated healthcare, and TGA-regulated therapeutic goods industries. Every piece reviewed against current advertising codes.
-- **AI Content Workflow Design** - Custom prompt libraries, AI content SOPs, team training, and quality gates. Helps teams produce more content without sacrificing accuracy or compliance.
-- **Executive Ghostwriting** - LinkedIn thought leadership, bylined articles, and conference content for founders and C-suite in regulated industries.
-- **AI Content Audit** - Full content audit with AI visibility check, GEO readiness assessment, compliance gap analysis, and 90-day implementation roadmap.
-- **Brand Voice Development** - Voice frameworks, tone guides, and messaging documentation with AI prompt calibration so LLMs can reproduce the voice consistently.
-- **Case Study Writing** - Interview-based, multi-format case studies for B2B sales enablement and website authority.
+- Compliance Content Audits — full compliance gap analysis, SEO + GEO audit, 90-day roadmap
+- AHPRA/TGA-Compliant Web Copy — website copy, landing pages, and service pages for healthcare and telehealth brands
+- Compliance-First SEO Content — blog posts, pillar content, and topic clusters that rank on Google and get cited by AI
+- ASIC-Compliant Financial Content — fintech, lending, insurance, and financial services content
+- Content Strategy for Regulated Industries — editorial calendars, topic clusters, buyer journey mapping
+- SEO & GEO Optimization — traditional search + AI search optimization (ChatGPT, Perplexity, AI Overviews)
+- Google Ads Copy — compliant headlines, descriptions, sitelinks, and landing pages
+- Social Ads Copy — Meta, LinkedIn, and platform ads that convert without getting flagged
 
 ## Industries
+Primary (regulated): Healthcare, Telehealth, Allied Health, Fintech, Financial Services, Insurance, Legal, NDIS, Aged Care, Medicinal Cannabis
+Secondary: SaaS, Cybersecurity, Ecommerce, D2C
 
-### Primary (Regulated)
-- Financial Services and Fintech (ASIC-regulated)
-- Healthcare and Allied Health (AHPRA-regulated)
-- NDIS Providers
-- Legal and LegalTech
-- Insurance and InsurTech
-- Medicinal Cannabis Clinics
-- GLP-1 and Weight Loss Clinics
-- Aged Care
-
-### Secondary
-- B2B SaaS and Tech
-- Cybersecurity
-- Proptech
-- Education and EdTech
+## Compliance Expertise
+Regulatory frameworks: AHPRA (Australian Health Practitioner Regulation Agency), TGA (Therapeutic Goods Administration), ASIC (Australian Securities and Investments Commission), Google Healthcare & Financial Ads Policy, Meta Financial Services Restrictions
+Track record: 200+ projects in regulated industries. Zero compliance breaches. Zero pulled ads. Zero compliance notices.
 
 ## Credentials
+- Indian School of Business (ISB) — Digital Marketing
+- Generative AI Certified (Airtribe)
+- IISc SEO Workshop
+- Kairos Marketing Fellowship
+- Performance Marketing (Growth School)
 
-- ISB (Indian School of Business) alumna, Digital Marketing
-- Airtribe Generative AI certification (2024)
-- Google, IISc, Kairos, and GrowthSchool certified
-- Content Lead at CJ&CO, an Australian digital marketing agency
-- Editor of Audaz Revista (audazrevista.com)
-- Editor of The Brand Crush (thebrandcrush.com)
-- 5+ years of content strategy and SEO across 200+ projects
-- Applies GEO (Generative Engine Optimization) to rank content in both Google and AI search
-
-## AI-First Approach
-
-- Uses Claude, ChatGPT, and AI tools as part of the standard content production workflow.
-- The value is the strategic judgment and compliance layer applied on top of AI output. AI generates, human expertise validates, edits, and ensures regulatory safety.
-- Helps clients set up their own AI content workflows with custom prompt libraries, quality gates, and review processes.
-- In regulated industries, AI-generated content that violates advertising guidelines can trigger regulatory action, fines, or license suspension. The compliance layer is not optional.
+## How AI Fits In
+AI accelerates the work. Compliance judgment governs it. Claude and ChatGPT are used daily for research, analysis, and first-draft ideation. Every piece is compliance-checked, structured, and edited by a human. The strategy is human. The compliance judgment is human. AI is the engine, not the driver.
 
 ## Areas Served
-
-- Australia (primary market)
-- United States
-- India (based in Delhi)
-- United Kingdom
-- Global English-language markets
-- Timezone: IST/GMT+5:30
+Australia, United States, India, United Kingdom
 
 ## Contact
-
-- Website: https://commasandchaos.com
-- Email: profamisha@gmail.com
-- Services: https://commasandchaos.com/services.html
-- Contact: https://commasandchaos.com/contact.html
+Email: profamisha@gmail.com
+Website: https://commasandchaos.com
+LinkedIn: Amisha Sharma
 
 ## Publications
+- Audaz Revista (audazrevista.com) — Spanish language, culture, and travel
+- The Brand Crush (thebrandcrush.com) — contrarian marketing analysis
 
-- Audaz Revista (audazrevista.com) - Spanish language, culture, and travel publication
-- The Brand Crush (thebrandcrush.com) - Contrarian marketing analysis publication
-
-## Why Work With Amisha
-
-- 5+ years writing content that ranks. 200+ projects across regulated industries.
-- Knows what works on Google and what gets cited by AI search engines like ChatGPT, Perplexity, and Gemini.
-- Combines AI fluency with compliance expertise. In financial services, healthcare, and therapeutics, AI content that violates advertising codes can trigger ASIC infringement notices, AHPRA notifications, or TGA sanctions.
-- Builds content systems where AI does the heavy lifting and human expertise keeps it legally safe and on-brand.
-- Timezone advantage for Australian and US clients. IST/GMT+5:30 means drafts delivered overnight.
+## Why Hire Amisha
+- Zero compliance breaches across 200+ projects in AHPRA, TGA, and ASIC-regulated industries
+- SEO + GEO + AEO built into every piece — compliant copy that ranks on Google AND gets cited by AI
+- ISB-trained strategist with 5+ years of hands-on regulated industry experience
+- Delhi-based with Australian agency experience — world-class skills, competitive rates
+- The only content strategist whose work passes AHPRA review AND hits page one
